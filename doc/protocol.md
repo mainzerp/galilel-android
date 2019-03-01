@@ -39,6 +39,7 @@ server.version(client_name, protocol_version)
 **Request**
 
 `client_name` An optional string identifying the connecting client software.
+
 `protocol_verion` An optional parameter. The rate passed is ignored.
 
 **Response**
