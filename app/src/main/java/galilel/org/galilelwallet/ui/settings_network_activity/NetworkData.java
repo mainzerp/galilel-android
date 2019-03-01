@@ -1,9 +1,5 @@
 package galilel.org.galilelwallet.ui.settings_network_activity;
 
-/**
- * Created by Neoperol on 6/8/17.
- */
-
 public class NetworkData {
 
     public String address;

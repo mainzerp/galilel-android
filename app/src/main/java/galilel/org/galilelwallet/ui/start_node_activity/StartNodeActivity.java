@@ -28,10 +28,6 @@ import galilel.org.galilelwallet.ui.wallet_activity.WalletActivity;
 import galilel.org.galilelwallet.utils.DialogBuilder;
 import galilel.org.galilelwallet.utils.DialogsUtil;
 
-/**
- * Created by Neoperol on 6/27/17.
- */
-
 public class StartNodeActivity extends BaseActivity {
 
     private Button openDialog;

@@ -44,11 +44,7 @@ import galilel.org.galilelwallet.utils.DialogsUtil;
 
 import static galilel.org.galilelwallet.module.GalilelContext.GALI_WALLET_APP_RELEASED_ON_PLAY_STORE_TIME;
 
-/**
- * Created by Neoperol on 7/19/17.
- * // todo: this activity is awfull, should do this right..
- */
-
+// todo: this activity is awfull, should do this right..
 public class RestoreWordsActivity extends BaseActivity {
     private View root;
     private ViewPager viewPager;

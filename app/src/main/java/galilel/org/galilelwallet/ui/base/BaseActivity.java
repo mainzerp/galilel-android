@@ -13,10 +13,6 @@ import android.widget.FrameLayout;
 
 import galilel.org.galilelwallet.R;
 
-/**
- * Created by mati on 18/04/17.
- */
-
 public abstract class BaseActivity extends GalilelActivity {
 
     protected Toolbar toolbar;

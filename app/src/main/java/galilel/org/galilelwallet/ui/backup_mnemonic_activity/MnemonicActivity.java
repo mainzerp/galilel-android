@@ -21,10 +21,6 @@ import galilel.org.galilelwallet.R;
 import galilel.org.galilelwallet.ui.base.BaseActivity;
 import galilel.org.galilelwallet.ui.wallet_activity.WalletActivity;
 
-/**
- * Created by Neoperol on 7/17/17.
- */
-
 public class MnemonicActivity extends BaseActivity {
 
     public static final String INTENT_EXTRA_INIT_VIEW = "init_view";

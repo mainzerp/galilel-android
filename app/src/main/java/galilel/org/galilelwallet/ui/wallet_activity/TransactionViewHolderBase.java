@@ -11,11 +11,6 @@ import galilel.org.galilelwallet.R;
 import galilel.org.galilelwallet.ui.base.tools.adapter.BaseRecyclerViewHolder;
 import galilel.org.galilelwallet.ui.transaction_detail_activity.TransactionDetailActivity;
 
-/**
- * Created by Neoperol on 5/3/17.
- */
-
-
 public class TransactionViewHolderBase extends BaseRecyclerViewHolder {
 
     CardView cv;

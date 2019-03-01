@@ -86,10 +86,6 @@ import static galilel.org.galilelwallet.ui.transaction_send_activity.custom.outp
 import static galilel.org.galilelwallet.ui.transaction_send_activity.custom.outputs.OutputsActivity.INTENT_EXTRA_OUTPUTS_WRAPPERS;
 import static galilel.org.galilelwallet.utils.scanner.ScanActivity.INTENT_EXTRA_RESULT;
 
-/**
- * Created by Neoperol on 5/4/17.
- */
-
 public class SendActivity extends BaseActivity implements View.OnClickListener {
 
     private Logger logger = LoggerFactory.getLogger(SendActivity.class);

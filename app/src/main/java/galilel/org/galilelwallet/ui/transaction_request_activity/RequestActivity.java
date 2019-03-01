@@ -33,10 +33,6 @@ import static android.graphics.Color.WHITE;
 import static galilel.org.galilelwallet.ui.qr_activity.MyAddressFragment.convertDpToPx;
 import static galilel.org.galilelwallet.utils.QrUtils.encodeAsBitmap;
 
-/**
- * Created by Neoperol on 5/11/17.
- */
-
 public class RequestActivity extends BaseActivity implements View.OnClickListener {
 
     private AmountInputFragment amountFragment;

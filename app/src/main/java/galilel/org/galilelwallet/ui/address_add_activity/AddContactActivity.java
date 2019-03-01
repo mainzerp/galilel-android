@@ -25,10 +25,6 @@ import galilel.org.galilelwallet.utils.scanner.ScanActivity;
 import static android.Manifest.permission_group.CAMERA;
 import static galilel.org.galilelwallet.utils.scanner.ScanActivity.INTENT_EXTRA_RESULT;
 
-/**
- * Created by Neoperol on 6/8/17.
- */
-
 public class AddContactActivity extends BaseActivity implements View.OnClickListener {
 
     public static final String ADDRESS_TO_ADD = "address";

@@ -2,10 +2,6 @@ package galilel.org.galilelwallet.utils;
 
 import android.content.SharedPreferences;
 
-/**
- * Created by mati on 22/11/16.
- */
-
 public class Configurations {
 
     protected final SharedPreferences prefs;

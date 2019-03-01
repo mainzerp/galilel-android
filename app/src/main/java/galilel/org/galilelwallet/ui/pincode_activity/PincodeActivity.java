@@ -21,10 +21,6 @@ import galilel.org.galilelwallet.ui.start_activity.StartActivity;
 
 import static galilel.org.galilelwallet.ui.backup_mnemonic_activity.MnemonicActivity.INTENT_EXTRA_INIT_VIEW;
 
-/**
- * Created by Neoperol on 4/20/17.
- */
-
 public class PincodeActivity extends BaseActivity implements KeyboardFragment.onKeyListener {
 
     public static final String CHECK_PIN = "check_pin";

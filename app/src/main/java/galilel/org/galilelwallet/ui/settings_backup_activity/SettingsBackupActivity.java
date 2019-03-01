@@ -27,10 +27,6 @@ import galilel.org.galilelwallet.ui.base.BaseActivity;
 import galilel.org.galilelwallet.ui.base.dialogs.SimpleTextDialog;
 import galilel.org.galilelwallet.utils.DialogsUtil;
 
-/**
- * Created by Neoperol on 5/18/17.
- */
-
 public class SettingsBackupActivity extends BaseActivity {
 
     private static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL = 500;

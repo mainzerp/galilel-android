@@ -47,10 +47,6 @@ import wallet.Crypto;
 import wallet.WalletUtils;
 import wallet.exceptions.CantRestoreEncryptedWallet;
 
-/**
- * Created by Neoperol on 4/20/17.
- */
-
 public class RestoreActivity extends BaseActivity {
     public static final String ACTION_RESTORE_AND_JUMP_TO_WIZARD = "jump_to_wizard";
     private static final int OPTIONS_RESTORE = 1;

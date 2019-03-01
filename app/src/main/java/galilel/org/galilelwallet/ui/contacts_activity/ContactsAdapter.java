@@ -7,10 +7,6 @@ import galilel.org.galilelwallet.R;
 import global.AddressLabel;
 import galilel.org.galilelwallet.ui.base.tools.adapter.BaseRecyclerAdapter;
 
-/**
- * Created by Neoperol on 5/18/17.
- */
-
 public class ContactsAdapter extends BaseRecyclerAdapter<AddressLabel,ContactViewHolderBase> {
 
     public ContactsAdapter(Context context) {

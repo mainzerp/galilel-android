@@ -12,10 +12,6 @@ import galilel.org.galilelwallet.R;
 import galilel.org.galilelwallet.ui.start_activity.StartActivity;
 import galilel.org.galilelwallet.ui.wallet_activity.WalletActivity;
 
-/**
- * Created by Neoperol on 6/13/17.
- */
-
 public class SplashActivity extends AppCompatActivity {
     VideoView videoView;
     private boolean ispaused = false;

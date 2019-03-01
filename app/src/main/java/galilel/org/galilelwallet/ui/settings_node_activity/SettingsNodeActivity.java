@@ -11,10 +11,6 @@ import galilel.org.galilelwallet.R;
 import galilel.org.galilelwallet.ui.base.BaseActivity;
 import galilel.org.galilelwallet.ui.wallet_activity.WalletActivity;
 
-/**
- * Created by Neoperol on 6/27/17.
- */
-
 public class SettingsNodeActivity extends BaseActivity implements View.OnClickListener {
     View root;
     Button btnSelectNode;

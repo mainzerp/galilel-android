@@ -32,10 +32,6 @@ import wallet.exceptions.InsufficientInputsException;
 import wallet.exceptions.TxNotFoundException;
 import wallet.exceptions.CantRestoreEncryptedWallet;
 
-/**
- * Created by mati on 18/04/17.
- */
-
 public interface GalilelModule {
 
     /**

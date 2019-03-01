@@ -52,10 +52,6 @@ import static galilel.org.galilelwallet.ui.transaction_send_activity.SendActivit
 import static galilel.org.galilelwallet.ui.transaction_send_activity.SendActivity.INTENT_MEMO;
 import static galilel.org.galilelwallet.utils.scanner.ScanActivity.INTENT_EXTRA_RESULT;
 
-/**
- * Created by Neoperol on 5/11/17.
- */
-
 public class WalletActivity extends BaseDrawerActivity {
 
     private static final int SCANNER_RESULT = 122;

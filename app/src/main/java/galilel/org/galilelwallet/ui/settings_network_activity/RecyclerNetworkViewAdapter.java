@@ -11,10 +11,6 @@ import java.util.List;
 
 import galilel.org.galilelwallet.R;
 
-/**
- * Created by Neoperol on 6/8/17.
- */
-
 public class RecyclerNetworkViewAdapter extends RecyclerView.Adapter<NetworkViewHolder> {
 
     List<NetworkData> list = Collections.emptyList();

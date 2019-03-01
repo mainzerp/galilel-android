@@ -27,11 +27,6 @@ import galilel.org.galilelwallet.ui.base.tools.adapter.ListItemListeners;
 import galilel.org.galilelwallet.utils.DialogsUtil;
 import galilel.org.galilelwallet.utils.NavigationUtils;
 
-/**
- * Created by Neoperol on 5/11/17.
- */
-
-
 public class ContactsActivity extends BaseDrawerActivity implements ListItemListeners<AddressLabel> {
 
     RecyclerView recyclerView;

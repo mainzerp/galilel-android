@@ -24,10 +24,6 @@ import galilel.org.galilelwallet.ui.pincode_activity.PincodeActivity;
 import galilel.org.galilelwallet.ui.start_node_activity.StartNodeActivity;
 import galilel.org.galilelwallet.ui.wallet_activity.WalletActivity;
 
-/**
- * Created by Neoperol on 7/6/17.
- */
-
 public class TutorialActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final int OPTION_ADD_NODE = 300;

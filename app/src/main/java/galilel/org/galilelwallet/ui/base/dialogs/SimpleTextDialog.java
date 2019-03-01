@@ -13,11 +13,6 @@ import android.widget.TextView;
 
 import galilel.org.galilelwallet.R;
 
-
-/**
- * Created by mati on 26/01/17.
- */
-
 public class SimpleTextDialog extends DialogFragment {
 
     private DialogListener cancelListener;

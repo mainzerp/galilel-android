@@ -47,10 +47,6 @@ import static galilel.org.galilelwallet.service.IntentsConstants.INTENT_BROADCAS
 import static galilel.org.galilelwallet.service.IntentsConstants.INTENT_EXTRA_BLOCKCHAIN_STATE;
 import static galilel.org.galilelwallet.ui.tutorial_activity.TutorialActivity.INTENT_EXTRA_INFO_TUTORIAL;
 
-/**
- * Created by Neoperol on 5/11/17.
- */
-
 public class SettingsActivity extends BaseDrawerActivity implements View.OnClickListener {
     private Switch videoSwitch;
     private Button buttonBackup;

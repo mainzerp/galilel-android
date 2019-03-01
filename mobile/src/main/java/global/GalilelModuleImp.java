@@ -56,10 +56,6 @@ import wallet.exceptions.InsufficientInputsException;
 import wallet.exceptions.TxNotFoundException;
 import wallet.WalletManager;
 
-/**
- * Created by mati on 18/04/17.
- */
-
 public class GalilelModuleImp implements GalilelModule {
 
     private static final Logger logger = LoggerFactory.getLogger(GalilelModuleImp.class);

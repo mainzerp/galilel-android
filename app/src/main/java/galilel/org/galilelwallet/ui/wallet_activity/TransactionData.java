@@ -1,9 +1,5 @@
 package galilel.org.galilelwallet.ui.wallet_activity;
 
-/**
- * Created by Neoperol on 5/3/17.
- */
-
 public class TransactionData {
     public String title;
     public String description;

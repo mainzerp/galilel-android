@@ -7,10 +7,6 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
-/**
- * Created by mati on 14/12/16.
- */
-
 public class AnimationUtils {
 
 

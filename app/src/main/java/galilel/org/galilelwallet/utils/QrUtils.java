@@ -7,10 +7,6 @@ import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 
-/**
- * Created by mati on 08/12/16.
- */
-
 public class QrUtils {
 
     public static Bitmap encodeAsBitmap(String str, int widht, int height, int qrColor, int backgroundColor) throws WriterException {

@@ -7,10 +7,6 @@ import android.view.ViewGroup;
 import galilel.org.galilelwallet.R;
 import galilel.org.galilelwallet.ui.base.BaseActivity;
 
-/**
- * Created by Neoperol on 6/8/17.
- */
-
 public class SettingsNetworkActivity extends BaseActivity {
 
     View root;

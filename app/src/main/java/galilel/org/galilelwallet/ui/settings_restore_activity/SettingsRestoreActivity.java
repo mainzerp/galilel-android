@@ -6,10 +6,6 @@ import android.view.ViewGroup;
 import galilel.org.galilelwallet.R;
 import galilel.org.galilelwallet.ui.base.BaseActivity;
 
-/**
- * Created by Neoperol on 5/18/17.
- */
-
 public class SettingsRestoreActivity extends BaseActivity {
 
     @Override

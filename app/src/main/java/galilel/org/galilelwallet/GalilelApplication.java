@@ -51,9 +51,6 @@ import galilel.org.galilelwallet.utils.CrashReporter;
 import static galilel.org.galilelwallet.service.IntentsConstants.ACTION_RESET_BLOCKCHAIN;
 import static galilel.org.galilelwallet.utils.AndroidUtils.shareText;
 
-/**
- * Created by mati on 18/04/17.
- */
 @ReportsCrashes(
         mailTo = GalilelContext.REPORT_EMAIL, // my email here
         mode = ReportingInteractionMode.TOAST,

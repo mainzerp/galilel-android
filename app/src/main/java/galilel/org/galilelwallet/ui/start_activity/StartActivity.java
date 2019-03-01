@@ -13,10 +13,6 @@ import galilel.org.galilelwallet.ui.tutorial_activity.TutorialActivity;
 
 import static galilel.org.galilelwallet.ui.restore_activity.RestoreActivity.ACTION_RESTORE_AND_JUMP_TO_WIZARD;
 
-/**
- * Created by mati on 18/04/17.
- */
-
 public class StartActivity extends BaseActivity {
 
     private Button buttonCreate;

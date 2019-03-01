@@ -12,10 +12,6 @@ import galilel.org.galilelwallet.ui.base.BaseActivity;
 import galilel.org.galilelwallet.ui.wallet_activity.WalletActivity;
 import galilel.org.galilelwallet.utils.NavigationUtils;
 
-/**
- * Created by Neoperol on 6/9/17.
- */
-
 public class TransactionDetailActivity extends BaseActivity {
 
     @Override

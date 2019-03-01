@@ -9,11 +9,6 @@ import android.widget.Toast;
 import galilel.org.galilelwallet.R;
 import galilel.org.galilelwallet.ui.base.BaseActivity;
 
-
-/**
- * Created by Neoperol on 5/18/17.
- */
-
 public class SettingsPincodeActivity extends BaseActivity implements KeyboardFragment.onKeyListener {
 
     private static final int OLDER_PIN = 99;

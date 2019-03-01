@@ -7,10 +7,6 @@ import android.widget.TextView;
 import galilel.org.galilelwallet.R;
 import galilel.org.galilelwallet.ui.base.tools.adapter.BaseRecyclerViewHolder;
 
-/**
- * Created by Neoperol on 6/8/17.
- */
-
 public class NetworkViewHolder extends BaseRecyclerViewHolder {
 
     CardView cv;
