@@ -398,26 +398,12 @@ public class GalilelModuleImp implements GalilelModule {
             }
             TransactionWrapper wrapper;
             if (!isStaking){
-                // Check if a zc_spend
-                boolean isZcSpend = false;
-                for (TransactionInput transactionInput : transaction.getInputs()) {
-                    if (transactionInput.isZcspend()){
-                        isZcSpend = true;
-                        break;
-                    }
-                }
-                TransactionWrapper.TransactionUse transactionUse;
-                if (!isZcSpend)
-                    transactionUse = isMine ? TransactionWrapper.TransactionUse.SENT_SINGLE: TransactionWrapper.TransactionUse.RECEIVE;
-                else {
-                    transactionUse = TransactionWrapper.TransactionUse.ZC_SPEND;
-                }
                 wrapper = new TransactionWrapper(
                         transaction,
                         inputsLabeled,
                         outputsLabeled,
                         isMine ? getValueSentFromMe(transaction,true):walletManager.getValueSentToMe(transaction),
-                        transactionUse
+                        isMine ? TransactionWrapper.TransactionUse.SENT_SINGLE: TransactionWrapper.TransactionUse.RECEIVE
                 );
             }else {
                 wrapper = new TransactionWrapper(
