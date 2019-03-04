@@ -344,9 +344,9 @@ public class WalletActivity extends BaseDrawerActivity {
 
     private void updateBalance() {
         Coin availableBalance = galilelModule.getAvailableBalanceCoin();
-        txt_value.setText(!availableBalance.isZero()?availableBalance.toFriendlyString():"0 GALIs");
+        txt_value.setText(!availableBalance.isZero()?availableBalance.toFriendlyString():"0 GALI");
         Coin unnavailableBalance = galilelModule.getUnnavailableBalanceCoin();
-        txt_unnavailable.setText(!unnavailableBalance.isZero()?unnavailableBalance.toFriendlyString():"0 GALIs");
+        txt_unnavailable.setText(!unnavailableBalance.isZero()?unnavailableBalance.toFriendlyString():"0 GALI");
         if (galilelRate == null)
             galilelRate = galilelModule.getRate(galilelApplication.getAppConf().getSelectedRateCoin());
         if (galilelRate!=null) {

@@ -258,7 +258,7 @@ public class GalilelWalletService extends Service{
                     resultIntent.setAction(ACTION_CANCEL_COINS_RECEIVED);
                     deleteIntent = PendingIntent.getService(GalilelWalletService.this, 0, resultIntent, PendingIntent.FLAG_CANCEL_CURRENT);
                     mBuilder = new NotificationCompat.Builder(getApplicationContext())
-                            .setContentTitle("GALIs received!")
+                            .setContentTitle("GALI received!")
                             .setContentText("Coins received for a value of " + notificationAccumulatedAmount.toFriendlyString())
                             .setAutoCancel(true)
                             .setSmallIcon(R.mipmap.ic_launcher)
