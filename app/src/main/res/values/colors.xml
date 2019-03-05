@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="transparent">#00000000</color>
-    <color name="colorPrimary">#55476c</color>
-    <color name="colorPrimaryDark">#45385a</color>
-    <color name="colorAccent">#009688</color>
-    <color name="bgPurple">#55476c</color>
-    <color name="green">#009688</color>
-    <color name="lightGreen1">#36c6a5</color>
-    <color name="mainGreen">#63ece0</color>
-    <color name="sync_green">#B7FFF9</color>
-    <color name="lightGreen">#50e3c2</color>
-    <color name="colorPurple">#55476c</color>
+    <color name="colorPrimary">#795548</color>
+    <color name="colorPrimaryDark">#543a32</color>
+    <color name="colorAccent">#845c4e</color>
+    <color name="bgBrown">#795548</color>
+    <color name="brown">#795548</color>
+    <color name="darkBrown1">#845c4e</color>
+    <color name="mainBrown">#d5c6b6</color>
+    <color name="syncLightBrown">#d5c6b6</color>
+    <color name="lightGreen">#986a5a</color>
+    <color name="colorBrown">#795548</color>
     <color name="bgWhite">#ffffff</color>
     <color name="bgWhite30">#4Dffffff</color>
     <color name="bgBlack30">#4D000000</color>
@@ -19,14 +19,13 @@
     <color name="bgBlackX">#DD000000</color>
     <color name="bgBlack10">#1A000000</color>
     <color name="bgBlack05">#0D000000</color>
-    <color name="textColorPurple">#55476c</color>
+    <color name="textColorBrown">#795548</color>
     <color name="textColorWhite">#ffffff</color>
-    <color name="textColorLightPurple">#ffffff</color>
-    <color name="transation_title">#55476c</color>
-    <color name="mainText">#4F4F4F</color>
+    <color name="transation_title">#795548</color>
+    <color name="mainText">#4a4a4a</color>
     <color name="subtitle">#757575</color>
-    <color name="bgInput">#F5F6F7</color>
-    <color name="hintInput">#979899</color>
+    <color name="bgInput">#ededed</color>
+    <color name="hintInput">#bdbcbc</color>
     <color name="red">#d0011b</color>
     <color name="warning">#d74759</color>
 
@@ -41,7 +40,7 @@
 
     <!-- Tutorial -->
 
-    <color name="bg_screen1">#55476c</color>
+    <color name="bg_screen1">#795548</color>
     <color name="bg_screen2">#73bdc5</color>
     <color name="bg_screen3">#ed8557</color>
 

@@ -44,20 +44,6 @@
             android:textColor="@android:color/white"
             android:textSize="@dimen/text_title" />
 
-
     </LinearLayout>
-
-    <!--<Button
-        android:id="@+id/btn_node"
-        android:layout_alignParentBottom="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner"
-        android:layout_centerHorizontal="true"
-        android:elevation="0dp"
-        android:background="@color/transparent"
-        android:text="@string/btn_select_node"
-        android:textColor="@color/mainGreen"
-        android:textSize="15sp" />-->
 
 </RelativeLayout>

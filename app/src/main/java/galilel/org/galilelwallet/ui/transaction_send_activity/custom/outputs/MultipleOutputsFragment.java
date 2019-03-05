@@ -119,7 +119,7 @@ public class MultipleOutputsFragment extends BaseRecyclerFragment<OutputWrapper>
                     if (!galilelModule.chechAddress(data.getAddress())) {
                         holder.edit_address.setTextColor(Color.RED);
                     } else {
-                        holder.edit_address.setTextColor(Color.parseColor("#4F4F4F"));
+                        holder.edit_address.setTextColor(Color.parseColor("4a4a4a"));
                     }
                 }else {
                     holder.edit_address.setText("");
@@ -153,7 +153,7 @@ public class MultipleOutputsFragment extends BaseRecyclerFragment<OutputWrapper>
                                 if (!galilelModule.chechAddress(address)) {
                                     holder.edit_address.setTextColor(Color.RED);
                                 } else {
-                                    holder.edit_address.setTextColor(Color.parseColor("#4F4F4F"));
+                                    holder.edit_address.setTextColor(Color.parseColor("4a4a4a"));
                                     // check if there is a label for this address
                                     AddressLabel addressLabel = galilelModule.getAddressLabel(address);
                                     if (addressLabel!=null){
