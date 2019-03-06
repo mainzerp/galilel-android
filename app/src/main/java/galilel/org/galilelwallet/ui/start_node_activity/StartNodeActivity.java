@@ -74,8 +74,10 @@ public class StartNodeActivity extends BaseActivity {
         findViewById(R.id.btn_default).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Check this..
-                galilelApplication.setTrustedServer(null);
+                List<GalileltrumPeerData> nodes = GalileltrumGlobalData.listTrustedHosts();
+                if (!nodes.isEmpty())
+                    galilelApplication.setTrustedServer(nodes.get(0));
+
                 galilelApplication.stopBlockchain();
                 // now that everything is good, start the service
                 new Handler().postDelayed(new Runnable() {
