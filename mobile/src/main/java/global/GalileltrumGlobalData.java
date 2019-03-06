@@ -8,7 +8,8 @@ import galileltrum.GalileltrumPeerData;
 public class GalileltrumGlobalData {
 
     public static final String[] TRUSTED_NODES = new String[] {
-        "mobile.galilel.cloud"
+        "eu1.galilel.cloud",
+        "eu2.galilel.cloud"
     };
 
     public static final List<GalileltrumPeerData> listTrustedHosts() {
