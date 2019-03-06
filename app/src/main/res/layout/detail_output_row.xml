@@ -26,7 +26,7 @@
         android:paddingStart="8dp"
         tools:text = "1FfmbHfnpaZjKFvyi1okTjJJusN455paPH"
         android:hint="Error"
-        android:textColor = "@color/mainText"
+        android:textColor = "@color/grey85black"
         android:textSize = "15sp" />
 
     <TextView

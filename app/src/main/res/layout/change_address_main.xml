@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/check_send_origin"
         android:layout_marginTop="7dp"
-        android:textColor="@color/mainText"
+        android:textColor="@color/grey85black"
         android:text="@string/change_address_origin"/>
 
     <LinearLayout
@@ -52,7 +52,7 @@
             android:textCursorDrawable="@drawable/color_cursor"
             android:inputType="text"
             android:textSize="14sp"
-            android:textColor="@color/mainText"
+            android:textColor="@color/grey85black"
             />
 
         <LinearLayout

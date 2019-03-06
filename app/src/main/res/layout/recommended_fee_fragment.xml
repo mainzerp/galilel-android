@@ -9,7 +9,7 @@
         android:id="@+id/txt_amount_per_kb"
         android:text="0.000000 GALI/kB"
         android:paddingTop="16dp"
-        android:textColor="@color/mainText"
+        android:textColor="@color/grey85black"
         android:textSize="20sp"
         android:gravity="center"
         />
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"
-            android:textColor="@color/mainText"
+            android:textColor="@color/grey85black"
             android:text="@string/fee_normal"/>
 
         <SeekBar
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:text="@string/fee_fast"
             android:textSize="14sp"
-            android:textColor="@color/mainText"
+            android:textColor="@color/grey85black"
             android:layout_alignParentEnd="true"/>
         
         

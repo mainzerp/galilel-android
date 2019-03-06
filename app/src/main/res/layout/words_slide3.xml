@@ -16,7 +16,7 @@
         android:layout_marginBottom="40dp"
         android:gravity="center_vertical|center_horizontal"
         android:text="@string/restore_words_3"
-        android:textColor="@color/mainText"
+        android:textColor="@color/grey85black"
         android:textSize="18sp" />
 
     <LinearLayout
@@ -42,7 +42,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/bg_inputs"
                 android:layout_height="wrap_content"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:imeOptions="actionNext"
                 android:nextFocusDown="@+id/text_word18"
                 android:inputType="text"
@@ -61,7 +61,7 @@
                 android:inputType="text"
                 android:lines="1"
                 android:background="@drawable/bg_inputs"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:padding="8dp"/>
@@ -83,7 +83,7 @@
                 android:background="@drawable/bg_inputs"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:maxLines="1"
                 android:imeOptions="actionNext"
                 android:nextFocusDown="@+id/text_word20"
@@ -96,7 +96,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="4dp"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:imeOptions="actionNext"
                 android:nextFocusDown="@+id/text_word21"
                 android:inputType="text"
@@ -122,7 +122,7 @@
                 android:background="@drawable/bg_inputs"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:maxLines="1"
                 android:imeOptions="actionNext"
                 android:nextFocusDown="@+id/text_word22"
@@ -135,7 +135,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="4dp"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:imeOptions="actionNext"
                 android:nextFocusDown="@+id/text_word23"
                 android:inputType="text"
@@ -164,7 +164,7 @@
                 android:background="@drawable/bg_inputs"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:maxLines="1"
                 android:layout_marginRight="4dp"/>
 
@@ -176,7 +176,7 @@
                 android:imeOptions="actionDone"
                 android:inputType="text"
                 android:lines="1"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:background="@drawable/bg_inputs"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
@@ -194,7 +194,7 @@
         android:id="@+id/txt_bip32_message"
         android:paddingTop="16dp"
         android:paddingBottom="7dp"
-        android:textColor="@color/warning"
+        android:textColor="@color/walletWarning"
         android:text="@string/restore_bip32_warning"
         />
 

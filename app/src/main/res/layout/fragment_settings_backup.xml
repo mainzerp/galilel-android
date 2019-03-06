@@ -15,7 +15,7 @@
         android:layout_marginTop="20dp"
         android:gravity="center_vertical|center_horizontal"
         android:text="@string/backup_wallet_message"
-        android:textColor="@color/mainText"
+        android:textColor="@color/grey85black"
         android:textSize="18sp"
         android:layout_centerHorizontal="true" />
 
@@ -31,8 +31,8 @@
         android:inputType="textPassword"
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
-        android:textColor="@color/mainText"
-        android:textColorHint="@color/hintInput"
+        android:textColor="@color/grey85black"
+        android:textColorHint="@color/grey35black"
         android:textSize="14sp"
         android:layout_below="@+id/backupMessage"
         android:layout_centerHorizontal="true" />
@@ -51,8 +51,8 @@
         android:inputType="textPassword"
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
-        android:textColor="@color/mainText"
-        android:textColorHint="@color/hintInput"
+        android:textColor="@color/grey85black"
+        android:textColorHint="@color/grey35black"
         android:textSize="14sp" />
 
     <LinearLayout

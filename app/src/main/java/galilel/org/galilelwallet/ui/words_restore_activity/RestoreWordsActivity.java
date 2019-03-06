@@ -270,9 +270,9 @@ public class RestoreWordsActivity extends BaseActivity {
                         }
                 );
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    dialog.setRightBtnTextColor(getColor(R.color.bgBrown));
+                    dialog.setRightBtnTextColor(getColor(R.color.darkBrown1));
                 }else {
-                    dialog.setRightBtnTextColor(ContextCompat.getColor(this, R.color.bgBrown));
+                    dialog.setRightBtnTextColor(ContextCompat.getColor(this, R.color.darkBrown1));
                 }
                 dialog.show();
             } catch (Exception e) {

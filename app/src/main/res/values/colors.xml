@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- common colors -->
     <color name="transparent">#00000000</color>
-    <color name="colorPrimary">#795548</color>
-    <color name="colorPrimaryDark">#543a32</color>
-    <color name="colorAccent">#845c4e</color>
-    <color name="bgBrown">#795548</color>
-    <color name="brown">#795548</color>
-    <color name="darkBrown1">#845c4e</color>
-    <color name="mainBrown">#d5c6b6</color>
-    <color name="syncLightBrown">#d5c6b6</color>
-    <color name="lightGreen">#986a5a</color>
-    <color name="colorBrown">#795548</color>
+
+    <!-- galilel corporate colors -->
+    <color name="darkBrownTemp">#543a32</color>
+    <color name="darkBrown1">#795548</color>
+    <color name="darkBrown2">#845c4e</color>
+    <color name="darkBrown3">#986a5a</color>
+    <color name="lightBrown1">#bca389</color> <!-- unused -->
+    <color name="lightBrown2">#c9b5a0</color> <!-- unused -->
+    <color name="lightBrown3">#d5c6b6</color>
+    <color name="grey85black">#4a4a4a</color>
+    <color name="grey35black">#bdbcbc</color>
+
+    <!-- wallet specific colors -->
+    <color name="walletInputSend">#d0011b</color>
+    <color name="walletWarning">#d74759</color>
+
     <color name="bgWhite">#ffffff</color>
     <color name="bgWhite30">#4Dffffff</color>
     <color name="bgBlack30">#4D000000</color>
     <color name="bgWhite80">#E6ffffff</color>
     <color name="bgBlack05">#0D000000</color>
-    <color name="textColorBrown">#795548</color>
     <color name="textColorWhite">#ffffff</color>
-    <color name="mainText">#4a4a4a</color>
     <color name="subtitle">#757575</color>
     <color name="bgInput">#ededed</color>
-    <color name="hintInput">#bdbcbc</color>
-    <color name="red">#d0011b</color>
-    <color name="warning">#d74759</color>
 
     <color name="gray_87_text">#dd000000</color>
 
@@ -34,14 +37,10 @@
     <color name="scan_result_view">#b0000000</color>
     <color name="scan_result_dots">#c099cc00</color>
 
-    <!-- Tutorial -->
-    <color name="bg_screen1">#795548</color>
-
     <!-- dots active colors -->
     <color name="dot_active">#000000</color>
 
     <!-- dots inactive colors -->
     <color name="dot_inactive">#cccccc</color>
     <color name="white">#ffffff</color>
-
 </resources>

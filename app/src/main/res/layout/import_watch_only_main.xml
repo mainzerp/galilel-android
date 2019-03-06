@@ -14,7 +14,7 @@
         android:padding="16dp"
         android:gravity="center_vertical|center_horizontal"
         android:text="@string/explanation_import_xpub"
-        android:textColor="@color/mainText"
+        android:textColor="@color/grey85black"
         android:textSize="18sp" />
 
     <EditText
@@ -27,8 +27,8 @@
         android:textSize="14sp"
         android:gravity="center"
         android:hint="@string/hint_paste_xpub"
-        android:textColorHint="@color/hintInput"
-        android:textColor="@color/mainText"
+        android:textColorHint="@color/grey35black"
+        android:textColor="@color/grey85black"
         />
 
     <CheckBox

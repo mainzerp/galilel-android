@@ -16,13 +16,13 @@
             android:layout_height="wrap_content"
             android:text="@string/total_amount"
             android:layout_marginRight="4dp"
-            android:textColor="@color/mainText"
+            android:textColor="@color/grey85black"
             android:textSize="16dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txt_total_amount"
-            android:textColor = "@color/mainText"
+            android:textColor = "@color/grey85black"
             android:text="3.13 GALI"/>
     </LinearLayout>
 
@@ -47,7 +47,7 @@
             android:paddingTop="12dp"
             android:text="@string/several_outputs_add_address"
             android:textSize="14sp"
-            android:textColor="@color/colorBrown"
+            android:textColor="@color/darkBrown1"
             android:textStyle="bold" />
 
     </LinearLayout>

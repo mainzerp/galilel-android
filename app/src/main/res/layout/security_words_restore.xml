@@ -20,7 +20,7 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:layout_alignParentBottom="true"
-        android:background="#795548">
+        android:background="@color/darkBrown1">
 
         <Button
             android:id="@+id/btn_next"
@@ -53,7 +53,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#795548"
+        android:background="@color/darkBrown1"
         android:id="@+id/container_loading"
         android:visibility="gone">
 

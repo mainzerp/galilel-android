@@ -39,7 +39,7 @@
                 android:background="@drawable/transaction_inputs"
                 android:text = "@string/transaction_hash"
                 android:textIsSelectable="true"
-                android:textColor = "@color/mainText"
+                android:textColor = "@color/grey85black"
                 android:textSize = "13sp" />
 
             <TextView
@@ -60,7 +60,7 @@
                 android:background="@drawable/transaction_inputs"
                 android:text = "36 GALI"
                 android:textStyle="bold"
-                android:textColor = "@color/mainText"
+                android:textColor = "@color/grey85black"
                 android:textSize = "18sp" />
 
 
@@ -83,7 +83,7 @@
                 android:textIsSelectable="true"
                 android:background="@drawable/transaction_inputs"
                 android:text = "13 Mar 2017"
-                android:textColor = "@color/mainText"
+                android:textColor = "@color/grey85black"
                 android:textSize = "16sp" />
 
             <TextView
@@ -104,7 +104,7 @@
                 android:textIsSelectable="true"
                 android:background="@drawable/transaction_inputs"
                 android:text = "45"
-                android:textColor = "@color/mainText"
+                android:textColor = "@color/grey85black"
                 android:textSize = "16sp" />
 
             <TextView
@@ -141,7 +141,7 @@
                 android:textIsSelectable="true"
                 android:background="@drawable/transaction_inputs"
                 android:text = "@string/add_memo"
-                android:textColor = "@color/mainText"
+                android:textColor = "@color/grey85black"
                 android:textSize = "16sp" />
 
 
@@ -163,7 +163,7 @@
                 android:background="@drawable/transaction_inputs"
                 android:text = "@string/title_fee"
                 android:textIsSelectable="true"
-                android:textColor = "@color/mainText"
+                android:textColor = "@color/grey85black"
                 android:textSize = "16sp" />
 
             <TextView
@@ -184,7 +184,7 @@
                 android:textIsSelectable="true"
                 android:background="@drawable/transaction_inputs"
                 android:text = "Bytes"
-                android:textColor = "@color/mainText"
+                android:textColor = "@color/grey85black"
                 android:textSize = "16sp" />
 
             <TextView
@@ -205,7 +205,7 @@
                 android:textStyle="bold"
                 android:background="@drawable/transaction_inputs"
                 tools:text = "@string/tx_detail_inputs"
-                android:textColor = "@color/mainText"
+                android:textColor = "@color/grey85black"
                 android:textSize = "16sp" />
 
 

@@ -67,7 +67,7 @@
             android:layout_height = "wrap_content"
             android:layout_marginBottom="14dp"
             android:text = "0.13532 GALI"
-            android:textColor = "@color/mainText"
+            android:textColor = "@color/grey85black"
             android:padding="8dp"
             android:background="@drawable/transaction_inputs"
             android:textSize = "16sp" />
@@ -89,7 +89,7 @@
             android:padding="8dp"
             android:background="@drawable/transaction_inputs"
             android:hint = "@string/add_memo"
-            android:textColor = "@color/mainText"
+            android:textColor = "@color/grey85black"
             android:textSize = "16sp" />
 
         <TextView
@@ -107,7 +107,7 @@
             android:padding="8dp"
             android:background="@drawable/transaction_inputs"
             android:hint = "@string/title_receiver_name"
-            android:textColor = "@color/mainText"
+            android:textColor = "@color/grey85black"
             android:textSize = "16sp" />
 
     </LinearLayout>

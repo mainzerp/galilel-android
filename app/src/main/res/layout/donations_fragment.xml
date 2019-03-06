@@ -24,7 +24,7 @@
             android:paddingBottom="20dp"
             android:gravity="center_vertical|center_horizontal"
             android:text="@string/donation_message"
-            android:textColor="@color/mainText"
+            android:textColor="@color/grey85black"
             android:textSize="18sp" />
 
         <ImageView

@@ -43,7 +43,7 @@
         android:id="@+id/btn_ok"
         android:text="OK"
         android:gravity="center"
-        android:textColor="@color/bgBrown"
+        android:textColor="@color/darkBrown1"
         android:background="@drawable/bg_button_border"
         />
 

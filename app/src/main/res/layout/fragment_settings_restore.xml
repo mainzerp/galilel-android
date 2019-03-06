@@ -17,7 +17,7 @@
         android:layout_marginTop="20dp"
         android:gravity="center_vertical|center_horizontal"
         android:text="@string/restore_wallet_message"
-        android:textColor="@color/mainText"
+        android:textColor="@color/grey85black"
         android:textSize="18sp" />
 
     <Spinner
@@ -36,7 +36,7 @@
         android:paddingRight="10dip"
         android:prompt="@string/select_file"
         android:text="@string/select_file"
-        android:textColor="@color/mainText"
+        android:textColor="@color/grey85black"
         android:textSize="14sp" />
 
 
@@ -62,8 +62,8 @@
             android:paddingLeft="10dip"
             android:paddingRight="10dip"
             android:textSize="14sp"
-            android:textColorHint="@color/hintInput"
-            android:textColor="@color/mainText"
+            android:textColorHint="@color/grey35black"
+            android:textColor="@color/grey85black"
             android:inputType="textPassword"/>
     </android.support.design.widget.TextInputLayout>
 

@@ -24,7 +24,7 @@
         android:paddingBottom="9dp"
         android:layout_below="@+id/txt_title"
         android:textSize="18sp"
-        android:textColor="@color/mainText"
+        android:textColor="@color/grey85black"
         tools:text="xpub"/>
 
     <TextView

@@ -57,7 +57,7 @@
             android:textCursorDrawable="@drawable/color_cursor"
             android:inputType="text"
             android:textSize="14sp"
-            android:textColor="@color/mainText"
+            android:textColor="@color/grey85black"
             />
 
         <LinearLayout
@@ -92,7 +92,7 @@
         android:paddingStart="5dp"
         android:textSize="15sp"
         android:textCursorDrawable="@drawable/color_cursor"
-        android:textColor="@color/mainText"
+        android:textColor="@color/grey85black"
         android:id="@+id/edit_amount"/>
 
     <EditText
@@ -105,7 +105,7 @@
         android:textCursorDrawable="@drawable/color_cursor"
         android:hint="Address label"
         android:textSize="15sp"
-        android:textColor="@color/mainText"
+        android:textColor="@color/grey85black"
         android:id="@+id/edit_address_label"/>
 
 </LinearLayout>

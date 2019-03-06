@@ -27,7 +27,7 @@
             android:paddingBottom="18dp"
             android:gravity="center"
             android:scaleType="centerInside"
-            android:textColor="@color/mainText"
+            android:textColor="@color/grey85black"
             android:textSize="24sp"
             android:text="@string/number_one"
             android:textIsSelectable="false" />
@@ -42,7 +42,7 @@
             android:paddingBottom="18dp"
             android:gravity="center"
             android:scaleType="centerInside"
-            android:textColor="@color/mainText"
+            android:textColor="@color/grey85black"
             android:textSize="24sp"
             android:text="@string/number_two"
             android:textIsSelectable="false" />
@@ -56,7 +56,7 @@
             android:paddingBottom="18dp"
             android:gravity="center"
             android:scaleType="centerInside"
-            android:textColor="@color/mainText"
+            android:textColor="@color/grey85black"
             android:textSize="24sp"
             android:text="@string/number_three"
             android:textIsSelectable="false" />
@@ -79,7 +79,7 @@
             android:paddingBottom="16dp"
             android:gravity="center"
             android:scaleType="centerInside"
-            android:textColor="@color/mainText"
+            android:textColor="@color/grey85black"
             android:textSize="24sp"
             android:text="@string/number_four"
             android:textIsSelectable="false" />
@@ -94,7 +94,7 @@
             android:gravity="center"
             android:background="@color/transparent"
             android:scaleType="centerInside"
-            android:textColor="@color/mainText"
+            android:textColor="@color/grey85black"
             android:textSize="24sp"
             android:text="@string/number_five"
             android:textIsSelectable="false" />
@@ -108,7 +108,7 @@
             android:paddingBottom="18dp"
             android:gravity="center"
             android:scaleType="centerInside"
-            android:textColor="@color/mainText"
+            android:textColor="@color/grey85black"
             android:textSize="24sp"
             android:text="@string/number_six"
             android:textIsSelectable="false" />
@@ -131,7 +131,7 @@
             android:paddingBottom="18dp"
             android:gravity="center"
             android:scaleType="centerInside"
-            android:textColor="@color/mainText"
+            android:textColor="@color/grey85black"
             android:textSize="24sp"
             android:text="@string/number_seven"
             android:textIsSelectable="false" />
@@ -147,7 +147,7 @@
             android:paddingTop="18dp"
             android:scaleType="centerInside"
             android:text="@string/number_eight"
-            android:textColor="@color/mainText"
+            android:textColor="@color/grey85black"
             android:textIsSelectable="false"
             android:textSize="24sp" />
 
@@ -160,7 +160,7 @@
             android:paddingBottom="18dp"
             android:gravity="center"
             android:scaleType="centerInside"
-            android:textColor="@color/mainText"
+            android:textColor="@color/grey85black"
             android:textSize="24sp"
             android:text="@string/number_nine"
             android:textIsSelectable="false" />
@@ -196,7 +196,7 @@
             android:gravity="center"
             android:background="@color/transparent"
             android:scaleType="centerInside"
-            android:textColor="@color/mainText"
+            android:textColor="@color/grey85black"
             android:textSize="24sp"
             android:text="@string/number_zero"
             android:textIsSelectable="false" />

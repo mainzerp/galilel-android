@@ -37,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
                 android:text="@string/backup_wallet" />
@@ -52,7 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
                 android:text="@string/restore_wallet"/>
@@ -68,7 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
                 android:text="@string/settings_export_pub_key"/>
@@ -85,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
                 android:text="@string/settings_sweep_wallet"/>
@@ -101,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
                 android:text="@string/settings_import_xpub"/>
@@ -117,7 +117,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
                 android:text="@string/change_pincode"/>
@@ -133,7 +133,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
                 android:text="@string/settings_change_trusted_node"/>
@@ -149,7 +149,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
                 android:text="@string/settings_reset_blockchain"/>
@@ -181,7 +181,7 @@
                 android:layout_height="40dp"
                 android:text="Splash video sound"
                 android:background="@drawable/settings_items"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
                 android:padding="8dp"
@@ -209,7 +209,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:textColor="@color/mainText"
+                    android:textColor="@color/grey85black"
                     android:textSize="16sp"
                     android:textStyle="normal"
                     android:text="@string/settings_rates"/>
@@ -219,7 +219,7 @@
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/mainText"
+                    android:textColor="@color/grey85black"
                     tools:text="USD"
                     android:gravity="right"
                     android:padding="0dp"
@@ -258,7 +258,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
                 android:text="@string/tutorial"/>
@@ -274,7 +274,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
                 android:text="@string/network_monitor"/>
@@ -290,7 +290,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
                 android:text="@string/settings_report"/>
@@ -307,7 +307,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:textColor="@color/mainText"
+                android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
                 android:text="@string/settings_support"/>
