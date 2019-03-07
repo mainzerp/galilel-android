@@ -2,6 +2,7 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/darkBrown1</item>
         <item name="colorPrimaryDark">@color/darkBrownTemp</item>
@@ -37,9 +38,13 @@
         <item name="cardElevation">0dp</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style
+        name="AppTheme.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style
+        name="AppTheme.PopupOverlay"
+        parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="FullscreenTheme" parent="AppTheme">
         <item name="android:windowFullscreen">true</item>
@@ -92,7 +97,7 @@
         <item name="android:stateListAnimator">@null</item>
     </style>
 
-    <style name="spinner_style" >
+    <style name="spinner_style">
         <item name="android:background">@drawable/bg_spinner</item>
         <item name="android:paddingLeft">8dp</item>
         <item name="android:paddingTop">5dp</item>
@@ -100,7 +105,10 @@
     </style>
 
     <!-- custom dialog activity theme -->
-    <style name="AppTheme.Dialog" parent="Base.Theme.AppCompat.Light.Dialog.FixedSize">
+    <style
+        name="AppTheme.Dialog"
+        parent="Base.Theme.AppCompat.Light.Dialog.FixedSize">
+
         <!-- removing the dialog's action bar -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -119,6 +127,4 @@
         <item name="android:textStyle">bold</item>
         <item name="colorAccent">@color/darkBrown2</item>
     </style>
-
-
 </resources>

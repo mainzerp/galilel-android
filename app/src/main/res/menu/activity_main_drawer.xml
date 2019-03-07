@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <group android:checkableBehavior="single">
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_wallet"
             android:icon="@mipmap/ic_wallet"
@@ -19,7 +20,4 @@
             android:icon="@drawable/ic_donations"
             android:title="@string/donations" />
     </group>
-
-
-
 </menu>
