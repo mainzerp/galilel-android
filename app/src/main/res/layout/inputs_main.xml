@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -8,6 +10,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:id="@+id/container_header">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,18 +18,21 @@
         android:padding="10dp"
         android:orientation="horizontal"
         android:gravity="center">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/total_amount"
             android:layout_marginRight="4dp"
             android:textColor="@color/grey85black"
-            android:textSize="16dp"/>
+            android:textSize="16dp" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txt_amount"
-            android:text="3.13 GALI"/>
+            android:text="3.13 GALI" />
+
     </LinearLayout>
 
     <TextView
@@ -37,16 +43,14 @@
         android:paddingBottom="20dp"
         android:gravity="center"
         android:textColor="@color/grey85black"
-        android:textSize="16sp"/>
+        android:textSize="16sp" />
 
     </LinearLayout>
-
 
     <fragment
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:name="galilel.org.galilelwallet.ui.transaction_send_activity.custom.inputs.InputsFragment"
-        android:id="@+id/inputs_fragment"
-        />
+        android:id="@+id/inputs_fragment" />
 
 </LinearLayout>

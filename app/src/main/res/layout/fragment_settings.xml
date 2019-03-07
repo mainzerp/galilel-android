@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
-        android:orientation="vertical" android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/bgWhite">
 
@@ -17,7 +19,7 @@
             android:textAllCaps="true"
             android:gravity="center_vertical"
             android:background="#F0F0F0"
-            android:text="@string/settings_subtitle_security"/>
+            android:text="@string/settings_subtitle_security" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,6 +43,7 @@
                 android:textSize="16sp"
                 android:textStyle="normal"
                 android:text="@string/backup_wallet" />
+
             <Button
                 android:id="@+id/btn_restore_wallet"
                 android:background="@drawable/settings_items"
@@ -55,7 +58,7 @@
                 android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                android:text="@string/restore_wallet"/>
+                android:text="@string/restore_wallet" />
 
             <Button
                 android:id="@+id/btn_export_pub_key"
@@ -71,7 +74,7 @@
                 android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                android:text="@string/settings_export_pub_key"/>
+                android:text="@string/settings_export_pub_key" />
 
             <Button
                 android:id="@+id/btn_sweep_wallet"
@@ -88,7 +91,7 @@
                 android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                android:text="@string/settings_sweep_wallet"/>
+                android:text="@string/settings_sweep_wallet" />
 
             <Button
                 android:id="@+id/btn_import_xpub"
@@ -104,7 +107,7 @@
                 android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                android:text="@string/settings_import_xpub"/>
+                android:text="@string/settings_import_xpub" />
 
             <Button
                 android:id="@+id/btn_change_pincode"
@@ -120,7 +123,7 @@
                 android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                android:text="@string/change_pincode"/>
+                android:text="@string/change_pincode" />
 
             <Button
                 android:id="@+id/btn_change_node"
@@ -136,7 +139,7 @@
                 android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                android:text="@string/settings_change_trusted_node"/>
+                android:text="@string/settings_change_trusted_node" />
 
             <Button
                 android:id="@+id/btn_reset_blockchain"
@@ -152,8 +155,7 @@
                 android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                android:text="@string/settings_reset_blockchain"/>
-
+                android:text="@string/settings_reset_blockchain" />
 
         </LinearLayout>
 
@@ -165,7 +167,7 @@
             android:textAllCaps="true"
             android:gravity="center_vertical"
             android:background="#F0F0F0"
-            android:text="@string/settings_subtitle_preference"/>
+            android:text="@string/settings_subtitle_preference" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -173,7 +175,6 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_height="wrap_content">
-
 
             <Switch
                 android:id="@+id/videoSwitch"
@@ -188,7 +189,7 @@
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="6dp"
                 android:checked="true"
-                android:gravity="left"/>
+                android:gravity="left" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -212,7 +213,7 @@
                     android:textColor="@color/grey85black"
                     android:textSize="16sp"
                     android:textStyle="normal"
-                    android:text="@string/settings_rates"/>
+                    android:text="@string/settings_rates" />
 
                 <TextView
                     android:id="@+id/text_rates"
@@ -223,10 +224,9 @@
                     tools:text="USD"
                     android:gravity="right"
                     android:padding="0dp"
-                    android:textSize="16sp"/>
+                    android:textSize="16sp" />
 
             </LinearLayout>
-
 
         </LinearLayout>
 
@@ -238,7 +238,7 @@
             android:textAllCaps="true"
             android:gravity="center_vertical"
             android:background="#F0F0F0"
-            android:text="@string/settings_subtitle_about"/>
+            android:text="@string/settings_subtitle_about" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -261,7 +261,7 @@
                 android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                android:text="@string/tutorial"/>
+                android:text="@string/tutorial" />
 
             <Button
                 android:id="@+id/btn_network"
@@ -277,7 +277,7 @@
                 android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                android:text="@string/network_monitor"/>
+                android:text="@string/network_monitor" />
 
             <Button
                 android:id="@+id/btn_report"
@@ -293,8 +293,7 @@
                 android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                android:text="@string/settings_report"/>
-
+                android:text="@string/settings_report" />
 
             <Button
                 android:id="@+id/btn_support"
@@ -310,7 +309,7 @@
                 android:textColor="@color/grey85black"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                android:text="@string/settings_support"/>
+                android:text="@string/settings_support" />
 
         </LinearLayout>
 
@@ -321,7 +320,6 @@
             android:paddingBottom="40dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp">
-
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -334,9 +332,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="right"
-                    android:text="174322"
-                    />
-
+                    android:text="174322" />
 
             </LinearLayout>
 
@@ -350,27 +346,23 @@
                     android:id="@+id/text_version"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/text_version"
-                    />
+                    android:text="@string/text_version" />
+
                 <TextView
                     android:id="@+id/app_version"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1.12"
-                    />
+                    android:text="1.12" />
 
                 <TextView
                     android:id="@+id/text_about"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    />
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
-
         </RelativeLayout>
 
-
-
     </LinearLayout>
+
 </ScrollView>

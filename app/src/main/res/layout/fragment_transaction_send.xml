@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_width="match_parent"
+<ScrollView
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,11 +18,10 @@
             android:focusable="true"
             android:gravity="center"
             android:layout_gravity="center"
-            android:focusableInTouchMode="true"
-            >
+            android:focusableInTouchMode="true">
 
-
-            <ViewFlipper android:id="@+id/viewFlipper"
+            <ViewFlipper
+                android:id="@+id/viewFlipper"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent">
 
@@ -61,7 +61,6 @@
                         android:text = ""
                         android:textColor = "#434343"
                         android:textSize = "20sp" />
-
 
                     <TextView
                         android:id = "@+id/txt_local_currency"
@@ -110,7 +109,6 @@
                         android:textColor = "#434343"
                         android:textSize = "20sp" />
 
-
                     <TextView
                         android:id = "@+id/txt_show_gali"
                         android:layout_width = "wrap_content"
@@ -120,6 +118,7 @@
                         android:textSize = "16sp" />
 
                 </LinearLayout>
+
             </ViewFlipper>
 
             <Button
@@ -152,7 +151,6 @@
                     android:textColor = "#757575"
                     android:textSize = "14sp" />
 
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -164,8 +162,7 @@
                     android:padding="7dp"
                     android:visibility="gone"
                     android:textStyle="bold"
-                    android:textColor="#d0011b"
-                    />
+                    android:textColor="#d0011b" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -173,7 +170,6 @@
                     android:id="@+id/container_address"
                     android:background="@drawable/transaction_inputs"
                     android:layout_marginBottom="20dp">
-
 
                     <AutoCompleteTextView
                         android:id = "@+id/edit_address"
@@ -194,7 +190,6 @@
                         android:textSize = "14.5sp"
                         android:layout_alignParentBottom="true" />
 
-
                     <ImageButton
                         android:id="@+id/button_qr"
                         android:layout_width="wrap_content"
@@ -204,9 +199,10 @@
                         android:src="@drawable/ic_qr_code"
                         android:layout_centerVertical="true"
                         android:layout_marginRight="5dp"
-                        android:text="Button"/>
+                        android:text="Button" />
 
                 </LinearLayout>
+
                 <TextView
                     android:id = "@+id/titleDescription"
                     android:layout_width = "wrap_content"
@@ -234,7 +230,6 @@
 
             </LinearLayout>
 
-
             <LinearLayout
                 android:layout_below="@+id/layoutDescription"
                 android:layout_weight="1"
@@ -246,7 +241,6 @@
                 android:orientation="vertical"
                 android:background="@android:color/transparent">
 
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -256,8 +250,7 @@
                     android:textColor="#d0011b"
                     android:visibility="gone"
                     android:textStyle="bold"
-                    android:paddingBottom="12dp"
-                    />
+                    android:paddingBottom="12dp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -268,8 +261,7 @@
                     android:visibility="gone"
                     android:textColor="#d0011b"
                     android:textStyle="bold"
-                    android:paddingBottom="12dp"
-                    />
+                    android:paddingBottom="12dp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -280,8 +272,7 @@
                     android:visibility="gone"
                     android:textColor="#d0011b"
                     android:textStyle="bold"
-                    android:paddingBottom="12dp"
-                    />
+                    android:paddingBottom="12dp" />
 
                 <Button
                     android:id="@+id/btnSend"
@@ -298,17 +289,15 @@
                     android:textColor="@color/textColorWhite"
                     android:textSize="14sp" />
 
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/fee_included"
                     android:gravity="center"
                     android:paddingTop="16dp"
-                    android:paddingBottom="16dp"/>
+                    android:paddingBottom="16dp" />
 
             </LinearLayout>
-
 
             <ImageButton
                 android:id="@+id/btn_swap"
@@ -318,9 +307,10 @@
                 android:layout_alignParentRight="true"
                 android:background="@color/transparent"
                 android:layout_margin="20dp"
-                android:src="@drawable/ic_swap"/>
+                android:src="@drawable/ic_swap" />
+
         </RelativeLayout>
 
-
     </LinearLayout>
+
 </ScrollView>

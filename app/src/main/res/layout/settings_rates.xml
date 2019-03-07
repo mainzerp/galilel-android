@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:name="galilel.org.galilelwallet.ui.settings_rates.RatesFragment"
-        android:id="@+id/rates_fragment"
-        />
+        android:id="@+id/rates_fragment" />
 
 </LinearLayout>

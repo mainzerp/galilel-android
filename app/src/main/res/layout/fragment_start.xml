@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,14 +11,12 @@
     android:background="@color/darkBrown1"
     tools:context="galilel.org.galilelwallet.ui.base.BaseDrawerActivity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop = "true"
         android:layout_centerHorizontal = "true"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -26,9 +25,7 @@
             android:src="@mipmap/img_login_logo"
             android:paddingTop="40dp"
             android:paddingBottom="20dp"
-            android:layout_gravity="center"
-           />
-
+            android:layout_gravity="center" />
 
         <TextView
             android:id="@+id/tutorialMessage"
@@ -38,12 +35,9 @@
             android:gravity="center"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
-            style="@style/MessageTextStart"
-            />
-
+            style="@style/MessageTextStart" />
 
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,8 +59,7 @@
             android:translationZ="2dp"
             android:stateListAnimator="@null"
             android:textColor = "@color/darkBrown1"
-            android:textSize="14sp"
-            />
+            android:textSize="14sp" />
 
         <Button
             android:layout_width="match_parent"
@@ -79,11 +72,8 @@
             android:text="@string/btn_restore_wallet"
             android:id="@+id/btnRestore"
             android:textSize="14sp"
-            android:textColor = "@color/textColorWhite"
-            />
-
+            android:textColor = "@color/textColorWhite" />
 
     </LinearLayout>
-
 
 </RelativeLayout>

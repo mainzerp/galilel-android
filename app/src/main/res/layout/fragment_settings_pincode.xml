@@ -36,30 +36,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:src="@drawable/pin_circle_white"
-            />
+            android:src="@drawable/pin_circle_white" />
+
         <ImageView
             android:id="@+id/imageview_circle2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:src="@drawable/pin_circle_white"
-            />
+            android:src="@drawable/pin_circle_white" />
+
         <ImageView
             android:id="@+id/imageview_circle3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:src="@drawable/pin_circle_white"
-            />
+            android:src="@drawable/pin_circle_white" />
+
         <ImageView
             android:id="@+id/imageview_circle4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:src="@drawable/pin_circle_white"
-            />
-
+            android:src="@drawable/pin_circle_white" />
 
     </LinearLayout>
 
@@ -68,10 +66,7 @@
         android:layout_height="match_parent"
         android:name="galilel.org.galilelwallet.ui.settings_pincode_activity.KeyboardFragment"
         android:id="@+id/fragment_keyboard"
-        android:layout_gravity="center|bottom"
-
-        />
-
+        android:layout_gravity="center|bottom" />
 
 </LinearLayout>
 

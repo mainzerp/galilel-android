@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:background="@color/bgWhite"
     android:layout_width="match_parent"
@@ -10,12 +11,10 @@
     android:paddingTop="20dp"
     android:gravity="center">
 
-
     <TextView
         android:text="@string/currency_message"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        style="@style/MessageTextDark"/>
-
+        style="@style/MessageTextDark" />
 
 </LinearLayout>

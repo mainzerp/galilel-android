@@ -17,10 +17,10 @@
         android:paddingTop="40dp"
         android:text = "@string/pincode_message"
         android:textColor = "@color/textColorWhite"
-        android:textSize = "18sp"
-        />
+        android:textSize = "18sp" />
 
-    <LinearLayout android:id="@+id/pin_layout"
+    <LinearLayout
+        android:id="@+id/pin_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -35,30 +35,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:src="@drawable/pin_circle"
-            />
+            android:src="@drawable/pin_circle" />
+
         <ImageView
             android:id="@+id/imageview_circle2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:src="@drawable/pin_circle"
-            />
+            android:src="@drawable/pin_circle" />
+
         <ImageView
             android:id="@+id/imageview_circle3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:src="@drawable/pin_circle"
-            />
+            android:src="@drawable/pin_circle" />
+
         <ImageView
             android:id="@+id/imageview_circle4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:src="@drawable/pin_circle"
-            />
-
+            android:src="@drawable/pin_circle" />
 
     </LinearLayout>
 
@@ -67,19 +65,13 @@
         android:layout_height="match_parent"
         android:layout_gravity="center|bottom">
 
-
         <fragment
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:name="galilel.org.galilelwallet.ui.settings_pincode_activity.KeyboardFragment"
             android:id="@+id/fragment_keyboard"
-            android:layout_centerInParent="true"
-            />
-
+            android:layout_centerInParent="true" />
 
     </RelativeLayout>
-
-
-
 
 </LinearLayout>

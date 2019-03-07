@@ -10,8 +10,7 @@
         android:paddingBottom="30dp"
         android:paddingLeft="@dimen/activity_vertical_margin"
         android:paddingRight="@dimen/activity_vertical_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        >
+        android:paddingTop="@dimen/activity_vertical_margin">
 
         <TextView
             android:id="@+id/secureMessage"
@@ -41,9 +40,7 @@
             android:paddingBottom="20dp"
             android:background="@color/transparent">
 
-
         </com.google.android.flexbox.FlexboxLayout>
-
 
         <LinearLayout
             android:layout_weight="1"
@@ -69,8 +66,6 @@
                 android:text="@string/button_ok"
                 android:textColor="@color/textColorWhite"
                 android:textSize="14sp" />
-
-
 
         </LinearLayout>
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@color/bgWhite"
@@ -10,15 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:name="galilel.org.galilelwallet.ui.transaction_send_activity.AmountInputFragment"
-        android:id="@+id/fragment_amount"
-        />
+        android:id="@+id/fragment_amount" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="12dp">
-
 
         <TextView
             android:id = "@+id/titleDescription"
@@ -70,16 +69,14 @@
             android:textColor="@color/textColorWhite"
             android:textSize="14sp" />
 
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/fee_included"
             android:gravity="center"
             android:paddingTop="16dp"
-            android:paddingBottom="16dp"/>
+            android:paddingBottom="16dp" />
 
     </LinearLayout>
-
 
 </LinearLayout>

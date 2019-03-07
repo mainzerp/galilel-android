@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@color/bgWhite"
@@ -12,13 +13,12 @@
     android:gravity="center"
     tools:context="galilel.org.galilelwallet.ui.base.BaseDrawerActivity">
 
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/img_error"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp" />
 
     <TextView
         android:id = "@+id/text_error_message"
@@ -30,6 +30,5 @@
         android:hint = "@string/error_message"
         android:textColor = "@color/walletInputSend"
         android:textSize = "16sp" />
-
 
 </LinearLayout>

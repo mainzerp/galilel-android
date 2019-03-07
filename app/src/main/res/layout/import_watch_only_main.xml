@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal">
 
@@ -28,8 +30,7 @@
         android:gravity="center"
         android:hint="@string/hint_paste_xpub"
         android:textColorHint="@color/grey35black"
-        android:textColor="@color/grey85black"
-        />
+        android:textColor="@color/grey85black" />
 
     <CheckBox
         android:layout_width="match_parent"
@@ -38,8 +39,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:text="BIP32 wallet"
-        />
+        android:text="BIP32 wallet" />
 
     <LinearLayout
         android:layout_below="@+id/passwordLayout"
@@ -56,14 +56,12 @@
         android:background="@android:color/transparent"
         android:layout_height="wrap_content">
 
-
         <ProgressBar
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:layout_marginBottom="12dp"
             android:id="@+id/progress"
-            android:visibility="gone"
-            />
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/btn_import"
@@ -78,7 +76,5 @@
             android:textSize="14sp" />
 
     </LinearLayout>
-
-
 
 </LinearLayout>

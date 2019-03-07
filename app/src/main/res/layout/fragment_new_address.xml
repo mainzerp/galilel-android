@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@color/bgWhite"
@@ -7,7 +8,8 @@
     android:layout_height="match_parent"
     tools:context="galilel.org.galilelwallet.ui.base.BaseDrawerActivity">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -44,7 +46,6 @@
                 android:textColor = "#434343"
                 android:textSize = "18sp" />
 
-
             <TextView
                 android:id = "@+id/titleAddress"
                 android:layout_marginTop="20dp"
@@ -55,7 +56,8 @@
                 android:textColor = "#757575"
                 android:textSize = "14sp" />
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -73,9 +75,7 @@
                     android:textCursorDrawable="@drawable/color_cursor"
                     android:hint="@string/add_address"
                     android:textColor = "#434343"
-                    android:textSize = "14sp"
-                     />
-
+                    android:textSize = "14sp" />
 
                 <ImageButton
                     android:id="@+id/img_qr"
@@ -85,14 +85,12 @@
                     android:src="@drawable/ic_qr_code"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="5dp"
-                    android:text="Button"/>
+                    android:text="Button" />
 
             </LinearLayout>
 
-
         </LinearLayout>
+
     </RelativeLayout>
-
-
 
 </LinearLayout>

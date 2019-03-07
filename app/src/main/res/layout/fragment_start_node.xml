@@ -12,8 +12,7 @@
         android:id="@+id/nodeMessage"
         android:text="@string/node_selection_message"
         style="@style/MessageTextStart"
-        android:paddingTop="40dp"/>
-
+        android:paddingTop="40dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,8 +23,7 @@
         android:orientation="vertical"
         android:paddingTop="60dp"
         android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        >
+        android:paddingEnd="12dp">
 
         <Spinner
             android:gravity="center_vertical"
@@ -36,7 +34,7 @@
             android:paddingBottom="7dp"
             android:popupBackground="#ffffff"
             android:layout_height="wrap_content"
-            android:prompt="@string/select"/>
+            android:prompt="@string/select" />
 
         <Button
             android:id="@+id/openDialog"
@@ -78,7 +76,6 @@
         android:translationZ="2dp"
         android:stateListAnimator="@null"
         android:textColor = "@color/darkBrown1"
-        android:textSize="14sp"
-        />
+        android:textSize="14sp" />
 
 </RelativeLayout>

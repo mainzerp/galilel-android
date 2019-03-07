@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:id="@+id/radio_per_kb"
             android:text="@string/per_kilobyte"
             android:textColor="@color/grey85black"
-            android:layout_marginEnd="12dp"/>
+            android:layout_marginEnd="12dp" />
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -27,7 +27,7 @@
             android:id="@+id/radio_total_at_least"
             android:layout_marginStart="12dp"
             android:textColor="@color/grey85black"
-            android:text="@string/total_at_least"/>
+            android:text="@string/total_at_least" />
 
     </RadioGroup>
 
@@ -48,7 +48,7 @@
         android:textSize="14sp"
         android:textColor="@color/grey85black"
         android:paddingTop="6dp"
-        android:gravity="center"/>
+        android:gravity="center" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -70,7 +70,7 @@
             android:inputType="numberDecimal"
             android:textColor="@color/grey85black"
             android:paddingTop="7dp"
-            android:gravity="center"/>
+            android:gravity="center" />
 
         <TextView
             android:layout_marginTop="10dp"
@@ -79,11 +79,9 @@
             android:text="GALI/kB"
             android:textSize="20sp"
             android:paddingTop="7dp"
-            android:layout_toRightOf="@+id/edit_fee"
-            />
+            android:layout_toRightOf="@+id/edit_fee" />
 
     </LinearLayout>
-
 
     <CheckBox
         android:layout_width="match_parent"
@@ -91,8 +89,6 @@
         android:id="@+id/check_pay_minimum"
         android:layout_marginTop="7dp"
         android:textColor="@color/grey85black"
-        android:text="@string/minimum_fee"/>
-
-
+        android:text="@string/minimum_fee" />
 
 </LinearLayout>

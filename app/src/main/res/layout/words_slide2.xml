@@ -1,4 +1,5 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -47,7 +48,7 @@
                 android:inputType="text"
                 android:lines="1"
                 android:maxLines="1"
-                android:layout_marginRight="4dp"/>
+                android:layout_marginRight="4dp" />
 
             <AutoCompleteTextView
                 android:id="@+id/text_word10"
@@ -62,7 +63,7 @@
                 android:textColor="@color/grey85black"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
-                android:padding="8dp"/>
+                android:padding="8dp" />
 
         </LinearLayout>
 
@@ -87,7 +88,7 @@
                 android:lines="1"
                 android:textColor="@color/grey85black"
                 android:maxLines="1"
-                android:layout_marginRight="4dp"/>
+                android:layout_marginRight="4dp" />
 
             <AutoCompleteTextView
                 android:id="@+id/text_word12"
@@ -102,7 +103,7 @@
                 android:background="@drawable/bg_inputs"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
-                android:padding="8dp"/>
+                android:padding="8dp" />
 
         </LinearLayout>
 
@@ -126,7 +127,7 @@
                 android:nextFocusDown="@+id/text_word14"
                 android:inputType="text"
                 android:lines="1"
-                android:layout_marginRight="4dp"/>
+                android:layout_marginRight="4dp" />
 
             <AutoCompleteTextView
                 android:id="@+id/text_word14"
@@ -141,7 +142,7 @@
                 android:background="@drawable/bg_inputs"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
-                android:padding="8dp"/>
+                android:padding="8dp" />
 
         </LinearLayout>
 
@@ -164,7 +165,7 @@
                 android:lines="1"
                 android:textColor="@color/grey85black"
                 android:maxLines="1"
-                android:layout_marginRight="4dp"/>
+                android:layout_marginRight="4dp" />
 
             <AutoCompleteTextView
                 android:id="@+id/text_word16"
@@ -178,10 +179,9 @@
                 android:background="@drawable/bg_inputs"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
-                android:padding="8dp"/>
+                android:padding="8dp" />
 
         </LinearLayout>
-
 
     </LinearLayout>
 

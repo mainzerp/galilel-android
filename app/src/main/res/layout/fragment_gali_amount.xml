@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/darkBrown1">
+    android:background="@color/darkBrown1" >
 
     <TextView
         android:layout_width="wrap_content"
@@ -15,16 +16,15 @@
         android:layout_alignParentEnd="true"
         android:textSize="14sp"
         android:paddingEnd="16dp"
-        android:paddingTop="7dp"
-        />
+        android:paddingTop="7dp" />
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingTop="20dp"
-        android:gravity="center"
-        >
+        android:gravity="center">
 
         <TextView
             android:id = "@+id/galilelValue"
@@ -35,6 +35,7 @@
             android:text = "13.135 GALI"
             android:textColor = "@color/textColorWhite"
             android:textSize = "24sp" />
+
         <TextView
             android:layout_below="@+id/galilelValue"
             android:layout_centerHorizontal="true"
@@ -44,7 +45,7 @@
             tools:text = "14710 USD"
             android:textColor = "@color/textColorWhite"
             android:textSize = "16sp"
-            android:paddingBottom="20dp"/>
+            android:paddingBottom="20dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -63,7 +64,7 @@
                 android:text="@string/unavailable"
                 android:textSize="14sp"
                 android:textColor="@color/bgWhite"
-                android:layout_marginRight="8dp"/>
+                android:layout_marginRight="8dp" />
 
             <TextView
                 android:id = "@+id/txt_unnavailable"
