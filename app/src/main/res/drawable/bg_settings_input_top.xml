@@ -5,11 +5,11 @@
     android:padding="10dp">
 
     <solid
-        android:color="@color/bgInput" />
+        android:color="@color/grey10black" />
 
     <stroke
         android:width="0.5dp"
-        android:color="#CFD0D1" />
+        android:color="@color/grey35black" />
 
     <corners
         android:bottomRightRadius="0dp"

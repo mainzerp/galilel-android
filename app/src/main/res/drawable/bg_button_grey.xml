@@ -3,11 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <solid
-        android:color="#ededed" />
+        android:color="@color/grey10black" />
 
     <stroke
         android:width="0.5dp"
-        android:color="#cfd0d1" />
+        android:color="@color/grey35black" />
 
     <padding
         android:left="1dp"

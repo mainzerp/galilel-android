@@ -54,9 +54,9 @@ public class DialogsUtil {
         dialog.setTitle(title);
         dialog.setBody(body);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            dialog.setOkBtnBackgroundColor(context.getResources().getColor(R.color.darkBrown3, null));
+            dialog.setOkBtnBackgroundColor(context.getResources().getColor(R.color.darkBrown1, null));
         }else {
-            dialog.setOkBtnBackgroundColor(ContextCompat.getColor(context, R.color.darkBrown3));
+            dialog.setOkBtnBackgroundColor(ContextCompat.getColor(context, R.color.darkBrown1));
         }
         dialog.setOkBtnTextColor(Color.WHITE);
         dialog.setRootBackgroundRes(R.drawable.dialog_bg);
@@ -76,9 +76,9 @@ public class DialogsUtil {
         dialog.setListener(simpleTwoBtnsDialogListener);
         dialog.setContainerBtnsBackgroundColor(Color.WHITE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            dialog.setRightBtnBackgroundColor(context.getResources().getColor(R.color.darkBrown3, null));
+            dialog.setRightBtnBackgroundColor(context.getResources().getColor(R.color.darkBrown1, null));
         }else {
-            dialog.setRightBtnBackgroundColor(ContextCompat.getColor(context,R.color.darkBrown3));
+            dialog.setRightBtnBackgroundColor(ContextCompat.getColor(context,R.color.darkBrown1));
         }
         dialog.setLeftBtnTextColor(Color.BLACK);
         dialog.setRightBtnTextColor(Color.WHITE);
