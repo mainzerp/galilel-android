@@ -60,7 +60,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/bg_button_border"
-                android:elevation="2dp"
                 android:gravity="center"
                 android:layout_gravity="bottom"
                 android:text="@string/button_ok"
