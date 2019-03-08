@@ -191,7 +191,7 @@
     <string name="minimum_fee">Pay only the minimum fee of 0.0001 GALI/kB</string>
     <string name="several_outputs_add_address">ADD ADDRESS</string>
     <string name="address_num">Address %d </string>
-    <string name="invalid_last_amount">Invalid last address amount</string>
+    <string name="invalid_last_amount">Invalid amount from last address</string>
     <string name="inputs_explanation">Select coins to use in the transaction</string>
     <string name="bad_address">Bad address</string>
     <string name="invalid_amount_value">Invalid amount rate</string>
