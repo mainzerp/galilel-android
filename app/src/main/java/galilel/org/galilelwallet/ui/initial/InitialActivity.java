@@ -17,13 +17,15 @@ public class InitialActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         GalilelApplication galilelApplication = GalilelApplication.getInstance();
         AppConf appConf = galilelApplication.getAppConf();
-        // show report dialog if something happen with the previous process
+
+        // show report dialog if something happen with the previous process.
         Intent intent;
-        if (!appConf.isAppInit() || appConf.isSplashSoundEnabled()){
+
+        if (!appConf.isAppInit())
             intent = new Intent(this, SplashActivity.class);
-        }else {
+        else
             intent = new Intent(this, WalletActivity.class);
-        }
+
         startActivity(intent);
         finish();
     }

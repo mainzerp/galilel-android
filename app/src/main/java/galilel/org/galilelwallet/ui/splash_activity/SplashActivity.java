@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.VideoView;
+import android.view.ViewGroup;
 
 import galilel.org.galilelwallet.GalilelApplication;
 import galilel.org.galilelwallet.R;
@@ -14,78 +15,75 @@ import galilel.org.galilelwallet.ui.wallet_activity.WalletActivity;
 
 public class SplashActivity extends AppCompatActivity {
     VideoView videoView;
-    private boolean ispaused = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_splash);
+        Uri video;
+
+        if (GalilelApplication.getInstance().getAppConf().isSplashSoundEnabled())
+            video = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.splash_video);
+        else
+            video = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.splash_video_muted);
 
         videoView = (VideoView) findViewById(R.id.video_view);
-        Uri video;
-        if(GalilelApplication.getInstance().getAppConf().isSplashSoundEnabled())
-            video = Uri.parse("android.resource://" + getPackageName() + "/"
-                + R.raw.splash_video);
-        else {
-            //video = Uri.parse("android.resource://" + getPackageName() + "/"
-            //        + R.raw.splash_video_muted);
-            Intent intent = new Intent(this, WalletActivity.class);
-            startActivity(intent);
-            finish();
-            return;
-        }
+        videoView.setVideoURI(video);
 
-        if (videoView != null) {
-            videoView.setVideoURI(video);
-            videoView.setZOrderOnTop(true);
-            videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                public void onCompletion(MediaPlayer mp) {
-                    jump();
-                }
-            });
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
 
-            videoView.setOnErrorListener(new MediaPlayer.OnErrorListener() {
-                @Override
-                public boolean onError(MediaPlayer mediaPlayer, int i, int i1) {
-                    jump();
-                    return true;
-                }
-            });
+            @Override
+            public void onPrepared(MediaPlayer mp) {
 
-            videoView.start();
+                // get your video's width and height.
+                int videoWidth = mp.getVideoWidth();
+                int videoHeight = mp.getVideoHeight();
 
-        }else{
-            jump();
-        }
-    }
+                // get videoview's current width and height.
+                int videoViewWidth = videoView.getWidth();
+                int videoViewHeight = videoView.getHeight();
 
+                // get scaling factor.
+                float xScale = (float) videoViewWidth / videoWidth;
+                float yScale = (float) videoViewHeight / videoHeight;
 
-    private void jump() {
+                // center crop the video.
+                float scale = Math.max(xScale, yScale);
 
-        if (GalilelApplication.getInstance().getAppConf().isAppInit()){
-            Intent intent = new Intent(this, WalletActivity.class);
-            startActivity(intent);
-        }else {
-            // Jump to your Next Activity or MainActivity
-            Intent intent = new Intent(this, StartActivity.class);
-            startActivity(intent);
-        }
-        finish();
-    }
+                float scaledWidth = scale * videoWidth;
+                float scaledHeight = scale * videoHeight;
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        ispaused = true;
-    }
+                // set the new size for the videoview based on the dimensions of the video.
+                ViewGroup.LayoutParams layoutParams = videoView.getLayoutParams();
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (ispaused) {
-            jump();
-        }
+                layoutParams.width = (int)scaledWidth;
+                layoutParams.height = (int)scaledHeight;
 
+                videoView.setLayoutParams(layoutParams);
+            }
+        });
+
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                Intent intent;
+
+                // jump to your next activity or main activity.
+                if (GalilelApplication.getInstance().getAppConf().isAppInit())
+                    intent = new Intent(getApplicationContext(), WalletActivity.class);
+                else
+                    intent = new Intent(getApplicationContext(), StartActivity.class);
+
+                // start activity.
+                startActivity(intent);
+
+                // finish activity.
+                finish();
+            }
+        });
+
+        videoView.start();
     }
 }
