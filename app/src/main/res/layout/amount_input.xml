@@ -23,7 +23,7 @@
                 android:layout_height = "wrap_content"
                 android:text = "@string/title_amount"
                 android:layout_marginBottom="10dp"
-                android:textColor = "#757575"
+                android:textColor = "@color/grey85black"
                 android:textSize = "14sp" />
 
             <EditText
@@ -43,7 +43,7 @@
                 android:maxLength="8"
                 android:hint="@string/set_amount_gali"
                 android:text = ""
-                android:textColor = "#434343"
+                android:textColor = "@color/grey85black"
                 android:textSize = "20sp" />
 
             <TextView
@@ -51,7 +51,7 @@
                 android:layout_width = "wrap_content"
                 android:layout_height = "wrap_content"
                 android:text = "0"
-                android:textColor = "#858585"
+                android:textColor = "@color/grey35black"
                 android:textSize = "16sp" />
 
         </LinearLayout>
@@ -70,7 +70,7 @@
                 android:id="@+id/txt_currency_amount"
                 android:text = "@string/title_amount"
                 android:layout_marginBottom="10dp"
-                android:textColor = "#757575"
+                android:textColor = "@color/grey85black"
                 android:textSize = "14sp" />
 
             <EditText
@@ -90,7 +90,7 @@
                 android:maxLength="8"
                 android:hint="@string/set_amount_usd"
                 android:text = ""
-                android:textColor = "#434343"
+                android:textColor = "@color/grey85black"
                 android:textSize = "20sp" />
 
             <TextView
@@ -98,7 +98,7 @@
                 android:layout_width = "wrap_content"
                 android:layout_height = "wrap_content"
                 android:text = "0 GALI"
-                android:textColor = "#858585"
+                android:textColor = "@color/grey35black"
                 android:textSize = "16sp" />
 
         </LinearLayout>
@@ -108,11 +108,13 @@
     <ImageButton
         android:id="@+id/btn_swap"
         android:layout_width="wrap_content"
-        android:layout_height="28dp"
-        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:background="@color/transparent"
-        android:layout_margin="20dp"
-        android:src="@drawable/ic_swap" />
+        android:paddingTop="52dp"
+        android:paddingRight="15dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_swap"
+        android:layout_gravity="center"
+        android:layout_marginRight="5dp" />
 
 </RelativeLayout>

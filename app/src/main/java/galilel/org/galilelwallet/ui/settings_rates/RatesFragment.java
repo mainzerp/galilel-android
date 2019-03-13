@@ -23,7 +23,7 @@ public class RatesFragment extends BaseRecyclerFragment<GalilelRate> implements 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);
         setEmptyText("No rate available");
-        setEmptyTextColor(Color.parseColor("#cccccc"));
+        setEmptyTextColor(getResources().getColor(R.color.grey85black));
         return view;
     }
 

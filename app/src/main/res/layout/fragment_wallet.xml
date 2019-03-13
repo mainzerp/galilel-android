@@ -7,7 +7,7 @@
     android:id="@+id/container"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/bgWhite"
+    android:background="@color/greyTemp"
     tools:context="galilel.org.galilelwallet.ui.base.BaseDrawerActivity">
 
     <LinearLayout
@@ -22,7 +22,7 @@
         tools:ignore="MissingConstraints">
 
         <include
-            layout="@layout/sincyng_view"
+            layout="@layout/syncing_view"
             android:id="@+id/container_syncing"
             android:visibility="gone" />
 
@@ -41,7 +41,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/bgWhite80"
+                android:background="@color/galilelWhite80"
                 android:id="@+id/view_background"
                 android:visibility="invisible" />
 
@@ -51,13 +51,13 @@
                 android:layout_height="wrap_content"
                 app:menu_fab_size="normal"
                 app:menu_showShadow="true"
-                app:menu_shadowColor="#66000000"
+                app:menu_shadowColor="@color/grey85black"
                 app:menu_shadowRadius="4dp"
                 app:menu_shadowXOffset="1dp"
                 app:menu_shadowYOffset="3dp"
                 app:menu_colorNormal="@color/darkBrown1"
                 app:menu_colorPressed="@color/darkBrown2"
-                app:menu_colorRipple="#99FFFFFF"
+                app:menu_colorRipple="@color/grey10black"
                 app:menu_animationDelayPerItem="60"
                 app:menu_icon="@drawable/fab_add"
                 app:menu_buttonSpacing="0dp"
@@ -72,13 +72,12 @@
                 app:menu_labels_textColor="@color/grey85black"
                 app:menu_labels_textSize="14sp"
                 app:menu_labels_cornerRadius="3dp"
-                app:menu_labels_colorNormal="#333333"
-                app:menu_labels_colorPressed="#444444"
-                app:menu_labels_colorRipple="#66FFFFFF"
+                app:menu_labels_colorNormal="@color/grey85black"
+                app:menu_labels_colorPressed="@color/grey35black"
+                app:menu_labels_colorRipple="@color/greyTemp"
                 app:menu_labels_showShadow="true"
                 app:menu_labels_singleLine="false"
                 app:menu_labels_ellipsize="none"
-                app:menu_labels_maxLines="-1"
                 app:menu_labels_style="@style/fab_text_style"
                 app:menu_labels_position="left"
                 app:menu_openDirection="up"

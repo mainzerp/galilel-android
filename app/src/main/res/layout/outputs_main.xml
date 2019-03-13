@@ -4,12 +4,11 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/greyTemp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F1F1F1"
         android:padding="10dp"
         android:orientation="horizontal"
         android:gravity="center">
@@ -44,13 +43,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txt_add_address"
-            android:background="@drawable/bg_button_border"
+            android:background="@drawable/button_brown"
             android:gravity="center"
             android:paddingBottom="12dp"
             android:paddingTop="12dp"
             android:text="@string/several_outputs_add_address"
             android:textSize="14sp"
-            android:textColor="@color/bgWhite"
+            android:textColor="@color/galilelWhite"
             android:textStyle="bold" />
 
     </LinearLayout>

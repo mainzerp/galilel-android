@@ -3,9 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center_vertical"
-    android:minHeight="?android:attr/listPreferredItemHeight"
-    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
     android:paddingBottom="12dp"
     android:paddingLeft="12dp"
     android:paddingRight="12dp"
@@ -19,13 +18,11 @@
     <TextView
         android:id="@+id/wallet_import_keys_file_row_security"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#ff666666" />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/wallet_import_keys_file_row_created"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#ff666666" />
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

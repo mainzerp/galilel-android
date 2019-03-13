@@ -21,7 +21,6 @@ import galilel.org.galilelwallet.ui.base.BaseActivity;
 import galilel.org.galilelwallet.utils.AndroidUtils;
 import galilel.org.galilelwallet.utils.CrashReporter;
 
-import static android.graphics.Color.WHITE;
 import static galilel.org.galilelwallet.utils.QrUtils.encodeAsBitmap;
 
 public class ExportKeyActivity extends BaseActivity implements View.OnClickListener {
@@ -72,7 +71,7 @@ public class ExportKeyActivity extends BaseActivity implements View.OnClickListe
         if (qrBitmap == null) {
             Resources r = getResources();
             int px = convertDpToPx(r,225);
-            qrBitmap = encodeAsBitmap(text, px, px, Color.parseColor("#1A1A1A"), WHITE );
+            qrBitmap = encodeAsBitmap(text, px, px, r.getColor(R.color.galilelBlack), r.getColor(R.color.greyTemp));
         }
         img_qr.setImageBitmap(qrBitmap);
     }

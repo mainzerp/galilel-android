@@ -33,7 +33,7 @@
             android:layout_centerHorizontal="true"
             android:paddingBottom="10dp"
             android:text = "13.135 GALI"
-            android:textColor = "@color/textColorWhite"
+            android:textColor = "@color/galilelWhite"
             android:textSize = "24sp" />
 
         <TextView
@@ -43,14 +43,14 @@
             android:layout_width = "wrap_content"
             android:layout_height = "wrap_content"
             tools:text = "14710 USD"
-            android:textColor = "@color/textColorWhite"
+            android:textColor = "@color/galilelWhite"
             android:textSize = "16sp"
             android:paddingBottom="20dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/bgBlack30"
+            android:background="@color/darkBrownTemp"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:paddingLeft="20dp"
@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/unavailable"
                 android:textSize="14sp"
-                android:textColor="@color/bgWhite"
+                android:textColor="@color/galilelWhite"
                 android:layout_marginRight="8dp" />
 
             <TextView

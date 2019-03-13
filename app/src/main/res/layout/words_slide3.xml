@@ -5,7 +5,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="30dp"
-    android:background="@color/bgWhite">
+    android:background="@color/greyTemp">
 
     <TextView
         android:id="@+id/restoreMessage"
@@ -41,7 +41,7 @@
                 android:id="@+id/text_word17"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:background="@drawable/bg_inputs"
+                android:background="@drawable/transaction_inputs"
                 android:layout_height="wrap_content"
                 android:textColor="@color/grey85black"
                 android:imeOptions="actionNext"
@@ -61,7 +61,7 @@
                 android:nextFocusDown="@+id/text_word19"
                 android:inputType="text"
                 android:lines="1"
-                android:background="@drawable/bg_inputs"
+                android:background="@drawable/transaction_inputs"
                 android:textColor="@color/grey85black"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
@@ -81,7 +81,7 @@
                 android:id="@+id/text_word19"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:background="@drawable/bg_inputs"
+                android:background="@drawable/transaction_inputs"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
                 android:textColor="@color/grey85black"
@@ -102,7 +102,7 @@
                 android:nextFocusDown="@+id/text_word21"
                 android:inputType="text"
                 android:lines="1"
-                android:background="@drawable/bg_inputs"
+                android:background="@drawable/transaction_inputs"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:padding="8dp" />
@@ -120,7 +120,7 @@
                 android:id="@+id/text_word21"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:background="@drawable/bg_inputs"
+                android:background="@drawable/transaction_inputs"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
                 android:textColor="@color/grey85black"
@@ -141,7 +141,7 @@
                 android:nextFocusDown="@+id/text_word23"
                 android:inputType="text"
                 android:lines="1"
-                android:background="@drawable/bg_inputs"
+                android:background="@drawable/transaction_inputs"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:padding="8dp" />
@@ -162,7 +162,7 @@
                 android:nextFocusDown="@+id/text_word24"
                 android:inputType="text"
                 android:lines="1"
-                android:background="@drawable/bg_inputs"
+                android:background="@drawable/transaction_inputs"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
                 android:textColor="@color/grey85black"
@@ -178,7 +178,7 @@
                 android:inputType="text"
                 android:lines="1"
                 android:textColor="@color/grey85black"
-                android:background="@drawable/bg_inputs"
+                android:background="@drawable/transaction_inputs"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:padding="8dp" />
@@ -193,7 +193,7 @@
         android:layout_below="@+id/container"
         android:id="@+id/txt_bip32_message"
         android:paddingTop="16dp"
-        android:paddingBottom="7dp"
+        android:paddingBottom="16dp"
         android:textColor="@color/walletWarning"
         android:text="@string/restore_bip32_warning" />
 
@@ -202,6 +202,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/check_bip32"
         android:layout_below="@+id/txt_bip32_message"
-        android:text="BIP32 wallet" />
+        android:text="BIP32 wallet" 
+        android:paddingLeft="14dp"
+        android:button="@drawable/selector_inputs" />
 
 </RelativeLayout>

@@ -26,7 +26,6 @@ import galilel.org.galilelwallet.GalilelApplication;
 import galilel.org.galilelwallet.R;
 import global.GalilelModule;
 
-import static android.graphics.Color.WHITE;
 import static galilel.org.galilelwallet.utils.AndroidUtils.copyToClipboard;
 import static galilel.org.galilelwallet.utils.QrUtils.encodeAsBitmap;
 
@@ -97,7 +96,7 @@ public class MyAddressFragment extends Fragment implements View.OnClickListener 
             Resources r = getResources();
             int px = convertDpToPx(r,225);
             Log.i("Util",uri);
-            qrBitmap = encodeAsBitmap(uri, px, px, Color.parseColor("#1A1A1A"), WHITE );
+            qrBitmap = encodeAsBitmap(uri, px, px, r.getColor(R.color.galilelBlack), r.getColor(R.color.greyTemp));
         }
         img_qr.setImageBitmap(qrBitmap);
         txt_address.setText(addressStr);

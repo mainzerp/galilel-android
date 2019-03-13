@@ -29,7 +29,6 @@ import galilel.org.galilelwallet.ui.transaction_send_activity.AmountInputFragmen
 import galilel.org.galilelwallet.utils.DialogsUtil;
 import galilel.org.galilelwallet.utils.NavigationUtils;
 
-import static android.graphics.Color.WHITE;
 import static galilel.org.galilelwallet.ui.qr_activity.MyAddressFragment.convertDpToPx;
 import static galilel.org.galilelwallet.utils.QrUtils.encodeAsBitmap;
 
@@ -171,7 +170,7 @@ public class RequestActivity extends BaseActivity implements View.OnClickListene
                 Resources r = getResources();
                 int px = convertDpToPx(r, 225);
                 Log.i("Util", qrText);
-                Bitmap qrBitmap = encodeAsBitmap(qrText, px, px, Color.parseColor("#1A1A1A"), WHITE);
+                Bitmap qrBitmap = encodeAsBitmap(qrText, px, px, r.getColor(R.color.galilelBlack), r.getColor(R.color.greyTemp));
                 img_qr.setImageBitmap(qrBitmap);
             }
         }

@@ -6,7 +6,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#66ffffff"
     android:padding="15dp">
 
     <TextView
@@ -23,7 +22,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#aeaeae"
+        android:background="@color/grey35black"
         android:layout_marginRight="12dp"
         android:layout_marginLeft="12dp" />
 
@@ -41,6 +40,6 @@
         android:text="OK"
         android:gravity="center"
         android:textColor="@color/darkBrown1"
-        android:background="@drawable/bg_button_border" />
+        android:background="@drawable/button_brown" />
 
 </LinearLayout>

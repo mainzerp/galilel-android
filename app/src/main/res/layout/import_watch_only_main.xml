@@ -22,7 +22,7 @@
     <EditText
         android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_settings_input_bottom"
+        android:background="@drawable/transaction_inputs"
         android:id="@+id/edit_xpub"
         android:maxLines="4"
         android:padding="10dp"
@@ -33,13 +33,16 @@
         android:textColor="@color/grey85black" />
 
     <CheckBox
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/check_bip32"
         android:layout_marginTop="24dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:text="BIP32 wallet" />
+        android:text="BIP32 wallet"
+        android:gravity="center"
+        android:paddingLeft="14dp"
+        android:button="@drawable/selector_inputs" />
 
     <LinearLayout
         android:layout_below="@+id/passwordLayout"
@@ -67,11 +70,11 @@
             android:id="@+id/btn_import"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/bg_button_border"
+            android:background="@drawable/button_brown"
             android:gravity="center"
             android:layout_gravity="bottom"
             android:text="@string/import_xpub"
-            android:textColor="@color/textColorWhite"
+            android:textColor="@color/galilelWhite"
             android:textSize="14sp" />
 
     </LinearLayout>

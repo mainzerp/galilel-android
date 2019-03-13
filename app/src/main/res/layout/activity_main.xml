@@ -40,8 +40,7 @@
                 android:id="@+id/txt_app_version"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:gravity="center"
-                android:text="Version 1.01" />
+                android:gravity="center" />
         </LinearLayout>
 
     </android.support.design.widget.NavigationView>

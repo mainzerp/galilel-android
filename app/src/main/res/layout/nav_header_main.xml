@@ -39,7 +39,7 @@
             android:id="@+id/txt_sync_status"
             tools:text="Sync"
             android:textSize="13sp"
-            android:textColor="#99ffffff" />
+            android:textColor="@color/galilelWhite" />
 
         <ImageView
             android:layout_width="wrap_content"

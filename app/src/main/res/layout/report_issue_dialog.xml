@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="6dp"
-            android:textColor="#000"
+            android:textColor="@color/galilelBlack"
             tools:text=""
             android:layout_marginTop="6dp" />
 
@@ -30,7 +30,7 @@
             android:layout_marginBottom="6dp"
             android:layout_marginTop="6dp"
             android:textSize="13sp"
-            android:textColor="#898989"
+            android:textColor="@color/grey85black"
             android:hint="@string/report_issue_dialog_description"
             android:inputType="text|textCapSentences|textMultiLine" />
 
@@ -42,7 +42,9 @@
             android:layout_marginTop="6dp"
             android:textSize="14sp"
             android:checked="true"
-            android:text="@string/report_issue_dialog_collect_device_info" />
+            android:text="@string/report_issue_dialog_collect_device_info"
+            android:paddingLeft="14dp"
+            android:button="@drawable/selector_inputs" />
 
         <CheckBox
             android:id="@+id/report_issue_dialog_collect_application_log"
@@ -52,7 +54,9 @@
             android:layout_marginTop="6dp"
             android:textSize="14sp"
             android:checked="true"
-            android:text="@string/report_issue_dialog_collect_application_log" />
+            android:text="@string/report_issue_dialog_collect_application_log"
+            android:paddingLeft="14dp"
+            android:button="@drawable/selector_inputs" />
 
         <CheckBox
             android:id="@+id/report_issue_dialog_collect_wallet_dump"
@@ -62,7 +66,9 @@
             android:layout_marginTop="6dp"
             android:textSize="14sp"
             android:checked="true"
-            android:text="@string/report_issue_dialog_collect_wallet_dump" />
+            android:text="@string/report_issue_dialog_collect_wallet_dump"
+            android:paddingLeft="14dp"
+            android:button="@drawable/selector_inputs" />
 
         <CheckBox
             android:id="@+id/report_issue_dialog_collect_installed_packages"
@@ -72,7 +78,9 @@
             android:textSize="14sp"
             android:layout_marginTop="6dp"
             android:checked="false"
-            android:text="@string/report_issue_dialog_collect_installed_packages" />
+            android:text="@string/report_issue_dialog_collect_installed_packages"
+            android:paddingLeft="14dp"
+            android:button="@drawable/selector_inputs" />
 
         <CheckBox
             android:id="@+id/report_issue_dialog_collect_db_data"
@@ -82,7 +90,9 @@
             android:textSize="14sp"
             android:layout_marginTop="6dp"
             android:checked="true"
-            android:text="@string/report_issue_dialog_collect_db_data" />
+            android:text="@string/report_issue_dialog_collect_db_data"
+            android:paddingLeft="14dp"
+            android:button="@drawable/selector_inputs" />
 
     </LinearLayout>
 

@@ -5,8 +5,7 @@
     android:id="@+id/dialog_container"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#66ffffff">
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -38,7 +37,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#aeaeae"
+        android:background="@color/grey35black"
         android:layout_marginRight="12dp"
         android:layout_marginLeft="12dp" />
 
@@ -60,7 +59,7 @@
         android:id="@+id/btn_ok"
         android:text="OK"
         android:gravity="center"
-        android:textColor="#fff"
-        android:background="#DC505E" />
+        android:textColor="@color/galilelWhite"
+        android:background="@color/walletWarning" />
 
 </LinearLayout>

@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@color/bgWhite"
+    android:background="@color/greyTemp"
     android:paddingTop="40dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -40,7 +40,7 @@
             android:layout_height = "wrap_content"
             android:text = "@string/donation_title"
             android:layout_marginBottom="10dp"
-            android:textColor = "#757575"
+            android:textColor = "@color/grey85black"
             android:textSize = "18sp" />
 
         <EditText
@@ -60,7 +60,7 @@
             android:maxLength="8"
             android:hint="@string/set_amount"
             android:text = ""
-            android:textColor = "#434343"
+            android:textColor = "@color/grey85black"
             android:textSize = "15sp" />
 
     </LinearLayout>
@@ -82,11 +82,11 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="40dp"
-            android:background="@drawable/bg_button_border"
+            android:background="@drawable/button_brown"
             android:gravity="center"
             android:layout_gravity="bottom"
             android:text="@string/btn_donate"
-            android:textColor="@color/textColorWhite"
+            android:textColor="@color/galilelWhite"
             android:textSize="14sp" />
 
     </LinearLayout>

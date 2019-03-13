@@ -2,7 +2,7 @@
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/greyTemp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -12,7 +12,7 @@
 
         <RelativeLayout
             android:orientation="vertical"
-            android:background="@color/bgWhite"
+            android:background="@color/greyTemp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:focusable="true"
@@ -39,7 +39,7 @@
                         android:layout_height = "wrap_content"
                         android:text = "@string/title_amount"
                         android:layout_marginBottom="10dp"
-                        android:textColor = "#757575"
+                        android:textColor = "@color/grey85black"
                         android:textSize = "14sp" />
 
                     <EditText
@@ -59,7 +59,7 @@
                         android:maxLength="8"
                         android:hint="@string/set_amount_gali"
                         android:text = ""
-                        android:textColor = "#434343"
+                        android:textColor = "@color/grey85black"
                         android:textSize = "20sp" />
 
                     <TextView
@@ -67,7 +67,7 @@
                         android:layout_width = "wrap_content"
                         android:layout_height = "wrap_content"
                         android:text = "0"
-                        android:textColor = "#858585"
+                        android:textColor = "@color/grey85black"
                         android:textSize = "16sp" />
 
                 </LinearLayout>
@@ -86,7 +86,7 @@
                         android:id="@+id/txt_currency_amount"
                         android:text = "@string/title_amount"
                         android:layout_marginBottom="10dp"
-                        android:textColor = "#757575"
+                        android:textColor = "@color/grey85black"
                         android:textSize = "14sp" />
 
                     <EditText
@@ -106,7 +106,7 @@
                         android:maxLength="8"
                         android:hint="@string/set_amount_usd"
                         android:text = ""
-                        android:textColor = "#434343"
+                        android:textColor = "@color/grey85black"
                         android:textSize = "20sp" />
 
                     <TextView
@@ -114,7 +114,7 @@
                         android:layout_width = "wrap_content"
                         android:layout_height = "wrap_content"
                         android:text = "0 GALI"
-                        android:textColor = "#858585"
+                        android:textColor = "@color/grey85black"
                         android:textSize = "16sp" />
 
                 </LinearLayout>
@@ -148,7 +148,7 @@
                     android:layout_height = "wrap_content"
                     android:layout_marginBottom="10dp"
                     android:text = "@string/title_address"
-                    android:textColor = "#757575"
+                    android:textColor = "@color/grey85black"
                     android:textSize = "14sp" />
 
                 <TextView
@@ -186,7 +186,7 @@
                         android:textCursorDrawable="@drawable/color_cursor"
                         android:hint="@string/set_address"
                         android:text = ""
-                        android:textColor = "#434343"
+                        android:textColor = "@color/grey85black"
                         android:textSize = "14.5sp"
                         android:layout_alignParentBottom="true" />
 
@@ -197,7 +197,7 @@
                         android:layout_alignParentRight="true"
                         android:background="@android:color/transparent"
                         android:src="@drawable/ic_qr_code"
-                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
                         android:layout_marginRight="5dp"
                         android:text="Button" />
 
@@ -209,7 +209,7 @@
                     android:layout_height = "wrap_content"
                     android:text = "@string/title_description"
                     android:layout_marginBottom="10dp"
-                    android:textColor = "#757575"
+                    android:textColor = "@color/grey85black"
                     android:textSize = "14sp" />
 
                 <EditText
@@ -225,7 +225,7 @@
                     android:maxLines="1"
                     android:hint="@string/set_description"
                     android:text = ""
-                    android:textColor = "#434343"
+                    android:textColor = "@color/grey85black"
                     android:textSize = "15sp" />
 
             </LinearLayout>
@@ -281,11 +281,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_button_border"
+                    android:background="@drawable/button_brown"
                     android:gravity="center"
                     android:layout_gravity="bottom"
                     android:text="@string/btn_send"
-                    android:textColor="@color/textColorWhite"
+                    android:textColor="@color/galilelWhite"
                     android:textSize="14sp" />
 
                 <TextView
@@ -301,12 +301,15 @@
             <ImageButton
                 android:id="@+id/btn_swap"
                 android:layout_width="wrap_content"
-                android:layout_height="28dp"
-                android:layout_alignParentTop="true"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:background="@color/transparent"
-                android:layout_margin="20dp"
-                android:src="@drawable/ic_swap" />
+                android:paddingTop="52dp"
+                android:paddingRight="15dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_swap"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:text="Button" />
 
         </RelativeLayout>
 

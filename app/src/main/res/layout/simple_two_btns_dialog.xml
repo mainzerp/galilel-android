@@ -4,7 +4,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#ccffffff"
     android:id="@+id/container_dialog">
 
     <RelativeLayout
@@ -54,14 +53,14 @@
         android:layout_height="40dp"
         android:id="@+id/btn_container"
         android:orientation="horizontal"
-        android:background="#662D91">
+        android:background="@color/darkBrown1">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="No"
             android:gravity="center"
-            android:textColor="#fff"
+            android:textColor="@color/galilelWhite"
             android:id="@+id/btn_left"
             android:layout_weight="1" />
 
@@ -79,7 +78,7 @@
             android:layout_height="match_parent"
             android:id="@+id/btn_right"
             android:text="Yes"
-            android:textColor="#fff"
+            android:textColor="@color/galilelWhite"
             android:gravity="center"
             android:layout_weight="1" />
 

@@ -230,17 +230,17 @@ public class BaseDrawerActivity extends GalilelActivity implements NavigationVie
             switch (blockchainState) {
                 case SYNC:
                     text = getString(R.string.sync);
-                    color = Color.parseColor("#ffffffff");
+                    color = getColor(R.color.galilelWhite);
                     imgSrc = 0;
                     break;
                 case SYNCING:
                     text = getString(R.string.syncing)+" "+progress+"%";
-                    color = Color.parseColor("#f6a623");
+                    color = getColor(R.color.walletSyncStatus);
                     imgSrc = R.drawable.ic_header_unsynced;
                     break;
                 case NOT_CONNECTION:
                     text = getString(R.string.not_connection);
-                    color = Color.parseColor("#f6a623");
+                    color = getColor(R.color.walletSyncStatus);
                     imgSrc = R.drawable.ic_header_unsynced;
                     break;
             }

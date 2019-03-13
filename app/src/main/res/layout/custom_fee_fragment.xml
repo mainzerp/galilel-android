@@ -81,14 +81,17 @@
             android:paddingTop="7dp"
             android:layout_toRightOf="@+id/edit_fee" />
 
-    </LinearLayout>
-
     <CheckBox
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/check_pay_minimum"
         android:layout_marginTop="7dp"
         android:textColor="@color/grey85black"
-        android:text="@string/minimum_fee" />
+        android:text="@string/minimum_fee"
+        android:gravity="center"
+        android:paddingLeft="14dp"
+        android:button="@drawable/selector_inputs" />
+
+    </LinearLayout>
 
 </LinearLayout>

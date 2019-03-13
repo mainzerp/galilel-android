@@ -9,7 +9,13 @@
     android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground"
     app:cardCornerRadius="0dp"
-    app:cardElevation="0dp">
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@color/greyTemp">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey10black" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -79,7 +85,7 @@
                 android:visibility="gone"
                 android:layout_height="wrap_content"
                 android:text="scaled"
-                android:textColor="#404040"
+                android:textColor="@color/grey85black"
                 android:textSize="11sp" />
 
             <TextView
@@ -89,7 +95,7 @@
                 android:gravity="end"
                 android:layout_height="wrap_content"
                 android:text="0.00203 GALI"
-                android:textColor="#404040"
+                android:textColor="@color/grey85black"
                 android:textSize="18sp" />
 
             <TextView
@@ -100,7 +106,7 @@
                 android:layout_height="wrap_content"
                 tools:text="0.002 USD"
                 android:lines="1"
-                android:textColor="#7f7f7f"
+                android:textColor="@color/grey35black"
                 android:textSize="14sp" />
         </LinearLayout>
 

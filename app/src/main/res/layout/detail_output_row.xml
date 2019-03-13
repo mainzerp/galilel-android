@@ -14,7 +14,7 @@
         android:paddingEnd="8dp"
         android:paddingStart="8dp"
         android:text = "Address 1"
-        android:textColor = "@color/subtitle"
+        android:textColor = "@color/grey35black"
         android:textSize = "14sp" />
 
     <TextView
@@ -38,7 +38,7 @@
         android:paddingBottom="3dp"
         android:background="@drawable/transaction_inputs"
         android:text = "40 GALI"
-        android:textColor = "@color/subtitle"
+        android:textColor = "@color/grey35black"
         android:textSize = "14sp" />
 
 </LinearLayout>

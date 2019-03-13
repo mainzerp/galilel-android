@@ -9,7 +9,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/bgWhite">
+        android:background="@color/greyTemp">
 
         <TextView
             android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:paddingLeft="16dp"
             android:textAllCaps="true"
             android:gravity="center_vertical"
-            android:background="#F0F0F0"
+            android:background="@color/grey10black"
             android:text="@string/settings_subtitle_security" />
 
         <LinearLayout
@@ -166,7 +166,7 @@
             android:paddingLeft="16dp"
             android:textAllCaps="true"
             android:gravity="center_vertical"
-            android:background="#F0F0F0"
+            android:background="@color/grey10black"
             android:text="@string/settings_subtitle_preference" />
 
         <LinearLayout
@@ -237,7 +237,7 @@
             android:paddingLeft="16dp"
             android:textAllCaps="true"
             android:gravity="center_vertical"
-            android:background="#F0F0F0"
+            android:background="@color/grey10black"
             android:text="@string/settings_subtitle_about" />
 
         <LinearLayout

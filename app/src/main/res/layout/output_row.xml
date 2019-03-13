@@ -68,6 +68,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginBottom="3dp"
+                android:layout_marginRight="5dp"
                 android:id="@+id/img_qr"
                 android:src="@drawable/ic_qr_code" />
 
@@ -75,32 +76,52 @@
 
     </LinearLayout>
 
-    <EditText
-        android:background="@drawable/transaction_inputs"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Amount"
         android:paddingTop="12dp"
-        android:paddingBottom="12dp"
-        android:inputType="numberDecimal"
-        android:maxLength="8"
-        android:paddingStart="5dp"
-        android:textSize="15sp"
-        android:textCursorDrawable="@drawable/color_cursor"
-        android:textColor="@color/grey85black"
-        android:id="@+id/edit_amount" />
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center">
 
-    <EditText
-        android:background="@drawable/transaction_inputs"
+        <EditText
+            android:background="@drawable/transaction_inputs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Amount"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:inputType="numberDecimal"
+            android:maxLength="8"
+            android:paddingStart="5dp"
+            android:textSize="15sp"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:textColor="@color/grey85black"
+            android:id="@+id/edit_amount" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="12dp"
-        android:paddingStart="5dp"
-        android:paddingBottom="12dp"
-        android:textCursorDrawable="@drawable/color_cursor"
-        android:hint="Address label"
-        android:textSize="15sp"
-        android:textColor="@color/grey85black"
-        android:id="@+id/edit_address_label" />
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <EditText
+            android:background="@drawable/transaction_inputs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="12dp"
+            android:paddingStart="5dp"
+            android:paddingBottom="12dp"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:hint="Address label"
+            android:textSize="15sp"
+            android:textColor="@color/grey85black"
+            android:id="@+id/edit_address_label" />
+
+    </LinearLayout>
 
 </LinearLayout>

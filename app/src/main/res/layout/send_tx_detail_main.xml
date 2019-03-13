@@ -24,7 +24,7 @@
             android:layout_alignParentBottom="true"
             android:layout_below="@+id/fragment_tx_detail"
             android:layout_gravity="center"
-            android:background="@color/bgBlack05"
+            android:background="@color/greyTemp"
             android:gravity="center"
             android:maxHeight="40dp"
             android:padding="7dp"
