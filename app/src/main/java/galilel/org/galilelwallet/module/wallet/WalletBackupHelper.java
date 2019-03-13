@@ -25,13 +25,12 @@ public class WalletBackupHelper implements BackupHelper{
 
         for (int i = 0; true; i++) {
             final StringBuilder filename = new StringBuilder(GalilelContext.Files.getExternalWalletBackupFileName(appName));
-            filename.append('-');
+            filename.append("-" + i + "-");
             filename.append(dateFormat.format(new Date()));
-            if (extraData!=null){
-                filename.append("-"+extraData);
+
+            if (extraData != null){
+                filename.append("-" + extraData);
             }
-            if (i > 0)
-                filename.append(" (").append(i).append(')');
 
             final File file = new File(GalilelContext.Files.EXTERNAL_WALLET_BACKUP_DIR, filename.toString());
             if (!file.exists())
