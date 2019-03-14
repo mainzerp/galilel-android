@@ -17,6 +17,7 @@ import galilel.org.galilelwallet.module.GalilelContext;
 import galilel.org.galilelwallet.service.GalilelWalletService;
 import galilel.org.galilelwallet.ui.base.BaseDrawerActivity;
 import galilel.org.galilelwallet.ui.base.dialogs.SimpleTextDialog;
+import galilel.org.galilelwallet.ui.pincode_activity.PincodeActivity;
 import galilel.org.galilelwallet.utils.DialogsUtil;
 import galilel.org.galilelwallet.utils.NavigationUtils;
 
@@ -24,6 +25,8 @@ import static galilel.org.galilelwallet.service.IntentsConstants.ACTION_BROADCAS
 import static galilel.org.galilelwallet.service.IntentsConstants.DATA_TRANSACTION_HASH;
 
 public class DonateActivity extends BaseDrawerActivity {
+
+    private static final int PIN_RESULT = 121;
 
     private View root;
     private EditText edit_amount;
@@ -38,6 +41,18 @@ public class DonateActivity extends BaseDrawerActivity {
         btn_donate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // start pin
+                Intent intent = new Intent(DonateActivity.this, PincodeActivity.class);
+                intent.putExtra(PincodeActivity.CHECK_PIN,true);
+                startActivityForResult(intent,PIN_RESULT);
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == PIN_RESULT){
+            if (resultCode == RESULT_OK){
                 try{
                     send();
                 }catch (Exception e){
@@ -45,9 +60,8 @@ public class DonateActivity extends BaseDrawerActivity {
                     showErrorDialog(e.getMessage());
                 }
             }
-        });
+        }
     }
-
 
     private void send() {
         try {
