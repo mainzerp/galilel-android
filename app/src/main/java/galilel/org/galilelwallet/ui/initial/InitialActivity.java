@@ -21,10 +21,12 @@ public class InitialActivity extends AppCompatActivity {
         // show report dialog if something happen with the previous process.
         Intent intent;
 
-        if (!appConf.isAppInit())
+        if (!appConf.isAppInit() || appConf.hasSplashVideo())
             intent = new Intent(this, SplashActivity.class);
         else
             intent = new Intent(this, WalletActivity.class);
+
+        appConf.setHasSplashVideo(false);
 
         startActivity(intent);
         finish();

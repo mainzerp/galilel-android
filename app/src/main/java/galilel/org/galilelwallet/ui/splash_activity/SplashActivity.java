@@ -21,15 +21,9 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_splash);
-        Uri video;
-
-        if (GalilelApplication.getInstance().getAppConf().isSplashSoundEnabled())
-            video = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.splash_video);
-        else
-            video = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.splash_video_muted);
 
         videoView = (VideoView) findViewById(R.id.video_view);
-        videoView.setVideoURI(video);
+        videoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.splash_video));
 
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
 
