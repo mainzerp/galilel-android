@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.support.v4.content.ContextCompat;
 
 import org.galilelj.core.Peer;
 
@@ -20,7 +21,7 @@ public class NetworkFragment extends BaseRecyclerFragment<Peer> {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);
         setEmptyText("No connection to any node.");
-        setEmptyTextColor(getResources().getColor(R.color.grey85black));
+        setEmptyTextColor(ContextCompat.getColor(getContext(), R.color.grey85black));
         return view;
     }
 

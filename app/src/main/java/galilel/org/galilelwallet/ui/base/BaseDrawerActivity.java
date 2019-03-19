@@ -7,6 +7,7 @@ import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -230,17 +231,17 @@ public class BaseDrawerActivity extends GalilelActivity implements NavigationVie
             switch (blockchainState) {
                 case SYNC:
                     text = getString(R.string.sync);
-                    color = getColor(R.color.galilelWhite);
+                    color = ContextCompat.getColor(getApplicationContext(), R.color.galilelWhite);
                     imgSrc = 0;
                     break;
                 case SYNCING:
                     text = getString(R.string.syncing)+" "+progress+"%";
-                    color = getColor(R.color.walletSyncStatus);
+                    color = ContextCompat.getColor(getApplicationContext(), R.color.walletSyncStatus);
                     imgSrc = R.drawable.ic_header_unsynced;
                     break;
                 case NOT_CONNECTION:
                     text = getString(R.string.not_connection);
-                    color = getColor(R.color.walletSyncStatus);
+                    color = ContextCompat.getColor(getApplicationContext(), R.color.walletSyncStatus);
                     imgSrc = R.drawable.ic_header_unsynced;
                     break;
             }

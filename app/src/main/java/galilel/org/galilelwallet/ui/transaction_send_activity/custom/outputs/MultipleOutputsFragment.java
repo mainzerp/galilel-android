@@ -1,5 +1,6 @@
 package galilel.org.galilelwallet.ui.transaction_send_activity.custom.outputs;
 
+import android.support.v4.content.ContextCompat;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -119,7 +120,7 @@ public class MultipleOutputsFragment extends BaseRecyclerFragment<OutputWrapper>
                     if (!galilelModule.chechAddress(data.getAddress())) {
                         holder.edit_address.setTextColor(Color.RED);
                     } else {
-                        holder.edit_address.setTextColor(getResources().getColor(R.color.grey85black));
+                        holder.edit_address.setTextColor(ContextCompat.getColor(getContext(), R.color.grey85black));
                     }
                 }else {
                     holder.edit_address.setText("");
@@ -153,7 +154,7 @@ public class MultipleOutputsFragment extends BaseRecyclerFragment<OutputWrapper>
                                 if (!galilelModule.chechAddress(address)) {
                                     holder.edit_address.setTextColor(Color.RED);
                                 } else {
-                                    holder.edit_address.setTextColor(getResources().getColor(R.color.grey85black));
+                                    holder.edit_address.setTextColor(ContextCompat.getColor(getContext(), R.color.grey85black));
                                     // check if there is a label for this address
                                     AddressLabel addressLabel = galilelModule.getAddressLabel(address);
                                     if (addressLabel!=null){

@@ -1,5 +1,6 @@
 package galilel.org.galilelwallet.ui.address_add_activity;
 
+import android.support.v4.content.ContextCompat;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -60,7 +61,7 @@ public class AddContactActivity extends BaseActivity implements View.OnClickList
 
             @Override
             public void afterTextChanged(Editable s) {
-                edit_address.setTextColor(getResources().getColor(R.color.grey85black));
+                edit_address.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.grey85black));
             }
         });
         Intent intent = getIntent();

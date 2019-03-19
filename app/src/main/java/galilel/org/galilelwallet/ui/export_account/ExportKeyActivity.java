@@ -1,5 +1,6 @@
 package galilel.org.galilelwallet.ui.export_account;
 
+import android.support.v4.content.ContextCompat;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -71,7 +72,7 @@ public class ExportKeyActivity extends BaseActivity implements View.OnClickListe
         if (qrBitmap == null) {
             Resources r = getResources();
             int px = convertDpToPx(r,225);
-            qrBitmap = encodeAsBitmap(text, px, px, r.getColor(R.color.galilelBlack), r.getColor(R.color.greyTemp));
+            qrBitmap = encodeAsBitmap(text, px, px, ContextCompat.getColor(getApplicationContext(), R.color.galilelBlack), ContextCompat.getColor(getApplicationContext(), R.color.greyTemp));
         }
         img_qr.setImageBitmap(qrBitmap);
     }

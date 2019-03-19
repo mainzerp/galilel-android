@@ -459,11 +459,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                         }
                     }
             );
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                noConnectivityDialog.setRightBtnTextColor(getColor(R.color.darkBrown1));
-            }else {
-                noConnectivityDialog.setRightBtnTextColor(ContextCompat.getColor(this, R.color.darkBrown1));
-            }
+            noConnectivityDialog.setRightBtnTextColor(ContextCompat.getColor(getApplicationContext(), R.color.darkBrown1));
             noConnectivityDialog.setLeftBtnTextColor(Color.WHITE)
                     .setRightBtnTextColor(Color.BLACK)
                     .setRightBtnBackgroundColor(Color.WHITE)

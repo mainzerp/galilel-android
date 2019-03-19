@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v4.content.ContextCompat;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class RatesFragment extends BaseRecyclerFragment<GalilelRate> implements 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);
         setEmptyText("No rate available");
-        setEmptyTextColor(getResources().getColor(R.color.grey85black));
+        setEmptyTextColor(ContextCompat.getColor(getContext(), R.color.grey85black));
         return view;
     }
 

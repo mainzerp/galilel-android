@@ -44,7 +44,7 @@ public class TransactionsFragmentBase extends BaseRecyclerFragment<TransactionWr
         View view = super.onCreateView(inflater, container, savedInstanceState);
         setEmptyView(R.drawable.img_transaction_empty);
         setEmptyText(getString(R.string.no_transactions));
-        setEmptyTextColor(getResources().getColor(R.color.grey85black));
+        setEmptyTextColor(ContextCompat.getColor(getContext(), R.color.grey85black));
         return view;
     }
 
@@ -104,19 +104,19 @@ public class TransactionsFragmentBase extends BaseRecyclerFragment<TransactionWr
                 if (data.isSent()) {
                     //holder.cv.setBackgroundColor(Color.RED);Color.BROWN
                     holder.imageView.setImageResource(R.mipmap.ic_transaction_send);
-                    holder.amount.setTextColor(ContextCompat.getColor(context, R.color.walletInputSend));
+                    holder.amount.setTextColor(ContextCompat.getColor(getContext(), R.color.walletInputSend));
                     holder.amount.setText("-" + holder.amount.getText());
                 } else if (data.isZcSpend()) {
                     holder.imageView.setImageResource(R.drawable.ic_transaction_incognito);
-                    holder.amount.setTextColor(ContextCompat.getColor(context, R.color.walletInputSend));
+                    holder.amount.setTextColor(ContextCompat.getColor(getContext(), R.color.walletInputSend));
                     holder.amount.setText("-" + holder.amount.getText());
                 } else if (!data.isStake()) {
                     holder.imageView.setImageResource(R.mipmap.ic_transaction_receive);
-                    holder.amount.setTextColor(ContextCompat.getColor(context, R.color.darkBrown1));
+                    holder.amount.setTextColor(ContextCompat.getColor(getContext(), R.color.darkBrown1));
                     holder.amount.setText("+" + holder.amount.getText());
                 } else {
                     holder.imageView.setImageResource(R.drawable.ic_transaction_mining);
-                    holder.amount.setTextColor(ContextCompat.getColor(context, R.color.darkBrown1));
+                    holder.amount.setTextColor(ContextCompat.getColor(getContext(), R.color.darkBrown1));
                     holder.amount.setText("+" + holder.amount.getText());
                 }
                 holder.title.setText(getAddressOrContact(galilelModule,data));

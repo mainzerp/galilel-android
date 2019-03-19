@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v4.content.ContextCompat;
 
 import com.google.zxing.WriterException;
 
@@ -96,7 +97,7 @@ public class MyAddressFragment extends Fragment implements View.OnClickListener 
             Resources r = getResources();
             int px = convertDpToPx(r,225);
             Log.i("Util",uri);
-            qrBitmap = encodeAsBitmap(uri, px, px, r.getColor(R.color.galilelBlack), r.getColor(R.color.greyTemp));
+            qrBitmap = encodeAsBitmap(uri, px, px, ContextCompat.getColor(getContext(), R.color.galilelBlack), ContextCompat.getColor(getContext(), R.color.greyTemp));
         }
         img_qr.setImageBitmap(qrBitmap);
         txt_address.setText(addressStr);

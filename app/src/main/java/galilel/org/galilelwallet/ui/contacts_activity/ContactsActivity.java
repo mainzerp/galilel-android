@@ -155,12 +155,7 @@ public class ContactsActivity extends BaseDrawerActivity implements ListItemList
             deleteAddressLabelDialog.setListener(listener);
             deleteAddressLabelDialog.setBody(getString(R.string.delete_address_label_text,data.getAddresses().get(0)));
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            deleteAddressLabelDialog.setRightBtnTextColor(getColor(R.color.darkBrown1));
-        }else {
-            deleteAddressLabelDialog.setRightBtnTextColor(ContextCompat.getColor(this, R.color.darkBrown1));
-        }
-
+        deleteAddressLabelDialog.setRightBtnTextColor(ContextCompat.getColor(getApplicationContext(), R.color.darkBrown1));
         deleteAddressLabelDialog.show();
     }
 

@@ -1,6 +1,7 @@
 package galilel.org.galilelwallet.ui.transaction_send_activity.custom.inputs;
 
 import android.app.Activity;
+import android.support.v4.content.ContextCompat;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -59,7 +60,7 @@ public class InputsFragment extends BaseRecyclerFragment<InputsFragment.InputSel
             }
             setSwipeRefresh(false);
             setEmptyText(getString(R.string.no_available_inputs));
-            setEmptyTextColor(getResources().getColor(R.color.grey85black));
+            setEmptyTextColor(ContextCompat.getColor(getContext(), R.color.grey85black));
             setEmptyView(R.drawable.img_coins_empty);
         } catch (TxNotFoundException e) {
             e.printStackTrace();

@@ -262,11 +262,7 @@ public class GalilelWalletService extends Service{
                             .setContentText("Coins received for a value of " + notificationAccumulatedAmount.toFriendlyString())
                             .setAutoCancel(true)
                             .setSmallIcon(R.mipmap.ic_launcher)
-                            .setColor(
-                                    (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) ?
-                                            getResources().getColor(R.color.darkBrown1, null)
-                                            :
-                                            ContextCompat.getColor(GalilelWalletService.this, R.color.darkBrown1))
+                            .setColor(ContextCompat.getColor(getApplicationContext(), R.color.darkBrown1))
                             .setDeleteIntent(deleteIntent)
                             .setContentIntent(openPendingIntent);
                     nm.notify(NOT_COINS_RECEIVED, mBuilder.build());
@@ -566,11 +562,7 @@ public class GalilelWalletService extends Service{
                                 .setContentTitle("Alert")
                                 .setContentText(stringBuilder.toString())
                                 .setAutoCancel(true)
-                                .setColor(
-                                        (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) ?
-                                                getResources().getColor(R.color.darkBrown1,null)
-                                                :
-                                                ContextCompat.getColor(GalilelWalletService.this,R.color.darkBrown1))
+                                .setColor(ContextCompat.getColor(getApplicationContext(), R.color.darkBrown1))
                         ;
 
                 nm.notify(NOT_BLOCKCHAIN_ALERT, mBuilder.build());

@@ -129,21 +129,12 @@ public class TutorialActivity extends AppCompatActivity implements View.OnClickL
             dots[i] = new TextView(this);
             dots[i].setText(Html.fromHtml("&#8226;"));
             dots[i].setTextSize(35);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                dots[i].setTextColor(getColor(R.color.grey35black));
-            } else {
-                dots[i].setTextColor(ContextCompat.getColor(this, R.color.grey35black));
-            }
-
+            dots[i].setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.grey35black));
             dotsLayout.addView(dots[i]);
         }
 
         if (dots.length > 0) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                dots[currentPage].setTextColor(getResources().getColor(R.color.galilelBlack, null));
-            } else {
-                dots[currentPage].setTextColor(ContextCompat.getColor(this, R.color.grey35black));
-            }
+            dots[currentPage].setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.grey35black));
         }
     }
 

@@ -14,6 +14,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+import android.support.v4.content.ContextCompat;
 
 import com.google.zxing.WriterException;
 
@@ -170,7 +171,7 @@ public class RequestActivity extends BaseActivity implements View.OnClickListene
                 Resources r = getResources();
                 int px = convertDpToPx(r, 225);
                 Log.i("Util", qrText);
-                Bitmap qrBitmap = encodeAsBitmap(qrText, px, px, r.getColor(R.color.galilelBlack), r.getColor(R.color.greyTemp));
+                Bitmap qrBitmap = encodeAsBitmap(qrText, px, px, ContextCompat.getColor(getContext(), R.color.galilelBlack), ContextCompat.getColor(getContext(), R.color.greyTemp));
                 img_qr.setImageBitmap(qrBitmap);
             }
         }
