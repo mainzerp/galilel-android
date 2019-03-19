@@ -61,6 +61,9 @@ public class AddContactActivity extends BaseActivity implements View.OnClickList
 
             @Override
             public void afterTextChanged(Editable s) {
+                String temp = s.toString();
+                if (galilelModule.chechAddress(temp))
+                    address = temp;
                 edit_address.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.grey85black));
             }
         });
