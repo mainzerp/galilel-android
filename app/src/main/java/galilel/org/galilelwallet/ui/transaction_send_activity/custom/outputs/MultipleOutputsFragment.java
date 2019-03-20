@@ -181,10 +181,13 @@ public class MultipleOutputsFragment extends BaseRecyclerFragment<OutputWrapper>
 
                     @Override
                     public void afterTextChanged(Editable s) {
-                        String amountStr = s.toString();
-                        if (amountStr.length()>0){
+                        if (s.length() > 0) {
+                            String amountStr = s.toString();
+                            if (amountStr.charAt(0) == '.') {
+                                amountStr = "0" + amountStr;
+                            }
                             data.setAmount(Coin.parseCoin(amountStr));
-                        }else {
+                        } else {
                             data.setAmount(null);
                         }
                         countAmount();
