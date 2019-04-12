@@ -1,5 +1,7 @@
 # Galilel Android Wallet
 
+![](doc/img/mobile_wallet.jpg)
+
 Welcome to the Galilel mobile wallet for Android!
 
 This project contains several sub-projects:
