@@ -30,7 +30,7 @@ public class GalilelContext {
     public static final String URL_FIAT_CURRENCIES_RATE = "https://bitpay.com/rates";
 
     // Report e-mail.
-    public static final String REPORT_EMAIL = "maik.broemme@galilel.cloud";
+    public static final String REPORT_EMAIL = "maik.broemme@galilel.org";
 
     // Subject line for manually reported issues.
     public static final String REPORT_SUBJECT_ISSUE = "Reported issue";
