@@ -1,35 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="@color/greyTemp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <fragment
-            android:id="@+id/fragment_tx_detail"
-            android:name="galilel.org.galilelwallet.ui.transaction_detail_activity.FragmentTxDetail"
+        <LinearLayout
+            android:id="@+id/layout_tx_detail"
+            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/txt_confirm"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_alignParentBottom="true"
-            android:layout_below="@+id/fragment_tx_detail"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/greyTemp"
             android:gravity="center"
-            android:maxHeight="40dp"
-            android:padding="7dp"
-            android:text="@string/confirm"
-            android:textColor="@color/darkBrown1" />
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <fragment
+                android:id="@+id/fragment_tx_detail"
+                android:name="galilel.org.galilelwallet.ui.transaction_detail_activity.FragmentTxDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_below="@+id/layout_tx_detail"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="20dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@android:color/transparent">
+
+            <Button
+                android:id="@+id/txt_confirm"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_brown"
+                android:gravity="center"
+                android:layout_gravity="bottom"
+                android:text="@string/confirm"
+                android:textColor="@color/galilelWhite"
+                android:textSize="14sp" />
+
+        </LinearLayout>
 
     </RelativeLayout>
 
