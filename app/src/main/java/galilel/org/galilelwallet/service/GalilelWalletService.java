@@ -261,7 +261,7 @@ public class GalilelWalletService extends Service{
                             .setContentTitle("GALI received!")
                             .setContentText("Coins received for a value of " + notificationAccumulatedAmount.toFriendlyString())
                             .setAutoCancel(true)
-                            .setSmallIcon(R.mipmap.ic_launcher)
+                            .setSmallIcon(R.mipmap.ic_notification)
                             .setColor(ContextCompat.getColor(getApplicationContext(), R.color.darkBrown1))
                             .setDeleteIntent(deleteIntent)
                             .setContentIntent(openPendingIntent);
@@ -558,7 +558,7 @@ public class GalilelWalletService extends Service{
             if(showNotif) {
                 android.support.v4.app.NotificationCompat.Builder mBuilder =
                         new NotificationCompat.Builder(getApplicationContext())
-                                .setSmallIcon(R.mipmap.ic_launcher)
+                                .setSmallIcon(R.mipmap.ic_notification)
                                 .setContentTitle("Alert")
                                 .setContentText(stringBuilder.toString())
                                 .setAutoCancel(true)
