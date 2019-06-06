@@ -21,8 +21,6 @@
 	<dimen name="text_title">18sp</dimen>
 
 	<!-- Tutorial -->
-	<dimen name="dots_height">30dp</dimen>
-	<dimen name="dots_bottom_margin">20dp</dimen>
 	<dimen name="pager_height">50dp</dimen>
 
 </resources>

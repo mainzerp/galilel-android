@@ -62,7 +62,6 @@
 
 	<View
 		android:layout_width="match_parent"
-		android:layout_height="@dimen/dots_height"
-		android:layout_marginBottom="@dimen/dots_bottom_margin" />
+		android:layout_height="@dimen/pager_height" />
 
 </LinearLayout>
