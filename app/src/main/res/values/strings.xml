@@ -21,7 +21,6 @@
     <string name="title_address">Address</string>
     <string name="title_name">Name</string>
     <string name="title_description">Description</string>
-    <string name="title_receiver_name">Receiver\'s name</string>
     <string name="title_date">Date</string>
     <string name="set_address">Write address or label name</string>
     <string name="add_address">Write address or label name</string>
@@ -38,14 +37,11 @@
     <string name="backup_wallet">Backup wallet</string>
     <string name="change_pincode">Change PIN code</string>
     <string name="local_currency">Local Currency</string>
-    <string name="local_currency_usd">USD</string>
     <string name="repeat_password">Repeat Password</string>
-    <string name="add_name">Add a name</string>
     <string name="scan_camera_problem_dialog_title">Sorry</string>
     <string name="scan_camera_problem_dialog_message">The camera has a problem. You probably need to restart the device.</string>
     <string name="scan_camera_permission_dialog_title">Camera permission</string>
     <string name="scan_camera_permission_dialog_message">In order to scan QR codes, you need to grant permission to use the camera.</string>
-    <string name="scan_result_title">Scanner result</string>
     <string name="scan_result_address_title">Address detected</string>
     <string name="node_selection_message">You can select one of the node available or add one </string>
     <string name="select_node">Select Node</string>
@@ -53,8 +49,6 @@
     <string name="text_version">Version</string>
     <string name="network_monitor">Network monitor</string>
     <string name="settings_report">Report issue</string>
-    <string name="send_message">Transaction details:</string>
-    <string name="save_message">Do you want to save the address?</string>
     <string name="confirm">Confirm</string>
     <string name="action_scan">scanner</string>
     <string name="btn_select_node">Add node</string>
@@ -62,7 +56,6 @@
     <string name="title_no_trusted_peer_connection">Peer issue</string>
     <string name="message_no_trusted_peer_connection">Trusted peer connection fail</string>
     <string name="share_address_text">Share address</string>
-    <string name="error_sending_coins">Send coins fail</string>
     <string name="ssl_port">SSL port</string>
     <string name="hint_ssl_port">Default SSL port</string>
     <string name="host">Host</string>
@@ -70,26 +63,20 @@
     <string name="tcp_port">TCP port</string>
     <string name="hint_tcp_port">Default TCP port</string>
     <string name="add_memo">Monthly payment</string>
-    <string name="backup_create">Create Backup</string>
     <string name="transaction_hash">Transaction ID</string>
     <string name="explorer">Explorer</string>
     <string name="backup_passwords_doesnt_match">Passwords doesn\'t match, please enter password again.</string>
     <string name="backup_completed">Backup completed</string>
     <string name="backup_completed_text">Congratulations! Your wallet backup is complete. It has been saved in the folder at\n\n%s</string>
     <string name="import_keys_dialog_message">Select one of your backups files loaded from folder\n\n%s</string>
-    <string name="backup_restore">Restore</string>
     <string name="import_export_keys_dialog_failure_title">Restore wallet fail</string>
     <string name="import_keys_dialog_failure">Error importing backup file\n\n%s</string>
     <string name="button_dismiss">Dismiss</string>
-    <string name="button_retry">Retry</string>
     <string name="restore_wallet_dialog_success">Wallet was restored</string>
     <string name="restore_wallet_dialog_success_replay">Your wallet was successfully restored. Its balance will be determined next. This will take some time.</string>
     <string name="unavailable">Amount unspendable:</string>
     <string name="sending_tx">Sending transaction...</string>
-    <string name="currency_message">Select the local currency of your choice</string>
     <string name="title_fee">Fee</string>
-    <string name="title_currency">Local Currency</string>
-    <string name="title_gali_send">Amount send</string>
     <string name="empty_message_address">You don\'t have any saved address yet.</string>
     <string name="error_message">There seems to been an error with your transaction</string>
     <string name="settings_change_trusted_node">Change trusted node</string>
@@ -112,7 +99,6 @@
     <string name="desc_slide3">Galilel is already the worlds first crypto currency which includes Dynamic Zerocoin Proof-of-Stake. Staking privacy coins makes it a truly anonymous crypto-currency!</string>
     <string name="title_slide4">Trusted Nodes Federation</string>
     <string name="desc_slide4">Trusted nodes federation make light Proof-of-Stake wallets possible, you can rely on them or create your own trusted node!</string>
-    <string name="option_add_node">Add node</string>
     <string name="report_issue_dialog_description">Issue description</string>
     <string name="report_issue_dialog_collect_device_info">Append device information</string>
     <string name="report_issue_dialog_collect_application_log">Append application log</string>
@@ -136,12 +122,7 @@
     <string name="share">Share</string>
     <string name="copy_message">Address copied to the clipboard</string>
     <string name="security_message">Please write this in a safe place and in horizontal order, you\'ll need them to restore your wallet.\n\nDon\'t share this words to anybody. Be careful, whoever has this words is the owner of the coins!</string>
-    <string name="security_message_confirmation">You have to confirm in the next screen</string>
-    <string name="confirmation_message">Verify your security words</string>
-    <string name="order_message_confirmation">Choose the words in the right order</string>
     <string name="backup_words">Mnemonic Code</string>
-    <string name="btn_secure">Already noted</string>
-    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
     <string name="number_zero">0</string>
     <string name="number_one">1</string>
     <string name="number_two">2</string>
@@ -152,8 +133,6 @@
     <string name="number_seven">7</string>
     <string name="number_eight">8</string>
     <string name="number_nine">9</string>
-    <string name="btn_clear">Clear</string>
-    <string name="btn_backspace">Back</string>
     <string name="pincode_saved">New PIN saved</string>
     <string name="insert_old_pin">Insert your current PIN</string>
     <string name="insert_new_pin">Insert new PIN</string>
@@ -180,8 +159,6 @@
     <string name="restore_from_words">Restore from words</string>
     <string name="restore_words_2">Now from number 9 to 16</string>
     <string name="restore_words_3">Now from number 17 to 24</string>
-    <string name="fee_recommended">Recommended</string>
-    <string name="fee_custom">Custom</string>
     <string name="confirmation_time">Confirmation time</string>
     <string name="fee_normal">Normal</string>
     <string name="fee_fast">Fast</string>
@@ -194,7 +171,6 @@
     <string name="invalid_last_amount">Invalid amount from last address</string>
     <string name="inputs_explanation">Select coins to use in the transaction</string>
     <string name="bad_address">Bad address</string>
-    <string name="invalid_amount_value">Invalid amount rate</string>
     <string name="select_all">Select all</string>
     <string name="total_amount">Total:</string>
     <string name="send_amount_input_error">You must set an amount to add custom inputs.</string>
@@ -206,8 +182,6 @@
     <string name="tx_detail_addresses">Outputs</string>
     <string name="custom_fee">Custom fee</string>
     <string name="coin_selection">Coin selection</string>
-    <string name="set_default">Set default</string>
-    <string name="delete_addresses">DELETE ADDRESSES</string>
     <string name="sync">Synced</string>
     <string name="syncing">Syncing</string>
     <string name="not_connection">No connection</string>
@@ -261,96 +235,9 @@
     <string name="export_wallet">Export Account</string>
     <string name="commit_tx_fail">Commit transaction failed, please send the error report.</string>
 
-    <!-- Sweep wallet -->
-    <!-- Sweep paper wallet means to redeem coins from a code usually printed on a paper -->
-    <string name="title_activity_sweep_wallet">Sweep Paper Wallet</string>
-    <string name="sweep_wallet_info">You are about to transfer coins from a paper wallet to your Galilel wallet. After the transfer is complete, please avoid reusing the paper wallet for security reasons.\n\nSupported formats: WIF, BIP38, Mini Private Key.</string>
-    <string name="sweep_wallet_key_title">Private Key</string>
-    <string name="sweep_wallet_key_password">Private key password</string>
-    <string name="sweep_wallet_key_hint">Type or scan a private key</string>
-    <string name="sweep_wallet_bad_format">Could not recognize the private key format.</string>
-    <string name="sweep_wallet_bad_coin_type">The private key type does not match the destination account type.</string>
-    <string name="sweep_wallet_bad_password">Incorrect password.</string>
-    <string name="sweep_wallet_zero_coins">The private key does not contain any funds.</string>
-    <string name="sweep_wallet_key_wait">Please wait while sweeping your paper wallet</string>
-
-    <!-- &#8230; is the ... character -->
-    <string name="sweep_wallet_key_decoding">Decoding private key&#8230;</string>
-
-    <!-- &#8230; is the ... character -->
-    <string name="sweep_wallet_key_loading">Loading balance&#8230;</string>
-
-    <!-- &#8230; is the ... character -->
-    <string name="sweep_wallet_key_signing">Creating transaction&#8230;</string>
-
-    <!-- Fees settings -->
-    <string name="title_activity_transaction_fees">Transaction fees</string>
-    <!-- Example: Bitcoin transaction fees-->
-    <string name="tx_fees_title">%1$s transaction fees</string>
-    <!-- Example: The ratealue is per kilobyte.-->
-    <string name="tx_fees_description">The fee rate is %1$s.</string>
-    <string name="tx_fees_per_kilobyte">per kilobyte of transaction data</string>
-    <string name="tx_fees_per_byte">per byte of transaction data</string>
-    <string name="tx_fees_per_transaction">per transaction</string>
-
     <!-- Terms -->
-    <string name="terms_of_service_title">Terms of service</string>
-    <string name="terms_of_service" translatable="false">LEGAL DISCLAIMER\n
-    \n
-    \n
-    1. Risks related to the use of Galilel Wallet\n
-    \n
-    Galilel UG (haftungsbeschränkt) and/or Maik Broemme will not be responsible for any losses, damages or claims arising from events falling within the scope of the following five categories:\n
-    \n
-    (1) Mistakes made by the user of any cryptocurrency-related software or service, e.g., forgotten passwords, payments sent to wrong code addresses, and accidental deletion of wallets.\n
-    \n
-    (2) Software problems of the wallet and/or any cryptocurrency-related software or service, e.g., corrupted wallet file, incorrectly constructed transactions, unsafe cryptographic libraries, malware affecting the wallet and/or any cryptocurrency-related software or service.\n
-    \n
-    (3) Technical failures in the hardware of the user of any cryptocurrency-related software or service, e.g., data loss due to a faulty or damaged storage device.\n
-    \n
-    (4) Security problems experienced by the user of any cryptocurrency-related software or service, e.g., unauthorized access to users\' wallets and/or accounts.\n
-    \n
-    (5) Actions or inactions of third parties and/or events experienced by third parties, e.g., bankruptcy of service providers, information security attacks on service providers, and fraud conducted by third parties.\n
-    \n
-    \n
-    2. Trading and Investment risks\n
-    \n
-    There is considerable exposure to risk in any crypto-currency exchange transaction. Any transaction involving currencies involves risks including, but not limited to, the potential for changing economic conditions that may substantially affect the price or liquidity of a currency. Investments in crypto-currency exchange speculation may also be susceptible to sharp rises and falls as the relevant market values fluctuate. It is for this reason that when speculating in such markets it is advisable to use only risk capital.\n
-    \n
-    \n
-    3. Electronic Trading Risks\n
-    \n
-    Before you engage in transactions using an electronic system, you should carefully review the rules and regulations of the exchanges offering the system and/or listing the instruments you intend to trade. Online trading has inherent risk due to system response and access times that may vary due to market conditions, system performance, and other factors. You should understand these and additional risks before trading.\n
-    \n
-    \n
-    4. Compliance with tax obligations\n
-    \n
-    The users of the wallet are solely responsible to determinate what, if any, taxes apply to their crypto-currency transactions. The owners of, or contributors to, the wallet are NOT responsible for determining the taxes that apply to crypto-currency transactions.\n
-    \n
-    \n
-    5. No warranties\n
-    \n
-    The wallet is provided on an \"as is\" basis without any warranties of any kind regarding the wallet and/or any content, data, materials and/or services provided on the wallet.\n
-    \n
-    \n
-    6. Limitation of liability\n
-    \n
-    Unless otherwise required by law, in no event shall the owners of, or contributors to, the wallet be liable for any damages of any kind, including, but not limited to, loss of use, loss of profits, or loss of data arising out of or in any way connected with the use of the wallet. In no way are the owners of, or contributors to, the wallet responsible for the actions, decisions, or other behavior taken or not taken by you in reliance upon the wallet.\n
-    \n
-    \n
-    7. Arbitration\n
-    \n
-    The user of the wallet agrees to arbitrate any dispute arising from or in connection with the wallet or this disclaimer, except for disputes related to copyrights, logos, trademarks, trade names, trade secrets or patents.\n
-    \n
-    \n
-    8. Last amendment\n
-    \n
-    This disclaimer was amended for the last time on March 4th, 2019.</string>
     <string name="settings_sweep_wallet">Sweep wallet</string>
-    <string name="disconnected_label">No connection</string>
     <string name="error_generic">Error occurred while performing action</string>
-    <string name="old_wallet_version">Old wallet version</string>
-    <string name="advance_restore">Advanced restore</string>
     <string name="restore_bip32_warning">If your mnemonic code was created by this wallet on a version lower than %s please check the next box to restore your coins correctly.</string>
     <string name="fee_included">Fee is not included on the total amount</string>
     <string name="title_blockstore_error">Error</string>
@@ -368,11 +255,9 @@
     <string name="option_custom_fee">Custom fee</string>
     <string name="option_multi_outputs">Multi send</string>
     <string name="option_coin_selection">Coin selection</string>
-    <string name="change_address_remember">Remember selection</string>
     <string name="my_address">My Address</string>
     <string name="settings_rates">Currency Rate</string>
     <string name="rate_selected">Rate selected</string>
-    <string name="fab_send">Send</string>
     <string name="fab_request">Request</string>
     <string name="scan_request">Scan Request</string>
     <string name="payment_request_received">Request Received</string>
