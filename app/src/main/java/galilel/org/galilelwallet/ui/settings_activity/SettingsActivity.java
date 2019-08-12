@@ -72,7 +72,7 @@ public class SettingsActivity extends BaseDrawerActivity implements View.OnClick
         txt_network_info = (TextView) findViewById(R.id.txt_network_info);
 
         textAbout = (TextView)findViewById(R.id.text_about);
-        String text = "Made by<br> <font color=#795548>Maik Broemme</font> <br>(c) Galilel Community";
+        String text = "Made by<br> <font color=#795548>Maik Broemme</font> <br>(c) Galilel UG (haftungsbeschränkt)";
         textAbout.setText(Html.fromHtml(text));
         // Open Backup Wallet
         buttonBackup = (Button) findViewById(R.id.btn_backup_wallet);
