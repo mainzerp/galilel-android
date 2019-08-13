@@ -194,7 +194,6 @@
     <string name="set_address">Adresse oder Kontaktname eingeben</string>
     <string name="set_amount">Betrag eingeben</string>
 	<string name="set_amount_gali">GALI</string>
-	<string name="set_amount_usd">Betrag eingeben</string>
     <string name="set_description">Eine Beschreibung hinzufügen</string>
     <string name="set_name">Name hinzufügen</string>
     <string name="settings_change_trusted_node">Wechseln des vertrauenswürdigen Servers</string>
