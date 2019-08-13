@@ -3,20 +3,18 @@
 	<string name="action_qr">QR Code</string>
 	<string name="action_scan">scanner</string>
 	<string name="add_address">Write address or label name</string>
-	<string name="add_all">ADD ALL</string>
+	<string name="add_all">Add all</string>
 	<string name="add_memo">Monthly payment</string>
 	<string name="address_book_screen_title">Address Book</string>
 	<string name="address_label_deleted">Address label deleted.</string>
 	<string name="address_num">Address %d </string>
 	<string name="amount">Amount</string>
 	<string name="app_name">Galilel Wallet</string>
-	<string name="appbar_scrolling_view_behavior">appbar_scrolling_view_behavior</string>
 	<string name="back">Back</string>
 	<string name="backup_completed">Backup completed</string>
 	<string name="backup_completed_text">Congratulations! Your wallet backup is complete. It has been saved in the folder at\n\n%s</string>
 	<string name="backup_fail">Backup fail</string>
 	<string name="backup_passwords_doesnt_match">Passwords doesn\'t match, please enter password again.</string>
-	<string name="backup_succed_dialog">backup_succed_dialog</string>
 	<string name="backup_wallet">Backup wallet</string>
 	<string name="backup_wallet_message">Your backup will be encrypted with the password you choose and saved to an external storage drive.</string>
 	<string name="backup_words">Mnemonic Code</string>
@@ -35,7 +33,6 @@
 	<string name="change_address_explain">You can customize the change address of your transaction specifing it or checking the box below and sending the amount to the origin (if there is more than one origin the wallet will chose the address with the highest rate).</string>
 	<string name="change_address_origin">Send it to origin.</string>
 	<string name="change_pincode">Change PIN code</string>
-	<string name="clean">Clean</string>
 	<string name="coin_selection">Coin selection</string>
 	<string name="commit_tx_fail">Commit transaction failed, please send the error report.</string>
 	<string name="confimations">Confirmations</string>
@@ -65,15 +62,14 @@
 	<string name="empty_message_address">You don\'t have any saved address yet.</string>
 	<string name="error_generic">Error occurred while performing action</string>
 	<string name="error_importing_xpub">Please check the key or send an error report.</string>
-	<string name="error_importing_xpub_title">Error importing xpub</string>
+	<string name="error_importing_xpub_title">Error importing xPub</string>
 	<string name="error_message">There seems to been an error with your transaction</string>
 	<string name="error_no_connectivity_body">The app is going to save your transaction until the connection back.\n\nDo you want to continue?</string>
 	<string name="error_no_connectivity_title">No internet connection</string>
 	<string name="error_watch_only_mode">Action is not possible on watch only mode</string>
-	<string name="explanation_import_xpub">Make your wallet a watch only wallet importing your xpub from another wallet.\n\nPeople using this device are going to see the full balance but not be able to spend coins.</string>
+	<string name="explanation_import_xpub">Make your wallet a watch only wallet importing your xPub from another wallet.\n\nPeople using this device are going to see the full balance but not be able to spend coins.</string>
 	<string name="explorer">Explorer</string>
 	<string name="export_wallet">Export Account</string>
-	<string name="fab_request">Request</string>
 	<string name="fee">Fee</string>
 	<string name="fee_explanation">If the custom fee is lower than the minimum fee (0.0001 GALI/kB) the cost will be the minimum and not the custom fee selected. Fee calculated per kilobyte.</string>
 	<string name="fee_fast">Fast</string>
@@ -81,7 +77,7 @@
 	<string name="fee_normal">Normal</string>
 	<string name="fee_per_kb">%s GALI/kB</string>
 	<string name="hint_host">Add a Host</string>
-	<string name="hint_paste_xpub">Paste your xpub here</string>
+	<string name="hint_paste_xpub">Paste your xPub here</string>
 	<string name="hint_ssl_port">Default SSL port</string>
 	<string name="hint_tcp_port">Default TCP port</string>
 	<string name="host">Host</string>
@@ -121,7 +117,7 @@
 	<string name="no_rate">No rate</string>
 	<string name="no_transactions">You don\'t have any transfers yet.</string>
 	<string name="node_default">Default values</string>
-	<string name="node_selection_message">You can select one of the node available or add one </string>
+	<string name="node_selection_message">You can select one of the node available or add one</string>
 	<string name="not_connection">No connection</string>
 	<string name="number_0">0</string>
 	<string name="number_1">1</string>
@@ -137,7 +133,7 @@
 	<string name="option_coin_selection">Coin selection</string>
 	<string name="option_custom_fee">Custom fee</string>
 	<string name="option_multi_outputs">Multi send</string>
-	<string name="options_menu">Options Menu</string>
+	<string name="options_menu">Options</string>
 	<string name="origin_address">Origin address</string>
 	<string name="payment_request">Payment Request</string>
 	<string name="payment_request_received">Request Received</string>
@@ -164,8 +160,8 @@
 	<string name="reseting_blockchain">Reseting blockchain...</string>
 	<string name="restore">Restore</string>
 	<string name="restore_bip32_warning">If your mnemonic code was created by this wallet on a version lower than %s please check the next box to restore your coins correctly.</string>
-	<string name="restore_dialog_error">restore dialog error</string>
-	<string name="restore_dialog_tag">restore dialog tag</string>
+	<string name="restore_dialog_error">Restore error</string>
+	<string name="restore_dialog_tag">Restore tags</string>
 	<string name="restore_from_words">Restore from words</string>
 	<string name="restore_mnemonic">Restoring wallet from mnemonic...</string>
 	<string name="restore_mnemonic_dialog_body">The restore is almost done! The blockchain synchronization process is going to start and could take a while to be fully synced.</string>
@@ -192,8 +188,8 @@
 	<string name="select_all">Select all</string>
 	<string name="select_file">Select File</string>
 	<string name="select_node">Select Node</string>
-	<string name="send_amount_input_error">You must set an amount to add custom inputs.</string>
-	<string name="send_error_dialog_tag">send error dialog tag</string>
+	<string name="send_amount_input_error">You must set an amount first.</string>
+	<string name="send_error_dialog_tag">Send Error</string>
 	<string name="sending_tx">Sending transaction...</string>
 	<string name="set_address">Write address or label name</string>
 	<string name="set_amount">Write amount to send</string>
@@ -212,8 +208,7 @@
 	<string name="settings_subtitle_preference">Preference</string>
 	<string name="settings_subtitle_security">Security</string>
 	<string name="settings_support">Support</string>
-	<string name="settings_sweep_wallet">Sweep wallet</string>
-	<string name="several_outputs_add_address">ADD ADDRESS</string>
+	<string name="several_outputs_add_address">Add Address</string>
 	<string name="share">Share</string>
 	<string name="share_address_text">Share address</string>
 	<string name="skip">Skip</string>
@@ -228,7 +223,7 @@
 	<string name="text_version">Version</string>
 	<string name="title_address">Address</string>
 	<string name="title_amount">Amount</string>
-	<string name="title_blockstore_error">Error</string>
+	<string name="title_blockstore_error">Blockchain Error</string>
 	<string name="title_date">Date</string>
 	<string name="title_description">Description</string>
 	<string name="title_fee">Fee</string>
@@ -251,7 +246,7 @@
 	<string name="tx_detail_no_memo">No description</string>
 	<string name="txt_detail_confirmations">Confirmations amount</string>
 	<string name="unavailable">Amount unspendable:</string>
-	<string name="unknown_error_message">Error loading the xpub, please send a report</string>
+	<string name="unknown_error_message">Error loading the xPub, please send a report</string>
 	<string name="upgrade_succesfull">Upgrade was successful, please wait some time before the wallet is sync again</string>
 	<string name="upgrade_wallet">Upgrade Wallet</string>
 	<string name="validate_multi_send_enabled">Blocked action, multi send enabled</string>
@@ -260,4 +255,8 @@
 	<string name="watch_only_mode_activated">Watch only mode activated</string>
 	<string name="watch_only_mode_activated_text">Please wait until the synchronization is completed, could take a while be patient.</string>
 	<string name="write_external_denied">Permission denied to write in the external storage</string>
+
+    <!-- internal strings, never translate. -->
+	<string name="appbar_scrolling_view_behavior">appbar_scrolling_view_behavior</string>
+	<string name="backup_succed_dialog">backup_succed_dialog</string>
 </resources>
