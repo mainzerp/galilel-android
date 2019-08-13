@@ -177,6 +177,8 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
         galilelRate = galilelModule.getRate(galilelApplication.getAppConf().getSelectedRateCoin());
 
         txt_local_currency.setText("0 " + galilelRate.getCode());
+        edit_amount.setHint("0 " + getString(R.string.set_amount_gali));
+        editCurrency.setHint("0 " + galilelRate.getCode());
 
         editCurrency.addTextChangedListener(new TextWatcher() {
             @Override

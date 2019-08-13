@@ -58,6 +58,9 @@ public class AmountInputFragment extends BaseFragment implements View.OnClickLis
         else
             txt_local_currency.setText("0");
 
+        edit_amount.setHint("0 " + getString(R.string.set_amount_gali));
+        editCurrency.setHint("0 " + galilelRate.getCode());
+
         editCurrency.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
