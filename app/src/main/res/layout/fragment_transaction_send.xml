@@ -48,9 +48,10 @@
                         android:gravity="center_horizontal"
                         android:layout_width = "match_parent"
                         android:layout_height = "wrap_content"
-                        android:padding="8dp"
                         android:paddingBottom="11dp"
                         android:paddingTop="11dp"
+                        android:paddingEnd="27dp"
+                        android:paddingStart="27dp"
                         android:inputType="numberDecimal"
                         android:background="@drawable/transaction_inputs"
                         android:textCursorDrawable="@drawable/color_cursor"
@@ -65,7 +66,7 @@
                         android:layout_width = "wrap_content"
                         android:layout_height = "wrap_content"
                         android:textColor = "@color/grey85black"
-                        android:textSize = "16sp" />
+                        android:textSize = "15sp" />
 
                 </LinearLayout>
 
@@ -92,9 +93,10 @@
                         android:gravity="center_horizontal"
                         android:layout_width = "match_parent"
                         android:layout_height = "wrap_content"
-                        android:padding="8dp"
                         android:paddingBottom="11dp"
                         android:paddingTop="11dp"
+                        android:paddingEnd="27dp"
+                        android:paddingStart="27dp"
                         android:inputType="numberDecimal"
                         android:background="@drawable/transaction_inputs"
                         android:textCursorDrawable="@drawable/color_cursor"
@@ -109,7 +111,7 @@
                         android:layout_width = "wrap_content"
                         android:layout_height = "wrap_content"
                         android:textColor = "@color/grey85black"
-                        android:textSize = "16sp" />
+                        android:textSize = "15sp" />
 
                 </LinearLayout>
 
@@ -172,14 +174,15 @@
                         android:layout_width = "0dp"
                         android:layout_height="wrap_content"
                         android:maxLines="4"
-                        android:paddingBottom="12dp"
-                        android:paddingTop="12dp"
-                        android:paddingEnd="16dp"
+                        android:paddingBottom="11dp"
+                        android:paddingTop="11dp"
+                        android:paddingEnd="5dp"
+                        android:paddingStart="27dp"
                         android:background="@color/transparent"
                         android:textCursorDrawable="@drawable/color_cursor"
                         android:hint="@string/set_address"
                         android:textColor = "@color/grey85black"
-                        android:textSize = "14.5sp"
+                        android:textSize = "16sp"
                         android:layout_alignParentBottom="true" />
 
                     <ImageButton
@@ -209,14 +212,17 @@
                     android:gravity="center_horizontal"
                     android:layout_width = "match_parent"
                     android:layout_height = "wrap_content"
-                    android:padding="8dp"
+                    android:paddingBottom="11dp"
+                    android:paddingTop="11dp"
+                    android:paddingEnd="27dp"
+                    android:paddingStart="27dp"
                     android:textCursorDrawable="@drawable/color_cursor"
                     android:background="@drawable/transaction_inputs"
                     android:layout_marginBottom="10dp"
                     android:maxLines="1"
                     android:hint="@string/set_description"
                     android:textColor = "@color/grey85black"
-                    android:textSize = "15sp" />
+                    android:textSize = "16sp" />
 
             </LinearLayout>
 
