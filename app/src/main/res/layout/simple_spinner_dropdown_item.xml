@@ -12,5 +12,4 @@
     android:paddingBottom="3dp"
     android:paddingStart="4dp"
     android:paddingEnd="4dp"
-    tools:text="192.186.34.21"
     android:ellipsize="marquee" />

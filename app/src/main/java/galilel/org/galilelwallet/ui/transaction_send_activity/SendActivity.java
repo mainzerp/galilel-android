@@ -137,7 +137,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
     @Override
     protected void onCreateView(Bundle savedInstanceState,ViewGroup container) {
         root = getLayoutInflater().inflate(R.layout.fragment_transaction_send, container);
-        setTitle(R.string.btn_send);
+        setTitle(getString(R.string.btn_send));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         edit_address = (AutoCompleteTextView) findViewById(R.id.edit_address);
@@ -176,9 +176,9 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
         addAllGali.setOnClickListener(this);
         galilelRate = galilelModule.getRate(galilelApplication.getAppConf().getSelectedRateCoin());
 
-        txt_local_currency.setText("0 " + galilelRate.getCode());
-        edit_amount.setHint("0 " + getString(R.string.set_amount_gali));
-        editCurrency.setHint("0 " + galilelRate.getCode());
+        txt_local_currency.setText(getString(R.string.number_0) + " " + galilelRate.getCode());
+        edit_amount.setHint(getString(R.string.number_0) + " " + getString(R.string.set_currency));
+        editCurrency.setHint(getString(R.string.number_0) + " " + galilelRate.getCode());
 
         editCurrency.addTextChangedListener(new TextWatcher() {
             @Override
@@ -197,15 +197,15 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                     if (s.length() > 0) {
                         String valueStr = s.toString();
                         if (valueStr.charAt(0) == '.') {
-                            valueStr = "0" + valueStr;
+                            valueStr = getString(R.string.number_0) + valueStr;
                         }
                         BigDecimal result = new BigDecimal(valueStr).divide(galilelRate.getRate(), 6, BigDecimal.ROUND_DOWN);
-                        txtShowGali.setText(result.toPlainString() + " GALI");
+                        txtShowGali.setText(result.toPlainString() + " " + getString(R.string.set_currency));
                     } else {
-                        txtShowGali.setText("0 " + galilelRate.getCode());
+                        txtShowGali.setText(getString(R.string.number_0) + " " + galilelRate.getCode());
                     }
                 }else {
-                    txtShowGali.setText(R.string.no_rate);
+                    txtShowGali.setText(getString(R.string.no_rate));
                 }
                 cleanWallet = false;
             }
@@ -228,7 +228,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                     if (galilelRate != null) {
                         String valueStr = s.toString();
                         if (valueStr.charAt(0) == '.') {
-                            valueStr = "0" + valueStr;
+                            valueStr = getString(R.string.number_0) + valueStr;
                         }
                         Coin coin = Coin.parseCoin(valueStr);
                         txt_local_currency.setText(
@@ -239,13 +239,13 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                         );
                     }else {
                         // rate null -> no connection.
-                        txt_local_currency.setText(R.string.no_rate);
+                        txt_local_currency.setText(getString(R.string.no_rate));
                     }
                 }else {
                     if (galilelRate!=null)
-                        txt_local_currency.setText("0 "+galilelRate.getCode());
+                        txt_local_currency.setText(getString(R.string.number_0) + " " + galilelRate.getCode());
                     else
-                        txt_local_currency.setText(R.string.no_rate);
+                        txt_local_currency.setText(getString(R.string.no_rate));
                 }
                 cleanWallet = false;
 
@@ -329,7 +329,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
             intent.putExtras(bundle);
             startActivityForResult(intent,CUSTOM_INPUTS);
         }else {
-            Toast.makeText(this,R.string.send_amount_input_error,Toast.LENGTH_LONG).show();
+            Toast.makeText(this,getString(R.string.send_amount_input_error),Toast.LENGTH_LONG).show();
         }
     }
 
@@ -416,14 +416,14 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                     txtShowGali.setText(coin.toFriendlyString());
                 }
             }else {
-                Toast.makeText(this,R.string.validate_multi_send_enabled,Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,getString(R.string.validate_multi_send_enabled),Toast.LENGTH_SHORT).show();
             }
         }else if(id == R.id.btn_swap){
             if (!isMultiSend){
                 inGalis = !inGalis;
                 amountSwap.showNext();
             }else {
-                Toast.makeText(this,R.string.validate_multi_send_enabled,Toast.LENGTH_LONG).show();
+                Toast.makeText(this,getString(R.string.validate_multi_send_enabled),Toast.LENGTH_LONG).show();
             }
         }else if (id == R.id.txt_coin_selection){
             startCoinControlActivity(unspent);
@@ -501,7 +501,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                     edit_address.setText(tempPubKey);
                 }catch (Exception e){
                     e.printStackTrace();
-                    Toast.makeText(this,"Bad address "+address,Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,getString(R.string.bad_address) + " " + address,Toast.LENGTH_LONG).show();
                 }
             }
         }else if(requestCode == SEND_DETAIL){
@@ -512,7 +512,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                 }catch (Exception e){
                     e.printStackTrace();
                     CrashReporter.saveBackgroundTrace(e,galilelApplication.getPackageInfo());
-                    showErrorDialog(R.string.commit_tx_fail);
+                    showErrorDialog(getString(R.string.commit_tx_fail));
                 }
             }
         }else if(requestCode == MULTIPLE_ADDRESSES_SEND_RESULT){
@@ -548,10 +548,10 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                 } catch (TxNotFoundException e) {
                     e.printStackTrace();
                     CrashReporter.saveBackgroundTrace(e,galilelApplication.getPackageInfo());
-                    Toast.makeText(this,R.string.load_inputs_fail,Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,getString(R.string.load_inputs_fail),Toast.LENGTH_LONG).show();
                 } catch (Exception e){
                     CrashReporter.saveBackgroundTrace(e,galilelApplication.getPackageInfo());
-                    Toast.makeText(this,R.string.load_inputs_fail,Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,getString(R.string.load_inputs_fail),Toast.LENGTH_LONG).show();
                 }
             }
         }else if (requestCode == CUSTOM_FEE_RESULT){
@@ -606,16 +606,16 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private String getAmountStr(){
-        String amountStr = "0";
+        String amountStr = getString(R.string.number_0);
         if (inGalis) {
             amountStr = edit_amount.getText().toString();
         }else {
             // the value is already converted
             String valueStr = txtShowGali.getText().toString();
-            amountStr = valueStr.replace(" GALI","");
+            amountStr = valueStr.replace(" " + getString(R.string.set_currency), "");
             if(valueStr.length() > 0) {
                 if (valueStr.charAt(0) == '.') {
-                    amountStr = "0" + valueStr;
+                    amountStr = getString(R.string.number_0) + valueStr;
                 }
             }
         }
@@ -661,7 +661,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
             if (amountStr.length() < 1) throw new IllegalArgumentException("Amount not valid");
             if (amountStr.length()==1 && amountStr.equals(".")) throw new IllegalArgumentException("Amount not valid");
             if (amountStr.charAt(0)=='.'){
-                amountStr = "0"+amountStr;
+                amountStr = getString(R.string.number_0) + amountStr;
             }
 
             Coin amount = Coin.parseCoin(amountStr);
@@ -845,7 +845,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            showErrorDialog(R.string.commit_tx_fail);
+            showErrorDialog(getString(R.string.commit_tx_fail));
             return;
         }
         galilelModule.commitTx(transaction);
@@ -853,7 +853,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
         intent.setAction(ACTION_BROADCAST_TRANSACTION);
         intent.putExtra(DATA_TRANSACTION_HASH,transaction.getHash().getBytes());
         startService(intent);
-        Toast.makeText(SendActivity.this,R.string.sending_tx,Toast.LENGTH_LONG).show();
+        Toast.makeText(SendActivity.this,getString(R.string.sending_tx),Toast.LENGTH_LONG).show();
         finish();
         NavigationUtils.goBackToHome(this);
     }

@@ -41,7 +41,6 @@
                 android:layout_marginBottom="10dp"
                 android:maxLines="1"
                 android:maxLength="8"
-                android:text = ""
                 android:textColor = "@color/grey85black"
                 android:textSize = "16sp" />
 
@@ -49,7 +48,6 @@
                 android:id = "@+id/txt_local_currency"
                 android:layout_width = "wrap_content"
                 android:layout_height = "wrap_content"
-                android:text = "0"
                 android:textColor = "@color/grey35black"
                 android:textSize = "16sp" />
 
@@ -87,7 +85,6 @@
                 android:layout_marginBottom="10dp"
                 android:maxLines="1"
                 android:maxLength="8"
-                android:text = ""
                 android:textColor = "@color/grey85black"
                 android:textSize = "16sp" />
 
@@ -95,7 +92,6 @@
                 android:id = "@+id/txt_show_gali"
                 android:layout_width = "wrap_content"
                 android:layout_height = "wrap_content"
-                android:text = "0 GALI"
                 android:textColor = "@color/grey35black"
                 android:textSize = "16sp" />
 

@@ -66,7 +66,7 @@ public class RestoreActivity extends BaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuItem menuItem = menu.add(0,OPTIONS_RESTORE,0,R.string.restore_from_words);
+        MenuItem menuItem = menu.add(0,OPTIONS_RESTORE,0,getString(R.string.restore_from_words));
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -84,7 +84,7 @@ public class RestoreActivity extends BaseActivity {
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
         root = getLayoutInflater().inflate(R.layout.fragment_settings_restore, container);
-        setTitle("Restore wallet");
+        setTitle(getString(R.string.restore_wallet));
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if (getIntent()!=null){
@@ -120,16 +120,16 @@ public class RestoreActivity extends BaseActivity {
                 filenameView.setText(file.getName());
 
                 final TextView securityView = (TextView) row.findViewById(R.id.wallet_import_keys_file_row_security);
-                /*final String encryptedStr = context.getString(isEncrypted ? R.string.import_keys_dialog_file_security_encrypted
-                        : R.string.import_keys_dialog_file_security_unencrypted);
-                final String storageStr = context.getString(isExternal ? R.string.import_keys_dialog_file_security_external
-                        : R.string.import_keys_dialog_file_security_internal);
+                /*final String encryptedStr = context.getString(isEncrypted ? getString(R.string.import_keys_dialog_file_security_encrypted)
+                        : getString(R.string.import_keys_dialog_file_security_unencrypted));
+                final String storageStr = context.getString(isExternal ? getString(R.string.import_keys_dialog_file_security_external)
+                        : getString(R.string.import_keys_dialog_file_security_internal));
                 securityView.setText(encryptedStr + ", " + storageStr);*/
 
                 final TextView createdView = (TextView) row.findViewById(R.id.wallet_import_keys_file_row_created);
                 /*createdView
-                        .setText(context.getString(isExternal ? R.string.import_keys_dialog_file_created_manual
-                                : R.string.import_keys_dialog_file_created_automatic, DateUtils.getRelativeTimeSpanString(context,
+                        .setText(context.getString(isExternal ? getString(R.string.import_keys_dialog_file_created_manual)
+                                : getString(R.string.import_keys_dialog_file_created_automatic), DateUtils.getRelativeTimeSpanString(context,
                                 file.lastModified(), true)));*/
 
                 return row;
@@ -197,7 +197,7 @@ public class RestoreActivity extends BaseActivity {
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        Toast.makeText(RestoreActivity.this, R.string.cannot_restore_wallet, Toast.LENGTH_LONG).show();
+                                        Toast.makeText(RestoreActivity.this, getString(R.string.cannot_restore_wallet), Toast.LENGTH_LONG).show();
                                     }
                                 });
                             }
@@ -207,7 +207,7 @@ public class RestoreActivity extends BaseActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(RestoreActivity.this, R.string.cannot_restore_wallet, Toast.LENGTH_LONG).show();
+                                Toast.makeText(RestoreActivity.this, getString(R.string.cannot_restore_wallet), Toast.LENGTH_LONG).show();
                             }
                         });
                     } catch (Exception e) {
@@ -215,7 +215,7 @@ public class RestoreActivity extends BaseActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(RestoreActivity.this, R.string.cannot_restore_wallet, Toast.LENGTH_LONG).show();
+                                Toast.makeText(RestoreActivity.this, getString(R.string.cannot_restore_wallet), Toast.LENGTH_LONG).show();
                             }
                         });
                     }
@@ -351,7 +351,7 @@ public class RestoreActivity extends BaseActivity {
                 } else {
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
-                    Toast.makeText(this, "Permission denied to write your External storage", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getString(R.string.write_external_denied), Toast.LENGTH_SHORT).show();
                 }
                 return;
             }

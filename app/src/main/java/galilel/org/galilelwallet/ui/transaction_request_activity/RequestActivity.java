@@ -45,7 +45,7 @@ public class RequestActivity extends BaseActivity implements View.OnClickListene
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
         View root = getLayoutInflater().inflate(R.layout.fragment_transaction_request, container);
-        setTitle(R.string.payment_request);
+        setTitle(getString(R.string.payment_request));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -94,7 +94,7 @@ public class RequestActivity extends BaseActivity implements View.OnClickListene
         if (amountStr.length() == 1 && amountStr.equals("."))
             throw new IllegalArgumentException("Amount not valid");
         if (amountStr.charAt(0) == '.') {
-            amountStr = "0" + amountStr;
+            amountStr = getString(R.string.number_0) + amountStr;
         }
 
         Coin amount = Coin.parseCoin(amountStr);
@@ -159,7 +159,7 @@ public class RequestActivity extends BaseActivity implements View.OnClickListene
                 });
                 updateQr();
             }catch (Exception e){
-                Toast.makeText(getActivity(),R.string.error_generic,Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),getString(R.string.error_generic),Toast.LENGTH_SHORT).show();
                 dismiss();
                 getActivity().onBackPressed();
             }

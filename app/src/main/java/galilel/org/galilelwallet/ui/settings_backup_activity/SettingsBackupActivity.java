@@ -40,7 +40,7 @@ public class SettingsBackupActivity extends BaseActivity {
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
         root = getLayoutInflater().inflate(R.layout.fragment_settings_backup, container);
-        setTitle("Backup Wallet");
+        setTitle(getString(R.string.backup_wallet));
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         edit_password = (EditText) root.findViewById(R.id.edit_password);
@@ -77,7 +77,7 @@ public class SettingsBackupActivity extends BaseActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
-        menu.add(0,0,0, R.string.backup_words);
+        menu.add(0,0,0, getString(R.string.backup_words));
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -87,7 +87,7 @@ public class SettingsBackupActivity extends BaseActivity {
         switch (item.getItemId()) {
             case 0:
                 if (galilelModule.isWalletWatchOnly()){
-                    Toast.makeText(this,R.string.error_watch_only_mode,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,getString(R.string.error_watch_only_mode),Toast.LENGTH_SHORT).show();
                     return true;
                 }
                 Intent myIntent = new Intent(getApplicationContext(), MnemonicActivity.class);
@@ -210,7 +210,7 @@ public class SettingsBackupActivity extends BaseActivity {
                 } else {
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
-                    Toast.makeText(this, R.string.write_external_denied, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getString(R.string.write_external_denied), Toast.LENGTH_SHORT).show();
                 }
                 return;
             }

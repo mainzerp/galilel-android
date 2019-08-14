@@ -136,17 +136,17 @@ public class FragmentTxDetail extends BaseFragment implements View.OnClickListen
         if (fee!=null)
             txt_fee.setText(fee.toFriendlyString());
         else
-            txt_fee.setText(R.string.no_data_available);
+            txt_fee.setText(getString(R.string.no_data_available));
 
         if (transactionWrapper.getTransaction().getMemo()!=null && transactionWrapper.getTransaction().getMemo().length()>0){
             txt_memo.setText(transactionWrapper.getTransaction().getMemo());
         }else {
-            txt_memo.setText(R.string.tx_detail_no_memo);
+            txt_memo.setText(getString(R.string.tx_detail_no_memo));
         }
 
         txt_confirmations.setText(String.valueOf(transactionWrapper.getTransaction().getConfidence().getDepthInBlocks()));
 
-        txt_tx_weight.setText(transactionWrapper.getTransaction().unsafeBitcoinSerialize().length+" bytes");
+        txt_tx_weight.setText(transactionWrapper.getTransaction().unsafeBitcoinSerialize().length + " " + getString(R.string.tx_detail_bytes));
 
         txt_inputs.setText(getString(R.string.tx_detail_inputs,transactionWrapper.getTransaction().getInputs().size()));
 
@@ -217,7 +217,7 @@ public class FragmentTxDetail extends BaseFragment implements View.OnClickListen
 
             @Override
             protected void bindHolder(DetailOutputHolder holder, OutputUtil data, int position) {
-                holder.txt_num.setText("Position "+position);
+                holder.txt_num.setText(getString(R.string.tx_detail_position) + " " + position);
                 holder.txt_address.setText(data.getLabel());
                 holder.txt_value.setText(data.getAmount().toFriendlyString());
             }
@@ -237,7 +237,7 @@ public class FragmentTxDetail extends BaseFragment implements View.OnClickListen
                 startActivity(intent);
             } catch (TxNotFoundException e) {
                 e.printStackTrace();
-                Toast.makeText(getActivity(),R.string.detail_no_available_inputs,Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),getString(R.string.detail_no_available_inputs),Toast.LENGTH_SHORT).show();
             }
         }
     }

@@ -17,7 +17,7 @@ public class TransactionDetailActivity extends BaseActivity {
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
         getLayoutInflater().inflate(R.layout.transaction_detail_main, container);
-        setTitle("Transaction Detail");
+        setTitle(getString(R.string.tx_detail_title));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -26,7 +26,7 @@ public class TransactionDetailActivity extends BaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        /*MenuItem menuItem = menu.add(0,0,0,R.string.explorer);
+        /*MenuItem menuItem = menu.add(0,0,0,getString(R.string.explorer));
         menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);*/
         return super.onCreateOptionsMenu(menu);
     }

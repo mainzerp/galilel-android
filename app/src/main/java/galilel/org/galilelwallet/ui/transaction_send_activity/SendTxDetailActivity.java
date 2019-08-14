@@ -18,7 +18,7 @@ public class SendTxDetailActivity extends BaseActivity {
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
         super.onCreateView(savedInstanceState, container);
-        setTitle("Transaction Information");
+        setTitle(getString(R.string.tx_detail_title));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         root = getLayoutInflater().inflate(R.layout.send_tx_detail_main,container);

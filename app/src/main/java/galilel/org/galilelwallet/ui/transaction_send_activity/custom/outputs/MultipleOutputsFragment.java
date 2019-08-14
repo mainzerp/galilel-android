@@ -184,7 +184,7 @@ public class MultipleOutputsFragment extends BaseRecyclerFragment<OutputWrapper>
                         if (s.length() > 0) {
                             String amountStr = s.toString();
                             if (amountStr.charAt(0) == '.') {
-                                amountStr = "0" + amountStr;
+                                amountStr = getString(R.string.number_0) + amountStr;
                             }
                             data.setAmount(Coin.parseCoin(amountStr));
                         } else {
@@ -253,7 +253,7 @@ public class MultipleOutputsFragment extends BaseRecyclerFragment<OutputWrapper>
         if (outputWrapper.getAmount()!=null)
             amountStr = outputWrapper.getAmount().toPlainString();
         if (amountStr.equals("")){
-            Toast.makeText(getActivity(),R.string.invalid_last_amount,Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(),getString(R.string.invalid_last_amount),Toast.LENGTH_LONG).show();
             return;
         }
         Coin amount = Coin.parseCoin(amountStr);
@@ -261,7 +261,7 @@ public class MultipleOutputsFragment extends BaseRecyclerFragment<OutputWrapper>
 
         if (address==null || !galilelModule.chechAddress(address)){
             // todo: mejorar esto
-            Toast.makeText(getActivity(),R.string.invalid_input_address,Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(),getString(R.string.invalid_input_address),Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -291,7 +291,7 @@ public class MultipleOutputsFragment extends BaseRecyclerFragment<OutputWrapper>
                     OutputHolder outputHolder = (OutputHolder) getRecycler().findViewHolderForAdapterPosition(holderWaitingForAddress);
                     outputHolder.edit_address.setText(tempPubKey);
                 }catch (Exception e){
-                    Toast.makeText(getActivity(),R.string.bad_address,Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(),getString(R.string.bad_address),Toast.LENGTH_LONG).show();
                 }
             }
         }

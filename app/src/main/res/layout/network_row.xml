@@ -19,7 +19,6 @@
             android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Address"
             android:textColor="@color/darkBrown1"
             android:textSize="16sp" />
 
@@ -39,7 +38,6 @@
                     android:id="@+id/network_ip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Network"
                     android:textColor="@color/grey85black"
                     android:textSize="14sp" />
 
@@ -48,7 +46,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/grey85black"
-                    android:text="Protocol"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -64,7 +61,6 @@
                     android:id="@+id/blocks"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Blocks"
                     android:textColor="@color/grey85black"
                     android:textSize="14sp" />
 
@@ -75,7 +71,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/grey85black"
-                    android:text="Speed"
                     android:textSize="14sp" />
 
             </LinearLayout>

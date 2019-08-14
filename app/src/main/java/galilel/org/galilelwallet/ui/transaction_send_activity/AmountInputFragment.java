@@ -54,12 +54,12 @@ public class AmountInputFragment extends BaseFragment implements View.OnClickLis
         galilelRate = galilelModule.getRate(galilelApplication.getAppConf().getSelectedRateCoin());
 
         if (galilelRate != null)
-            txt_local_currency.setText("0 " + galilelRate.getCode());
+            txt_local_currency.setText(getString(R.string.number_0) + " " + galilelRate.getCode());
         else
-            txt_local_currency.setText("0");
+            txt_local_currency.setText(getString(R.string.number_0));
 
-        edit_amount.setHint("0 " + getString(R.string.set_amount_gali));
-        editCurrency.setHint("0 " + galilelRate.getCode());
+        edit_amount.setHint(getString(R.string.number_0) + " " + getString(R.string.set_currency));
+        editCurrency.setHint(getString(R.string.number_0) + " " + galilelRate.getCode());
 
         editCurrency.addTextChangedListener(new TextWatcher() {
             @Override
@@ -78,15 +78,15 @@ public class AmountInputFragment extends BaseFragment implements View.OnClickLis
                     if (s.length() > 0) {
                         String valueStr = s.toString();
                         if (valueStr.charAt(0) == '.') {
-                            valueStr = "0" + valueStr;
+                            valueStr = getString(R.string.number_0) + valueStr;
                         }
                         BigDecimal result = new BigDecimal(valueStr).divide(galilelRate.getRate(), 6, BigDecimal.ROUND_DOWN);
-                        txtShowGali.setText(result.toPlainString() + " GALI");
+                        txtShowGali.setText(result.toPlainString() + " " + getString(R.string.set_currency));
                     } else {
-                        txtShowGali.setText("0 " + galilelRate.getCode());
+                        txtShowGali.setText(getString(R.string.number_0) + " " + galilelRate.getCode());
                     }
                 }else {
-                    txtShowGali.setText(R.string.no_rate);
+                    txtShowGali.setText(getString(R.string.no_rate));
                 }
             }
         });
@@ -108,7 +108,7 @@ public class AmountInputFragment extends BaseFragment implements View.OnClickLis
                     if (galilelRate != null) {
                         String valueStr = s.toString();
                         if (valueStr.charAt(0) == '.') {
-                            valueStr = "0" + valueStr;
+                            valueStr = getString(R.string.number_0) + valueStr;
                         }
                         Coin coin = Coin.parseCoin(valueStr);
                         txt_local_currency.setText(
@@ -119,13 +119,13 @@ public class AmountInputFragment extends BaseFragment implements View.OnClickLis
                         );
                     }else {
                         // rate null -> no connection.
-                        txt_local_currency.setText(R.string.no_rate);
+                        txt_local_currency.setText(getString(R.string.no_rate));
                     }
                 }else {
                     if (galilelRate!=null)
-                        txt_local_currency.setText("0 "+galilelRate.getCode());
+                        txt_local_currency.setText(getString(R.string.number_0) + " " + galilelRate.getCode());
                     else
-                        txt_local_currency.setText(R.string.no_rate);
+                        txt_local_currency.setText(getString(R.string.no_rate));
                 }
             }
         });
@@ -137,16 +137,16 @@ public class AmountInputFragment extends BaseFragment implements View.OnClickLis
         if (edit_amount == null && editCurrency == null){
             throw new Exception("Fragment is not attached");
         }
-        String amountStr = "0";
+        String amountStr = getString(R.string.number_0);
         if (inGalis) {
             amountStr = edit_amount.getText().toString();
         }else {
             // the value is already converted
             String valueStr = txtShowGali.getText().toString();
-            amountStr = valueStr.replace(" GALI","");
+            amountStr = valueStr.replace(" " + getString(R.string.set_currency), "");
             if(valueStr.length() > 0) {
                 if (valueStr.charAt(0) == '.') {
-                    amountStr = "0" + valueStr;
+                    amountStr = getString(R.string.number_0) + valueStr;
                 }
             }
         }

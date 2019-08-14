@@ -21,7 +21,6 @@
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
             android:textColor="@color/darkBrown1"
             android:textSize="18sp" />
 
@@ -29,7 +28,6 @@
             android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Address"
             android:textSize="14sp" />
 
     </LinearLayout>

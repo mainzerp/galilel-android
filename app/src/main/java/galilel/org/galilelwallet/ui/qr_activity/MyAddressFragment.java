@@ -81,7 +81,7 @@ public class MyAddressFragment extends Fragment implements View.OnClickListener 
             }
         }catch (WriterException e){
             e.printStackTrace();
-            Toast.makeText(getActivity(),"Problem loading qr",Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(),getString(R.string.error_loading_qr),Toast.LENGTH_LONG).show();
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -113,7 +113,7 @@ public class MyAddressFragment extends Fragment implements View.OnClickListener 
         sendIntent.setAction(Intent.ACTION_SEND);
         sendIntent.putExtra(Intent.EXTRA_TEXT, address);
         sendIntent.setType("text/plain");
-        startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.share_address_text)));
+        startActivity(Intent.createChooser(sendIntent, getResources().getString(R.string.share_address_text)));
     }
 
     @Override
@@ -123,10 +123,10 @@ public class MyAddressFragment extends Fragment implements View.OnClickListener 
             share(address.toBase58());
         }else if(id == R.id.img_qr){
             copyToClipboard(getActivity(),address.toBase58());
-            Toast.makeText(v.getContext(), R.string.copy_message,Toast.LENGTH_LONG).show();
+            Toast.makeText(v.getContext(), getString(R.string.copy_message),Toast.LENGTH_LONG).show();
         }else if (id == R.id.btn_copy){
             copyToClipboard(getActivity(),address.toBase58());
-            Toast.makeText(v.getContext(), R.string.copy_message, Toast.LENGTH_LONG).show();
+            Toast.makeText(v.getContext(), getString(R.string.copy_message), Toast.LENGTH_LONG).show();
         }
     }
 }

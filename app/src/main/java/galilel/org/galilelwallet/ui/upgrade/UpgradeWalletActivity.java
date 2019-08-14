@@ -105,7 +105,7 @@ public class UpgradeWalletActivity extends BaseActivity {
                                             }
                                         }, TimeUnit.SECONDS.toMillis(3));
                                         Toast.makeText(UpgradeWalletActivity.this,
-                                                R.string.upgrade_succesfull,
+                                                getString(R.string.upgrade_succesfull),
                                                 Toast.LENGTH_LONG).show();
                                     } else {
                                         Toast.makeText(UpgradeWalletActivity.this, finalMessage, Toast.LENGTH_LONG).show();

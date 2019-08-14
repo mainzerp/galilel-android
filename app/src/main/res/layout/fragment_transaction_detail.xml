@@ -57,7 +57,6 @@
                 android:padding="8dp"
                 android:textIsSelectable="true"
                 android:background="@drawable/transaction_inputs"
-                android:text = "36 GALI"
                 android:textStyle="bold"
                 android:textColor = "@color/grey85black"
                 android:textSize = "18sp" />
@@ -79,7 +78,6 @@
                 android:padding="8dp"
                 android:textIsSelectable="true"
                 android:background="@drawable/transaction_inputs"
-                android:text = "13 Mar 2017"
                 android:textColor = "@color/grey85black"
                 android:textSize = "16sp" />
 
@@ -87,7 +85,7 @@
                 android:layout_width = "wrap_content"
                 android:layout_height = "wrap_content"
                 android:id="@+id/container_confirmations"
-                android:text = "@string/txt_detail_confirmations"
+                android:text = "@string/tx_detail_confirmations"
                 android:layout_marginBottom="10dp"
                 android:textColor = "@color/grey35black"
                 android:textSize = "14sp" />
@@ -100,7 +98,6 @@
                 android:padding="8dp"
                 android:textIsSelectable="true"
                 android:background="@drawable/transaction_inputs"
-                android:text = "45"
                 android:textColor = "@color/grey85black"
                 android:textSize = "16sp" />
 
@@ -174,7 +171,6 @@
                 android:padding="8dp"
                 android:textIsSelectable="true"
                 android:background="@drawable/transaction_inputs"
-                android:text = "Bytes"
                 android:textColor = "@color/grey85black"
                 android:textSize = "16sp" />
 

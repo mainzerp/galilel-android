@@ -64,7 +64,7 @@ public class SettingsActivity extends BaseDrawerActivity implements View.OnClick
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
         getLayoutInflater().inflate(R.layout.fragment_settings, container);
-        setTitle("Settings");
+        setTitle(getString(R.string.settings_screen_title));
 
         TextView app_version = (TextView) findViewById(R.id.app_version);
         app_version.setText(BuildConfig.VERSION_NAME);
@@ -72,7 +72,7 @@ public class SettingsActivity extends BaseDrawerActivity implements View.OnClick
         txt_network_info = (TextView) findViewById(R.id.txt_network_info);
 
         textAbout = (TextView)findViewById(R.id.text_about);
-        String text = "Made by<br> <font color=#795548>Maik Broemme</font> <br>(c) Galilel UG (haftungsbeschränkt)";
+        String text = getString(R.string.made_by) + "<br> <font color=#795548>Maik Broemme</font> <br>(c) Galilel UG (haftungsbeschränkt)";
         textAbout.setText(Html.fromHtml(text));
         // Open Backup Wallet
         buttonBackup = (Button) findViewById(R.id.btn_backup_wallet);
@@ -132,12 +132,18 @@ public class SettingsActivity extends BaseDrawerActivity implements View.OnClick
         if (!isOnForeground)return;
         txt_network_info.setText(
                 Html.fromHtml(
-                        "Network<br><font color=#795548>"+galilelModule.getConf().getNetworkParams().getId()+
-                                "</font><br>" +
-                                "Height<br><font color=#795548>"+galilelModule.getChainHeight()+"</font><br>" +
-                                "Protocol Version<br><font color=#795548>"+
-                                galilelModule.getProtocolVersion()+"</font>"
-
+                        getString(R.string.about_network) +
+                        "<br><font color=#795548>" +
+                        galilelModule.getConf().getNetworkParams().getId() +
+                        "</font><br>" +
+                        getString(R.string.about_height) +
+                        "<br><font color=#795548>" + 
+                        galilelModule.getChainHeight() +
+                        "</font><br>" +
+                        getString(R.string.about_protocol) +
+                        "<br><font color=#795548>" +
+                        galilelModule.getProtocolVersion() +
+                        "</font>"
                 )
         );
     }
@@ -191,7 +197,7 @@ public class SettingsActivity extends BaseDrawerActivity implements View.OnClick
                     @Override
                     public void onRightBtnClicked(SimpleTwoButtonsDialog dialog) {
                         galilelApplication.stopBlockchain();
-                        Toast.makeText(SettingsActivity.this,R.string.reseting_blockchain,Toast.LENGTH_LONG).show();
+                        Toast.makeText(SettingsActivity.this,getString(R.string.reseting_blockchain),Toast.LENGTH_LONG).show();
                         dialog.dismiss();
                     }
 
@@ -201,8 +207,8 @@ public class SettingsActivity extends BaseDrawerActivity implements View.OnClick
                     }
                 }
         );
-        dialog.setLeftBtnText(R.string.button_cancel)
-                .setRightBtnText(R.string.button_ok);
+        dialog.setLeftBtnText(getString(R.string.button_cancel))
+                .setRightBtnText(getString(R.string.button_ok));
         dialog.show();
     }
 

@@ -73,7 +73,7 @@ public class DonateActivity extends BaseDrawerActivity {
             if (amountStr.length() < 1) throw new IllegalArgumentException("Amount not valid");
             if (amountStr.length()==1 && amountStr.equals(".")) throw new IllegalArgumentException("Amount not valid");
             if (amountStr.charAt(0)=='.'){
-                amountStr = "0"+amountStr;
+                amountStr = getString(R.string.number_0) + amountStr;
             }
             Coin amount = Coin.parseCoin(amountStr);
             if (amount.isZero()) throw new IllegalArgumentException("Amount zero, please correct it");
@@ -90,7 +90,7 @@ public class DonateActivity extends BaseDrawerActivity {
             intent.putExtra(DATA_TRANSACTION_HASH,transaction.getHash().getBytes());
             startService(intent);
 
-            Toast.makeText(this,R.string.donation_thanks,Toast.LENGTH_LONG).show();
+            Toast.makeText(this,getString(R.string.donation_thanks),Toast.LENGTH_LONG).show();
             onBackPressed();
 
         } catch (InsufficientMoneyException e) {

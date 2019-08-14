@@ -39,7 +39,6 @@
         android:layout_marginTop="24dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:text="BIP32 wallet"
         android:gravity="center"
         android:paddingLeft="14dp"
         android:button="@drawable/selector_inputs" />

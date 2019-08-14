@@ -26,7 +26,7 @@ public class SettingsPincodeActivity extends BaseActivity implements KeyboardFra
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
         getLayoutInflater().inflate(R.layout.fragment_settings_pincode, container);
-        setTitle("Update PIN");
+        setTitle(getString(R.string.update_pin));
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         i1 = (ImageView) findViewById(R.id.imageview_circle1);
@@ -37,7 +37,7 @@ public class SettingsPincodeActivity extends BaseActivity implements KeyboardFra
         keyboardFragment = (KeyboardFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_keyboard);
         keyboardFragment.setOnKeyListener(this);
         if (reason==OLDER_PIN){
-            pincodeMessage.setText(R.string.insert_old_pin);
+            pincodeMessage.setText(getString(R.string.insert_old_pin));
         }
     }
 
@@ -53,14 +53,14 @@ public class SettingsPincodeActivity extends BaseActivity implements KeyboardFra
                     if (pincode.equals(galilelApplication.getAppConf().getPincode())){
                         clear();
                         reason = NEW_PIN;
-                        pincodeMessage.setText(R.string.insert_new_pin);
+                        pincodeMessage.setText(getString(R.string.insert_new_pin));
                     }else {
                         clear();
-                        Toast.makeText(this,R.string.invalid_pincode,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this,getString(R.string.invalid_pincode),Toast.LENGTH_SHORT).show();
                     }
                 }else {
                     galilelApplication.getAppConf().savePincode(pincode);
-                    Toast.makeText(this,R.string.pincode_saved,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,getString(R.string.pincode_saved),Toast.LENGTH_SHORT).show();
                     onBackPressed();
                 }
             }

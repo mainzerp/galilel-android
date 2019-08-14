@@ -189,7 +189,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:textColor="@color/grey85black"
-                    tools:text="USD"
                     android:gravity="right"
                     android:padding="0dp"
                     android:textSize="16sp" />
@@ -299,8 +298,7 @@
                     android:id="@+id/txt_network_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:text="174322" />
+                    android:gravity="right" />
 
             </LinearLayout>
 
@@ -319,8 +317,7 @@
                 <TextView
                     android:id="@+id/app_version"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1.12" />
+                    android:layout_height="wrap_content" />
 
                 <TextView
                     android:id="@+id/text_about"

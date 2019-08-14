@@ -84,8 +84,7 @@
                     android:background="@color/transparent"
                     android:src="@drawable/ic_qr_code"
                     android:layout_gravity="center"
-                    android:layout_marginRight="5dp"
-                    android:text="Button" />
+                    android:layout_marginRight="5dp" />
 
             </LinearLayout>
 

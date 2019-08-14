@@ -26,7 +26,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/txt_title"
             android:layout_toRightOf="@+id/img_alert"
-            tools:text="Login failed"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
             android:textSize="18sp"
@@ -49,7 +48,6 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:textAlignment="center"
-        tools:text="Please enter user and password"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp" />
 
@@ -57,7 +55,6 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:id="@+id/btn_ok"
-        android:text="OK"
         android:gravity="center"
         android:textColor="@color/galilelWhite"
         android:background="@color/walletWarning" />

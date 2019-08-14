@@ -25,8 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txt_total_amount"
-            android:textColor = "@color/grey85black"
-            android:text="3.13 GALI" />
+            android:textColor = "@color/grey85black" />
     </LinearLayout>
 
     <LinearLayout

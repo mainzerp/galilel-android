@@ -39,8 +39,7 @@
                 android:paddingTop="9dp"
                 android:paddingEnd="9dp"
                 android:paddingStart="9dp"
-                android:textSize="14sp"
-                tools:text="1p2csad3113rgdv223r31edwqsa213dw213caxsad23" />
+                android:textSize="14sp" />
 
         </LinearLayout>
 

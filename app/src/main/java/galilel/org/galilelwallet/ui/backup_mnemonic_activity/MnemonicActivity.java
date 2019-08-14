@@ -40,7 +40,7 @@ public class MnemonicActivity extends BaseActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
         getLayoutInflater().inflate(R.layout.security_words_show, container);
-        setTitle("Mnemonic code");
+        setTitle(getString(R.string.backup_words));
 
         container_continue_btn = findViewById(R.id.container_continue_btn);
         if (!isInit){
@@ -78,7 +78,7 @@ public class MnemonicActivity extends BaseActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
-        /*MenuItem menuItem = menu.add(0,0,0, R.string.share);
+        /*MenuItem menuItem = menu.add(0,0,0, getString(R.string.share));
         menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);*/
         return super.onCreateOptionsMenu(menu);
     }

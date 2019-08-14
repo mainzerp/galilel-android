@@ -202,7 +202,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/check_bip32"
         android:layout_below="@+id/txt_bip32_message"
-        android:text="BIP32 wallet" 
         android:paddingLeft="14dp"
         android:button="@drawable/selector_inputs" />
 

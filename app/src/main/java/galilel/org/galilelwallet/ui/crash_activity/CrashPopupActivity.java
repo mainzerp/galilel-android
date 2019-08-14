@@ -59,7 +59,7 @@ public class CrashPopupActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.report_issue_activity_dialog);
         this.setFinishOnTouchOutside(false);
 
-        ((TextView) findViewById(R.id.report_issue_dialog_message)).setText(R.string.report_crash_title);
+        ((TextView) findViewById(R.id.report_issue_dialog_message)).setText(getString(R.string.report_crash_title));
         txt_send = (TextView) findViewById(R.id.txt_send);
         txt_cancel = (TextView) findViewById(R.id.txt_cancel);
         viewDescription = (EditText) findViewById(R.id.report_issue_dialog_description);

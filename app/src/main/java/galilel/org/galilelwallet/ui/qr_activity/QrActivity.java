@@ -16,7 +16,7 @@ public class QrActivity extends BaseActivity {
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
         super.onCreateView(savedInstanceState, container);;
         root = getLayoutInflater().inflate(R.layout.qr_activity,container,true);
-        setTitle(R.string.my_address);
+        setTitle(getString(R.string.my_address));
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

@@ -10,7 +10,7 @@ public class InputsDetailActivity extends BaseActivity {
 
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
-        setTitle("Inputs Detail");
+        setTitle(getString(R.string.tx_input_title));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getLayoutInflater().inflate(R.layout.inputs_tx_detail_main,container);

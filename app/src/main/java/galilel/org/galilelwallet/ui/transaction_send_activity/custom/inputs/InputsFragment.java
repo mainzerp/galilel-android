@@ -64,7 +64,7 @@ public class InputsFragment extends BaseRecyclerFragment<InputsFragment.InputSel
             setEmptyView(R.drawable.img_coins_empty);
         } catch (TxNotFoundException e) {
             e.printStackTrace();
-            Toast.makeText(getActivity(),R.string.invalid_inputs,Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(),getString(R.string.invalid_inputs),Toast.LENGTH_SHORT).show();
             getActivity().onBackPressed();
         }
 
@@ -90,7 +90,7 @@ public class InputsFragment extends BaseRecyclerFragment<InputsFragment.InputSel
                 getActivity().finish();
                 return true;
             }else {
-                Toast.makeText(getActivity(),R.string.no_coin_selected,Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),getString(R.string.no_coin_selected),Toast.LENGTH_SHORT).show();
             }
         }
         return super.onOptionsItemSelected(item);
