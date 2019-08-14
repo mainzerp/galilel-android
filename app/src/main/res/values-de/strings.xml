@@ -5,7 +5,7 @@
     <string name="action_add">Kontakt hinzufügen</string>
     <string name="action_qr">QR-Code</string>
     <string name="action_scan">Scanner</string>
-    <string name="add_address">Sendebetrag eingeben</string>
+    <string name="add_address">Adresse hier eingeben</string>
     <string name="add_all">Alles hinzufügen</string>
     <string name="add_memo">Monatliche Zahlung</string>
     <string name="add_pin">PIN erstellen</string>
@@ -217,8 +217,8 @@
     <string name="set_address">Adresse oder Kontaktname eingeben</string>
     <string name="set_amount">Betrag eingeben</string>
     <string name="set_currency">GALI</string>
-    <string name="set_description">Eine Beschreibung hinzufügen</string>
-    <string name="set_name">Name hinzufügen</string>
+    <string name="set_description">Eine Beschreibung hinzufügen (optional)</string>
+    <string name="set_name">Name hier hinzufügen</string>
     <string name="settings_change_trusted_node">Server wechseln</string>
     <string name="settings_export_pub_key">Konto exportieren</string>
     <string name="settings_import_xpub">Nur Beobachtermodus</string>
