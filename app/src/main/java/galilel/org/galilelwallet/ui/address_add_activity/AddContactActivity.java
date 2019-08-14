@@ -41,7 +41,7 @@ public class AddContactActivity extends BaseActivity implements View.OnClickList
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
         root = getLayoutInflater().inflate(R.layout.fragment_new_address, container);
-        setTitle("New Address Label");
+        setTitle(getString(R.string.contact_title));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         edit_name = (EditText) root.findViewById(R.id.edit_name);
@@ -88,20 +88,20 @@ public class AddContactActivity extends BaseActivity implements View.OnClickList
                     if (name.length() > 0 && address.length() > 0) {
                         try {
                             if (!galilelModule.chechAddress(address)) {
-                                Toast.makeText(this, R.string.invalid_input_address, Toast.LENGTH_LONG).show();
+                                Toast.makeText(this, getString(R.string.invalid_input_address), Toast.LENGTH_LONG).show();
                                 return true;
                             }
                             AddressLabel addressLabel = new AddressLabel(name);
                             addressLabel.addAddress(address);
                             galilelModule.saveContact(addressLabel);
-                            Toast.makeText(this, "AddressLabel saved", Toast.LENGTH_LONG).show();
+                            Toast.makeText(this, getString(R.string.contact_saved), Toast.LENGTH_LONG).show();
                             onBackPressed();
                         } catch (ContactAlreadyExistException e) {
-                            Toast.makeText(this, R.string.contact_already_exist, Toast.LENGTH_LONG).show();
+                            Toast.makeText(this, getString(R.string.contact_already_exist), Toast.LENGTH_LONG).show();
                         }
                     }
                 }else {
-                    Toast.makeText(this,R.string.invalid_input_address,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,getString(R.string.invalid_input_address),Toast.LENGTH_SHORT).show();
                 }
                 return true;
             default:
@@ -145,7 +145,7 @@ public class AddContactActivity extends BaseActivity implements View.OnClickList
                     final String tempPubKey = usedAddress;
                     edit_address.setText(tempPubKey);
                 }catch (Exception e){
-                    Toast.makeText(this,"Bad address",Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,getString(R.string.bad_address),Toast.LENGTH_LONG).show();
                 }
             }
         }

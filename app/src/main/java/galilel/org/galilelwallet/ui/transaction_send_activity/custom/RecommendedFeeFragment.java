@@ -25,7 +25,7 @@ public class RecommendedFeeFragment extends BaseFragment {
         root = inflater.inflate(R.layout.recommended_fee_fragment,container, false);
         seekBar = (SeekBar) root.findViewById(R.id.seekbar);
         txt_amount_per_kb = (TextView) root.findViewById(R.id.txt_amount_per_kb);
-        txt_amount_per_kb.setText(getString(R.string.fee_per_kb,Transaction.REFERENCE_DEFAULT_MIN_TX_FEE.toPlainString()));
+        txt_amount_per_kb.setText(Transaction.REFERENCE_DEFAULT_MIN_TX_FEE.toPlainString() + " " + getString(R.string.fee_per_kb));
         return root;
     }
 

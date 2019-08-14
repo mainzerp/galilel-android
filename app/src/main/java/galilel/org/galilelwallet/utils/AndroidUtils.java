@@ -61,7 +61,7 @@ public class AndroidUtils {
             context.startActivity(Intent.createChooser(intent, maiñChooser));
             logger.info("invoked chooser for sending issue report");
         } catch (final Exception x) {
-            Toast.makeText(context, R.string.report_issue_dialog_mail_intent_failed, Toast.LENGTH_LONG).show();
+            Toast.makeText(context, context.getString(R.string.report_issue_dialog_mail_intent_failed), Toast.LENGTH_LONG).show();
             logger.error("report issue failed", x);
         }
     }

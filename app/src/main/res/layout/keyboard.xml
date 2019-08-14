@@ -30,7 +30,7 @@
             android:scaleType="centerInside"
             android:textColor="@color/grey85black"
             android:textSize="24sp"
-            android:text="@string/number_one"
+            android:text="@string/number_1"
             android:textIsSelectable="false" />
 
         <TextView
@@ -45,7 +45,7 @@
             android:scaleType="centerInside"
             android:textColor="@color/grey85black"
             android:textSize="24sp"
-            android:text="@string/number_two"
+            android:text="@string/number_2"
             android:textIsSelectable="false" />
 
         <TextView
@@ -59,7 +59,7 @@
             android:scaleType="centerInside"
             android:textColor="@color/grey85black"
             android:textSize="24sp"
-            android:text="@string/number_three"
+            android:text="@string/number_3"
             android:textIsSelectable="false" />
     </TableRow>
 
@@ -82,7 +82,7 @@
             android:scaleType="centerInside"
             android:textColor="@color/grey85black"
             android:textSize="24sp"
-            android:text="@string/number_four"
+            android:text="@string/number_4"
             android:textIsSelectable="false" />
 
         <TextView
@@ -97,7 +97,7 @@
             android:scaleType="centerInside"
             android:textColor="@color/grey85black"
             android:textSize="24sp"
-            android:text="@string/number_five"
+            android:text="@string/number_5"
             android:textIsSelectable="false" />
 
         <TextView
@@ -111,7 +111,7 @@
             android:scaleType="centerInside"
             android:textColor="@color/grey85black"
             android:textSize="24sp"
-            android:text="@string/number_six"
+            android:text="@string/number_6"
             android:textIsSelectable="false" />
     </TableRow>
 
@@ -134,7 +134,7 @@
             android:scaleType="centerInside"
             android:textColor="@color/grey85black"
             android:textSize="24sp"
-            android:text="@string/number_seven"
+            android:text="@string/number_7"
             android:textIsSelectable="false" />
 
         <TextView
@@ -147,7 +147,7 @@
             android:paddingBottom="18dp"
             android:paddingTop="18dp"
             android:scaleType="centerInside"
-            android:text="@string/number_eight"
+            android:text="@string/number_8"
             android:textColor="@color/grey85black"
             android:textIsSelectable="false"
             android:textSize="24sp" />
@@ -163,7 +163,7 @@
             android:scaleType="centerInside"
             android:textColor="@color/grey85black"
             android:textSize="24sp"
-            android:text="@string/number_nine"
+            android:text="@string/number_9"
             android:textIsSelectable="false" />
     </TableRow>
 
@@ -199,7 +199,7 @@
             android:scaleType="centerInside"
             android:textColor="@color/grey85black"
             android:textSize="24sp"
-            android:text="@string/number_zero"
+            android:text="@string/number_0"
             android:textIsSelectable="false" />
 
         <ImageView

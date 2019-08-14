@@ -42,7 +42,7 @@ public class StartNodeActivity extends BaseActivity {
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
 
         getLayoutInflater().inflate(R.layout.fragment_start_node, container);
-        setTitle(R.string.select_node);
+        setTitle(getString(R.string.select_node));
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

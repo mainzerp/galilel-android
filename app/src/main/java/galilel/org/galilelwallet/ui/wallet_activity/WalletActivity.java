@@ -103,7 +103,7 @@ public class WalletActivity extends BaseDrawerActivity {
 
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
-        setTitle(R.string.my_wallet);
+        setTitle(getString(R.string.my_wallet));
         root = getLayoutInflater().inflate(R.layout.fragment_wallet, container);
         View containerHeader = getLayoutInflater().inflate(R.layout.fragment_gali_amount,header_container);
         header_container.setVisibility(View.VISIBLE);
@@ -119,7 +119,7 @@ public class WalletActivity extends BaseDrawerActivity {
             @Override
             public void onClick(View v) {
                 if (galilelModule.isWalletWatchOnly()){
-                    Toast.makeText(v.getContext(),R.string.error_watch_only_mode,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(v.getContext(),getString(R.string.error_watch_only_mode),Toast.LENGTH_SHORT).show();
                     return;
                 }
                 startActivity(new Intent(v.getContext(), SendActivity.class));
@@ -169,14 +169,7 @@ public class WalletActivity extends BaseDrawerActivity {
                     Intent intent = UpgradeWalletActivity.createStartIntent(
                             this,
                             getString(R.string.upgrade_wallet),
-                            "An old wallet version with bip32 key was detected, in order to upgrade the wallet your coins are going to be sweeped" +
-                                    " to a new wallet with bip44 account.\n\nThis means that your current mnemonic code and" +
-                                    " backup file are not going to be valid anymore, please write the mnemonic code in paper " +
-                                    "or export the backup file again to be able to backup your coins." +
-                                    "\n\nPlease wait and not close this screen. The upgrade + blockchain sychronization could take a while."
-                                    +"\n\nTip: If this screen is closed for user's mistake before the upgrade is finished you can find two backups files in the 'Download' folder" +
-                                    " with prefix 'old' and 'upgrade' to be able to continue the restore manually."
-                                    + "\n\nThanks!",
+                            getString(R.string.wallet_update_needed),
                             "sweepBip32"
                     );
                     startActivity(intent);
@@ -326,7 +319,7 @@ public class WalletActivity extends BaseDrawerActivity {
                     DialogsUtil.showCreateAddressLabelDialog(this,usedAddress);
                 }catch (Exception e){
                     e.printStackTrace();
-                    Toast.makeText(this,"Bad address",Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,getString(R.string.bad_address),Toast.LENGTH_LONG).show();
                 }
             }
         }
@@ -344,9 +337,9 @@ public class WalletActivity extends BaseDrawerActivity {
 
     private void updateBalance() {
         Coin availableBalance = galilelModule.getAvailableBalanceCoin();
-        txt_value.setText(!availableBalance.isZero()?availableBalance.toFriendlyString():"0 GALI");
+        txt_value.setText(!availableBalance.isZero()?availableBalance.toFriendlyString():getString(R.string.number_0) + " " + getString(R.string.set_currency));
         Coin unnavailableBalance = galilelModule.getUnnavailableBalanceCoin();
-        txt_unnavailable.setText(!unnavailableBalance.isZero()?unnavailableBalance.toFriendlyString():"0 GALI");
+        txt_unnavailable.setText(!unnavailableBalance.isZero()?unnavailableBalance.toFriendlyString():getString(R.string.number_0) + " " + getString(R.string.set_currency));
         if (galilelRate == null)
             galilelRate = galilelModule.getRate(galilelApplication.getAppConf().getSelectedRateCoin());
         if (galilelRate!=null) {
@@ -357,7 +350,7 @@ public class WalletActivity extends BaseDrawerActivity {
                     + " "+galilelRate.getCode()
             );
         }else {
-            txt_local_currency.setText("0");
+            txt_local_currency.setText(getString(R.string.number_0));
         }
     }
 

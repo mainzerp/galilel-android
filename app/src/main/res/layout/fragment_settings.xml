@@ -77,23 +77,6 @@
                 android:text="@string/settings_export_pub_key" />
 
             <Button
-                android:id="@+id/btn_sweep_wallet"
-                android:visibility="gone"
-                android:background="@drawable/settings_items"
-                android:stateListAnimator="@null"
-                android:padding="8dp"
-                android:height="40dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="6dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:textColor="@color/grey85black"
-                android:textSize="16sp"
-                android:textStyle="normal"
-                android:text="@string/settings_sweep_wallet" />
-
-            <Button
                 android:id="@+id/btn_import_xpub"
                 android:background="@drawable/settings_items"
                 android:stateListAnimator="@null"
@@ -206,7 +189,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:textColor="@color/grey85black"
-                    tools:text="USD"
                     android:gravity="right"
                     android:padding="0dp"
                     android:textSize="16sp" />
@@ -316,8 +298,7 @@
                     android:id="@+id/txt_network_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:text="174322" />
+                    android:gravity="right" />
 
             </LinearLayout>
 
@@ -336,8 +317,7 @@
                 <TextView
                     android:id="@+id/app_version"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1.12" />
+                    android:layout_height="wrap_content" />
 
                 <TextView
                     android:id="@+id/text_about"

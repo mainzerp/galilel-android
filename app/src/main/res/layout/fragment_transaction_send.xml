@@ -57,16 +57,13 @@
                         android:layout_marginBottom="10dp"
                         android:maxLines="1"
                         android:maxLength="8"
-                        android:hint="@string/set_amount_gali"
-                        android:text = ""
                         android:textColor = "@color/grey85black"
-                        android:textSize = "20sp" />
+                        android:textSize = "16sp" />
 
                     <TextView
                         android:id = "@+id/txt_local_currency"
                         android:layout_width = "wrap_content"
                         android:layout_height = "wrap_content"
-                        android:text = "0"
                         android:textColor = "@color/grey85black"
                         android:textSize = "16sp" />
 
@@ -104,16 +101,13 @@
                         android:layout_marginBottom="10dp"
                         android:maxLines="1"
                         android:maxLength="8"
-                        android:hint="@string/set_amount_usd"
-                        android:text = ""
                         android:textColor = "@color/grey85black"
-                        android:textSize = "20sp" />
+                        android:textSize = "16sp" />
 
                     <TextView
                         android:id = "@+id/txt_show_gali"
                         android:layout_width = "wrap_content"
                         android:layout_height = "wrap_content"
-                        android:text = "0 GALI"
                         android:textColor = "@color/grey85black"
                         android:textSize = "16sp" />
 
@@ -157,7 +151,6 @@
                     android:id="@+id/txt_multiple_outputs"
                     android:background="@drawable/transaction_inputs"
                     android:layout_marginBottom="20dp"
-                    tools:text="Sending to 5 different addresses"
                     android:gravity="center"
                     android:padding="7dp"
                     android:visibility="gone"
@@ -185,7 +178,6 @@
                         android:background="@color/transparent"
                         android:textCursorDrawable="@drawable/color_cursor"
                         android:hint="@string/set_address"
-                        android:text = ""
                         android:textColor = "@color/grey85black"
                         android:textSize = "14.5sp"
                         android:layout_alignParentBottom="true" />
@@ -198,8 +190,7 @@
                         android:background="@android:color/transparent"
                         android:src="@drawable/ic_qr_code"
                         android:layout_gravity="center"
-                        android:layout_marginRight="5dp"
-                        android:text="Button" />
+                        android:layout_marginRight="5dp" />
 
                 </LinearLayout>
 
@@ -224,7 +215,6 @@
                     android:layout_marginBottom="10dp"
                     android:maxLines="1"
                     android:hint="@string/set_description"
-                    android:text = ""
                     android:textColor = "@color/grey85black"
                     android:textSize = "15sp" />
 
@@ -308,8 +298,7 @@
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_swap"
                 android:layout_gravity="center"
-                android:layout_marginRight="5dp"
-                android:text="Button" />
+                android:layout_marginRight="5dp" />
 
         </RelativeLayout>
 

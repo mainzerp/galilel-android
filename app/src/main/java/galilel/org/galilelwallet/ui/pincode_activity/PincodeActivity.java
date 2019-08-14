@@ -46,7 +46,7 @@ public class PincodeActivity extends BaseActivity implements KeyboardFragment.on
         }
 
         getLayoutInflater().inflate(R.layout.fragment_pincode, container);
-        setTitle("Create Pin");
+        setTitle(getString(R.string.add_pin));
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -89,7 +89,7 @@ public class PincodeActivity extends BaseActivity implements KeyboardFragment.on
 
                     if (!checkPin) {
                         galilelApplication.getAppConf().savePincode(pincode);
-                        Toast.makeText(this, R.string.pincode_saved, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, getString(R.string.pincode_saved), Toast.LENGTH_SHORT).show();
                         goNext();
                     }else {
                         // check pin and return result
@@ -98,7 +98,7 @@ public class PincodeActivity extends BaseActivity implements KeyboardFragment.on
                             setResult(Activity.RESULT_OK, intent);
                             finish();
                         }else {
-                            Toast.makeText(this,R.string.bad_pin_code,Toast.LENGTH_LONG).show();
+                            Toast.makeText(this,getString(R.string.bad_pin_code),Toast.LENGTH_LONG).show();
                             clear();
                         }
                     }

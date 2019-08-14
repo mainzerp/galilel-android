@@ -90,7 +90,7 @@ public class DialogsUtil {
         final EditText editHost = (EditText) dialogView.findViewById(R.id.hostText);
         final EditText editTcp = (EditText) dialogView.findViewById(R.id.tcpText);
         final EditText editSsl = (EditText) dialogView.findViewById(R.id.sslText);
-        nodeDialog.setTitle("Add your Node");
+        nodeDialog.setTitle(R.string.dialog_node_add_title);
         nodeDialog.setView(dialogView);
         nodeDialog.setPositiveButton("Add Node", new DialogInterface.OnClickListener() {
 
@@ -171,7 +171,7 @@ public class DialogsUtil {
 
     public static void showCreateAddressLabelDialog(final Context context, String address){
         final DialogBuilder dialog = DialogBuilder.warn(context, R.string.scan_result_address_title);
-        dialog.setMessage(address+"\n\nCreate contact?");
+        dialog.setMessage(address + "\n\n" + context.getString(R.string.dialog_contact_create));
         final String tempPubKey = address;
         DialogInterface.OnClickListener rightListener = new DialogInterface.OnClickListener() {
             @Override

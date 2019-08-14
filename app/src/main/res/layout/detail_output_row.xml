@@ -13,7 +13,6 @@
         android:paddingTop="3dp"
         android:paddingEnd="8dp"
         android:paddingStart="8dp"
-        android:text = "Address 1"
         android:textColor = "@color/grey35black"
         android:textSize = "14sp" />
 
@@ -24,8 +23,6 @@
         android:paddingTop="3dp"
         android:paddingEnd="8dp"
         android:paddingStart="8dp"
-        tools:text = "1FfmbHfnpaZjKFvyi1okTjJJusN455paPH"
-        android:hint="Error"
         android:textColor = "@color/grey85black"
         android:textSize = "15sp" />
 
@@ -37,7 +34,6 @@
         android:paddingStart="8dp"
         android:paddingBottom="3dp"
         android:background="@drawable/transaction_inputs"
-        android:text = "40 GALI"
         android:textColor = "@color/grey35black"
         android:textSize = "14sp" />
 

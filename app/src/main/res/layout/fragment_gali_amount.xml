@@ -32,7 +32,6 @@
             android:layout_height = "wrap_content"
             android:layout_centerHorizontal="true"
             android:paddingBottom="10dp"
-            android:text = "13.135 GALI"
             android:textColor = "@color/galilelWhite"
             android:textSize = "24sp" />
 
@@ -42,7 +41,6 @@
             android:id = "@+id/txt_local_currency"
             android:layout_width = "wrap_content"
             android:layout_height = "wrap_content"
-            tools:text = "14710 USD"
             android:textColor = "@color/galilelWhite"
             android:textSize = "16sp"
             android:paddingBottom="20dp" />
@@ -70,7 +68,6 @@
                 android:id = "@+id/txt_unnavailable"
                 android:layout_width = "wrap_content"
                 android:layout_height = "wrap_content"
-                android:text = "Unspendable: 0"
                 android:textColor = "@color/lightBrown3"
                 android:textSize = "14sp" />
 

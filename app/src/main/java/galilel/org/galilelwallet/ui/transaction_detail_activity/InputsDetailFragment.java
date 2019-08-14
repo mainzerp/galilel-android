@@ -45,7 +45,7 @@ public class InputsDetailFragment extends BaseRecyclerFragment<InputWrapper> {
             setSwipeRefresh(false);
         } catch (TxNotFoundException e) {
             e.printStackTrace();
-            Toast.makeText(getActivity(), R.string.invalid_inputs,Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), getString(R.string.invalid_inputs),Toast.LENGTH_SHORT).show();
             getActivity().onBackPressed();
         }
     }
@@ -73,7 +73,7 @@ public class InputsDetailFragment extends BaseRecyclerFragment<InputWrapper> {
 
             @Override
             protected void bindHolder(final FragmentTxDetail.DetailOutputHolder holder, final InputWrapper data, int position) {
-                holder.txt_num.setText("Position "+position);
+                holder.txt_num.setText(getString(R.string.tx_detail_position) + " " + position);
                 holder.txt_address.setText(data.getLabel(GalilelContext.NETWORK_PARAMETERS));
                 holder.txt_value.setText(data.getUnspent().getValue().toFriendlyString());
             }

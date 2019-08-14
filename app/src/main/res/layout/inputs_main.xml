@@ -30,8 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_amount"
-            android:text="3.13 GALI" />
+            android:id="@+id/txt_amount" />
 
     </LinearLayout>
 

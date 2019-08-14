@@ -39,7 +39,7 @@ public class ChangeAddressActivity extends BaseActivity {
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
         super.onCreateView(savedInstanceState, container);
-        setTitle(R.string.option_change_address);
+        setTitle(getString(R.string.option_change_address));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         root = getLayoutInflater().inflate(R.layout.change_address_main,container);
@@ -92,11 +92,11 @@ public class ChangeAddressActivity extends BaseActivity {
     public void disableAddress(){
         edit_address.setEnabled(false);
         edit_address.setText("");
-        edit_address.setHint(R.string.origin_address);
+        edit_address.setHint(getString(R.string.origin_address));
     }
 
     public void enableAddress(){
-        edit_address.setHint(R.string.add_address);
+        edit_address.setHint(getString(R.string.add_address));
         edit_address.setEnabled(true);
     }
 
@@ -157,7 +157,7 @@ public class ChangeAddressActivity extends BaseActivity {
                     }
                     edit_address.setText(usedAddress);
                 }catch (Exception e){
-                    Toast.makeText(ChangeAddressActivity.this,R.string.bad_address,Toast.LENGTH_LONG).show();
+                    Toast.makeText(ChangeAddressActivity.this,getString(R.string.bad_address),Toast.LENGTH_LONG).show();
                 }
             }
         }

@@ -34,10 +34,10 @@ public class GalilelActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             if (action.equals(ACTION_TRUSTED_PEER_CONNECTION_FAIL)) {
-                SimpleTextDialog simpleTextDialog = DialogsUtil.buildSimpleErrorTextDialog(context,R.string.title_no_trusted_peer_connection,R.string.message_no_trusted_peer_connection);
+                SimpleTextDialog simpleTextDialog = DialogsUtil.buildSimpleErrorTextDialog(context,getString(R.string.title_no_trusted_peer_connection),getString(R.string.message_no_trusted_peer_connection));
                 simpleTextDialog.show(getFragmentManager(),"fail_node_connection_dialog");
             }else if (action.equals(ACTION_STORED_BLOCKCHAIN_ERROR)){
-                SimpleTextDialog simpleTextDialog = DialogsUtil.buildSimpleErrorTextDialog(context,R.string.title_blockstore_error,R.string.message_blockstore_error);
+                SimpleTextDialog simpleTextDialog = DialogsUtil.buildSimpleErrorTextDialog(context,getString(R.string.title_blockstore_error),getString(R.string.message_blockstore_error));
                 simpleTextDialog.show(getFragmentManager(),"blockstore_error_dialog");
             }
         }

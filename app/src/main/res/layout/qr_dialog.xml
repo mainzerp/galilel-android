@@ -37,7 +37,6 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:id="@+id/btn_ok"
-        android:text="OK"
         android:gravity="center"
         android:textColor="@color/darkBrown1"
         android:background="@drawable/button_brown" />

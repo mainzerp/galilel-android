@@ -11,7 +11,6 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Public key"
         android:textSize="14sp"
         android:paddingBottom="9dp"
         android:id="@+id/txt_title"
@@ -26,8 +25,7 @@
         android:paddingBottom="9dp"
         android:layout_below="@+id/txt_title"
         android:textSize="18sp"
-        android:textColor="@color/grey85black"
-        tools:text="xpub" />
+        android:textColor="@color/grey85black" />
 
     <TextView
         android:layout_width="match_parent"
@@ -36,7 +34,6 @@
         android:paddingBottom="9dp"
         android:textColor="@color/walletInputSend"
         android:textSize="14sp"
-        tools:text="@string/warn_sharing_pub_key"
         android:layout_below="@+id/txt_key" />
 
     <TextView
@@ -46,8 +43,7 @@
         android:layout_below="@+id/txt_warn"
         android:textColor="@color/grey35black"
         android:textSize="14sp"
-        android:paddingBottom="9dp"
-        tools:text="Derivation path (BIP32)" />
+        android:paddingBottom="9dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -56,8 +52,7 @@
         android:paddingBottom="9dp"
         android:textSize="14sp"
         android:textColor="@color/grey35black"
-        android:layout_below="@+id/txt_title_derivation_path"
-        tools:text="M / 44' / 119' / 0' " />
+        android:layout_below="@+id/txt_title_derivation_path" />
 
     <ImageView
         android:id="@+id/img_qr"

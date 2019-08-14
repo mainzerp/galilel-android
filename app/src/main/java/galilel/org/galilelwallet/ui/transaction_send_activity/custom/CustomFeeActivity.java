@@ -25,7 +25,7 @@ public class CustomFeeActivity extends BaseActivity {
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
         root = getLayoutInflater().inflate(R.layout.custom_fee_main, container);
-        setTitle("Custom fee");
+        setTitle(getString(R.string.option_custom_fee));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 

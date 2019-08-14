@@ -11,7 +11,7 @@ public class SettingsRestoreActivity extends BaseActivity {
     @Override
     protected void onCreateView(Bundle savedInstanceState,ViewGroup container) {
         getLayoutInflater().inflate(R.layout.fragment_settings_restore, container);
-        setTitle("Restore Wallet");
+        setTitle(getString(R.string.restore_wallet));
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

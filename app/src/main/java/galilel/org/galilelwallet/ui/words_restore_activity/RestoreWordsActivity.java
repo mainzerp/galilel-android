@@ -68,7 +68,7 @@ public class RestoreWordsActivity extends BaseActivity {
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
         root = getLayoutInflater().inflate(R.layout.security_words_restore, container);
 
-        setTitle(R.string.restore_mnemonic_screen_title);
+        setTitle(getString(R.string.restore_mnemonic_screen_title));
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         viewPager = (ViewPager) findViewById(R.id.view_pager);
@@ -189,8 +189,8 @@ public class RestoreWordsActivity extends BaseActivity {
 
                 SimpleTwoButtonsDialog dialog = DialogsUtil.buildSimpleTwoBtnsDialog(
                         this,
-                        R.string.restore_mnemonic_title,
-                        R.string.restore_mnemonic_dialog_body,
+                        getString(R.string.restore_mnemonic_title),
+                        getString(R.string.restore_mnemonic_dialog_body),
                         new SimpleTwoButtonsDialog.SimpleTwoBtnsDialogListener() {
                             @Override
                             public void onRightBtnClicked(SimpleTwoButtonsDialog dialog) {

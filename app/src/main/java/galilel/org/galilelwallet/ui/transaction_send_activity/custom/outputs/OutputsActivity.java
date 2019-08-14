@@ -35,7 +35,7 @@ public class OutputsActivity extends BaseActivity {
 
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
-        setTitle(R.string.multi_send_activity_title);
+        setTitle(getString(R.string.multi_send_activity_title));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -88,7 +88,7 @@ public class OutputsActivity extends BaseActivity {
                 Bundle bundle = new Bundle();
                 outputWrappers = multiple_addresses_fragment.getList();
                 if (outputWrappers.isEmpty()){
-                    Toast.makeText(this,R.string.invalid_inputs,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,getString(R.string.invalid_inputs),Toast.LENGTH_SHORT).show();
                     return true;
                 }
                 // save addresses labels in db

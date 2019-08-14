@@ -26,7 +26,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/txt_title"
             android:layout_toRightOf="@+id/img_alert"
-            android:text="Login failed"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
             android:paddingRight="12dp"
@@ -45,7 +44,6 @@
         android:layout_marginTop="16dp"
         android:textSize="15sp"
         android:textAlignment="center"
-        android:text="Are you sure?"
         android:layout_marginBottom="16dp" />
 
     <LinearLayout
@@ -58,7 +56,6 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="No"
             android:gravity="center"
             android:textColor="@color/galilelWhite"
             android:id="@+id/btn_left"
@@ -77,7 +74,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/btn_right"
-            android:text="Yes"
             android:textColor="@color/galilelWhite"
             android:gravity="center"
             android:layout_weight="1" />

@@ -31,7 +31,7 @@ public class SettingsWatchOnly extends BaseActivity {
 
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
-        setTitle(R.string.screen_title_watch_only);
+        setTitle(getString(R.string.screen_title_watch_only));
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         root = getLayoutInflater().inflate(R.layout.import_watch_only_main,container);
@@ -79,7 +79,7 @@ public class SettingsWatchOnly extends BaseActivity {
                 showError();
             }
         }else {
-            Toast.makeText(this,R.string.invalid_inputs,Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,getString(R.string.invalid_inputs),Toast.LENGTH_SHORT).show();
         }
     }
 

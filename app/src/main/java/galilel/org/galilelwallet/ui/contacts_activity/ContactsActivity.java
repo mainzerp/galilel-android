@@ -41,7 +41,7 @@ public class ContactsActivity extends BaseDrawerActivity implements ListItemList
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
         getLayoutInflater().inflate(R.layout.fragment_address, container);
-        setTitle(R.string.address_book_screen_title);
+        setTitle(getString(R.string.address_book_screen_title));
         recyclerView = (RecyclerView) findViewById(R.id.addressList);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
@@ -135,7 +135,7 @@ public class ContactsActivity extends BaseDrawerActivity implements ListItemList
             public void onRightBtnClicked(SimpleTwoButtonsDialog dialog) {
                 galilelModule.deleteAddressLabel(data);
                 load();
-                Toast.makeText(ContactsActivity.this,R.string.address_label_deleted,Toast.LENGTH_LONG).show();
+                Toast.makeText(ContactsActivity.this,getString(R.string.address_label_deleted),Toast.LENGTH_LONG).show();
                 dialog.dismiss();
             }
 

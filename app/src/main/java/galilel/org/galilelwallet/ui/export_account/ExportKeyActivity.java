@@ -34,7 +34,7 @@ public class ExportKeyActivity extends BaseActivity implements View.OnClickListe
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
         try {
-            setTitle(R.string.export_wallet);
+            setTitle(getString(R.string.export_wallet));
             getSupportActionBar().setHomeButtonEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             root = getLayoutInflater().inflate(R.layout.export_key_main, container);
@@ -49,7 +49,7 @@ public class ExportKeyActivity extends BaseActivity implements View.OnClickListe
         }catch (Exception e){
             e.printStackTrace();
             CrashReporter.saveBackgroundTrace(e,galilelApplication.getPackageInfo());
-            Toast.makeText(this,R.string.unknown_error_message,Toast.LENGTH_LONG).show();
+            Toast.makeText(this,getString(R.string.unknown_error_message),Toast.LENGTH_LONG).show();
             onBackPressed();
         }
     }
@@ -57,11 +57,11 @@ public class ExportKeyActivity extends BaseActivity implements View.OnClickListe
     private void initValues() throws WriterException {
         DeterministicKey deterministicKey = galilelModule.getWatchingKey();
         xpubKey = deterministicKey.serializePubB58(GalilelContext.NETWORK_PARAMETERS);
-        txt_title.setText(R.string.public_key);
+        txt_title.setText(getString(R.string.public_key));
         txt_key.setText(xpubKey);
         txt_key.setOnClickListener(this);
-        txt_warn.setText(R.string.warn_sharing_pub_key);
-        txt_title_derivation_path.setText(R.string.derivation_path);
+        txt_warn.setText(getString(R.string.warn_sharing_pub_key));
+        txt_title_derivation_path.setText(getString(R.string.derivation_path));
         txt_derivation_path.setText(deterministicKey.getPathAsString());
         loadQr(xpubKey);
         img_qr.setOnClickListener(this);
@@ -87,7 +87,7 @@ public class ExportKeyActivity extends BaseActivity implements View.OnClickListe
         int id = v.getId();
         if (id == R.id.txt_key || id == R.id.img_qr){
             AndroidUtils.copyToClipboard(this,xpubKey);
-            Toast.makeText(v.getContext(), R.string.copy_key_message, Toast.LENGTH_LONG).show();
+            Toast.makeText(v.getContext(), getString(R.string.copy_key_message), Toast.LENGTH_LONG).show();
         }
     }
 }

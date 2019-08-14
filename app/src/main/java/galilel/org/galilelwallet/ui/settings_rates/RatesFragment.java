@@ -23,7 +23,7 @@ public class RatesFragment extends BaseRecyclerFragment<GalilelRate> implements 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);
-        setEmptyText("No rate available");
+        setEmptyText(getString(R.string.empty_rate));
         setEmptyTextColor(ContextCompat.getColor(getContext(), R.color.grey85black));
         return view;
     }
@@ -60,7 +60,7 @@ public class RatesFragment extends BaseRecyclerFragment<GalilelRate> implements 
     @Override
     public void onItemClickListener(GalilelRate data, int position) {
         galilelApplication.getAppConf().setSelectedRateCoin(data.getCode());
-        Toast.makeText(getActivity(),R.string.rate_selected,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(),getString(R.string.rate_selected),Toast.LENGTH_SHORT).show();
         getActivity().onBackPressed();
     }
 
