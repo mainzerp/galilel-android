@@ -3,7 +3,6 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     buildToolsVersion '28.0.3'
-    useLibrary 'org.apache.http.legacy'
     defaultConfig {
         applicationId "galilel.tech.mbroemme"
         minSdkVersion 21
@@ -39,12 +38,6 @@ android {
             jniLibs {
                 srcDir 'libs'
             }
-        }
-    }
-
-    configurations {
-        all {
-            exclude module: 'httpclient'
         }
     }
 }
@@ -84,6 +77,5 @@ dependencies {
     testImplementation 'org.slf4j:slf4j-api:1.7.20'
     testImplementation 'org.slf4j:slf4j-simple:1.7.5'
     testImplementation 'junit:junit:4.12'
-    testImplementation 'org.apache.httpcomponents:httpclient:4.5.3'
     testImplementation 'org.mockito:mockito-core:2.8.9'
 }
