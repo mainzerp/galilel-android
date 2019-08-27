@@ -60,6 +60,7 @@ import galilel.org.galilelwallet.utils.AppConf;
 import galilel.org.galilelwallet.utils.CrashReporter;
 
 import static galilel.org.galilelwallet.module.GalilelContext.CONTEXT;
+import static galilel.org.galilelwallet.module.GalilelContext.DEFAULT_RATE_COIN;
 import static galilel.org.galilelwallet.service.IntentsConstants.ACTION_ADDRESS_BALANCE_CHANGE;
 import static galilel.org.galilelwallet.service.IntentsConstants.ACTION_BROADCAST_TRANSACTION;
 import static galilel.org.galilelwallet.service.IntentsConstants.ACTION_CANCEL_COINS_RECEIVED;
@@ -482,7 +483,7 @@ public class GalilelWalletService extends Service{
                     try {
                         CoinGeckoApiClient c = new CoinGeckoApiClient();
                         CoinGeckoApiClient.GalilelMarket galilelMarket = c.getGalilelPxrice();
-                        GalilelRate galilelRate = new GalilelRate("USD",galilelMarket.priceUsd,System.currentTimeMillis());
+                        GalilelRate galilelRate = new GalilelRate(DEFAULT_RATE_COIN,galilelMarket.priceUsd,System.currentTimeMillis());
                         module.saveRate(galilelRate);
                         final GalilelRate galilelBtcRate = new GalilelRate("BTC",galilelMarket.priceBtc,System.currentTimeMillis());
                         module.saveRate(galilelBtcRate);
