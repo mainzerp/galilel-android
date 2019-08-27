@@ -69,7 +69,7 @@
     <string name="donations">Donations</string>
     <string name="empty_connection">No connection to any node</string>
     <string name="empty_message_address">You don\'t have any saved address yet.</string>
-    <string name="empty_rate">No rate available</string>
+    <string name="empty_rate">No rates available</string>
     <string name="error_generic">Error occurred while performing action</string>
     <string name="error_importing_xpub">Please check the key or send an error report.</string>
     <string name="error_importing_xpub_title">Error importing xPub</string>
