@@ -24,7 +24,7 @@ public class GalilelContext {
     public static final String ENABLE_BIP44_APP_VERSION = "1.03";
 
     // Galilel wallet released time.
-    public static final long GALI_WALLET_APP_RELEASED_ON_PLAY_STORE_TIME = 1551261600;
+    public static final long GALI_WALLET_APP_RELEASED_ON_PLAY_STORE_TIME = 1566381600;
 
     // Currency exchange rate.
     public static final String URL_FIAT_CURRENCIES_RATE = "https://bitpay.com/rates";
