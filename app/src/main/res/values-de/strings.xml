@@ -55,7 +55,7 @@
     <string name="derivation_path">Ableitungspfad (BIP32)</string>
     <string name="desc_slide1">Eine der ersten mobilen Geldbörsen welche 2-Faktor-Authentifizierung für verschlüsselte private Schlüssel enthält. Deine Geldbörse wird somit bestmöglichst vor Diebstahl geschützt.</string>
     <string name="desc_slide2">Obwohl Transaktionen ohnehin sehr schnell sind, werden sie unter Verwendung von SwiftTX sofort ausgeführt und brauchen keine Wartezeit zur Bestätigung.</string>
-    <string name="desc_slide3">Galilel ist außergewöhnlich. Es geht darum, die erste wirklich anonyme Kryptowährung mit dynamischen und privaten Zerocoin Proof-of-Stake zu etablieren!</string>
+    <string name="desc_slide3">Galilel ist außergewöhnlich. Es geht darum, die erste wirklich anonyme Kryptowährung mit dynamischen und privaten Proof-of-Stake zu etablieren!</string>
     <string name="desc_slide4">Ein vertrauter Server macht leichte Proof-of-Stake Geldbörsen möglich. Du kannst dich auf diese verlassen oder erstelle deinen eigenen vertrauenswürdigen Server!</string>
     <string name="description">Beschreibung</string>
     <string name="detail_no_available_inputs">Keine Eingangsinformationen verfügbar</string>
@@ -261,7 +261,7 @@
     <string name="transaction_hash">Transaktions-ID</string>
     <string name="transaction_scaled">skaliert</string>
     <string name="tutorial">Tutorial</string>
-    <string name="tutorial_message">Galilel ist eine dezentrale Open-Source-Kryptowährung gestützt durch eine globale Community von Vordenkern und organisiert durch Technologieenthusiasten.\n\nEs ist die erste leicht zu benutzende Kryptowährung mit einem hybriden Konsensalgorithmus, dynamischen Zerocoin Proof-of-Stake, Proof-of-Transaction und Masternodeabstimmungen für zeitlich begrenzte Inflationskontrolle.</string>
+    <string name="tutorial_message">Galilel ist eine dezentrale Open-Source-Kryptowährung gestützt durch eine globale Community von Vordenkern und organisiert durch Technologieenthusiasten.\n\nEs ist die erste leicht zu benutzende Kryptowährung mit einem hybriden Konsensalgorithmus, dynamischen Proof-of-Stake, Proof-of-Transaction und Masternodeabstimmungen für zeitlich begrenzte Inflationskontrolle.</string>
     <string name="tx_detail_addresses">Ausgaben</string>
     <string name="tx_detail_amount">Gesamter Betrag</string>
     <string name="tx_detail_bytes">Bytes</string>
