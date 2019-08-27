@@ -40,6 +40,10 @@ android {
             }
         }
     }
+
+    packagingOptions {
+        exclude 'lib/x86_64/darwin/libscrypt.dylib'
+    }
 }
 
 configurations.all {
