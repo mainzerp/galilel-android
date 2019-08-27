@@ -67,13 +67,14 @@ public class SettingsActivity extends BaseDrawerActivity implements View.OnClick
         setTitle(getString(R.string.settings_screen_title));
 
         TextView app_version = (TextView) findViewById(R.id.app_version);
-        app_version.setText(BuildConfig.VERSION_NAME);
+        app_version.setText(BuildConfig.VERSION_NAME + " " + getString(R.string.text_build) + " " + BuildConfig.VERSION_CODE);
 
         txt_network_info = (TextView) findViewById(R.id.txt_network_info);
 
         textAbout = (TextView)findViewById(R.id.text_about);
         String text = getString(R.string.made_by) + "<br> <font color=#795548>Maik Broemme</font> <br>(c) Galilel UG (haftungsbeschränkt)";
         textAbout.setText(Html.fromHtml(text));
+
         // Open Backup Wallet
         buttonBackup = (Button) findViewById(R.id.btn_backup_wallet);
         buttonBackup.setOnClickListener(this);
