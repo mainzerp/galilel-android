@@ -135,7 +135,7 @@ public class TransactionsFragmentBase extends BaseRecyclerFragment<TransactionWr
                     holder.title.setText(data.getTransaction().getOutput(0).getScriptPubKey().getToAddress(galilelModule.getConf().getNetworkParams()).toBase58());
                 }*/
                 String memo = data.getTransaction().getMemo();
-                holder.description.setText(memo!=null?memo:"No description");
+                holder.description.setText(memo != null ? memo: getString(R.string.tx_detail_no_memo));
             }
         };
         adapter.setListEventListener(new ListItemListeners<TransactionWrapper>() {

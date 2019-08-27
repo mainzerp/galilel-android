@@ -55,7 +55,7 @@
     <string name="derivation_path">Derivation path (BIP32)</string>
     <string name="desc_slide1">One of the worlds first mobile wallets which supports two-factor authentication for encrypted private keys. It allows you to protect your wallet without any risk of electronic theft.</string>
     <string name="desc_slide2">Already very fast, Galilel transactions using SwiftX are instant with zero confirmation wait time required.</string>
-    <string name="desc_slide3">Galilel is already the worlds first crypto currency which includes Dynamic Zerocoin Proof-of-Stake. Staking privacy coins makes it a truly anonymous crypto-currency!</string>
+    <string name="desc_slide3">Galilel is already the worlds first crypto currency which includes Dynamic Proof-of-Stake. Staking privacy coins makes it a truly anonymous crypto-currency!</string>
     <string name="desc_slide4">Trusted nodes federation make light Proof-of-Stake wallets possible, you can rely on them or create your own trusted node!</string>
     <string name="description">Description</string>
     <string name="detail_no_available_inputs">No inputs information available</string>
@@ -69,7 +69,7 @@
     <string name="donations">Donations</string>
     <string name="empty_connection">No connection to any node</string>
     <string name="empty_message_address">You don\'t have any saved address yet.</string>
-    <string name="empty_rate">No rate available</string>
+    <string name="empty_rate">No rates available</string>
     <string name="error_generic">Error occurred while performing action</string>
     <string name="error_importing_xpub">Please check the key or send an error report.</string>
     <string name="error_importing_xpub_title">Error importing xPub</string>
@@ -261,7 +261,7 @@
     <string name="transaction_hash">Transaction ID</string>
     <string name="transaction_scaled">scaled</string>
     <string name="tutorial">Tutorial</string>
-    <string name="tutorial_message">Galilel is an open-source public and private Proof-of-Stake digital crypto currency for fast (using SwiftX), private (Zerocoin protocol) and secure micro transactions.\n\nGalilel aims to be the first general purpose crypto currency with Hybrid Consensus Algorithm, Dynamic Zerocoin Proof-of-Stake, Proof-of-Transaction and Masternode voting for period based reward burning.</string>
+    <string name="tutorial_message">Galilel is an open-source public and private Proof-of-Stake digital crypto currency for fast (using SwiftX), private (Sigma protocol) and secure micro transactions.\n\nGalilel aims to be the first general purpose crypto currency with Hybrid Consensus Algorithm, Dynamic Proof-of-Stake, Proof-of-Transaction and Masternode voting for period based reward burning.</string>
     <string name="tx_detail_addresses">Outputs</string>
     <string name="tx_detail_amount">Total amount</string>
     <string name="tx_detail_bytes">bytes</string>

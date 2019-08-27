@@ -52,7 +52,7 @@ import galilel.org.galilelwallet.R;
 import galilel.org.galilelwallet.module.GalilelContext;
 import global.GalilelModuleImp;
 import galilel.org.galilelwallet.module.store.SnappyBlockchainStore;
-import galilel.org.galilelwallet.rate.CoinGeckoApiClient;
+import galilel.org.galilelwallet.rate.CoinMarketCapApiClient;
 import galilel.org.galilelwallet.rate.RequestGalilelRateException;
 import global.GalilelRate;
 import galilel.org.galilelwallet.ui.wallet_activity.WalletActivity;
@@ -60,6 +60,7 @@ import galilel.org.galilelwallet.utils.AppConf;
 import galilel.org.galilelwallet.utils.CrashReporter;
 
 import static galilel.org.galilelwallet.module.GalilelContext.CONTEXT;
+import static galilel.org.galilelwallet.module.GalilelContext.DEFAULT_RATE_COIN;
 import static galilel.org.galilelwallet.service.IntentsConstants.ACTION_ADDRESS_BALANCE_CHANGE;
 import static galilel.org.galilelwallet.service.IntentsConstants.ACTION_BROADCAST_TRANSACTION;
 import static galilel.org.galilelwallet.service.IntentsConstants.ACTION_CANCEL_COINS_RECEIVED;
@@ -480,15 +481,15 @@ public class GalilelWalletService extends Service{
                 @Override
                 public void run() {
                     try {
-                        CoinGeckoApiClient c = new CoinGeckoApiClient();
-                        CoinGeckoApiClient.GalilelMarket galilelMarket = c.getGalilelPxrice();
-                        GalilelRate galilelRate = new GalilelRate("USD",galilelMarket.priceUsd,System.currentTimeMillis());
+                        CoinMarketCapApiClient c = new CoinMarketCapApiClient();
+                        CoinMarketCapApiClient.GalilelMarket galilelMarket = c.getGalilelPxrice();
+                        GalilelRate galilelRate = new GalilelRate(DEFAULT_RATE_COIN,galilelMarket.priceUsd,System.currentTimeMillis());
                         module.saveRate(galilelRate);
                         final GalilelRate galilelBtcRate = new GalilelRate("BTC",galilelMarket.priceBtc,System.currentTimeMillis());
                         module.saveRate(galilelBtcRate);
 
                         // Get the rest of the rates:
-                        List<GalilelRate> rates = new CoinGeckoApiClient.BitPayApi().getRates(new CoinGeckoApiClient.BitPayApi.RatesConvertor<GalilelRate>() {
+                        List<GalilelRate> rates = new CoinMarketCapApiClient.BitPayApi().getRates(new CoinMarketCapApiClient.BitPayApi.RatesConvertor<GalilelRate>() {
                             @Override
                             public GalilelRate convertRate(String code, String name, BigDecimal bitcoinRate) {
                                 BigDecimal rate = bitcoinRate.multiply(galilelBtcRate.getRate());

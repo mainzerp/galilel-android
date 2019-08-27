@@ -53,13 +53,14 @@ public class AmountInputFragment extends BaseFragment implements View.OnClickLis
 
         galilelRate = galilelModule.getRate(galilelApplication.getAppConf().getSelectedRateCoin());
 
-        if (galilelRate != null)
+        if (galilelRate != null) {
             txt_local_currency.setText(getString(R.string.number_0) + " " + galilelRate.getCode());
-        else
-            txt_local_currency.setText(getString(R.string.number_0));
+            editCurrency.setHint(getString(R.string.number_0) + " " + galilelRate.getCode());
+        } else {
+            txt_local_currency.setText(getString(R.string.no_rate));
+        }
 
         edit_amount.setHint(getString(R.string.number_0) + " " + getString(R.string.set_currency));
-        editCurrency.setHint(getString(R.string.number_0) + " " + galilelRate.getCode());
 
         editCurrency.addTextChangedListener(new TextWatcher() {
             @Override
