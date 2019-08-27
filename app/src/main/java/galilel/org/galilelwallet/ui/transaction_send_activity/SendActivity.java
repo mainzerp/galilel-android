@@ -176,9 +176,14 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
         addAllGali.setOnClickListener(this);
         galilelRate = galilelModule.getRate(galilelApplication.getAppConf().getSelectedRateCoin());
 
-        txt_local_currency.setText(getString(R.string.number_0) + " " + galilelRate.getCode());
+        if (galilelRate != null) {
+            txt_local_currency.setText(getString(R.string.number_0) + " " + galilelRate.getCode());
+            editCurrency.setHint(getString(R.string.number_0) + " " + galilelRate.getCode());
+        } else {
+            txt_local_currency.setText(getString(R.string.no_rate));
+        }
+
         edit_amount.setHint(getString(R.string.number_0) + " " + getString(R.string.set_currency));
-        editCurrency.setHint(getString(R.string.number_0) + " " + galilelRate.getCode());
 
         editCurrency.addTextChangedListener(new TextWatcher() {
             @Override
