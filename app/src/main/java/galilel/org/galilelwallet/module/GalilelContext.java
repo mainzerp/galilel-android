@@ -19,11 +19,13 @@ public class GalilelContext {
     public static final Context CONTEXT = new Context(NETWORK_PARAMETERS);
 
     public static final String DEFAULT_RATE_COIN = "USD";
-    public static final long RATE_UPDATE_TIME = 72000000;
+
+    // wallet update time of local currency rates (86400000 = every 24 hours).
+    public static final long RATE_UPDATE_TIME = 86400000;
 
     public static final String ENABLE_BIP44_APP_VERSION = "1.03";
 
-    // Galilel wallet released time.
+    // wallet released time.
     public static final long GALI_WALLET_APP_RELEASED_ON_PLAY_STORE_TIME = 1566381600;
 
     // Currency exchange rate.
