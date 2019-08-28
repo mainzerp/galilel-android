@@ -8,9 +8,4 @@
         android:title="Ok"
         app:showAsAction="always" />
 
-    <item
-        android:id="@+id/option_default"
-        android:title="Clean"
-        app:showAsAction="never" />
-
 </menu>
