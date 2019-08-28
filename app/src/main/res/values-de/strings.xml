@@ -243,6 +243,7 @@
     <string name="syncing">Synchronisiere</string>
     <string name="tcp_port">TCP Port</string>
     <string name="text_version">Version</string>
+    <string name="text_build">Build</string>
     <string name="title_address">Adresse</string>
     <string name="title_amount">Betrag</string>
     <string name="title_blockstore_error">Blockchainfehler</string>

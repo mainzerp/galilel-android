@@ -69,8 +69,6 @@ public class CoinMarketCapApiClient {
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
 
-        System.out.println("MAIK1 PostParseURL " + url);
-
         if (con.getResponseCode() == HttpURLConnection.HTTP_OK) {
             BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
             String inputLine;
