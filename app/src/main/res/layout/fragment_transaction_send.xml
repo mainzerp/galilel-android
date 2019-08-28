@@ -20,106 +20,124 @@
             android:layout_gravity="center"
             android:focusableInTouchMode="true">
 
-            <ViewFlipper
-                android:id="@+id/viewFlipper"
+            <FrameLayout
+                android:id="@+id/viewFlipperLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@android:color/transparent">
 
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
+                <ViewFlipper
+                    android:id="@+id/viewFlipper"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:background="@android:color/transparent"
-                    android:gravity="center_horizontal">
+                    android:layout_width="match_parent">
 
-                    <TextView
-                        android:id = "@+id/titleAmount"
-                        android:layout_width = "wrap_content"
-                        android:layout_height = "wrap_content"
-                        android:text = "@string/title_amount"
-                        android:layout_marginBottom="10dp"
-                        android:textColor = "@color/grey85black"
-                        android:textSize = "14sp" />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_horizontal">
 
-                    <EditText
-                        android:id = "@+id/edit_amount"
-                        android:ellipsize="start"
-                        android:gravity="center_horizontal"
-                        android:layout_width = "match_parent"
-                        android:layout_height = "wrap_content"
-                        android:paddingBottom="11dp"
-                        android:paddingTop="11dp"
-                        android:paddingEnd="27dp"
-                        android:paddingStart="27dp"
-                        android:inputType="numberDecimal"
-                        android:background="@drawable/transaction_inputs"
-                        android:textCursorDrawable="@drawable/color_cursor"
-                        android:layout_marginBottom="10dp"
-                        android:maxLines="1"
-                        android:maxLength="8"
-                        android:textColor = "@color/grey85black"
-                        android:textSize = "16sp" />
+                        <TextView
+                            android:id = "@+id/titleAmount"
+                            android:layout_width = "wrap_content"
+                            android:layout_height = "wrap_content"
+                            android:text = "@string/title_amount"
+                            android:layout_marginBottom="10dp"
+                            android:textColor = "@color/grey85black"
+                            android:textSize = "14sp" />
 
-                    <TextView
-                        android:id = "@+id/txt_local_currency"
-                        android:layout_width = "wrap_content"
-                        android:layout_height = "wrap_content"
-                        android:textColor = "@color/grey85black"
-                        android:textSize = "15sp" />
+                        <EditText
+                            android:id = "@+id/edit_amount"
+                            android:ellipsize="start"
+                            android:gravity="center_horizontal"
+                            android:layout_width = "match_parent"
+                            android:layout_height = "wrap_content"
+                            android:paddingBottom="11dp"
+                            android:paddingTop="11dp"
+                            android:paddingEnd="27dp"
+                            android:paddingStart="27dp"
+                            android:inputType="numberDecimal"
+                            android:background="@drawable/transaction_inputs"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:layout_marginBottom="10dp"
+                            android:maxLines="1"
+                            android:maxLength="8"
+                            android:textColor = "@color/grey85black"
+                            android:textSize = "16sp" />
 
-                </LinearLayout>
+                        <TextView
+                            android:id = "@+id/txt_local_currency"
+                            android:layout_width = "wrap_content"
+                            android:layout_height = "wrap_content"
+                            android:textColor = "@color/grey85black"
+                            android:textSize = "15sp" />
 
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width = "wrap_content"
+                            android:layout_height = "wrap_content"
+                            android:id="@+id/txt_currency_amount"
+                            android:text = "@string/title_amount"
+                            android:layout_marginBottom="10dp"
+                            android:textColor = "@color/grey85black"
+                            android:textSize = "14sp" />
+
+                        <EditText
+                            android:id = "@+id/edit_amount_currency"
+                            android:ellipsize="start"
+                            android:gravity="center_horizontal"
+                            android:layout_width = "match_parent"
+                            android:layout_height = "wrap_content"
+                            android:paddingBottom="11dp"
+                            android:paddingTop="11dp"
+                            android:paddingEnd="27dp"
+                            android:paddingStart="27dp"
+                            android:inputType="numberDecimal"
+                            android:background="@drawable/transaction_inputs"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:layout_marginBottom="10dp"
+                            android:maxLines="1"
+                            android:maxLength="8"
+                            android:textColor = "@color/grey85black"
+                            android:textSize = "16sp" />
+
+                        <TextView
+                            android:id = "@+id/txt_show_gali"
+                            android:layout_width = "wrap_content"
+                            android:layout_height = "wrap_content"
+                            android:textColor = "@color/grey85black"
+                            android:textSize = "15sp" />
+
+                    </LinearLayout>
+
+                </ViewFlipper>
+
+                <ImageButton
+                    android:id="@+id/btn_swap"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
+                    android:paddingRight="15dp"
                     android:background="@android:color/transparent"
-                    android:gravity="center_horizontal">
+                    android:src="@drawable/ic_swap"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="5dp" />
 
-                    <TextView
-                        android:layout_width = "wrap_content"
-                        android:layout_height = "wrap_content"
-                        android:id="@+id/txt_currency_amount"
-                        android:text = "@string/title_amount"
-                        android:layout_marginBottom="10dp"
-                        android:textColor = "@color/grey85black"
-                        android:textSize = "14sp" />
-
-                    <EditText
-                        android:id = "@+id/edit_amount_currency"
-                        android:ellipsize="start"
-                        android:gravity="center_horizontal"
-                        android:layout_width = "match_parent"
-                        android:layout_height = "wrap_content"
-                        android:paddingBottom="11dp"
-                        android:paddingTop="11dp"
-                        android:paddingEnd="27dp"
-                        android:paddingStart="27dp"
-                        android:inputType="numberDecimal"
-                        android:background="@drawable/transaction_inputs"
-                        android:textCursorDrawable="@drawable/color_cursor"
-                        android:layout_marginBottom="10dp"
-                        android:maxLines="1"
-                        android:maxLength="8"
-                        android:textColor = "@color/grey85black"
-                        android:textSize = "16sp" />
-
-                    <TextView
-                        android:id = "@+id/txt_show_gali"
-                        android:layout_width = "wrap_content"
-                        android:layout_height = "wrap_content"
-                        android:textColor = "@color/grey85black"
-                        android:textSize = "15sp" />
-
-                </LinearLayout>
-
-            </ViewFlipper>
+            </FrameLayout>
 
             <Button
                 android:id="@+id/btn_add_all"
-                android:layout_below="@+id/viewFlipper"
+                android:layout_below="@+id/viewFlipperLayout"
                 android:gravity="center"
                 android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
@@ -293,18 +311,6 @@
                     android:paddingBottom="16dp" />
 
             </LinearLayout>
-
-            <ImageButton
-                android:id="@+id/btn_swap"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:paddingTop="52dp"
-                android:paddingRight="15dp"
-                android:background="@android:color/transparent"
-                android:src="@drawable/ic_swap"
-                android:layout_gravity="center"
-                android:layout_marginRight="5dp" />
 
         </RelativeLayout>
 
