@@ -126,12 +126,6 @@ public class ChangeAddressActivity extends BaseActivity {
                 e.printStackTrace();
                 DialogsUtil.buildSimpleErrorTextDialog(this,getString(R.string.invalid_inputs),getString(R.string.invalid_input_address)).show(getFragmentManager(),"custom_change_address");
             }
-        }else if (item.getItemId() == R.id.option_default){
-            Intent intent = new Intent();
-            intent.putExtra(INTENT_EXTRA_CLEAR_CHANGE_ADDRESS,true);
-            setResult(RESULT_OK,intent);
-            finish();
-            return true;
         }
         return super.onOptionsItemSelected(item);
     }

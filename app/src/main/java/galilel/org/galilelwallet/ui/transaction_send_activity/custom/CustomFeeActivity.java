@@ -56,12 +56,6 @@ public class CustomFeeActivity extends BaseActivity {
                 e.printStackTrace();
                 DialogsUtil.buildSimpleErrorTextDialog(this,getString(R.string.invalid_inputs),e.getMessage()).show(getFragmentManager(),"custom_fee_invalid_inputs");
             }
-        }else if (item.getItemId() == R.id.option_default){
-            Intent intent = new Intent();
-            intent.putExtra(INTENT_EXTRA_CLEAR,true);
-            setResult(RESULT_OK,intent);
-            finish();
-            return true;
         }
         return super.onOptionsItemSelected(item);
     }

@@ -107,11 +107,6 @@ public class OutputsActivity extends BaseActivity {
                         .show(getFragmentManager(),"invalid_fields_outputs");
             }
             return true;
-        }else if (id == R.id.option_default){
-            Intent intent = new Intent();
-            intent.putExtra(INTENT_EXTRA_OUTPUTS_CLEAR,true);
-            setResult(RESULT_OK, intent);
-            finish();
         }
         return super.onOptionsItemSelected(item);
     }
