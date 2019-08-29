@@ -44,7 +44,6 @@ public class BaseDrawerActivity extends GalilelActivity implements NavigationVie
     protected FrameLayout header_container;
     private TextView txt_app_version;
     private TextView txt_sync_status;
-    private ImageView img_sync;
 
     protected BlockchainState blockchainState = BlockchainState.SYNCING;
 
@@ -88,7 +87,6 @@ public class BaseDrawerActivity extends GalilelActivity implements NavigationVie
         navigationView.setNavigationItemSelectedListener(this);
         View headerLayout = navigationView.getHeaderView(0);
         txt_sync_status = (TextView) headerLayout.findViewById(R.id.txt_sync_status);
-        img_sync = (ImageView) headerLayout.findViewById(R.id.img_sync);
         txt_app_version = (TextView) navigationView.findViewById(R.id.txt_app_version);
         txt_app_version.setText(BuildConfig.VERSION_NAME);
 
@@ -226,32 +224,23 @@ public class BaseDrawerActivity extends GalilelActivity implements NavigationVie
         if (txt_sync_status!=null) {
             String text = null;
             int color = 0;
-            int imgSrc = 0;
             double progress = calculateBlockchainSyncProgress();
             switch (blockchainState) {
                 case SYNC:
                     text = getString(R.string.sync);
                     color = ContextCompat.getColor(getApplicationContext(), R.color.galilelWhite);
-                    imgSrc = 0;
                     break;
                 case SYNCING:
                     text = getString(R.string.syncing) + " " + String.format("%.2f", progress) + "%";
                     color = ContextCompat.getColor(getApplicationContext(), R.color.walletSyncStatus);
-                    imgSrc = R.drawable.ic_header_unsynced;
                     break;
                 case NOT_CONNECTION:
                     text = getString(R.string.not_connection);
                     color = ContextCompat.getColor(getApplicationContext(), R.color.walletSyncStatus);
-                    imgSrc = R.drawable.ic_header_unsynced;
                     break;
             }
             txt_sync_status.setText(text);
             txt_sync_status.setTextColor(color);
-            if (imgSrc!=0) {
-                img_sync.setImageResource(imgSrc);
-                img_sync.setVisibility(View.VISIBLE);
-            }else
-                img_sync.setVisibility(View.INVISIBLE);
         }
     }
 
