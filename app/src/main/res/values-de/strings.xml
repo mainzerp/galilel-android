@@ -107,6 +107,7 @@
     <string name="invalid_last_amount">Ungültiger Betrag der letzten Adresse</string>
     <string name="invalid_mnemonic_code">Ungültiger Mnemonic Code, bitte überprüfe jedes Wort erneut.</string>
     <string name="invalid_pincode">Ungültige PIN</string>
+    <string name="item_ok">Ok</string>
     <string name="load_inputs_fail">Coin Control fehlgeschlagen</string>
     <string name="local_currency">Lokale Währung</string>
     <string name="made_by">Entwickelt von</string>
