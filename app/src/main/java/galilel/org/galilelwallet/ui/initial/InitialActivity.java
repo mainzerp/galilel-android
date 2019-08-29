@@ -26,8 +26,6 @@ public class InitialActivity extends AppCompatActivity {
         else
             intent = new Intent(this, WalletActivity.class);
 
-        appConf.setHasSplashVideo(false);
-
         startActivity(intent);
         finish();
     }

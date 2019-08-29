@@ -48,6 +48,7 @@ import static galilel.org.galilelwallet.service.IntentsConstants.INTENT_EXTRA_BL
 import static galilel.org.galilelwallet.ui.tutorial_activity.TutorialActivity.INTENT_EXTRA_INFO_TUTORIAL;
 
 public class SettingsActivity extends BaseDrawerActivity implements View.OnClickListener {
+    private Switch videoSwitch;
     private Button buttonBackup;
     private Button buttonRestore;
     private Button btn_export_pub_key;
@@ -117,6 +118,17 @@ public class SettingsActivity extends BaseDrawerActivity implements View.OnClick
         // Open Tutorial
         buttonTutorial = (Button) findViewById(R.id.btn_tutorial);
         buttonTutorial.setOnClickListener(this);
+
+        // Video Switch
+        videoSwitch = (Switch) findViewById(R.id.videoSwitch);
+        videoSwitch.setChecked(galilelApplication.getAppConf().hasSplashVideo());
+        videoSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
+                galilelApplication.getAppConf().setHasSplashVideo(checked);
+            }
+        });
     }
 
     @Override

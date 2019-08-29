@@ -19,8 +19,7 @@ public class AppConf extends Configurations {
     private static final String USER_HAS_BACKUP = "user_has_backup";
     private static final String LAST_BEST_CHAIN_BLOCK_TIME = "last_best_chain_block_time";
     private static final String SHOW_REPORT_ON_START = "show_report";
-
-    private static boolean SPLASH_VIDEO_ENABLED = true;
+    private static final String SPLASH_VIDEO_ENABLED = "splash_video";
 
     public AppConf(SharedPreferences prefs) {
         super(prefs);
@@ -92,10 +91,10 @@ public class AppConf extends Configurations {
     }
 
     public void setHasSplashVideo(boolean enabled) {
-        SPLASH_VIDEO_ENABLED = enabled;
+        save(SPLASH_VIDEO_ENABLED, enabled);
     }
 
     public boolean hasSplashVideo() {
-        return SPLASH_VIDEO_ENABLED;
+        return getBoolean(SPLASH_VIDEO_ENABLED, true);
     }
 }

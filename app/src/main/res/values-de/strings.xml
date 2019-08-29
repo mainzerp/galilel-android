@@ -227,6 +227,7 @@
     <string name="settings_report">Problem melden</string>
     <string name="settings_reset_blockchain">Blockchain zurücksetzen</string>
     <string name="settings_screen_title">Einstellungen</string>
+    <string name="settings_splash_video">Begrüßungsvideo</string>
     <string name="settings_subtitle_about">Über</string>
     <string name="settings_subtitle_preference">Voreinstellungen</string>
     <string name="settings_subtitle_security">Sicherheit</string>

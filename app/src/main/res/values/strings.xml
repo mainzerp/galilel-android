@@ -227,6 +227,7 @@
     <string name="settings_report">Report Issue</string>
     <string name="settings_reset_blockchain">Reset Blockchain</string>
     <string name="settings_screen_title">Settings</string>
+    <string name="settings_splash_video">Splash Video</string>
     <string name="settings_subtitle_about">About</string>
     <string name="settings_subtitle_preference">Preference</string>
     <string name="settings_subtitle_security">Security</string>
