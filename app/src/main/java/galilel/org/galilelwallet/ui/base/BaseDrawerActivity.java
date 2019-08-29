@@ -235,7 +235,7 @@ public class BaseDrawerActivity extends GalilelActivity implements NavigationVie
                     imgSrc = 0;
                     break;
                 case SYNCING:
-                    text = getString(R.string.syncing)+" "+progress+"%";
+                    text = getString(R.string.syncing) + " " + String.format("%.2f", progress) + "%";
                     color = ContextCompat.getColor(getApplicationContext(), R.color.walletSyncStatus);
                     imgSrc = R.drawable.ic_header_unsynced;
                     break;
@@ -256,14 +256,15 @@ public class BaseDrawerActivity extends GalilelActivity implements NavigationVie
     }
 
     protected double calculateBlockchainSyncProgress() {
-        long nodeHeight = galilelModule.getConnectedPeerHeight();
-        if (nodeHeight>0){
+        double chainHeight = galilelModule.getChainHeight();
+        double nodeHeight = galilelModule.getConnectedPeerHeight();
+        if (nodeHeight > 0) {
             // calculate the progress
             // nodeHeight -> 100 %
             // current height -> x %
-            return (galilelModule.getChainHeight()*100) / nodeHeight;
+            return (chainHeight * 100) / nodeHeight;
         }
-        return -1;
+        return 0;
     }
 
     /**
