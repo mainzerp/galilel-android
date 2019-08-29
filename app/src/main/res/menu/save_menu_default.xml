@@ -5,7 +5,7 @@
 
     <item
         android:id="@+id/option_ok"
-        android:title="Ok"
+        android:title="@string/item_ok"
         app:showAsAction="always" />
 
 </menu>
