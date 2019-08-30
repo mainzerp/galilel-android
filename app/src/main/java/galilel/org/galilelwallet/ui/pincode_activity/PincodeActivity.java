@@ -2,8 +2,8 @@ package galilel.org.galilelwallet.ui.pincode_activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -56,7 +56,7 @@ public class PincodeActivity extends BaseActivity implements KeyboardFragment.on
         i4 = (ImageView) findViewById(R.id.imageview_circle4);
         keyboardFragment = (KeyboardFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_keyboard);
         keyboardFragment.setOnKeyListener(this);
-        keyboardFragment.setTextButtonsColor(Color.WHITE);
+        keyboardFragment.setTextButtonsColor(ContextCompat.getColor(getApplicationContext(), R.color.galilelWhite));
     }
 
     private void goNext() {

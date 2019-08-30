@@ -287,8 +287,4 @@
     <string name="watch_only_mode_activated">Watch only mode activated</string>
     <string name="watch_only_mode_activated_text">Please wait until the synchronization is completed, could take a while be patient.</string>
     <string name="write_external_denied">Permission denied to write in the external storage</string>
-
-    <!-- internal strings, never translate. -->
-    <string name="appbar_scrolling_view_behavior" translatable="false">appbar_scrolling_view_behavior</string>
-    <string name="backup_succed_dialog" translatable="false">backup_succed_dialog</string>
 </resources>

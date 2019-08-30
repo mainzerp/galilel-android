@@ -2,7 +2,6 @@ package galilel.org.galilelwallet.ui.transaction_send_activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
@@ -467,10 +466,10 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                     }
             );
             noConnectivityDialog.setRightBtnTextColor(ContextCompat.getColor(getApplicationContext(), R.color.darkBrown1));
-            noConnectivityDialog.setLeftBtnTextColor(Color.WHITE)
-                    .setRightBtnTextColor(Color.BLACK)
-                    .setRightBtnBackgroundColor(Color.WHITE)
-                    .setLeftBtnTextColor(Color.BLACK)
+            noConnectivityDialog.setLeftBtnTextColor(ContextCompat.getColor(getApplicationContext(), R.color.galilelWhite))
+                    .setRightBtnTextColor(ContextCompat.getColor(getApplicationContext(), R.color.galilelBlack))
+                    .setRightBtnBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.galilelWhite))
+                    .setLeftBtnTextColor(ContextCompat.getColor(getApplicationContext(), R.color.galilelBlack))
                     .setLeftBtnText(getString(R.string.button_cancel))
                     .setRightBtnText(getString(R.string.button_ok))
                     .show();

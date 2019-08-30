@@ -20,9 +20,9 @@ package galilel.org.galilelwallet.utils;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
-import android.graphics.Color;
 import android.net.Uri;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -88,7 +88,7 @@ public abstract class ReportIssueDialogBuilder extends DialogBuilder implements 
         setView(view);
         setPositiveButton(R.string.report_issue_dialog_report, this);
         setNegativeButton(R.string.button_cancel, null);
-        setTitleColor(Color.BLACK);
+        setTitleColor(ContextCompat.getColor(context, R.color.galilelBlack));
 
     }
 

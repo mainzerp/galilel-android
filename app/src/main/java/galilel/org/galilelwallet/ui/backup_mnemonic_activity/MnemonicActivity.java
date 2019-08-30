@@ -1,8 +1,8 @@
 package galilel.org.galilelwallet.ui.backup_mnemonic_activity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -66,7 +66,7 @@ public class MnemonicActivity extends BaseActivity {
             FlexboxLayout.LayoutParams llp = new FlexboxLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             llp.setMargins(0, 40, 20, 0);
             textView.setLayoutParams(llp);
-            textView.setTextColor(Color.BLACK);
+            textView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.galilelBlack));
             textView.setBackgroundResource(R.drawable.bg_button_grey);
             textView.setPadding(10,8,10,8);
             textView.setText(word);
