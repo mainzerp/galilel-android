@@ -1,7 +1,7 @@
 package galilel.org.galilelwallet.ui.base;
 
-import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -147,7 +147,7 @@ public abstract class BaseRecyclerFragment<T> extends BaseFragment {
                             } else {
                                 showEmptyScreen();
                                 txt_empty.setText(emptyText);
-                                txt_empty.setTextColor(Color.BLACK);
+                                txt_empty.setTextColor(ContextCompat.getColor(getContext(), R.color.galilelBlack));
                             }
                         }
                     }

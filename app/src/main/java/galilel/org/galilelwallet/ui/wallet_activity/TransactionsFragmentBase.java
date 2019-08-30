@@ -1,7 +1,6 @@
 package galilel.org.galilelwallet.ui.wallet_activity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
@@ -102,7 +101,6 @@ public class TransactionsFragmentBase extends BaseRecyclerFragment<TransactionWr
                 holder.description.setText(data.getTransaction().getMemo());
 
                 if (data.isSent()) {
-                    //holder.cv.setBackgroundColor(Color.RED);Color.BROWN
                     holder.imageView.setImageResource(R.mipmap.ic_transaction_send);
                     holder.amount.setTextColor(ContextCompat.getColor(getContext(), R.color.walletInputSend));
                     holder.amount.setText("-" + holder.amount.getText());

@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
@@ -43,8 +42,8 @@ public class DialogsUtil {
         final SimpleTextDialog dialog = SimpleTextDialog.newInstance();
         dialog.setTitle(title);
         dialog.setBody(body);
-        dialog.setOkBtnBackgroundColor(Color.RED);
-        dialog.setOkBtnTextColor(Color.WHITE);
+        dialog.setOkBtnBackgroundColor(ContextCompat.getColor(context, R.color.walletWarning));
+        dialog.setOkBtnTextColor(ContextCompat.getColor(context, R.color.galilelWhite));
         dialog.setRootBackgroundRes(R.drawable.dialog_bg);
         return dialog;
     }
@@ -54,7 +53,7 @@ public class DialogsUtil {
         dialog.setTitle(title);
         dialog.setBody(body);
         dialog.setOkBtnBackgroundColor(ContextCompat.getColor(context, R.color.darkBrown1));
-        dialog.setOkBtnTextColor(Color.WHITE);
+        dialog.setOkBtnTextColor(ContextCompat.getColor(context, R.color.galilelWhite));
         dialog.setRootBackgroundRes(R.drawable.dialog_bg);
         return dialog;
     }
@@ -66,14 +65,14 @@ public class DialogsUtil {
     public static SimpleTwoButtonsDialog buildSimpleTwoBtnsDialog(Context context, String title, String body, SimpleTwoButtonsDialog.SimpleTwoBtnsDialogListener simpleTwoBtnsDialogListener){
         final SimpleTwoButtonsDialog dialog = SimpleTwoButtonsDialog.newInstance(context);
         dialog.setTitle(title);
-        dialog.setTitleColor(Color.BLACK);
+        dialog.setTitleColor(ContextCompat.getColor(context, R.color.galilelBlack));
         dialog.setBody(body);
-        dialog.setBodyColor(Color.BLACK);
+        dialog.setBodyColor(ContextCompat.getColor(context, R.color.galilelBlack));
         dialog.setListener(simpleTwoBtnsDialogListener);
-        dialog.setContainerBtnsBackgroundColor(Color.WHITE);
+        dialog.setContainerBtnsBackgroundColor(ContextCompat.getColor(context, R.color.galilelWhite));
         dialog.setRightBtnBackgroundColor(ContextCompat.getColor(context, R.color.darkBrown1));
-        dialog.setLeftBtnTextColor(Color.BLACK);
-        dialog.setRightBtnTextColor(Color.WHITE);
+        dialog.setLeftBtnTextColor(ContextCompat.getColor(context, R.color.galilelBlack));
+        dialog.setRightBtnTextColor(ContextCompat.getColor(context, R.color.galilelWhite));
         dialog.setRootBackgroundRes(R.drawable.dialog_bg);
         return dialog;
     }

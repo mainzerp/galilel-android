@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -210,7 +209,7 @@ public class WalletActivity extends BaseDrawerActivity {
                         }
                 );
                 reminderDialog.setLeftBtnText(getString(R.string.button_dismiss));
-                reminderDialog.setLeftBtnTextColor(Color.BLACK);
+                reminderDialog.setLeftBtnTextColor(ContextCompat.getColor(getApplicationContext(), R.color.galilelBlack));
                 reminderDialog.setRightBtnText(getString(R.string.button_ok));
                 reminderDialog.show();
             }

@@ -2,10 +2,10 @@ package galilel.org.galilelwallet.ui.start_node_activity;
 
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
@@ -137,7 +137,7 @@ public class StartNodeActivity extends BaseActivity {
             @Override
             public View getDropDownView(int position, View convertView, ViewGroup parent) {
                 CheckedTextView view = (CheckedTextView) super.getDropDownView(position, convertView, parent);
-                view.setTextColor(Color.BLACK);
+                view.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.galilelBlack));
                 view.setPadding(16, 16, 16, 16);
                 return view;
             }
@@ -146,7 +146,7 @@ public class StartNodeActivity extends BaseActivity {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 CheckedTextView view = (CheckedTextView) super.getView(position, convertView, parent);
-                view.setTextColor(Color.BLACK);
+                view.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.galilelBlack));
                 view.setPadding(8, 8, 8, 8);
                 return view;
             }
