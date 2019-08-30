@@ -154,7 +154,7 @@ public class SettingsBackupActivity extends BaseActivity {
                         onBackPressed();
                     }
                 });
-                succedDialog.show(getFragmentManager(),getString(R.string.backup_succed_dialog));
+                succedDialog.show(getFragmentManager(),"backup_succed_dialog");
             }
         });
 

@@ -290,5 +290,4 @@
 
     <!-- internal strings, never translate. -->
     <string name="appbar_scrolling_view_behavior" translatable="false">appbar_scrolling_view_behavior</string>
-    <string name="backup_succed_dialog" translatable="false">backup_succed_dialog</string>
 </resources>
