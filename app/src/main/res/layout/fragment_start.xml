@@ -4,7 +4,7 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:paddingTop="50dp"
+	android:paddingTop="@dimen/tutorial_padding_top"
 	android:orientation="vertical"
 	android:gravity="center_horizontal"
 	android:background="@color/darkBrown1"
@@ -18,13 +18,12 @@
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:paddingLeft="16dp"
-		android:paddingRight="16dp"
-		android:paddingTop="8dp"
-		android:paddingBottom="8dp"
+		android:paddingLeft="@dimen/activity_horizontal_margin"
+		android:paddingRight="@dimen/activity_horizontal_margin"
+		android:paddingTop="@dimen/tutorial_vertical_padding"
 		android:text="@string/tutorial_message"
 		android:textColor="@color/galilelWhite"
-		android:textSize="@dimen/text_title"
+		android:textSize="@dimen/tutorial_message_text_size"
 		android:textAlignment="center" />
 
 	<LinearLayout
@@ -45,18 +44,17 @@
 			android:paddingTop="12dp"
 			android:text="@string/btn_create_wallet"
 			android:textColor="@color/darkBrown1"
-			android:textSize="15sp"
+			android:textSize="@dimen/tutorial_button_text_size"
 			android:background="@drawable/button_white"
 			android:id="@+id/btnCreate" />
 
 		<Button
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_marginTop="7dp"
 			android:paddingBottom="12dp"
 			android:paddingTop="12dp"
 			android:text="@string/btn_restore_wallet"
-			android:textSize="15sp"
+			android:textSize="@dimen/tutorial_button_text_size"
 			android:textColor="@color/galilelWhite"
 			android:background="@android:color/transparent"
 			android:id="@+id/btnRestore" />

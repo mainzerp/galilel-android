@@ -1,13 +1,5 @@
 <resources>
 
-	<!-- Default screen margins, per the Android Design guidelines. -->
-	<dimen name="activity_horizontal_margin">16dp</dimen>
-	<dimen name="activity_vertical_margin">16dp</dimen>
-	<dimen name="nav_header_vertical_spacing">12dp</dimen>
-	<dimen name="nav_header_height">160dp</dimen>
-	<dimen name="scan_laser_width">4dp</dimen>
-	<dimen name="scan_dot_size">8dp</dimen>
-
 	<!-- Tutorial -->
 	<dimen name="tutorial_button_text_size">15sp</dimen>
 	<dimen name="tutorial_message_text_size">18sp</dimen>

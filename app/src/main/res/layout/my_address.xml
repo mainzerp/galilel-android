@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/darkBrown1"
-    android:padding="32dp">
+    android:padding="@dimen/my_address_vertical_padding">
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -21,8 +21,8 @@
             android:layout_gravity="center"
             android:background="@color/greyTemp"
             android:orientation="vertical"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp">
+            android:paddingTop="@dimen/my_address_vertical_padding"
+            android:paddingBottom="@dimen/my_address_vertical_padding">
 
             <ImageView
                 android:id="@+id/img_qr"
@@ -36,10 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:paddingTop="9dp"
-                android:paddingEnd="9dp"
-                android:paddingStart="9dp"
-                android:textSize="14sp" />
+                android:textSize="@dimen/my_address_pubkey_text_size" />
 
         </LinearLayout>
 
@@ -57,8 +54,8 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="60dp"
+            android:layout_marginRight="@dimen/my_address_horizontal_margin"
             android:background="@color/greyTemp"
-            android:layout_margin="1dp"
             android:gravity="center"
             android:text="@string/copy"
             android:textAlignment="center"
@@ -69,8 +66,8 @@
             android:id="@+id/btn_share"
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_margin="1dp"
             android:layout_height="60dp"
+            android:layout_marginLeft="@dimen/my_address_horizontal_margin"
             android:background="@color/greyTemp"
             android:gravity="center"
             android:text="@string/share"
