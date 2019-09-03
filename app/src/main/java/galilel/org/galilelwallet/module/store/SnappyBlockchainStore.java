@@ -32,6 +32,8 @@ public class SnappyBlockchainStore implements BlockStore{
     private final File path;
     private final String filename;
 
+    // Stored genesis
+    private StoredBlock storedGenesis;
 
     /** Creates a LevelDB SPV block store using the given factory, which is useful if you want a pure Java version. */
     public SnappyBlockchainStore(Context context, File directory,String filename) throws BlockStoreException {
@@ -67,7 +69,7 @@ public class SnappyBlockchainStore implements BlockStore{
         } catch (SnappydbException e) {
             // not initialized
             Block genesis = context.getParams().getGenesisBlock().cloneAsHeader();
-            StoredBlock storedGenesis = new StoredBlock(genesis, genesis.getWork(), 0);
+            storedGenesis = new StoredBlock(genesis, genesis.getWork(), 0);
             put(storedGenesis);
             setChainHead(storedGenesis);
         }
@@ -76,21 +78,13 @@ public class SnappyBlockchainStore implements BlockStore{
     @Override
     public synchronized void put(StoredBlock block) throws BlockStoreException {
         try {
-            //System.out.println("### trying to save something..");
             ByteBuffer buffer;
             buffer = block.getHeader().isZerocoin() ? zerocoinBuffer : this.buffer;
             buffer.clear();
-            //System.out.println("Block information: " + block.toString());
             block.serializeCompact(buffer);
             Sha256Hash blockHash = block.getHeader().getHash();
-            //System.out.println("### block hash to save: " + blockHash.toString());
-            //byte[] hash = blockHash.getBytes();
             byte[] dbBuffer = buffer.array();
             db.put(blockHash.toString(), dbBuffer);
-            // just for now to check something:
-            StoredBlock dbBlock = get(blockHash);
-
-            assert Arrays.equals(dbBlock.getHeader().getHash().getBytes(), blockHash.getBytes()) : "put is different than get in db.. " + block.getHeader().getHashAsString() + ", db: " + dbBlock.getHeader().getHashAsString();
         } catch (SnappydbException e) {
             e.printStackTrace();
             throw new BlockStoreException(e);
@@ -102,7 +96,6 @@ public class SnappyBlockchainStore implements BlockStore{
         try {
             String blockToGet = hash.toString();
             if (!db.exists(blockToGet)) {
-                //System.out.println("Block to get doesn't exists: "+blockToGet);
                 return null;
             }
             byte[] bits = db.getBytes(blockToGet);
@@ -118,7 +111,6 @@ public class SnappyBlockchainStore implements BlockStore{
     @Override
     public synchronized StoredBlock getChainHead() throws BlockStoreException {
         try {
-            System.out.println("Calling get Method from chain head");
             return get(Sha256Hash.wrap(db.getBytes(CHAIN_HEAD_KEY_STRING)));
         } catch (SnappydbException e) {
             e.printStackTrace();

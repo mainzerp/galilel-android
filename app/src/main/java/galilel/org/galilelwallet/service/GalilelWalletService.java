@@ -82,7 +82,6 @@ public class GalilelWalletService extends Service{
 
     private GalilelApplication galilelApplication;
     private GalilelModuleImp module;
-    //private GalileltrumPeergroup galileltrumPeergroup;
     private BlockchainManager blockchainManager;
 
     private PeerConnectivityListener peerConnectivityListener;
@@ -138,6 +137,7 @@ public class GalilelWalletService extends Service{
         public void onPeerDisconnected(Peer peer, int i) {
             //todo: notify peer disconnected
             log.info("Peer disconnected: "+peer.getAddress());
+            nm.cancelAll();
         }
     }
 
@@ -272,7 +272,7 @@ public class GalilelWalletService extends Service{
                 }
 
             }catch (Exception e){
-                e.printStackTrace();
+                log.error("Something happen on coin receive ", e);
             }
 
         }
@@ -296,7 +296,7 @@ public class GalilelWalletService extends Service{
                     }
                 }
             }catch (Exception e){
-                e.printStackTrace();
+                log.error("onTransactionConfidenceChanged exception",e);
             }
         }
     };
@@ -312,15 +312,12 @@ public class GalilelWalletService extends Service{
             final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
             wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, lockName);
             nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            nm.cancelAll();
             broadcastManager = LocalBroadcastManager.getInstance(this);
             // Galilel
             galilelApplication = GalilelApplication.getInstance();
             module = (GalilelModuleImp) galilelApplication.getModule();
             blockchainManager = module.getBlockchainManager();
-            // connect to galileltrum node
-            /*galileltrumPeergroup = new GalileltrumPeergroup(galilelApplication.getNetworkConf());
-            galileltrumPeergroup.addAddressListener(addressListener);
-            module.setGalileltrumPeergroup(galileltrumPeergroup);*/
 
             // Schedule service
             tryScheduleService();
@@ -346,9 +343,6 @@ public class GalilelWalletService extends Service{
             intentFilter.addAction(Intent.ACTION_DEVICE_STORAGE_LOW);
             intentFilter.addAction(Intent.ACTION_DEVICE_STORAGE_OK);
             registerReceiver(connectivityReceiver, intentFilter); // implicitly init PeerGroup
-
-            // initilizing trusted node.
-            //galileltrumPeergroup.start();
 
 
         } catch (Error e){
@@ -397,7 +391,7 @@ public class GalilelWalletService extends Service{
                 log.warn("service restart, although it was started as non-sticky");
             }
         }catch (Exception e){
-            e.printStackTrace();
+            log.error("onStartCommand exception",e);
         }
         return START_NOT_STICKY;
     }
@@ -408,36 +402,37 @@ public class GalilelWalletService extends Service{
         log.info(".onDestroy()");
         try {
             // todo: notify module about this shutdown...
-            unregisterReceiver(connectivityReceiver);
+            try {
+                unregisterReceiver(connectivityReceiver);
+            }catch (Exception e){
+                // swallow
+            }
 
             // remove listeners
             module.removeCoinsReceivedEventListener(coinReceiverListener);
             module.removeTransactionsConfidenceChange(transactionConfidenceEventListener);
             blockchainManager.removeBlockchainDownloadListener(blockchainDownloadListener);
-            // destroy the blockchain
-            /*if (resetBlockchainOnShutdown){
-                try {
-                    blockchainStore.truncate();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-            }*/
-            blockchainManager.destroy(resetBlockchainOnShutdown);
 
-            /*if (galileltrumPeergroup.isRunning()) {
-                galileltrumPeergroup.shutdown();
-            }*/
+            blockchainManager.destroy(resetBlockchainOnShutdown);
 
             if (wakeLock.isHeld()) {
                 log.debug("wakelock still held, releasing");
                 wakeLock.release();
             }
 
+            try {
+                // Remove every notification
+                NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                nm.cancelAll();
+            }catch (Exception e){
+                log.error("Exception cancelling notifications", e);
+            }
+
             log.info("service was up for " + ((System.currentTimeMillis() - serviceCreatedAt) / 1000 / 60) + " minutes");
             // schedule service it is not scheduled yet
             tryScheduleService();
         }catch (Exception e){
-            e.printStackTrace();
+            log.error("onDestroy exception",e);
         }
     }
 
@@ -445,12 +440,12 @@ public class GalilelWalletService extends Service{
      * Schedule service for later
      */
     private void tryScheduleService() {
-        boolean isSchedule = System.currentTimeMillis()<module.getConf().getScheduledBLockchainService();
+        boolean isSchedule = System.currentTimeMillis() < module.getConf().getScheduledBLockchainService();
 
         if (!isSchedule){
             log.info("scheduling service");
             AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
-            long scheduleTime = System.currentTimeMillis() + 2000*60;//(1000 * 60 * 60); // One hour from now
+            long scheduleTime = System.currentTimeMillis() + 1000*60;//(1000 * 60 * 60); // One hour from now
 
             Intent intent = new Intent(this, GalilelWalletService.class);
             intent.setAction(ACTION_SCHEDULE_SERVICE);
@@ -544,7 +539,7 @@ public class GalilelWalletService extends Service{
 
             StringBuilder stringBuilder = new StringBuilder();
             for (Impediment impediment : impediments) {
-                if (stringBuilder.length()!=0){
+                if (stringBuilder.length() != 0){
                     stringBuilder.append("\n");
                 }
                 if (impediment == Impediment.NETWORK){
