@@ -93,13 +93,15 @@ public class BlockchainManager {
             try {
                 if (blockStoreInit != null && blockStoreInit.getChainHead().getHeight() < 2) {
                     blockChainFileExists = false;
+                    LOG.info("resetting blockstore for been on block height: " + blockStoreInit.getChainHead().getHeight() );
                 }
             } catch (BlockStoreException e) {
                 e.printStackTrace();
+                LOG.error("init blockstore exception",e);
             }
 
             if (!blockChainFileExists) {
-                LOG.info("blockchain does not exist, resetting wallet");
+                LOG.info("blockchain does not exist, resetting wallet. File: " + blockChainFile.getAbsolutePath());
                 walletManager.reset();
             }
 
@@ -204,11 +206,9 @@ public class BlockchainManager {
 
     public void destroy(boolean resetBlockchainOnShutdown) {
         if (peerGroup != null) {
-//            peerGroup.removeDisconnectedEventListener(peerConnectivityListener);
-//            peerGroup.removeConnectedEventListener(peerConnectivityListener);
             walletManager.removeWalletFrom(peerGroup);
             if (peerGroup.isRunning())
-                peerGroup.stopAsync();
+                peerGroup.stop();
             peerGroup = null;
             LOG.info("peergroup stopped");
         }
@@ -221,8 +221,10 @@ public class BlockchainManager {
             }
         }
 
-        // save the wallet
-        walletManager.saveWallet();
+        if (walletManager.isStarted()){
+            // save the wallet
+            walletManager.saveWallet();
+        }
 
         if (resetBlockchainOnShutdown) {
             LOG.info("removing blockchain");
@@ -240,7 +242,6 @@ public class BlockchainManager {
 
     public void check(Set<Impediment> impediments, PeerConnectedEventListener peerConnectivityListener, PeerDisconnectedEventListener peerDisconnectedEventListener , PeerDataEventListener blockchainDownloadListener, Executor executor){
         synchronized (this) {
-            //final Wallet wallet = walletManager.getWallet();
 
             if (impediments.isEmpty() && peerGroup == null) {
 

@@ -61,7 +61,8 @@ public class PincodeActivity extends BaseActivity implements KeyboardFragment.on
 
     private void goNext() {
         if (galilelApplication.getAppConf().getTrustedNode() == null){
-            galilelApplication.stopBlockchain();
+            if (galilelModule.isStarted())
+                galilelApplication.stopBlockchain();
         }
 
         galilelApplication.getAppConf().setAppInit(true);

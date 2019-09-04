@@ -47,6 +47,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import global.ContextWrapper;
 import global.WalletConfiguration;
@@ -69,6 +70,8 @@ public class WalletManager {
 
     private WalletConfiguration conf;
     private ContextWrapper contextWrapper;
+
+    public AtomicBoolean isStarted = new AtomicBoolean(false);
 
     public WalletManager(ContextWrapper contextWrapper, WalletConfiguration conf) {
         this.conf = conf;
@@ -118,6 +121,9 @@ public class WalletManager {
         initMnemonicCode();
 
         restoreOrCreateWallet();
+
+        // started
+        isStarted.set(true);
     }
 
     private void initMnemonicCode(){
@@ -497,6 +503,14 @@ public class WalletManager {
     }
 
     public void restoreWalletFromEncrypted(File file, String password) throws IOException {
+
+        boolean walletExists = wallet != null;
+
+        if (!walletExists){
+            // init mnemonic code first..
+            initMnemonicCode();
+        }
+
         final BufferedReader cipherIn = new BufferedReader(new InputStreamReader(new FileInputStream(file), Charsets.UTF_8));
         final StringBuilder cipherText = new StringBuilder();
         Io.copy(cipherIn, cipherText, conf.getBackupMaxChars());
@@ -506,6 +520,11 @@ public class WalletManager {
         final InputStream is = new ByteArrayInputStream(plainText);
 
         restoreWallet(WalletUtils.restoreWalletFromProtobufOrBase58(is, conf.getNetworkParams(), conf.getBackupMaxChars()));
+
+        if (!walletExists){
+            // started
+            isStarted.set(true);
+        }
 
         logger.info("successfully restored encrypted wallet: {}", file);
     }
@@ -652,6 +671,10 @@ public class WalletManager {
 
     public List<String> getAvailableMnemonicWordsList() {
         return MnemonicCode.INSTANCE.getWordList();
+    }
+
+    public boolean isStarted() {
+        return isStarted.get();
     }
 
     private static final class WalletAutosaveEventListener implements WalletFiles.Listener {

@@ -21,6 +21,8 @@ import com.github.clans.fab.FloatingActionMenu;
 import org.galilelj.core.Coin;
 import org.galilelj.core.Transaction;
 import org.galilelj.uri.GalilelURI;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -53,6 +55,8 @@ import static galilel.org.galilelwallet.utils.scanner.ScanActivity.INTENT_EXTRA_
 
 public class WalletActivity extends BaseDrawerActivity {
 
+    private static final Logger log = LoggerFactory.getLogger(WalletActivity.class);
+
     private static final int SCANNER_RESULT = 122;
 
     private View root;
@@ -80,6 +84,7 @@ public class WalletActivity extends BaseDrawerActivity {
                     // Check if the app is on foreground to update the view.
                     if (!isOnForeground)return;
                     updateBalance();
+                    showOrHideSyncingContainer();
                     txsFragment.refresh();
                 }
             }
@@ -149,33 +154,50 @@ public class WalletActivity extends BaseDrawerActivity {
 
     @Override
     protected void onResume() {
-        super.onResume();
-        // to check current activity in the navigation drawer
-        setNavigationMenuItemChecked(0);
-
-        init();
-
-        // register
-        localBroadcastManager.registerReceiver(galilelServiceReceiver,galilelServiceFilter);
-
-        updateState();
-        updateBalance();
-
-        // check if this wallet need an update:
         try {
-            if(galilelModule.isBip32Wallet() && galilelModule.isSyncWithNode()){
-                if (!galilelModule.isWalletWatchOnly() && galilelModule.getAvailableBalanceCoin().isGreaterThan(Transaction.DEFAULT_TX_FEE)) {
-                    Intent intent = UpgradeWalletActivity.createStartIntent(
-                            this,
-                            getString(R.string.upgrade_wallet),
-                            getString(R.string.wallet_update_needed),
-                            "sweepBip32"
-                    );
-                    startActivity(intent);
-                }
+            super.onResume();
+
+            // to check current activity in the navigation drawer
+            setNavigationMenuItemChecked(0);
+
+            // register
+            try {
+                localBroadcastManager.unregisterReceiver(galilelServiceReceiver);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        } catch (NoPeerConnectedException e) {
-            e.printStackTrace();
+
+            if (galilelModule.isStarted()) {
+                init();
+
+                localBroadcastManager.registerReceiver(galilelServiceReceiver, galilelServiceFilter);
+
+                updateState();
+                updateBalance();
+                showOrHideSyncingContainer();
+                txsFragment.refresh();
+
+                // check if this wallet need an update:
+                try {
+                    if(galilelModule.isBip32Wallet() && galilelModule.isSyncWithNode()){
+                        if (!galilelModule.isWalletWatchOnly() && galilelModule.getAvailableBalanceCoin().isGreaterThan(Transaction.DEFAULT_TX_FEE)) {
+                            Intent intent = UpgradeWalletActivity.createStartIntent(
+                                    this,
+                                    getString(R.string.upgrade_wallet),
+                                    getString(R.string.wallet_update_needed),
+                                    "sweepBip32"
+                            );
+                            startActivity(intent);
+                        }
+                    }
+                } catch (NoPeerConnectedException e) {
+                    log.info("No peer connection on walletUpdate", e.getMessage());
+                }
+            } else {
+                log.info("This should open the loading screen first");
+            }
+        } catch (Exception e){
+			LoggerFactory.getLogger(WalletActivity.class).error("Error on resume",e);
         }
     }
 
@@ -333,6 +355,10 @@ public class WalletActivity extends BaseDrawerActivity {
 
     @Override
     protected void onBlockchainStateChange(){
+        showOrHideSyncingContainer();
+    }
+
+    private void showOrHideSyncingContainer(){
         if (blockchainState == BlockchainState.SYNCING){
             AnimationUtils.fadeInView(container_syncing,500);
         }else if (blockchainState == BlockchainState.SYNC){

@@ -79,14 +79,16 @@ public class StartNodeActivity extends BaseActivity {
             public void onClick(View v) {
                 // Check this..
                 galilelApplication.setTrustedServer(null);
-                galilelApplication.stopBlockchain();
-                // now that everything is good, start the service
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        galilelApplication.startGalilelService();
-                    }
-                }, TimeUnit.SECONDS.toMillis(5));
+                if (galilelModule.isStarted()) {
+                    galilelApplication.stopBlockchain();
+                    // now that everything is good, start the service
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            galilelApplication.startGalilelService();
+                        }
+                    }, TimeUnit.SECONDS.toMillis(5));
+                }
                 goNext();
                 finish();
             }
