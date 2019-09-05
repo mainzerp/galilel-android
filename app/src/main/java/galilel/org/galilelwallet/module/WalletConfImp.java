@@ -20,6 +20,7 @@ import static galilel.org.galilelwallet.module.GalilelContext.PEER_TIMEOUT_MS;
 public class WalletConfImp extends Configurations implements WalletConfiguration {
 
     private static final String PREF_TRUSTED_NODE = "trusted_node";
+    private static final String PREF_TRUSTED_NODE_PORT = "trusted_node_port";
     private static final String PREFS_KEY_SCHEDULE_BLOCKCHAIN_SERVICE = "sch_block_serv";
     private static final String PREF_CURRENCY_RATE = "currency_code";
 
@@ -36,6 +37,7 @@ public class WalletConfImp extends Configurations implements WalletConfiguration
     @Override
     public void saveTrustedNode(String host, int port) {
         save(PREF_TRUSTED_NODE,host);
+        save(PREF_TRUSTED_NODE_PORT,port);
     }
 
     @Override
@@ -50,7 +52,7 @@ public class WalletConfImp extends Configurations implements WalletConfiguration
 
     @Override
     public int getTrustedNodePort() {
-        return GalilelContext.NETWORK_PARAMETERS.getPort();
+        return getInt(PREF_TRUSTED_NODE_PORT,GalilelContext.NETWORK_PARAMETERS.getPort());
     }
 
     @Override

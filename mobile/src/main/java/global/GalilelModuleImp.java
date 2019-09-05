@@ -85,6 +85,7 @@ public class GalilelModuleImp implements GalilelModule {
     }
 
     public void start() throws IOException{
+        if (walletManager.isStarted()) throw new IllegalStateException("Core is starting or started");
         walletManager.init();
     }
 
@@ -673,6 +674,10 @@ public class GalilelModuleImp implements GalilelModule {
         return walletManager.getWallet().isEncrypted();
     }
 
+    @Override
+    public boolean isStarted() {
+        return walletManager.isStarted();
+    }
 
     public void saveRate(GalilelRate galilelRate){
         rateDb.insertOrUpdateIfExist(galilelRate);

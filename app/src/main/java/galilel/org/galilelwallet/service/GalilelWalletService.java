@@ -1,6 +1,7 @@
 package galilel.org.galilelwallet.service;
 
 import android.app.AlarmManager;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -75,6 +76,8 @@ import static galilel.org.galilelwallet.service.IntentsConstants.INTENT_BROADCAS
 import static galilel.org.galilelwallet.service.IntentsConstants.INTENT_EXTRA_BLOCKCHAIN_STATE;
 import static galilel.org.galilelwallet.service.IntentsConstants.NOT_BLOCKCHAIN_ALERT;
 import static galilel.org.galilelwallet.service.IntentsConstants.NOT_COINS_RECEIVED;
+import static galilel.org.galilelwallet.service.IntentsConstants.NOTIFICATION_CHANNEL_ID;
+import static galilel.org.galilelwallet.service.IntentsConstants.NOTIFICATION_CHANNEL_NAME;
 
 public class GalilelWalletService extends Service{
 
@@ -82,7 +85,6 @@ public class GalilelWalletService extends Service{
 
     private GalilelApplication galilelApplication;
     private GalilelModuleImp module;
-    //private GalileltrumPeergroup galileltrumPeergroup;
     private BlockchainManager blockchainManager;
 
     private PeerConnectivityListener peerConnectivityListener;
@@ -138,6 +140,7 @@ public class GalilelWalletService extends Service{
         public void onPeerDisconnected(Peer peer, int i) {
             //todo: notify peer disconnected
             log.info("Peer disconnected: "+peer.getAddress());
+            nm.cancelAll();
         }
     }
 
@@ -254,11 +257,13 @@ public class GalilelWalletService extends Service{
                     //notificationCount++;
                     notificationAccumulatedAmount = notificationAccumulatedAmount.add(amount);
                     Intent openIntent = new Intent(getApplicationContext(), WalletActivity.class);
+                    openIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                            | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     openPendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, openIntent, 0);
                     Intent resultIntent = new Intent(getApplicationContext(), GalilelWalletService.this.getClass());
                     resultIntent.setAction(ACTION_CANCEL_COINS_RECEIVED);
                     deleteIntent = PendingIntent.getService(GalilelWalletService.this, 0, resultIntent, PendingIntent.FLAG_CANCEL_CURRENT);
-                    mBuilder = new NotificationCompat.Builder(getApplicationContext())
+                    mBuilder = new NotificationCompat.Builder(getApplicationContext(), NOTIFICATION_CHANNEL_ID)
                             .setContentTitle(getString(R.string.notification_received_title))
                             .setContentText(getString(R.string.notification_received_text) + " " + notificationAccumulatedAmount.toFriendlyString())
                             .setAutoCancel(true)
@@ -272,7 +277,7 @@ public class GalilelWalletService extends Service{
                 }
 
             }catch (Exception e){
-                e.printStackTrace();
+                log.error("Something happen on coin receive ", e);
             }
 
         }
@@ -296,7 +301,7 @@ public class GalilelWalletService extends Service{
                     }
                 }
             }catch (Exception e){
-                e.printStackTrace();
+                log.error("onTransactionConfidenceChanged exception",e);
             }
         }
     };
@@ -311,16 +316,19 @@ public class GalilelWalletService extends Service{
             final String lockName = getPackageName() + " blockchain sync";
             final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
             wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, lockName);
+
+            NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, NOTIFICATION_CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.createNotificationChannel(channel);
+
             nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            nm.cancelAll();
+
             broadcastManager = LocalBroadcastManager.getInstance(this);
             // Galilel
             galilelApplication = GalilelApplication.getInstance();
             module = (GalilelModuleImp) galilelApplication.getModule();
             blockchainManager = module.getBlockchainManager();
-            // connect to galileltrum node
-            /*galileltrumPeergroup = new GalileltrumPeergroup(galilelApplication.getNetworkConf());
-            galileltrumPeergroup.addAddressListener(addressListener);
-            module.setGalileltrumPeergroup(galileltrumPeergroup);*/
 
             // Schedule service
             tryScheduleService();
@@ -346,9 +354,6 @@ public class GalilelWalletService extends Service{
             intentFilter.addAction(Intent.ACTION_DEVICE_STORAGE_LOW);
             intentFilter.addAction(Intent.ACTION_DEVICE_STORAGE_OK);
             registerReceiver(connectivityReceiver, intentFilter); // implicitly init PeerGroup
-
-            // initilizing trusted node.
-            //galileltrumPeergroup.start();
 
 
         } catch (Error e){
@@ -397,7 +402,7 @@ public class GalilelWalletService extends Service{
                 log.warn("service restart, although it was started as non-sticky");
             }
         }catch (Exception e){
-            e.printStackTrace();
+            log.error("onStartCommand exception",e);
         }
         return START_NOT_STICKY;
     }
@@ -408,36 +413,41 @@ public class GalilelWalletService extends Service{
         log.info(".onDestroy()");
         try {
             // todo: notify module about this shutdown...
-            unregisterReceiver(connectivityReceiver);
+            try {
+                unregisterReceiver(connectivityReceiver);
+            }catch (Exception e){
+                // swallow
+            }
 
-            // remove listeners
-            module.removeCoinsReceivedEventListener(coinReceiverListener);
-            module.removeTransactionsConfidenceChange(transactionConfidenceEventListener);
-            blockchainManager.removeBlockchainDownloadListener(blockchainDownloadListener);
-            // destroy the blockchain
-            /*if (resetBlockchainOnShutdown){
-                try {
-                    blockchainStore.truncate();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-            }*/
-            blockchainManager.destroy(resetBlockchainOnShutdown);
+            if (module.isStarted()) {
 
-            /*if (galileltrumPeergroup.isRunning()) {
-                galileltrumPeergroup.shutdown();
-            }*/
+                // remove listeners
+                module.removeCoinsReceivedEventListener(coinReceiverListener);
+                module.removeTransactionsConfidenceChange(transactionConfidenceEventListener);
+                blockchainManager.removeBlockchainDownloadListener(blockchainDownloadListener);
+                blockchainManager.destroy(resetBlockchainOnShutdown);
+            } else {
+                tryScheduleServiceNow();
+            }
 
             if (wakeLock.isHeld()) {
                 log.debug("wakelock still held, releasing");
                 wakeLock.release();
             }
 
+            try {
+                // Remove every notification
+                NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                nm.cancelAll();
+            }catch (Exception e){
+                log.error("Exception cancelling notifications", e);
+            }
+
             log.info("service was up for " + ((System.currentTimeMillis() - serviceCreatedAt) / 1000 / 60) + " minutes");
             // schedule service it is not scheduled yet
             tryScheduleService();
         }catch (Exception e){
-            e.printStackTrace();
+            log.error("onDestroy exception",e);
         }
     }
 
@@ -445,31 +455,55 @@ public class GalilelWalletService extends Service{
      * Schedule service for later
      */
     private void tryScheduleService() {
-        boolean isSchedule = System.currentTimeMillis()<module.getConf().getScheduledBLockchainService();
+        boolean isSchedule = System.currentTimeMillis() < module.getConf().getScheduledBLockchainService();
 
         if (!isSchedule){
             log.info("scheduling service");
             AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
-            long scheduleTime = System.currentTimeMillis() + 2000*60;//(1000 * 60 * 60); // One hour from now
+            long scheduleTime = System.currentTimeMillis() + 1000*60;//(1000 * 60 * 60); // One hour from now
 
             Intent intent = new Intent(this, GalilelWalletService.class);
             intent.setAction(ACTION_SCHEDULE_SERVICE);
-            alarm.set(
-                    // This alarm will wake up the device when System.currentTimeMillis()
-                    // equals the second argument value
-                    alarm.RTC_WAKEUP,
-                    scheduleTime,
-                    // PendingIntent.getService creates an Intent that will start a service
-                    // when it is called. The first argument is the Context that will be used
-                    // when delivering this intent. Using this has worked for me. The second
-                    // argument is a request code. You can use this code to cancel the
-                    // pending intent if you need to. Third is the intent you want to
-                    // trigger. In this case I want to create an intent that will start my
-                    // service. Lastly you can optionally pass flags.
-                    PendingIntent.getService(this, 0,intent , 0)
-            );
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                alarm.set(
+                        alarm.RTC_WAKEUP,
+                        scheduleTime,
+                        PendingIntent.getForegroundService(this, 0, intent, 0)
+                );
+            } else {
+                alarm.set(
+                        alarm.RTC_WAKEUP,
+                        scheduleTime,
+                        PendingIntent.getService(this, 0, intent, 0)
+                );
+            }
+
             // save
             module.getConf().saveScheduleBlockchainService(scheduleTime);
+        }
+    }
+
+    private void tryScheduleServiceNow() {
+        log.info("scheduling service now");
+        AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
+        long scheduleTime = System.currentTimeMillis() + 1000 * 60 * 2; // 2 minutes
+
+        Intent intent = new Intent(this, GalilelWalletService.class);
+        intent.setAction(ACTION_SCHEDULE_SERVICE);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            alarm.set(
+                    alarm.RTC_WAKEUP,
+                    scheduleTime,
+                    PendingIntent.getForegroundService(this, 0, intent, 0)
+            );
+        } else {
+            alarm.set(
+                    alarm.RTC_WAKEUP,
+                    scheduleTime,
+                    PendingIntent.getService(this, 0, intent, 0)
+            );
         }
     }
 
@@ -520,13 +554,17 @@ public class GalilelWalletService extends Service{
         log.info("check");
         try {
             if (!isChecking.getAndSet(true)) {
-                blockchainManager.check(
-                        impediments,
-                        peerConnectivityListener,
-                        peerConnectivityListener,
-                        blockchainDownloadListener,
-                        null
-                        );
+                if (module.isStarted()) {
+                    blockchainManager.check(
+                            impediments,
+                            peerConnectivityListener,
+                            peerConnectivityListener,
+                            blockchainDownloadListener,
+                            null
+                    );
+                } else {
+                    tryScheduleServiceNow();
+                }
                 //todo: ver si conviene esto..
                 broadcastBlockchainState(true);
                 isChecking.set(false);
@@ -544,7 +582,7 @@ public class GalilelWalletService extends Service{
 
             StringBuilder stringBuilder = new StringBuilder();
             for (Impediment impediment : impediments) {
-                if (stringBuilder.length()!=0){
+                if (stringBuilder.length() != 0){
                     stringBuilder.append("\n");
                 }
                 if (impediment == Impediment.NETWORK){
@@ -558,7 +596,7 @@ public class GalilelWalletService extends Service{
 
             if(showNotif) {
                 android.support.v4.app.NotificationCompat.Builder mBuilder =
-                        new NotificationCompat.Builder(getApplicationContext())
+                        new NotificationCompat.Builder(getApplicationContext(), NOTIFICATION_CHANNEL_ID)
                                 .setSmallIcon(R.mipmap.ic_notification)
                                 .setContentTitle(getString(R.string.notification_received_title))
                                 .setContentText(stringBuilder.toString())

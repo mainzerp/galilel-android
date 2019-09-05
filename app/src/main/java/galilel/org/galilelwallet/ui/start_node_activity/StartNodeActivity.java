@@ -22,6 +22,7 @@ import global.GalileltrumGlobalData;
 import galileltrum.GalileltrumPeer;
 import galileltrum.GalileltrumPeerData;
 import galilel.org.galilelwallet.R;
+import galilel.org.galilelwallet.module.GalilelContext;
 import galilel.org.galilelwallet.ui.base.BaseActivity;
 import galilel.org.galilelwallet.ui.pincode_activity.PincodeActivity;
 import galilel.org.galilelwallet.ui.wallet_activity.WalletActivity;
@@ -36,7 +37,9 @@ public class StartNodeActivity extends BaseActivity {
     private ArrayAdapter<String> adapter;
     private List<String> hosts = new ArrayList<>();
 
-    private static final List<GalileltrumPeerData> trustedNodes = GalileltrumGlobalData.listTrustedHosts();
+    private static final List<GalileltrumPeerData> trustedNodes = GalileltrumGlobalData.listTrustedHosts(
+            GalilelContext.NETWORK_PARAMETERS.getPort()
+    );
 
     @Override
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
@@ -74,18 +77,18 @@ public class StartNodeActivity extends BaseActivity {
         findViewById(R.id.btn_default).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<GalileltrumPeerData> nodes = GalileltrumGlobalData.listTrustedHosts();
-                if (!nodes.isEmpty())
-                    galilelApplication.setTrustedServer(nodes.get(0));
-
-                galilelApplication.stopBlockchain();
-                // now that everything is good, start the service
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        galilelApplication.startGalilelService();
-                    }
-                }, TimeUnit.SECONDS.toMillis(5));
+                // Check this..
+                galilelApplication.setTrustedServer(null);
+                if (galilelModule.isStarted()) {
+                    galilelApplication.stopBlockchain();
+                    // now that everything is good, start the service
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            galilelApplication.startGalilelService();
+                        }
+                    }, TimeUnit.SECONDS.toMillis(5));
+                }
                 goNext();
                 finish();
             }

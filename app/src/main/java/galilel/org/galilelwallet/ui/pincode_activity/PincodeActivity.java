@@ -60,12 +60,9 @@ public class PincodeActivity extends BaseActivity implements KeyboardFragment.on
     }
 
     private void goNext() {
-        if (galilelApplication.getAppConf().getTrustedNode()==null){
-            // select random trusted node
-            List<GalileltrumPeerData> nodes = GalileltrumGlobalData.listTrustedHosts();
-            Random random = new Random();
-            galilelApplication.setTrustedServer(nodes.get(random.nextInt(nodes.size())));
-            galilelApplication.stopBlockchain();
+        if (galilelApplication.getAppConf().getTrustedNode() == null){
+            if (galilelModule.isStarted())
+                galilelApplication.stopBlockchain();
         }
 
         galilelApplication.getAppConf().setAppInit(true);

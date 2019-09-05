@@ -173,4 +173,6 @@ public interface GalilelModule {
     boolean encrypt(String password) throws UnsupportedEncodingException;
     boolean decrypt(String password) throws UnsupportedEncodingException;
     boolean isWalletLocked();
+
+    boolean isStarted();
 }

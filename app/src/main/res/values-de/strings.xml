@@ -32,7 +32,7 @@
     <string name="btn_send">Senden</string>
     <string name="button_cancel">Abbrechen</string>
     <string name="button_dismiss">Verwerfen</string>
-    <string name="button_ok">Okay</string>
+    <string name="button_ok">Ok</string>
     <string name="cannot_restore_wallet">Fehler, Geldbörse kann nicht wiederhergestellt werden.\nBitte überprüfe dein Passwort</string>
     <string name="change_address_explain">Du kannst die Wechseladresse für die Transaktion angeben oder setze einen Haken im Kontrollkästchen unten. Damit wird die Ursprungsadresse verwendet (sollten mehrere Adressen in der Geldbörse existieren, wird die mit dem höchsten Rate genommen).</string>
     <string name="change_address_origin">An die Ursprungsadresse senden.</string>

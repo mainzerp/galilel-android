@@ -13,6 +13,8 @@ import org.galilelj.core.Sha256Hash;
 import org.galilelj.core.StoredBlock;
 import org.galilelj.store.BlockStore;
 import org.galilelj.store.BlockStoreException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,6 +26,7 @@ import java.util.Map;
 public class SnappyBlockchainStore implements BlockStore{
 
     private static final String CHAIN_HEAD_KEY_STRING = "chainhead";
+    private static final Logger log = LoggerFactory.getLogger(SnappyBlockchainStore.class);
 
     private final Context context;
     private DB db;
@@ -32,6 +35,8 @@ public class SnappyBlockchainStore implements BlockStore{
     private final File path;
     private final String filename;
 
+    // Stored genesis
+    private StoredBlock storedGenesis;
 
     /** Creates a LevelDB SPV block store using the given factory, which is useful if you want a pure Java version. */
     public SnappyBlockchainStore(Context context, File directory,String filename) throws BlockStoreException {
@@ -53,7 +58,8 @@ public class SnappyBlockchainStore implements BlockStore{
 
     private synchronized void tryOpen(File directory,String filename) throws IOException, BlockStoreException {
         try {
-            db = DBFactory.open(directory.getAbsolutePath(),filename);
+            if (db == null || !db.isOpen())
+                db = DBFactory.open(directory.getAbsolutePath(),filename);
         } catch (SnappydbException e) {
             throw new IOException(e);
         }
@@ -67,7 +73,7 @@ public class SnappyBlockchainStore implements BlockStore{
         } catch (SnappydbException e) {
             // not initialized
             Block genesis = context.getParams().getGenesisBlock().cloneAsHeader();
-            StoredBlock storedGenesis = new StoredBlock(genesis, genesis.getWork(), 0);
+            storedGenesis = new StoredBlock(genesis, genesis.getWork(), 0);
             put(storedGenesis);
             setChainHead(storedGenesis);
         }
@@ -75,34 +81,52 @@ public class SnappyBlockchainStore implements BlockStore{
 
     @Override
     public synchronized void put(StoredBlock block) throws BlockStoreException {
+        boolean notOpen = false;
         try {
-            //System.out.println("### trying to save something..");
+            if (!db.isOpen()){
+                try {
+                    tryOpen(this.path, this.filename);
+                    notOpen = true;
+                } catch (IOException e) {
+                    log.error("Error trying to open db", e);
+                }
+            }
             ByteBuffer buffer;
             buffer = block.getHeader().isZerocoin() ? zerocoinBuffer : this.buffer;
             buffer.clear();
-            //System.out.println("Block information: " + block.toString());
             block.serializeCompact(buffer);
             Sha256Hash blockHash = block.getHeader().getHash();
-            //System.out.println("### block hash to save: " + blockHash.toString());
-            //byte[] hash = blockHash.getBytes();
             byte[] dbBuffer = buffer.array();
             db.put(blockHash.toString(), dbBuffer);
-            // just for now to check something:
-            StoredBlock dbBlock = get(blockHash);
-
-            assert Arrays.equals(dbBlock.getHeader().getHash().getBytes(), blockHash.getBytes()) : "put is different than get in db.. " + block.getHeader().getHashAsString() + ", db: " + dbBlock.getHeader().getHashAsString();
         } catch (SnappydbException e) {
-            e.printStackTrace();
+            log.error("cannot store block", e);
             throw new BlockStoreException(e);
+        }finally {
+            if (notOpen){
+                try {
+                    close();
+                }catch (Exception e){
+                    log.error("Trying to close the blockstore after add a block because of service stopped", e);
+                }
+            }
         }
     }
 
     @Override @Nullable
     public synchronized StoredBlock get(Sha256Hash hash) throws BlockStoreException {
+        boolean notOpen = false;
         try {
+            if (!db.isOpen()){
+                try {
+                    tryOpen(this.path, this.filename);
+                    notOpen = true;
+                } catch (IOException e) {
+                    log.error("Error trying to open db", e);
+                }
+            }
+
             String blockToGet = hash.toString();
             if (!db.exists(blockToGet)) {
-                //System.out.println("Block to get doesn't exists: "+blockToGet);
                 return null;
             }
             byte[] bits = db.getBytes(blockToGet);
@@ -110,19 +134,43 @@ public class SnappyBlockchainStore implements BlockStore{
                 return null;
             return StoredBlock.deserializeCompact(context.getParams(), ByteBuffer.wrap(bits));
         } catch (SnappydbException e) {
-            e.printStackTrace();
+            log.error("Cannot get storedblock", e);
             return null;
+        } finally {
+            if (notOpen){
+                try {
+                    close();
+                }catch (Exception e){
+                    log.error("Trying to close the blockstore after get a block because of service stopped", e);
+                }
+            }
         }
     }
 
     @Override
     public synchronized StoredBlock getChainHead() throws BlockStoreException {
+        boolean notOpen = false;
         try {
-            System.out.println("Calling get Method from chain head");
+            if (!db.isOpen()){
+                try {
+                    tryOpen(this.path, this.filename);
+                    notOpen = true;
+                } catch (IOException e) {
+                    log.error("Error trying to open db on getChainHead", e);
+                }
+            }
+
             return get(Sha256Hash.wrap(db.getBytes(CHAIN_HEAD_KEY_STRING)));
         } catch (SnappydbException e) {
-            e.printStackTrace();
             throw new BlockStoreException(e);
+        } finally {
+            if (notOpen){
+                try {
+                    close();
+                }catch (Exception e){
+                    log.error("Trying to close the blockstore after get a block because of service stopped", e);
+                }
+            }
         }
     }
 
@@ -131,7 +179,7 @@ public class SnappyBlockchainStore implements BlockStore{
         try {
             db.put(CHAIN_HEAD_KEY_STRING, chainHead.getHeader().getHash().getBytes());
         } catch (SnappydbException e) {
-            e.printStackTrace();
+            log.error("cannot store chainhead ", e);
             throw new BlockStoreException(e);
         }
     }
@@ -139,7 +187,7 @@ public class SnappyBlockchainStore implements BlockStore{
     @Override
     public synchronized void close() throws BlockStoreException {
         try {
-            db.destroy();
+            db.close();
         } catch (SnappydbException e) {
             throw new BlockStoreException(e);
         }
@@ -188,7 +236,7 @@ public class SnappyBlockchainStore implements BlockStore{
         return context.getParams();
     }
 
-    public void truncate() throws SnappydbException {
+    public void truncate() throws Exception {
         db.destroy();
     }
 }

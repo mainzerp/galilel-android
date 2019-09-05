@@ -12,10 +12,10 @@ public class GalileltrumGlobalData {
         "eu2.galilel.org"
     };
 
-    public static final List<GalileltrumPeerData> listTrustedHosts() {
+    public static final List<GalileltrumPeerData> listTrustedHosts(int paramsPort) {
         List<GalileltrumPeerData> list = new ArrayList<>();
         for (String trustedNode : TRUSTED_NODES) {
-            list.add(new GalileltrumPeerData(trustedNode,36001,55552));
+            list.add(new GalileltrumPeerData(trustedNode,paramsPort,55552));
         }
         return list;
     }

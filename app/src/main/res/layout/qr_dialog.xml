@@ -38,7 +38,8 @@
         android:layout_height="40dp"
         android:id="@+id/btn_ok"
         android:gravity="center"
-        android:textColor="@color/darkBrown1"
+        android:text="@string/button_ok"
+        android:textColor="@color/galilelWhite"
         android:background="@drawable/button_brown" />
 
 </LinearLayout>

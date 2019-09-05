@@ -198,7 +198,7 @@ public class BaseDrawerActivity extends GalilelActivity implements NavigationVie
 
         if (id == R.id.nav_wallet) {
             Intent intent = new Intent(this,WalletActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
         } else if (id == R.id.nav_address) {
