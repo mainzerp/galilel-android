@@ -254,6 +254,8 @@ public class GalilelWalletService extends Service{
                     //notificationCount++;
                     notificationAccumulatedAmount = notificationAccumulatedAmount.add(amount);
                     Intent openIntent = new Intent(getApplicationContext(), WalletActivity.class);
+                    openIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+                            | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     openPendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, openIntent, 0);
                     Intent resultIntent = new Intent(getApplicationContext(), GalilelWalletService.this.getClass());
                     resultIntent.setAction(ACTION_CANCEL_COINS_RECEIVED);
