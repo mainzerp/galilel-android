@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.support.v4.content.FileProvider;
 
 import org.acra.ACRA;
@@ -152,9 +153,27 @@ public class GalilelApplication extends Application implements ContextWrapper {
         }
     }
 
+    public static boolean isServiceRunningInForeground(Context context, Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                if (service.foreground) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public void startGalilelService() {
-        Intent intent = new Intent(this,GalilelWalletService.class);
-        startService(intent);
+        Intent intent = new Intent(getApplicationContext(), GalilelWalletService.class);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            if (!isServiceRunningInForeground(getApplicationContext(), GalilelWalletService.class)) {
+                startForegroundService(intent);
+            }
+        } else {
+            startService(intent);
+        }
     }
 
     private void initLogging() {

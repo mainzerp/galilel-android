@@ -464,20 +464,21 @@ public class GalilelWalletService extends Service{
 
             Intent intent = new Intent(this, GalilelWalletService.class);
             intent.setAction(ACTION_SCHEDULE_SERVICE);
-            alarm.set(
-                    // This alarm will wake up the device when System.currentTimeMillis()
-                    // equals the second argument value
-                    alarm.RTC_WAKEUP,
-                    scheduleTime,
-                    // PendingIntent.getService creates an Intent that will start a service
-                    // when it is called. The first argument is the Context that will be used
-                    // when delivering this intent. Using this has worked for me. The second
-                    // argument is a request code. You can use this code to cancel the
-                    // pending intent if you need to. Third is the intent you want to
-                    // trigger. In this case I want to create an intent that will start my
-                    // service. Lastly you can optionally pass flags.
-                    PendingIntent.getService(this, 0,intent , 0)
-            );
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                alarm.set(
+                        alarm.RTC_WAKEUP,
+                        scheduleTime,
+                        PendingIntent.getForegroundService(this, 0, intent, 0)
+                );
+            } else {
+                alarm.set(
+                        alarm.RTC_WAKEUP,
+                        scheduleTime,
+                        PendingIntent.getService(this, 0, intent, 0)
+                );
+            }
+
             // save
             module.getConf().saveScheduleBlockchainService(scheduleTime);
         }
@@ -490,20 +491,20 @@ public class GalilelWalletService extends Service{
 
         Intent intent = new Intent(this, GalilelWalletService.class);
         intent.setAction(ACTION_SCHEDULE_SERVICE);
-        alarm.set(
-                // This alarm will wake up the device when System.currentTimeMillis()
-                // equals the second argument value
-                alarm.RTC_WAKEUP,
-                scheduleTime,
-                // PendingIntent.getService creates an Intent that will start a service
-                // when it is called. The first argument is the Context that will be used
-                // when delivering this intent. Using this has worked for me. The second
-                // argument is a request code. You can use this code to cancel the
-                // pending intent if you need to. Third is the intent you want to
-                // trigger. In this case I want to create an intent that will start my
-                // service. Lastly you can optionally pass flags.
-                PendingIntent.getService(this, 0,intent , 0)
-        );
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            alarm.set(
+                    alarm.RTC_WAKEUP,
+                    scheduleTime,
+                    PendingIntent.getForegroundService(this, 0, intent, 0)
+            );
+        } else {
+            alarm.set(
+                    alarm.RTC_WAKEUP,
+                    scheduleTime,
+                    PendingIntent.getService(this, 0, intent, 0)
+            );
+        }
     }
 
     private void requestRateCoin(){
