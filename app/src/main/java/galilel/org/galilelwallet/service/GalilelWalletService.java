@@ -1,6 +1,7 @@
 package galilel.org.galilelwallet.service;
 
 import android.app.AlarmManager;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -75,6 +76,8 @@ import static galilel.org.galilelwallet.service.IntentsConstants.INTENT_BROADCAS
 import static galilel.org.galilelwallet.service.IntentsConstants.INTENT_EXTRA_BLOCKCHAIN_STATE;
 import static galilel.org.galilelwallet.service.IntentsConstants.NOT_BLOCKCHAIN_ALERT;
 import static galilel.org.galilelwallet.service.IntentsConstants.NOT_COINS_RECEIVED;
+import static galilel.org.galilelwallet.service.IntentsConstants.NOTIFICATION_CHANNEL_ID;
+import static galilel.org.galilelwallet.service.IntentsConstants.NOTIFICATION_CHANNEL_NAME;
 
 public class GalilelWalletService extends Service{
 
@@ -260,7 +263,7 @@ public class GalilelWalletService extends Service{
                     Intent resultIntent = new Intent(getApplicationContext(), GalilelWalletService.this.getClass());
                     resultIntent.setAction(ACTION_CANCEL_COINS_RECEIVED);
                     deleteIntent = PendingIntent.getService(GalilelWalletService.this, 0, resultIntent, PendingIntent.FLAG_CANCEL_CURRENT);
-                    mBuilder = new NotificationCompat.Builder(getApplicationContext())
+                    mBuilder = new NotificationCompat.Builder(getApplicationContext(), NOTIFICATION_CHANNEL_ID)
                             .setContentTitle(getString(R.string.notification_received_title))
                             .setContentText(getString(R.string.notification_received_text) + " " + notificationAccumulatedAmount.toFriendlyString())
                             .setAutoCancel(true)
@@ -313,8 +316,14 @@ public class GalilelWalletService extends Service{
             final String lockName = getPackageName() + " blockchain sync";
             final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
             wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, lockName);
+
+            NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, NOTIFICATION_CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.createNotificationChannel(channel);
+
             nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             nm.cancelAll();
+
             broadcastManager = LocalBroadcastManager.getInstance(this);
             // Galilel
             galilelApplication = GalilelApplication.getInstance();
@@ -586,7 +595,7 @@ public class GalilelWalletService extends Service{
 
             if(showNotif) {
                 android.support.v4.app.NotificationCompat.Builder mBuilder =
-                        new NotificationCompat.Builder(getApplicationContext())
+                        new NotificationCompat.Builder(getApplicationContext(), NOTIFICATION_CHANNEL_ID)
                                 .setSmallIcon(R.mipmap.ic_notification)
                                 .setContentTitle(getString(R.string.notification_received_title))
                                 .setContentText(stringBuilder.toString())
