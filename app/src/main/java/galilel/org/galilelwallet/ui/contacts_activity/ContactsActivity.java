@@ -147,7 +147,7 @@ public class ContactsActivity extends BaseDrawerActivity implements ListItemList
         if (deleteAddressLabelDialog==null) {
             deleteAddressLabelDialog = DialogsUtil.buildSimpleTwoBtnsDialog(
                     this,
-                    getString(R.string.options_menu),
+                    getString(R.string.options_notice),
                     getString(R.string.delete_address_label_text,data.getAddresses().get(0)),
                     listener
             );

@@ -10,8 +10,8 @@
     <string name="add_memo">Monatliche Zahlung</string>
     <string name="add_pin">PIN erstellen</string>
     <string name="address_book_screen_title">Adressbuch</string>
-    <string name="address_label_deleted">Adresse gelöscht.</string>
-    <string name="address_num">Adresse %d </string>
+    <string name="address_label_deleted">Adresse gelöscht</string>
+    <string name="address_num">Adresse %d</string>
     <string name="amount">Betrag</string>
     <string name="app_name">Galilel Geldbörse</string>
     <string name="back">Zurück</string>
@@ -137,7 +137,6 @@
     <string name="node_protocol">Protokoll:</string>
     <string name="node_selection_message">Du kannst einen verfügbaren Server auswählen oder einen hinzufügen</string>
     <string name="not_connection">Keine Verbindung</string>
-    <string name="notification_notice">Hinweis</string>
     <string name="notification_received_text">Münzen empfangen im Wert von</string>
     <string name="notification_received_title">GALI empfangen</string>
     <string name="number_0">0</string>
@@ -154,7 +153,7 @@
     <string name="option_coin_selection">Münzauswahl</string>
     <string name="option_custom_fee">Benutzerdefinierte Gebühr</string>
     <string name="option_multi_outputs">Multi Send</string>
-    <string name="options_menu">Optionen</string>
+    <string name="options_notice">Hinweis</string>
     <string name="origin_address">Ursprungsadresse</string>
     <string name="output_amount">Betrag</string>
     <string name="output_label">Adresse</string>
