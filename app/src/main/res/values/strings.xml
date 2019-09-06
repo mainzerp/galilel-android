@@ -32,7 +32,9 @@
     <string name="btn_send">Send</string>
     <string name="button_cancel">Cancel</string>
     <string name="button_dismiss">Dismiss</string>
+    <string name="button_no">No</string>
     <string name="button_ok">Ok</string>
+    <string name="button_yes">Yes</string>
     <string name="cannot_restore_wallet">Error, cannot restore wallet, please verify your password</string>
     <string name="change_address_explain">You can customize the change address of your transaction specifing it or checking the box below and sending the amount to the origin (if there is more than one origin the wallet will chose the address with the highest rate).</string>
     <string name="change_address_origin">Send it to origin.</string>
