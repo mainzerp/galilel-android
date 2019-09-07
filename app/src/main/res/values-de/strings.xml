@@ -114,7 +114,6 @@
     <string name="local_currency">Lokale Währung</string>
     <string name="made_by">Entwickelt von</string>
     <string name="message_blockstore_error">Blockchainspeicher beschädigt\n\nBitte sende einen Fehlerbericht und versuche die Geldbörse mit deinem Mnemonic Code oder aus einer Sicherung wiederherzustellen.</string>
-    <string name="message_connection_is_needed">Netzwerkverbindung wird für diese Aufgabe benötigt, bitte überprüfe deine Internetverbindung und ob dein vertrauter Server erreichbar ist.</string>
     <string name="message_no_trusted_peer_connection">Vertraute Serververbindung fehlgeschlagen</string>
     <string name="minimum_fee">Zahle nur die Mindestgebühr von 0.0001 GALI/kB</string>
     <string name="multi_send_activity_title">Multi Send</string>
@@ -279,11 +278,8 @@
     <string name="unavailable">Betragt nicht ausgebbar</string>
     <string name="unknown_error_message">Fehler beim Laden des xPub Schlüssels, bitte sende einen Fehlerbericht</string>
     <string name="update_pin">PIN aktualisieren</string>
-    <string name="upgrade_succesfull">Aktualisierung erfolgreich, bitte warte einen Moment bis die Geldbörse wieder synchronisiert ist</string>
-    <string name="upgrade_wallet">Aktualisiere Geldbörse</string>
     <string name="validate_multi_send_enabled">Aktion unmöglich, Multi Send aktiviert</string>
     <string name="wallet_is_not_sync">Geldbörse nicht aktuell, um deinen tatsächlichen Saldo zu sehen warte bis die Synchronisierung fertig ist</string>
-    <string name="wallet_update_needed">Eine veraltete Geldbörse mit BIP32 Schlüssel wurde gefunden, um diese zu aktualisieren, werden deine Münzen auf eine mit BIP44 Schlüssel transferiert.\n\nDies bedeutet, dass dein alter Mnemonic Code und deine alte Sicherung nicht mehr gültig sind, bitte notiere den neuen Mnemonic Code auf Papier oder erstelle ein neues Backup deiner Geldbörse.\n\nBitte warte und schließe diesen Bildschirm nicht. Die Aktualisierung und Blockchainsynchronisierung kann eine Weile dauern.\n\nSollte der Bildschirm versehentlich geschlossen werden bevor die Aktualisierung beendet wurde, kannst du zwei Sicherungen im \'Download\' Verzeichnis mit dem Präfix \'old\' und \'upgrade\' finden. Damit kannst du die Geldbörse manuell wiederherstellen.</string>
     <string name="warn_sharing_pub_key">Wenn du deinen öffentlichen Schlüssels teilst, kann jeder deinen Saldo und deine Transaktionshistorie einsehen.</string>
     <string name="watch_only_mode_activated">Beobachtermodus aktiviert</string>
     <string name="watch_only_mode_activated_text">Bitte warte bis die Synchronisierung fertig ist. Sei geduldig, es kann eine Weile dauern.</string>

@@ -39,7 +39,6 @@ import galilel.org.galilelwallet.ui.qr_activity.QrActivity;
 import galilel.org.galilelwallet.ui.settings_backup_activity.SettingsBackupActivity;
 import galilel.org.galilelwallet.ui.transaction_request_activity.RequestActivity;
 import galilel.org.galilelwallet.ui.transaction_send_activity.SendActivity;
-import galilel.org.galilelwallet.ui.upgrade.UpgradeWalletActivity;
 import galilel.org.galilelwallet.utils.AnimationUtils;
 import galilel.org.galilelwallet.utils.DialogsUtil;
 import galilel.org.galilelwallet.utils.scanner.ScanActivity;
@@ -176,23 +175,6 @@ public class WalletActivity extends BaseDrawerActivity {
                 updateBalance();
                 showOrHideSyncingContainer();
                 txsFragment.refresh();
-
-                // check if this wallet need an update:
-                try {
-                    if(galilelModule.isBip32Wallet() && galilelModule.isSyncWithNode()){
-                        if (!galilelModule.isWalletWatchOnly() && galilelModule.getAvailableBalanceCoin().isGreaterThan(Transaction.DEFAULT_TX_FEE)) {
-                            Intent intent = UpgradeWalletActivity.createStartIntent(
-                                    this,
-                                    getString(R.string.upgrade_wallet),
-                                    getString(R.string.wallet_update_needed),
-                                    "sweepBip32"
-                            );
-                            startActivity(intent);
-                        }
-                    }
-                } catch (NoPeerConnectedException e) {
-                    log.info("No peer connection on walletUpdate", e.getMessage());
-                }
             } else {
                 log.info("This should open the loading screen first");
             }
