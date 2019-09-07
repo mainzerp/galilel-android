@@ -1,6 +1,7 @@
 package galilel.org.galilelwallet.service;
 
 import android.app.AlarmManager;
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -9,6 +10,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Binder;
@@ -76,8 +79,6 @@ import static galilel.org.galilelwallet.service.IntentsConstants.INTENT_BROADCAS
 import static galilel.org.galilelwallet.service.IntentsConstants.INTENT_EXTRA_BLOCKCHAIN_STATE;
 import static galilel.org.galilelwallet.service.IntentsConstants.NOT_BLOCKCHAIN_ALERT;
 import static galilel.org.galilelwallet.service.IntentsConstants.NOT_COINS_RECEIVED;
-import static galilel.org.galilelwallet.service.IntentsConstants.NOTIFICATION_CHANNEL_ID;
-import static galilel.org.galilelwallet.service.IntentsConstants.NOTIFICATION_CHANNEL_NAME;
 
 public class GalilelWalletService extends Service{
 
@@ -106,6 +107,9 @@ public class GalilelWalletService extends Service{
 
     private volatile long lastUpdateTime = System.currentTimeMillis();
     private volatile long lastMessageTime = System.currentTimeMillis();
+
+    private static final String NOTIFICATION_CHANNEL_ID = "notification_channel";
+    private static final String NOTIFICATION_CHANNEL_NAME = "notification_wallet";
 
     public class GalilelBinder extends Binder {
         public GalilelWalletService getService() {
@@ -140,7 +144,6 @@ public class GalilelWalletService extends Service{
         public void onPeerDisconnected(Peer peer, int i) {
             //todo: notify peer disconnected
             log.info("Peer disconnected: "+peer.getAddress());
-            nm.cancelAll();
         }
     }
 
@@ -317,12 +320,7 @@ public class GalilelWalletService extends Service{
             final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
             wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, lockName);
 
-            NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, NOTIFICATION_CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
-            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            notificationManager.createNotificationChannel(channel);
-
             nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            nm.cancelAll();
 
             broadcastManager = LocalBroadcastManager.getInstance(this);
             // Galilel
@@ -375,6 +373,24 @@ public class GalilelWalletService extends Service{
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         log.info("Galilel service onStartCommand");
+
+        // create initial configuration for foreground service.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, NOTIFICATION_CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.createNotificationChannel(channel);
+
+            Bitmap largeIconBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
+            Notification.Builder builder = new Notification.Builder(this, NOTIFICATION_CHANNEL_ID)
+                    .setContentTitle(getString(R.string.app_name))
+                    .setContentText("MAIK wallet is syncing.")
+                    .setLargeIcon(largeIconBitmap)
+                    .setAutoCancel(true);
+
+            Notification notification = builder.build();
+            startForeground(1, notification);
+        }
+
         try {
             if (intent != null) {
                 try {
@@ -394,7 +410,12 @@ public class GalilelWalletService extends Service{
                 } else if (ACTION_RESET_BLOCKCHAIN.equals(action)) {
                     log.info("will remove blockchain on service shutdown");
                     resetBlockchainOnShutdown = true;
-                    stopSelf();
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        stopForeground(true);
+                    } else {
+                        stopSelf();
+                    }
                 } else if (ACTION_BROADCAST_TRANSACTION.equals(action)) {
                     blockchainManager.broadcastTransaction(intent.getByteArrayExtra(DATA_TRANSACTION_HASH));
                 }
@@ -433,14 +454,6 @@ public class GalilelWalletService extends Service{
             if (wakeLock.isHeld()) {
                 log.debug("wakelock still held, releasing");
                 wakeLock.release();
-            }
-
-            try {
-                // Remove every notification
-                NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-                nm.cancelAll();
-            }catch (Exception e){
-                log.error("Exception cancelling notifications", e);
             }
 
             log.info("service was up for " + ((System.currentTimeMillis() - serviceCreatedAt) / 1000 / 60) + " minutes");
@@ -621,6 +634,14 @@ public class GalilelWalletService extends Service{
             intent.putExtra(INTENT_BROADCAST_DATA_TYPE, INTENT_BROADCAST_DATA_BLOCKCHAIN_STATE);
             intent.putExtra(INTENT_EXTRA_BLOCKCHAIN_STATE,blockchainState);
             broadcastManager.sendBroadcast(intent);
+        }
+
+        if (blockchainState == BlockchainState.SYNC){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                stopForeground(true);
+            } else {
+                stopSelf();
+            }
         }
     }
 

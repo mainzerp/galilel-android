@@ -10,7 +10,7 @@
     <string name="add_memo">Monthly payment</string>
     <string name="add_pin">Create PIN</string>
     <string name="address_book_screen_title">Address Book</string>
-    <string name="address_label_deleted">Address label deleted.</string>
+    <string name="address_label_deleted">Address label deleted</string>
     <string name="address_num">Address %d</string>
     <string name="amount">Amount</string>
     <string name="app_name">Galilel Wallet</string>
@@ -32,7 +32,9 @@
     <string name="btn_send">Send</string>
     <string name="button_cancel">Cancel</string>
     <string name="button_dismiss">Dismiss</string>
+    <string name="button_no">No</string>
     <string name="button_ok">Ok</string>
+    <string name="button_yes">Yes</string>
     <string name="cannot_restore_wallet">Error, cannot restore wallet, please verify your password</string>
     <string name="change_address_explain">You can customize the change address of your transaction specifing it or checking the box below and sending the amount to the origin (if there is more than one origin the wallet will chose the address with the highest rate).</string>
     <string name="change_address_origin">Send it to origin.</string>
@@ -51,7 +53,7 @@
     <string name="crash_toast_text">Galilel wallet crash</string>
     <string name="custom_fee">Custom fee</string>
     <string name="delete">Delete</string>
-    <string name="delete_address_label_text">Label for address\n\n%s\n\nis going to be deleted.\n\nAre you sure?</string>
+    <string name="delete_address_label_text">Address\n\n%s\n\nis going to be deleted.\n\nAre you sure?</string>
     <string name="derivation_path">Derivation path (BIP32)</string>
     <string name="desc_slide1">One of the worlds first mobile wallets which supports two-factor authentication for encrypted private keys. It allows you to protect your wallet without any risk of electronic theft.</string>
     <string name="desc_slide2">Already very fast, Galilel transactions using SwiftX are instant with zero confirmation wait time required.</string>
@@ -137,7 +139,6 @@
     <string name="node_protocol">Protocol:</string>
     <string name="node_selection_message">You can select one of the node available or add one</string>
     <string name="not_connection">No connection</string>
-    <string name="notification_notice">Notice</string>
     <string name="notification_received_text">Coins received for a value of</string>
     <string name="notification_received_title">GALI received</string>
     <string name="number_0">0</string>
@@ -154,7 +155,7 @@
     <string name="option_coin_selection">Coin selection</string>
     <string name="option_custom_fee">Custom fee</string>
     <string name="option_multi_outputs">Multi send</string>
-    <string name="options_menu">Options</string>
+    <string name="options_notice">Notice</string>
     <string name="origin_address">Origin address</string>
     <string name="output_amount">Amount</string>
     <string name="output_label">Address label</string>

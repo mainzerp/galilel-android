@@ -30,6 +30,4 @@ public class IntentsConstants {
 
     // Notifications types
     public static final String INTENT_BROADCAST_DATA_ON_COIN_RECEIVED = "on_coin_received";
-    public static final String NOTIFICATION_CHANNEL_ID = "notification_channel";
-    public static final String NOTIFICATION_CHANNEL_NAME = "notification_wallet";
 }
