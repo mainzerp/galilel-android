@@ -155,12 +155,6 @@ public interface GalilelModule {
 
     void watchOnlyMode(String xpub, DeterministicKeyChain.KeyChainType keyChainType) throws IOException;
 
-    boolean isBip32Wallet();
-
-    boolean sweepBalanceToNewSchema() throws InsufficientMoneyException, CantSweepBalanceException;
-
-    boolean upgradeWallet(String upgradeCode) throws UpgradeException;
-
     List<GalilelRate> listRates();
 
     List<String> getAvailableMnemonicWordsList();

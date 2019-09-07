@@ -654,10 +654,6 @@ public class WalletManager {
         return wallet.getWatchingKey().serializePubB58(conf.getNetworkParams());
     }
 
-    public boolean isBip32Wallet() {
-        return wallet.getActiveKeyChain().getKeyChainType() == DeterministicKeyChain.KeyChainType.BIP32;
-    }
-
     /**
      * Create a clean transaction from the wallet balance to the sweep address
      * @param sweepAddress
