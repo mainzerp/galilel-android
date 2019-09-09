@@ -98,6 +98,7 @@
     <string name="import_keys_dialog_failure">Fehler beim Importieren der Sicherung\n\n%s</string>
     <string name="import_keys_dialog_message">Wähle eine Sicherung aus dem Verzeichnis\n\n%s\n\naus.</string>
     <string name="import_xpub">Importieren</string>
+    <string name="input">Eingabe</string>
     <string name="inputs_explanation">Wähle die Münzen für diese Transaktion</string>
     <string name="insert_new_pin">Gebe die neue PIN ein</string>
     <string name="insert_old_pin">Gebe deine aktuelle PIN ein</string>
@@ -152,6 +153,7 @@
     <string name="option_multi_outputs">Multi Send</string>
     <string name="options_notice">Hinweis</string>
     <string name="origin_address">Ursprungsadresse</string>
+    <string name="output">Ausgabe</string>
     <string name="output_amount">Betrag</string>
     <string name="output_label">Adresse</string>
     <string name="payment_request">Zahlung anfordern</string>
@@ -262,10 +264,10 @@
     <string name="tx_detail_amount">Gesamter Betrag</string>
     <string name="tx_detail_bytes">Bytes</string>
     <string name="tx_detail_confirmations">Bestätigungen</string>
+    <string name="tx_detail_input">%d Eingabe</string>
     <string name="tx_detail_inputs">%d Eingaben</string>
     <string name="tx_detail_inputs_title">Münzquellen</string>
     <string name="tx_detail_no_memo">Keine Beschreibung</string>
-    <string name="tx_detail_position">Position</string>
     <string name="tx_detail_title">Transaktionsdetails</string>
     <string name="tx_input_title">Eingangsdetails</string>
     <string name="unavailable">Betragt nicht ausgebbar</string>

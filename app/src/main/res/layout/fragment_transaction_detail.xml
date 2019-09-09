@@ -62,6 +62,19 @@
                 android:textSize = "18sp" />
 
             <TextView
+                android:id = "@+id/txt_amount_local"
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:layout_marginBottom="20dp"
+                android:padding="8dp"
+                android:gravity="right"
+                android:textIsSelectable="true"
+                android:background="@drawable/transaction_inputs"
+                android:textStyle="bold"
+                android:textColor = "@color/grey85black"
+                android:textSize = "18sp" />
+
+            <TextView
                 android:id="@+id/txt_date_title"
                 android:layout_width = "wrap_content"
                 android:layout_height = "wrap_content"

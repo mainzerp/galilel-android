@@ -98,6 +98,7 @@
     <string name="import_keys_dialog_failure">Error importing backup file\n\n%s</string>
     <string name="import_keys_dialog_message">Select one of your backups files loaded from folder\n\n%s</string>
     <string name="import_xpub">Import</string>
+    <string name="input">Input</string>
     <string name="inputs_explanation">Select coins to use in the transaction</string>
     <string name="insert_new_pin">Insert new PIN</string>
     <string name="insert_old_pin">Insert your current PIN</string>
@@ -152,6 +153,7 @@
     <string name="option_multi_outputs">Multi send</string>
     <string name="options_notice">Notice</string>
     <string name="origin_address">Origin address</string>
+    <string name="output">Output</string>
     <string name="output_amount">Amount</string>
     <string name="output_label">Address label</string>
     <string name="payment_request">Payment Request</string>
@@ -262,10 +264,10 @@
     <string name="tx_detail_amount">Total amount</string>
     <string name="tx_detail_bytes">bytes</string>
     <string name="tx_detail_confirmations">Confirmations amount</string>
+    <string name="tx_detail_input">%d input</string>
     <string name="tx_detail_inputs">%d inputs</string>
     <string name="tx_detail_inputs_title">Source coins</string>
     <string name="tx_detail_no_memo">No description</string>
-    <string name="tx_detail_position">Position</string>
     <string name="tx_detail_title">Transaction Details</string>
     <string name="tx_input_title">Inputs Detail</string>
     <string name="unavailable">Amount unspendable:</string>
