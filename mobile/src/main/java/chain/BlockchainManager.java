@@ -6,6 +6,7 @@ import com.google.common.util.concurrent.ListenableFuture;
 import global.utils.Io;
 import org.galilelj.core.BlockChain;
 import org.galilelj.core.CheckpointManager;
+import org.galilelj.core.Context;
 import org.galilelj.core.Peer;
 import org.galilelj.core.PeerGroup;
 import org.galilelj.core.Sha256Hash;
@@ -15,6 +16,7 @@ import org.galilelj.core.TransactionBroadcast;
 import org.galilelj.core.listeners.PeerConnectedEventListener;
 import org.galilelj.core.listeners.PeerDataEventListener;
 import org.galilelj.core.listeners.PeerDisconnectedEventListener;
+import org.galilelj.net.discovery.DnsDiscovery;
 import org.galilelj.net.discovery.MultiplexingDiscovery;
 import org.galilelj.net.discovery.PeerDiscovery;
 import org.galilelj.net.discovery.PeerDiscoveryException;
@@ -139,6 +141,7 @@ public class BlockchainManager {
             // create the blockchain
             try {
                 blockChain = new BlockChain(conf.getNetworkParams(), blockStore);
+                Context.get().blockChain = blockChain;
                 walletManager.addWalletFrom(blockChain);
             } catch (final BlockStoreException x) {
                 throw new Error("blockchain cannot be created", x);
@@ -254,6 +257,7 @@ public class BlockchainManager {
                 int bestChainHeight = 0;
                 if (blockChain != null)
                     bestChainHeight = blockChain.getBestChainHeight();
+                Context.get().blockChain = blockChain;
                 if (walletLastBlockSeenHeight != -1 && walletLastBlockSeenHeight != bestChainHeight) {
                     final String message = "wallet/blockchain out of sync: " + walletLastBlockSeenHeight + "/" + bestChainHeight;
                     LOG.error(message);
@@ -279,7 +283,7 @@ public class BlockchainManager {
                 final int trustedPeerPort = conf.getTrustedNodePort();
                 final boolean hasTrustedPeer = trustedPeerHost != null;
 
-                final boolean connectTrustedPeerOnly = false;// trustedPeerHost != null;//hasTrustedPeer && config.getTrustedPeerOnly();
+                final boolean connectTrustedPeerOnly = trustedPeerHost != null;//hasTrustedPeer && config.getTrustedPeerOnly();
                 peerGroup.setMaxConnections(connectTrustedPeerOnly ? 1 : maxConnectedPeers);
                 peerGroup.setConnectTimeoutMillis(conf.getPeerTimeoutMs());
                 peerGroup.setPeerDiscoveryTimeoutMillis(conf.getPeerDiscoveryTimeoutMs());
@@ -299,87 +303,9 @@ public class BlockchainManager {
                         }
                     });
                 } else {
-                    peerGroup.addPeerDiscovery(new PeerDiscovery() {
 
-                        private final PeerDiscovery normalPeerDiscovery = MultiplexingDiscovery.forServices(conf.getNetworkParams(), 0);
-
-                        @Override
-                        public InetSocketAddress[] getPeers(final long services, final long timeoutValue, final TimeUnit timeoutUnit)
-                                throws PeerDiscoveryException {
-                            final List<InetSocketAddress> peers = new LinkedList<>();
-
-                            boolean needsTrimPeersWorkaround = false;
-
-                            final String trustedPeerHost = conf.getTrustedNodeHost();
-                            final int trustedPeerPort = conf.getTrustedNodePort();
-
-                            boolean hasTrustedPeer = trustedPeerHost != null;
-
-                            if (hasTrustedPeer) {
-                                LOG.info("trusted peer '" + trustedPeerHost + "'" + (hasTrustedPeer ? " only" : ""));
-                                final InetSocketAddress addr;
-
-                                int port;
-                                if (trustedPeerPort == 0){
-                                    port = conf.getNetworkParams().getPort();
-                                }else
-                                    port = trustedPeerPort;
-
-                                addr = new InetSocketAddress(trustedPeerHost, port);
-
-                                if (addr.isUnresolved()) {
-                                    LOG.warn("Unresolved trusted peer, " + addr);
-                                    for (GalileltrumPeerData galileltrumPeerData : GalileltrumGlobalData.listTrustedHosts(conf.getNetworkParams().getPort())) {
-                                        InetSocketAddress socketAddress = new InetSocketAddress(galileltrumPeerData.getHost(), galileltrumPeerData.getTcpPort());
-                                        if (!socketAddress.isUnresolved()) {
-                                            peers.add(socketAddress);
-                                        }else {
-                                            LOG.warn("Unresolved peer, " + socketAddress);
-                                        }
-                                    }
-                                    InetSocketAddress[] nodes = new InetSocketAddress[peers.size()];
-                                    for (int i = 0; i < peers.size(); i++) {
-                                        nodes[i] = peers.get(i);
-                                    }
-                                    return nodes;
-                                }
-
-                                if (addr.getAddress() != null) {
-                                    peers.add(addr);
-                                    needsTrimPeersWorkaround = true;
-                                }
-                            }else {
-                                for (GalileltrumPeerData galileltrumPeerData : GalileltrumGlobalData.listTrustedHosts(conf.getNetworkParams().getPort())) {
-                                    InetSocketAddress socketAddress = new InetSocketAddress(galileltrumPeerData.getHost(), galileltrumPeerData.getTcpPort());
-                                    if (!socketAddress.isUnresolved()) {
-                                        peers.add(socketAddress);
-                                    }else {
-                                        LOG.warn("Unresolved peer, " + socketAddress);
-                                    }
-                                }
-                                InetSocketAddress[] nodes = new InetSocketAddress[peers.size()];
-                                for (int i = 0; i < peers.size(); i++) {
-                                    nodes[i] = peers.get(i);
-                                }
-                                return nodes;
-                            }
-
-                            if (!hasTrustedPeer && peers.isEmpty())
-                                peers.addAll(Arrays.asList(normalPeerDiscovery.getPeers(services, timeoutValue, timeoutUnit)));
-
-                            // workaround because PeerGroup will shuffle peers
-                            if (needsTrimPeersWorkaround)
-                                while (peers.size() >= maxConnectedPeers)
-                                    peers.remove(peers.size() - 1);
-
-                            return peers.toArray(new InetSocketAddress[0]);
-                        }
-
-                        @Override
-                        public void shutdown() {
-                            normalPeerDiscovery.shutdown();
-                        }
-                    });
+                    // we switched to DNS discovery only for simplicity.
+                    peerGroup.addPeerDiscovery(new DnsDiscovery(conf.getNetworkParams()));
                 }
 
                 // notify that the peergroup was initialized
