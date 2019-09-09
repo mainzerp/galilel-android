@@ -473,20 +473,20 @@ public class GalilelWalletService extends Service{
         if (!isSchedule){
             log.info("scheduling service");
             AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
-            long scheduleTime = System.currentTimeMillis() + 1000*60;//(1000 * 60 * 60); // One hour from now
+            long scheduleTime = System.currentTimeMillis() + 1000 * 60 * 15; // (1000 * 60 * 15); // 15 minutes from now
 
             Intent intent = new Intent(this, GalilelWalletService.class);
             intent.setAction(ACTION_SCHEDULE_SERVICE);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 alarm.set(
-                        alarm.RTC_WAKEUP,
+                        AlarmManager.RTC_WAKEUP,
                         scheduleTime,
                         PendingIntent.getForegroundService(this, 0, intent, 0)
                 );
             } else {
                 alarm.set(
-                        alarm.RTC_WAKEUP,
+                        AlarmManager.RTC_WAKEUP,
                         scheduleTime,
                         PendingIntent.getService(this, 0, intent, 0)
                 );
@@ -500,20 +500,20 @@ public class GalilelWalletService extends Service{
     private void tryScheduleServiceNow() {
         log.info("scheduling service now");
         AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
-        long scheduleTime = System.currentTimeMillis() + 1000 * 60 * 2; // 2 minutes
+        long scheduleTime = System.currentTimeMillis() + 1000 * 60 * 5; // 5 minutes
 
         Intent intent = new Intent(this, GalilelWalletService.class);
         intent.setAction(ACTION_SCHEDULE_SERVICE);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             alarm.set(
-                    alarm.RTC_WAKEUP,
+                    AlarmManager.RTC_WAKEUP,
                     scheduleTime,
                     PendingIntent.getForegroundService(this, 0, intent, 0)
             );
         } else {
             alarm.set(
-                    alarm.RTC_WAKEUP,
+                    AlarmManager.RTC_WAKEUP,
                     scheduleTime,
                     PendingIntent.getService(this, 0, intent, 0)
             );
