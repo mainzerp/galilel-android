@@ -36,28 +36,6 @@
 		android:textSize="@dimen/tutorial_message_text_size"
 		android:textAlignment="center" />
 
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_weight="1"
-		android:paddingLeft="@dimen/activity_horizontal_margin"
-		android:paddingRight="@dimen/activity_horizontal_margin"
-		android:paddingTop="@dimen/activity_vertical_margin"
-		android:paddingBottom="@dimen/activity_vertical_margin"
-		android:orientation="vertical"
-		android:gravity="bottom">
-
-		<Button
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:text="@string/btn_select_node"
-			android:textColor="@color/darkBrown1"
-			android:textSize="@dimen/tutorial_button_text_size"
-			android:background="@drawable/button_white"
-			android:onClick="btnNodeClick" />
-
-	</LinearLayout>
-
 	<View
 		android:layout_width="match_parent"
 		android:layout_height="@dimen/tutorial_pager_height" />

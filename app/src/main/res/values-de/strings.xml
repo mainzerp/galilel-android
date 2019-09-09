@@ -58,7 +58,7 @@
     <string name="desc_slide1">Eine der ersten mobilen Geldbörsen welche 2-Faktor-Authentifizierung für verschlüsselte private Schlüssel enthält. Deine Geldbörse wird somit bestmöglichst vor Diebstahl geschützt.</string>
     <string name="desc_slide2">Obwohl Transaktionen ohnehin sehr schnell sind, werden sie unter Verwendung von SwiftTX sofort ausgeführt und brauchen keine Wartezeit zur Bestätigung.</string>
     <string name="desc_slide3">Galilel ist außergewöhnlich. Es geht darum, die erste wirklich anonyme Kryptowährung mit dynamischen und privaten Proof-of-Stake zu etablieren!</string>
-    <string name="desc_slide4">Ein vertrauter Server macht leichte Proof-of-Stake Geldbörsen möglich. Du kannst dich auf diese verlassen oder erstelle deinen eigenen vertrauenswürdigen Server!</string>
+    <string name="desc_slide4">Unsere Mission is es digitales Geld der breiten Öffentlichkeit zugänglich zu machen ohne komplizierte Einstellungen oder Dokumentationen lesen zu müssen und dabei optimale Sicherheit zu wahren!</string>
     <string name="description">Beschreibung</string>
     <string name="detail_no_available_inputs">Keine Eingangsinformationen verfügbar</string>
     <string name="dialog_contact_create">Kontakt hinzufügen?</string>
@@ -257,7 +257,7 @@
     <string name="title_slide1">Höchste Sicherheit</string>
     <string name="title_slide2">Sofortiges Senden</string>
     <string name="title_slide3">Volle Privatsphäre</string>
-    <string name="title_slide4">Verbund vertrauter Server</string>
+    <string name="title_slide4">Einfach und Leicht</string>
     <string name="title_tx_weight">Größe</string>
     <string name="total_amount">Gesamt:</string>
     <string name="total_at_least">Mindestens insgesamt</string>
