@@ -19,10 +19,14 @@ import org.galilelj.core.TransactionOutput;
 import org.galilelj.script.Script;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
+import global.GalilelRate;
+import global.wrappers.InputWrapper;
 import galilel.org.galilelwallet.R;
 import global.AddressLabel;
 import galilel.org.galilelwallet.ui.base.BaseFragment;
@@ -48,24 +52,21 @@ public class FragmentTxDetail extends BaseFragment implements View.OnClickListen
     private TextView txt_amount;
     private TextView txt_date;
     private RecyclerView recycler_outputs;
-    private TextView txt_memo;
-    private TextView txt_fee;
-    private TextView txt_inputs;
-    private TextView txt_date_title;
-    private TextView txt_confirmations;
-    private TextView container_confirmations;
-    private TextView txt_tx_weight;
+    private TextView txt_memo, txt_fee, txt_inputs, txt_date_title, txt_confirmations, container_confirmations, txt_tx_weight, txt_amount_local;
 
     private TransactionWrapper transactionWrapper;
     private boolean isTxDetail = true;
+    private int myPosition;
+    private GalilelRate galilelRate;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_transaction_detail,container,false);
+        galilelRate = galilelModule.getRate(galilelApplication.getAppConf().getSelectedRateCoin());
 
         Intent intent = getActivity().getIntent();
-        if (intent!=null){
+        if (intent != null){
             transactionWrapper = (TransactionWrapper) intent.getSerializableExtra(TX_WRAPPER);
             if (intent.hasExtra(IS_DETAIL)){
                 transactionWrapper.setTransaction(galilelModule.getTx(transactionWrapper.getTxId()));
@@ -81,6 +82,7 @@ public class FragmentTxDetail extends BaseFragment implements View.OnClickListen
         }
         txt_transaction_id = (TextView) root.findViewById(R.id.txt_transaction_id);
         txt_amount = (TextView) root.findViewById(R.id.txt_amount);
+        txt_amount_local = (TextView) root.findViewById(R.id.txt_amount_local);
         txt_date = (TextView) root.findViewById(R.id.txt_date);
         txt_memo = (TextView) root.findViewById(R.id.txt_memo);
         txt_fee = (TextView) root.findViewById(R.id.txt_fee);
@@ -110,15 +112,26 @@ public class FragmentTxDetail extends BaseFragment implements View.OnClickListen
             txt_confirmations.setVisibility(View.GONE);
         }else {
             // set date
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yy HH:mm");
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM dd, yyyy hh:mm a");
             txt_date.setText(simpleDateFormat.format(transactionWrapper.getTransaction().getUpdateTime()));
         }
         txt_transaction_id.setText(transactionWrapper.getTransaction().getHashAsString());
         txt_amount.setText(transactionWrapper.getAmount().toFriendlyString());
+
+        if (galilelRate != null) {
+            txt_amount_local.setText(
+                    galilelApplication.getCentralFormats().format(
+                            new BigDecimal(transactionWrapper.getAmount().getValue() * galilelRate.getRate().doubleValue()).movePointLeft(8)
+                    )
+                            + " " + galilelRate.getCode()
+            );
+        } else {
+            txt_amount_local.setText("0.00");
+        }
         Coin fee = null;
         if (transactionWrapper.isStake()){
             fee = Coin.ZERO;
-        }else if(transactionWrapper.getTransaction().getFee()!=null) {
+        }else if(transactionWrapper.getTransaction().getFee() != null) {
             fee = transactionWrapper.getTransaction().getFee();
         }else {
             try {
@@ -126,29 +139,41 @@ public class FragmentTxDetail extends BaseFragment implements View.OnClickListen
                 Coin inputsSum = Coin.ZERO;
                 for (TransactionInput input : transactionWrapper.getTransaction().getInputs()) {
                     TransactionOutPoint unspent = input.getOutpoint();
-                    inputsSum = inputsSum.plus(galilelModule.getUnspentValue(unspent.getHash(), (int) unspent.getIndex()));
+                    Coin unspentValue = galilelModule.getUnspentValue(unspent.getHash(), (int) unspent.getIndex());
+                    if (unspentValue != null)
+                        inputsSum = inputsSum.plus(unspentValue);
+                    else
+                        // TODO: Improve this..
+                        throw new Exception("Unspent value null");
                 }
                 fee = inputsSum.subtract(transactionWrapper.getTransaction().getOutputSum());
             }catch (Exception e){
                 e.printStackTrace();
             }
         }
-        if (fee!=null)
+        if (fee != null)
             txt_fee.setText(fee.toFriendlyString());
         else
-            txt_fee.setText(getString(R.string.no_data_available));
+            txt_fee.setText(R.string.no_data_available);
 
         if (transactionWrapper.getTransaction().getMemo()!=null && transactionWrapper.getTransaction().getMemo().length()>0){
             txt_memo.setText(transactionWrapper.getTransaction().getMemo());
         }else {
-            txt_memo.setText(getString(R.string.tx_detail_no_memo));
+            txt_memo.setText(R.string.tx_detail_no_memo);
         }
 
         txt_confirmations.setText(String.valueOf(transactionWrapper.getTransaction().getConfidence().getDepthInBlocks()));
 
-        txt_tx_weight.setText(transactionWrapper.getTransaction().unsafeBitcoinSerialize().length + " " + getString(R.string.tx_detail_bytes));
+        int bytesSize = transactionWrapper.getTransaction().unsafeBitcoinSerialize().length;
+        BigDecimal bytesSizeDecimal = new BigDecimal(bytesSize).movePointLeft(3);
+        txt_tx_weight.setText(bytesSizeDecimal.toPlainString() + " " + R.string.tx_detail_bytes);
 
-        txt_inputs.setText(getString(R.string.tx_detail_inputs,transactionWrapper.getTransaction().getInputs().size()));
+        if (transactionWrapper.getTransaction().getInputs().size() > 1) {
+            txt_inputs.setText(getString(R.string.tx_detail_inputs,transactionWrapper.getTransaction().getInputs().size()));
+        } else {
+
+            txt_inputs.setText(getString(R.string.tx_detail_input,transactionWrapper.getTransaction().getInputs().size()));
+        }
 
         List<OutputUtil> list = new ArrayList<>();
 
@@ -205,6 +230,7 @@ public class FragmentTxDetail extends BaseFragment implements View.OnClickListen
             }
         };
         recycler_outputs.setAdapter(new BaseRecyclerAdapter<OutputUtil,DetailOutputHolder>(getActivity(),list,listItemListener) {
+            String myOutputs = getResources().getString(R.string.output);
             @Override
             protected DetailOutputHolder createHolder(View itemView, int type) {
                 return new DetailOutputHolder(itemView,type);
@@ -217,7 +243,8 @@ public class FragmentTxDetail extends BaseFragment implements View.OnClickListen
 
             @Override
             protected void bindHolder(DetailOutputHolder holder, OutputUtil data, int position) {
-                holder.txt_num.setText(getString(R.string.tx_detail_position) + " " + position);
+                myPosition = position + 1;
+                holder.txt_num.setText(myOutputs+ " "+myPosition);
                 holder.txt_address.setText(data.getLabel());
                 holder.txt_value.setText(data.getAmount().toFriendlyString());
             }
@@ -229,15 +256,21 @@ public class FragmentTxDetail extends BaseFragment implements View.OnClickListen
         int id = v.getId();
         if (id == R.id.txt_inputs){
             try {
+                Set<InputWrapper> set = galilelModule.convertFrom(transactionWrapper.getTransaction().getInputs());
+                if (set == null || set.isEmpty()) {
+                    Toast.makeText(getActivity(), R.string.detail_no_available_inputs, Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 Intent intent = new Intent(getActivity(), InputsDetailActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putBoolean(INTENT_NO_TOTAL_AMOUNT, true);
-                bundle.putSerializable(INTENT_EXTRA_UNSPENT_WRAPPERS, (Serializable) galilelModule.convertFrom(transactionWrapper.getTransaction().getInputs()));
+                bundle.putSerializable(INTENT_EXTRA_UNSPENT_WRAPPERS, (Serializable) set);
                 intent.putExtras(bundle);
                 startActivity(intent);
             } catch (TxNotFoundException e) {
                 e.printStackTrace();
-                Toast.makeText(getActivity(),getString(R.string.detail_no_available_inputs),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),R.string.detail_no_available_inputs,Toast.LENGTH_SHORT).show();
             }
         }
     }

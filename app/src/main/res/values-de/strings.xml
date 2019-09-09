@@ -28,7 +28,6 @@
     <string name="btn_donate">Spende</string>
     <string name="btn_request">Empfangen</string>
     <string name="btn_restore_wallet">Geldbörse wiederherstellen</string>
-    <string name="btn_select_node">Server hinzufügen</string>
     <string name="btn_send">Senden</string>
     <string name="button_cancel">Abbrechen</string>
     <string name="button_dismiss">Verwerfen</string>
@@ -58,7 +57,7 @@
     <string name="desc_slide1">Eine der ersten mobilen Geldbörsen welche 2-Faktor-Authentifizierung für verschlüsselte private Schlüssel enthält. Deine Geldbörse wird somit bestmöglichst vor Diebstahl geschützt.</string>
     <string name="desc_slide2">Obwohl Transaktionen ohnehin sehr schnell sind, werden sie unter Verwendung von SwiftTX sofort ausgeführt und brauchen keine Wartezeit zur Bestätigung.</string>
     <string name="desc_slide3">Galilel ist außergewöhnlich. Es geht darum, die erste wirklich anonyme Kryptowährung mit dynamischen und privaten Proof-of-Stake zu etablieren!</string>
-    <string name="desc_slide4">Ein vertrauter Server macht leichte Proof-of-Stake Geldbörsen möglich. Du kannst dich auf diese verlassen oder erstelle deinen eigenen vertrauenswürdigen Server!</string>
+    <string name="desc_slide4">Unsere Mission is es digitales Geld der breiten Öffentlichkeit zugänglich zu machen ohne komplizierte Einstellungen oder Dokumentationen lesen zu müssen und dabei optimale Sicherheit zu wahren!</string>
     <string name="description">Beschreibung</string>
     <string name="detail_no_available_inputs">Keine Eingangsinformationen verfügbar</string>
     <string name="dialog_contact_create">Kontakt hinzufügen?</string>
@@ -99,6 +98,7 @@
     <string name="import_keys_dialog_failure">Fehler beim Importieren der Sicherung\n\n%s</string>
     <string name="import_keys_dialog_message">Wähle eine Sicherung aus dem Verzeichnis\n\n%s\n\naus.</string>
     <string name="import_xpub">Importieren</string>
+    <string name="input">Eingabe</string>
     <string name="inputs_explanation">Wähle die Münzen für diese Transaktion</string>
     <string name="insert_new_pin">Gebe die neue PIN ein</string>
     <string name="insert_old_pin">Gebe deine aktuelle PIN ein</string>
@@ -132,11 +132,8 @@
     <string name="no_rate">Kein Wechselkurs</string>
     <string name="no_transactions">Du hast keine Transaktionen im Moment.</string>
     <string name="node_block">Blöcke</string>
-    <string name="node_default">Standardwerte</string>
     <string name="node_millisecond">ms</string>
-    <string name="node_preferences">Servereinstellungen</string>
     <string name="node_protocol">Protokoll:</string>
-    <string name="node_selection_message">Du kannst einen verfügbaren Server auswählen oder einen hinzufügen</string>
     <string name="not_connection">Keine Verbindung</string>
     <string name="notification_received_text">Münzen empfangen im Wert von</string>
     <string name="notification_received_title">GALI empfangen</string>
@@ -156,6 +153,7 @@
     <string name="option_multi_outputs">Multi Send</string>
     <string name="options_notice">Hinweis</string>
     <string name="origin_address">Ursprungsadresse</string>
+    <string name="output">Ausgabe</string>
     <string name="output_amount">Betrag</string>
     <string name="output_label">Adresse</string>
     <string name="payment_request">Zahlung anfordern</string>
@@ -208,10 +206,8 @@
     <string name="scan_result_address_title">Adresse erkannt</string>
     <string name="screen_title_watch_only">Nur beobachten</string>
     <string name="security_message">Bitte notiere die Wörter und bewahre sie an einem sicheren Platz auf, du brauchst sie um deine Geldbörse wiederherzustellen.\n\nTeile diese Wörter mit niemanden, wer auch immer diese Wörter besitzt ist Eigentümer der Münzen!</string>
-    <string name="select">Einen Server auswählen</string>
     <string name="select_all">Alles auswählen</string>
     <string name="select_file">Datei auswählen</string>
-    <string name="select_node">Server auswählen</string>
     <string name="send_amount_input_error">Du musst zuerst einen Betrag eingeben.</string>
     <string name="send_error_dialog_tag">Fehler beim Senden</string>
     <string name="sending_tx">Sende Transaktion...</string>
@@ -220,7 +216,6 @@
     <string name="set_currency">GALI</string>
     <string name="set_description">Eine Beschreibung hinzufügen (optional)</string>
     <string name="set_name">Name hier hinzufügen</string>
-    <string name="settings_change_trusted_node">Server wechseln</string>
     <string name="settings_export_pub_key">Konto exportieren</string>
     <string name="settings_import_xpub">Nur Beobachtermodus</string>
     <string name="settings_rates">Wechselkurs</string>
@@ -257,7 +252,7 @@
     <string name="title_slide1">Höchste Sicherheit</string>
     <string name="title_slide2">Sofortiges Senden</string>
     <string name="title_slide3">Volle Privatsphäre</string>
-    <string name="title_slide4">Verbund vertrauter Server</string>
+    <string name="title_slide4">Einfach und Leicht</string>
     <string name="title_tx_weight">Größe</string>
     <string name="total_amount">Gesamt:</string>
     <string name="total_at_least">Mindestens insgesamt</string>
@@ -269,10 +264,10 @@
     <string name="tx_detail_amount">Gesamter Betrag</string>
     <string name="tx_detail_bytes">Bytes</string>
     <string name="tx_detail_confirmations">Bestätigungen</string>
+    <string name="tx_detail_input">%d Eingabe</string>
     <string name="tx_detail_inputs">%d Eingaben</string>
     <string name="tx_detail_inputs_title">Münzquellen</string>
     <string name="tx_detail_no_memo">Keine Beschreibung</string>
-    <string name="tx_detail_position">Position</string>
     <string name="tx_detail_title">Transaktionsdetails</string>
     <string name="tx_input_title">Eingangsdetails</string>
     <string name="unavailable">Betragt nicht ausgebbar</string>

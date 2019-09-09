@@ -52,8 +52,6 @@
 
         <activity android:name=".ui.address_add_activity.AddContactActivity"  android:screenOrientation="portrait"/>
         <activity android:name=".ui.settings_network_activity.SettingsNetworkActivity"  android:screenOrientation="portrait"/>
-        <activity android:name=".ui.settings_node_activity.SettingsNodeActivity"  android:screenOrientation="portrait"/>
-        <activity android:name=".ui.start_node_activity.StartNodeActivity"  android:screenOrientation="portrait"/>
         <activity android:name=".ui.restore_activity.RestoreActivity"  android:screenOrientation="portrait"/>
         <activity android:name=".ui.pincode_activity.PincodeActivity"  android:screenOrientation="portrait">
 

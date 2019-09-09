@@ -55,6 +55,7 @@ public class SplashActivity extends AppCompatActivity {
                 layoutParams.height = (int)scaledHeight;
 
                 videoView.setLayoutParams(layoutParams);
+                videoView.start();
             }
         });
 

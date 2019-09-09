@@ -28,7 +28,6 @@
     <string name="btn_donate">Donate</string>
     <string name="btn_request">Request</string>
     <string name="btn_restore_wallet">Restore Wallet</string>
-    <string name="btn_select_node">Add node</string>
     <string name="btn_send">Send</string>
     <string name="button_cancel">Cancel</string>
     <string name="button_dismiss">Dismiss</string>
@@ -58,7 +57,7 @@
     <string name="desc_slide1">One of the worlds first mobile wallets which supports two-factor authentication for encrypted private keys. It allows you to protect your wallet without any risk of electronic theft.</string>
     <string name="desc_slide2">Already very fast, Galilel transactions using SwiftX are instant with zero confirmation wait time required.</string>
     <string name="desc_slide3">Galilel is already the worlds first crypto currency which includes Dynamic Proof-of-Stake. Staking privacy coins makes it a truly anonymous crypto-currency!</string>
-    <string name="desc_slide4">Trusted nodes federation make light Proof-of-Stake wallets possible, you can rely on them or create your own trusted node!</string>
+    <string name="desc_slide4">Our mission is to bring digital money to the mass market and keeping it as simple as possible to give you the best user experience while keeping your money secure!</string>
     <string name="description">Description</string>
     <string name="detail_no_available_inputs">No inputs information available</string>
     <string name="dialog_contact_create">Add contact?</string>
@@ -99,6 +98,7 @@
     <string name="import_keys_dialog_failure">Error importing backup file\n\n%s</string>
     <string name="import_keys_dialog_message">Select one of your backups files loaded from folder\n\n%s</string>
     <string name="import_xpub">Import</string>
+    <string name="input">Input</string>
     <string name="inputs_explanation">Select coins to use in the transaction</string>
     <string name="insert_new_pin">Insert new PIN</string>
     <string name="insert_old_pin">Insert your current PIN</string>
@@ -131,12 +131,9 @@
     <string name="no_peer_connection">No connection to the node</string>
     <string name="no_rate">No rate</string>
     <string name="no_transactions">You don\'t have any transfers yet.</string>
-    <string name="node_block">ms</string>
-    <string name="node_default">Default values</string>
-    <string name="node_millisecond">Blocks</string>
-    <string name="node_preferences">Node Preferences</string>
+    <string name="node_block">blocks</string>
+    <string name="node_millisecond">ms</string>
     <string name="node_protocol">Protocol:</string>
-    <string name="node_selection_message">You can select one of the node available or add one</string>
     <string name="not_connection">No connection</string>
     <string name="notification_received_text">Coins received for a value of</string>
     <string name="notification_received_title">GALI received</string>
@@ -156,6 +153,7 @@
     <string name="option_multi_outputs">Multi send</string>
     <string name="options_notice">Notice</string>
     <string name="origin_address">Origin address</string>
+    <string name="output">Output</string>
     <string name="output_amount">Amount</string>
     <string name="output_label">Address label</string>
     <string name="payment_request">Payment Request</string>
@@ -208,10 +206,8 @@
     <string name="scan_result_address_title">Address detected</string>
     <string name="screen_title_watch_only">Watch Only</string>
     <string name="security_message">Please write this in a safe place and in horizontal order, you\'ll need them to restore your wallet.\n\nDon\'t share this words to anybody. Be careful, whoever has this words is the owner of the coins!</string>
-    <string name="select">Select a Node</string>
     <string name="select_all">Select all</string>
     <string name="select_file">Select File</string>
-    <string name="select_node">Select Node</string>
     <string name="send_amount_input_error">You must set an amount first.</string>
     <string name="send_error_dialog_tag">Send Error</string>
     <string name="sending_tx">Sending transaction...</string>
@@ -220,7 +216,6 @@
     <string name="set_currency">GALI</string>
     <string name="set_description">Add a description (optional)</string>
     <string name="set_name">Enter name or label here</string>
-    <string name="settings_change_trusted_node">Change Trusted Node</string>
     <string name="settings_export_pub_key">Export Account</string>
     <string name="settings_import_xpub">Watch only Mode</string>
     <string name="settings_rates">Currency Rate</string>
@@ -257,7 +252,7 @@
     <string name="title_slide1">Highest Security</string>
     <string name="title_slide2">Instant Transaction</string>
     <string name="title_slide3">Full Privacy</string>
-    <string name="title_slide4">Trusted Nodes Federation</string>
+    <string name="title_slide4">Simple and Easy</string>
     <string name="title_tx_weight">Size</string>
     <string name="total_amount">Total:</string>
     <string name="total_at_least">Total at least</string>
@@ -269,10 +264,10 @@
     <string name="tx_detail_amount">Total amount</string>
     <string name="tx_detail_bytes">bytes</string>
     <string name="tx_detail_confirmations">Confirmations amount</string>
+    <string name="tx_detail_input">%d input</string>
     <string name="tx_detail_inputs">%d inputs</string>
     <string name="tx_detail_inputs_title">Source coins</string>
     <string name="tx_detail_no_memo">No description</string>
-    <string name="tx_detail_position">Position</string>
     <string name="tx_detail_title">Transaction Details</string>
     <string name="tx_input_title">Inputs Detail</string>
     <string name="unavailable">Amount unspendable:</string>
