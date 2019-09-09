@@ -28,7 +28,6 @@
     <string name="btn_donate">Donate</string>
     <string name="btn_request">Request</string>
     <string name="btn_restore_wallet">Restore Wallet</string>
-    <string name="btn_select_node">Add node</string>
     <string name="btn_send">Send</string>
     <string name="button_cancel">Cancel</string>
     <string name="button_dismiss">Dismiss</string>
@@ -132,11 +131,8 @@
     <string name="no_rate">No rate</string>
     <string name="no_transactions">You don\'t have any transfers yet.</string>
     <string name="node_block">blocks</string>
-    <string name="node_default">Default values</string>
     <string name="node_millisecond">ms</string>
-    <string name="node_preferences">Node Preferences</string>
     <string name="node_protocol">Protocol:</string>
-    <string name="node_selection_message">You can select one of the node available or add one</string>
     <string name="not_connection">No connection</string>
     <string name="notification_received_text">Coins received for a value of</string>
     <string name="notification_received_title">GALI received</string>
@@ -208,10 +204,8 @@
     <string name="scan_result_address_title">Address detected</string>
     <string name="screen_title_watch_only">Watch Only</string>
     <string name="security_message">Please write this in a safe place and in horizontal order, you\'ll need them to restore your wallet.\n\nDon\'t share this words to anybody. Be careful, whoever has this words is the owner of the coins!</string>
-    <string name="select">Select a Node</string>
     <string name="select_all">Select all</string>
     <string name="select_file">Select File</string>
-    <string name="select_node">Select Node</string>
     <string name="send_amount_input_error">You must set an amount first.</string>
     <string name="send_error_dialog_tag">Send Error</string>
     <string name="sending_tx">Sending transaction...</string>
@@ -220,7 +214,6 @@
     <string name="set_currency">GALI</string>
     <string name="set_description">Add a description (optional)</string>
     <string name="set_name">Enter name or label here</string>
-    <string name="settings_change_trusted_node">Change Trusted Node</string>
     <string name="settings_export_pub_key">Export Account</string>
     <string name="settings_import_xpub">Watch only Mode</string>
     <string name="settings_rates">Currency Rate</string>

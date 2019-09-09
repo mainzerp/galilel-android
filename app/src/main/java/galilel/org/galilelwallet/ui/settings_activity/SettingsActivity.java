@@ -33,7 +33,6 @@ import galilel.org.galilelwallet.ui.settings_backup_activity.SettingsBackupActiv
 import galilel.org.galilelwallet.ui.settings_network_activity.SettingsNetworkActivity;
 import galilel.org.galilelwallet.ui.settings_pincode_activity.SettingsPincodeActivity;
 import galilel.org.galilelwallet.ui.settings_rates.SettingsRatesActivity;
-import galilel.org.galilelwallet.ui.start_node_activity.StartNodeActivity;
 import galilel.org.galilelwallet.ui.tutorial_activity.TutorialActivity;
 import galilel.org.galilelwallet.utils.CrashReporter;
 import galilel.org.galilelwallet.utils.DialogsUtil;
@@ -54,7 +53,6 @@ public class SettingsActivity extends BaseDrawerActivity implements View.OnClick
     private Button btn_export_pub_key;
     private Button btn_import_xpub;
     private Button buttonChange;
-    private Button btn_change_node;
     private Button btn_reset_blockchain;
     private Button btn_report;
     private Button btn_support;
@@ -93,9 +91,6 @@ public class SettingsActivity extends BaseDrawerActivity implements View.OnClick
         // Open Change Pincode
         buttonChange = (Button) findViewById(R.id.btn_change_pincode);
         buttonChange.setOnClickListener(this);
-
-        btn_change_node = (Button) findViewById(R.id.btn_change_node);
-        btn_change_node.setOnClickListener(this);
 
         btn_reset_blockchain = (Button) findViewById(R.id.btn_reset_blockchain);
         btn_reset_blockchain.setOnClickListener(this);
@@ -179,8 +174,6 @@ public class SettingsActivity extends BaseDrawerActivity implements View.OnClick
             startActivity(myIntent);
         }else if (id == R.id.btn_network){
             startActivity(new Intent(v.getContext(),SettingsNetworkActivity.class));
-        }else if(id == R.id.btn_change_node) {
-            startActivity(new Intent(v.getContext(), StartNodeActivity.class));
         }else if(id == R.id.btn_reset_blockchain){
             launchResetBlockchainDialog();
         }else if (id == R.id.btn_report){
