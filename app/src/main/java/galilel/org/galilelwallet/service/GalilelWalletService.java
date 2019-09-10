@@ -583,9 +583,11 @@ public class GalilelWalletService extends Service{
                 isChecking.set(false);
             }
         }catch (Exception e){
-            e.printStackTrace();
+            log.error("Exception on blockchainManager check", e);
             isChecking.set(false);
             broadcastBlockchainState(false);
+            // Try to schedule the service again
+            tryScheduleServiceNow();
         }
     }
 
