@@ -67,6 +67,7 @@
     <string name="donation_message">Spenden helfen bei der Erhaltung und der Entwicklung dieser App. Vielen Dank im Voraus.</string>
     <string name="donation_thanks">Sende die Spende..\n\nVielen Dank für deine Unterstützung!</string>
     <string name="donation_title">Ich werde spenden</string>
+    <string name="donation">Spende</string>
     <string name="donations">Spenden</string>
     <string name="empty_connection">Keine Verbindung zu einem Server</string>
     <string name="empty_message_address">Du hast bisher keine gespeicherten Adressen.</string>

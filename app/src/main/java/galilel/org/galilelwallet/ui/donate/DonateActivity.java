@@ -102,9 +102,8 @@ public class DonateActivity extends BaseDrawerActivity {
             if (amount.isLessThan(Transaction.MIN_NONDUST_OUTPUT)) throw new IllegalArgumentException(getString(R.string.invalid_amount_small) + " " + Transaction.MIN_NONDUST_OUTPUT.toFriendlyString());
             if (amount.isGreaterThan(Coin.valueOf(galilelModule.getAvailableBalance())))
                 throw new IllegalArgumentException(getString(R.string.invalid_balance));
-            String memo = "Donation!";
             // build a tx with the default fee
-            transaction = galilelModule.buildSendTx(addressStr, amount, memo,galilelModule.getReceiveAddress());
+            transaction = galilelModule.buildSendTx(addressStr, amount, getString(R.string.donation), galilelModule.getReceiveAddress());
         } catch (InsufficientMoneyException e) {
             e.printStackTrace();
             throw new IllegalArgumentException(getString(R.string.invalid_balance));

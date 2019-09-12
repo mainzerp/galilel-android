@@ -67,6 +67,7 @@
     <string name="donation_message">Donations help with the maintenance and development of the app. Thanks in advance.</string>
     <string name="donation_thanks">Sending donation...\n\nThanks for your support!</string>
     <string name="donation_title">I\'m going to donate</string>
+    <string name="donation">Donation</string>
     <string name="donations">Donations</string>
     <string name="empty_connection">No connection to any node</string>
     <string name="empty_message_address">You don\'t have any saved address yet.</string>
