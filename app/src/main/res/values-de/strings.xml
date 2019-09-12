@@ -102,6 +102,11 @@
     <string name="inputs_explanation">Wähle die Münzen für diese Transaktion</string>
     <string name="insert_new_pin">Gebe die neue PIN ein</string>
     <string name="insert_old_pin">Gebe deine aktuelle PIN ein</string>
+    <string name="invalid_amount">Ungültiger Betrag</string>
+    <string name="invalid_amount_dusty">Zu kleine Ausgaben, bitte erhöhe den Wert deiner Ausgaben</string>
+    <string name="invalid_amount_small">Betrag muss größer als das zulässige Minimum sein:</string>
+    <string name="invalid_balance">Unzureichendes Guthaben</string>
+    <string name="invalid_balance_missing">Unzureichendes Guthaben, fehlende Münzen:</string>
     <string name="invalid_fee_amount">Ungültige Gebühr</string>
     <string name="invalid_host">Üngültiger Servername</string>
     <string name="invalid_input_address">Ungültige Adresse</string>

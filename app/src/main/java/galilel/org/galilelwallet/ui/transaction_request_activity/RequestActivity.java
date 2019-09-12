@@ -90,17 +90,17 @@ public class RequestActivity extends BaseActivity implements View.OnClickListene
     private void showRequestQr() throws Exception {
         // first check amount
         String amountStr = amountFragment.getAmountStr();
-        if (amountStr.length() < 1) throw new IllegalArgumentException("Amount not valid");
+        if (amountStr.length() < 1) throw new IllegalArgumentException(getString(R.string.invalid_amount));
         if (amountStr.length() == 1 && amountStr.equals("."))
-            throw new IllegalArgumentException("Amount not valid");
+            throw new IllegalArgumentException(getString(R.string.invalid_amount));
         if (amountStr.charAt(0) == '.') {
             amountStr = getString(R.string.number_0) + amountStr;
         }
 
         Coin amount = Coin.parseCoin(amountStr);
-        if (amount.isZero()) throw new IllegalArgumentException("Amount zero, please correct it");
+        if (amount.isZero()) throw new IllegalArgumentException(getString(R.string.invalid_amount));
         if (amount.isLessThan(Transaction.MIN_NONDUST_OUTPUT))
-            throw new IllegalArgumentException("Amount must be greater than the minimum amount accepted from miners, " + Transaction.MIN_NONDUST_OUTPUT.toFriendlyString());
+            throw new IllegalArgumentException(getString(R.string.invalid_amount_small) + " " + Transaction.MIN_NONDUST_OUTPUT.toFriendlyString());
 
         // memo
         String memo = edit_memo.getText().toString();

@@ -102,6 +102,11 @@
     <string name="inputs_explanation">Select coins to use in the transaction</string>
     <string name="insert_new_pin">Insert new PIN</string>
     <string name="insert_old_pin">Insert your current PIN</string>
+    <string name="invalid_amount">Amount not valid</string>
+    <string name="invalid_amount_dusty">Dusty send output, please increase the value of your outputs</string>
+    <string name="invalid_amount_small">Amount must be greater than the accepted minimum:</string>
+    <string name="invalid_balance">Insufficient balance</string>
+    <string name="invalid_balance_missing">Insufficient balance, missing coins:</string>
     <string name="invalid_fee_amount">Invalid fee amount</string>
     <string name="invalid_host">Invalid host name</string>
     <string name="invalid_input_address">Invalid address</string>

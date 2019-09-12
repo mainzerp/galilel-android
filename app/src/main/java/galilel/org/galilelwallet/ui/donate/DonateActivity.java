@@ -68,18 +68,18 @@ public class DonateActivity extends BaseDrawerActivity {
             // create the tx
             String addressStr = GalilelContext.DONATE_ADDRESS;
             if (!galilelModule.chechAddress(addressStr))
-                throw new IllegalArgumentException("Address not valid");
+                throw new IllegalArgumentException(getString(R.string.invalid_input_address));
             String amountStr = edit_amount.getText().toString();
-            if (amountStr.length() < 1) throw new IllegalArgumentException("Amount not valid");
-            if (amountStr.length()==1 && amountStr.equals(".")) throw new IllegalArgumentException("Amount not valid");
+            if (amountStr.length() < 1) throw new IllegalArgumentException(getString(R.string.invalid_amount));
+            if (amountStr.length()==1 && amountStr.equals(".")) throw new IllegalArgumentException(getString(R.string.invalid_amount));
             if (amountStr.charAt(0)=='.'){
                 amountStr = getString(R.string.number_0) + amountStr;
             }
             Coin amount = Coin.parseCoin(amountStr);
-            if (amount.isZero()) throw new IllegalArgumentException("Amount zero, please correct it");
-            if (amount.isLessThan(Transaction.MIN_NONDUST_OUTPUT)) throw new IllegalArgumentException("Amount must be greater than the minimum amount accepted from miners, "+Transaction.MIN_NONDUST_OUTPUT.toFriendlyString());
+            if (amount.isZero()) throw new IllegalArgumentException(getString(R.string.invalid_amount));
+            if (amount.isLessThan(Transaction.MIN_NONDUST_OUTPUT)) throw new IllegalArgumentException(getString(R.string.invalid_amount_small) + " " + Transaction.MIN_NONDUST_OUTPUT.toFriendlyString());
             if (amount.isGreaterThan(Coin.valueOf(galilelModule.getAvailableBalance())))
-                throw new IllegalArgumentException("Insuficient balance");
+                throw new IllegalArgumentException(getString(R.string.invalid_balance));
             String memo = "Donation!";
             // build a tx with the default fee
             Transaction transaction = galilelModule.buildSendTx(addressStr, amount, memo,galilelModule.getReceiveAddress());
@@ -95,7 +95,7 @@ public class DonateActivity extends BaseDrawerActivity {
 
         } catch (InsufficientMoneyException e) {
             e.printStackTrace();
-            throw new IllegalArgumentException("Insuficient balance");
+            throw new IllegalArgumentException(getString(R.string.invalid_balance));
         }
     }
 
