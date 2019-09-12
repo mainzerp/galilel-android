@@ -21,6 +21,8 @@ import galilel.org.galilelwallet.ui.pincode_activity.PincodeActivity;
 import galilel.org.galilelwallet.utils.DialogsUtil;
 import galilel.org.galilelwallet.utils.NavigationUtils;
 
+import global.exceptions.NoPeerConnectedException;
+
 import static galilel.org.galilelwallet.service.IntentsConstants.ACTION_BROADCAST_TRANSACTION;
 import static galilel.org.galilelwallet.service.IntentsConstants.DATA_TRANSACTION_HASH;
 
@@ -74,6 +76,16 @@ public class DonateActivity extends BaseDrawerActivity {
 
     private void send_prepare() {
         try {
+
+            // check if the wallet is still syncing
+            try {
+                if (!galilelModule.isSyncWithNode()) {
+                    throw new IllegalArgumentException(getString(R.string.wallet_is_not_sync));
+                }
+            } catch (NoPeerConnectedException e) {
+                e.printStackTrace();
+                throw new IllegalArgumentException(getString(R.string.no_peer_connection));
+            }
 
             // create the tx
             addressStr = GalilelContext.DONATE_ADDRESS;
