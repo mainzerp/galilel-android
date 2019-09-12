@@ -403,6 +403,9 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
             if (!isMultiSend) {
                 cleanWallet = true;
                 Coin coin = galilelModule.getAvailableBalanceCoin();
+                if (galilelModule.getAvailableBalanceCoin().getValue() >= getFee().getValue()) {
+                    coin = coin.subtract(getFee());
+                }
                 if (inGalis) {
                     edit_amount.setText(coin.toPlainString());
                     txt_local_currency.setText(
