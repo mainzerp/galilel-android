@@ -161,7 +161,7 @@
     <string name="origin_address">Ursprungsadresse</string>
     <string name="output">Ausgabe</string>
     <string name="output_amount">Betrag</string>
-    <string name="output_label">Adresse</string>
+    <string name="output_label">Adressebucheintrag (optional)</string>
     <string name="payment_request">Zahlung anfordern</string>
     <string name="payment_request_received">Anfrage erhalten</string>
     <string name="per_kilobyte">Pro Kilobyte</string>

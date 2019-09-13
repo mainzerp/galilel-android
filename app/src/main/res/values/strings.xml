@@ -122,7 +122,7 @@
     <string name="message_blockstore_error">Blockchain store corrupted\n\nPlease send the error report and try to restore the wallet from the mnemonic code or the backup file.</string>
     <string name="message_no_trusted_peer_connection">Trusted peer connection fail</string>
     <string name="minimum_fee">Pay only the minimum fee of 0.0001 GALI/kB</string>
-    <string name="multi_send_activity_title">Multi Send</string>
+    <string name="multi_send_activity_title">Multi send</string>
     <string name="multiple_address_send">Sending to %d addresses</string>
     <string name="my_address">My Address</string>
     <string name="my_wallet">My Wallet</string>
@@ -161,7 +161,7 @@
     <string name="origin_address">Origin address</string>
     <string name="output">Output</string>
     <string name="output_amount">Amount</string>
-    <string name="output_label">Address label</string>
+    <string name="output_label">Address label (optional)</string>
     <string name="payment_request">Payment Request</string>
     <string name="payment_request_received">Request Received</string>
     <string name="per_kilobyte">Per kilobyte</string>
