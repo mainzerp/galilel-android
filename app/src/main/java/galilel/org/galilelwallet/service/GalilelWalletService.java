@@ -413,9 +413,8 @@ public class GalilelWalletService extends Service{
 
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                         stopForeground(true);
-                    } else {
-                        stopSelf();
                     }
+                    stopSelf();
                 } else if (ACTION_BROADCAST_TRANSACTION.equals(action)) {
                     blockchainManager.broadcastTransaction(intent.getByteArrayExtra(DATA_TRANSACTION_HASH));
                 }
@@ -641,9 +640,8 @@ public class GalilelWalletService extends Service{
         if (blockchainState == BlockchainState.SYNC){
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 stopForeground(true);
-            } else {
-                stopSelf();
             }
+            stopSelf();
         }
     }
 
