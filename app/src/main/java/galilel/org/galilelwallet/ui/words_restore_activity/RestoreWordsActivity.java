@@ -68,7 +68,7 @@ public class RestoreWordsActivity extends BaseActivity {
     protected void onCreateView(Bundle savedInstanceState, ViewGroup container) {
         root = getLayoutInflater().inflate(R.layout.security_words_restore, container);
 
-        setTitle(getString(R.string.restore_mnemonic_screen_title));
+        setTitle(getString(R.string.restore_from_words));
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         viewPager = (ViewPager) findViewById(R.id.view_pager);
@@ -194,6 +194,11 @@ public class RestoreWordsActivity extends BaseActivity {
                         new SimpleTwoButtonsDialog.SimpleTwoBtnsDialogListener() {
                             @Override
                             public void onRightBtnClicked(SimpleTwoButtonsDialog dialog) {
+                                dialog.dismiss();
+                            }
+
+                            @Override
+                            public void onLeftBtnClicked(SimpleTwoButtonsDialog dialog) {
                                 AnimationUtils.fadeInView(container_loading,500);
                                 dialog.dismiss();
 
@@ -262,14 +267,10 @@ public class RestoreWordsActivity extends BaseActivity {
                                     }
                                 });
                             }
-
-                            @Override
-                            public void onLeftBtnClicked(SimpleTwoButtonsDialog dialog) {
-                                dialog.dismiss();
-                            }
                         }
                 );
-                dialog.setRightBtnTextColor(ContextCompat.getColor(getApplicationContext(), R.color.darkBrown1));
+                dialog.setLeftBtnText(getString(R.string.button_yes))
+                        .setRightBtnText(getString(R.string.button_no));
                 dialog.show();
             } catch (Exception e) {
                 e.printStackTrace();

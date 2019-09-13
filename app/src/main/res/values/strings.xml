@@ -193,7 +193,6 @@
     <string name="restore_from_words">Restore from words</string>
     <string name="restore_mnemonic">Restoring wallet from mnemonic...</string>
     <string name="restore_mnemonic_dialog_body">The restore is almost done! The blockchain synchronization process is going to start and could take a while to be fully synced.</string>
-    <string name="restore_mnemonic_screen_title">Restore Mnemonic</string>
     <string name="restore_mnemonic_title">Restore Mnemonic</string>
     <string name="restore_wallet">Restore Wallet</string>
     <string name="restore_wallet_dialog_success">Wallet was restored</string>

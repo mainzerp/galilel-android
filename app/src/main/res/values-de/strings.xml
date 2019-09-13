@@ -193,7 +193,6 @@
     <string name="restore_from_words">Wiederherstellung aus Wörtern</string>
     <string name="restore_mnemonic">Wiederherstellen der Geldbörse aus Mnemonic...</string>
     <string name="restore_mnemonic_dialog_body">Wiederherstellung fast fertig! Die Blockchainsynchronisierung startet nun und es kann eine Weile dauern bis sie abgeschlossen ist.</string>
-    <string name="restore_mnemonic_screen_title">Mnemonic wiederherstellen</string>
     <string name="restore_mnemonic_title">Mnemonic wiederherstellen</string>
     <string name="restore_wallet">Geldbörse wiederherstellen</string>
     <string name="restore_wallet_dialog_success">Geldbörse wurde wiederhergestellt</string>
