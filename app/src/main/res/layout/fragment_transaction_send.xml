@@ -191,7 +191,9 @@
                         android:layout_weight="1"
                         android:layout_width = "0dp"
                         android:layout_height="wrap_content"
-                        android:maxLines="4"
+                        android:maxLines="1"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
                         android:paddingBottom="11dp"
                         android:paddingTop="11dp"
                         android:paddingEnd="5dp"
@@ -238,6 +240,7 @@
                     android:background="@drawable/transaction_inputs"
                     android:layout_marginBottom="10dp"
                     android:maxLines="1"
+                    android:inputType="text"
                     android:hint="@string/set_description"
                     android:textColor = "@color/grey85black"
                     android:textSize = "16sp" />

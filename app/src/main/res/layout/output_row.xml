@@ -117,6 +117,8 @@
             android:paddingBottom="12dp"
             android:textCursorDrawable="@drawable/color_cursor"
             android:hint="@string/output_label"
+            android:maxLines="1"
+            android:inputType="text"
             android:textSize="15sp"
             android:textColor="@color/grey85black"
             android:id="@+id/edit_address_label" />
