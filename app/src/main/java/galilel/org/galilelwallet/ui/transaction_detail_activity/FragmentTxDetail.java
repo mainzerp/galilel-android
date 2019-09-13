@@ -166,7 +166,7 @@ public class FragmentTxDetail extends BaseFragment implements View.OnClickListen
 
         int bytesSize = transactionWrapper.getTransaction().unsafeBitcoinSerialize().length;
         BigDecimal bytesSizeDecimal = new BigDecimal(bytesSize).movePointLeft(3);
-        txt_tx_weight.setText(bytesSizeDecimal.toPlainString() + " " + R.string.tx_detail_bytes);
+        txt_tx_weight.setText(bytesSizeDecimal.toPlainString() + " " + getString(R.string.tx_detail_bytes));
 
         if (transactionWrapper.getTransaction().getInputs().size() > 1) {
             txt_inputs.setText(getString(R.string.tx_detail_inputs,transactionWrapper.getTransaction().getInputs().size()));

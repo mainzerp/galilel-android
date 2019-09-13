@@ -383,7 +383,7 @@ public class GalilelWalletService extends Service{
             Bitmap largeIconBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
             Notification.Builder builder = new Notification.Builder(this, NOTIFICATION_CHANNEL_ID)
                     .setContentTitle(getString(R.string.app_name))
-                    .setContentText("MAIK wallet is syncing.")
+                    .setContentText("Wallet is syncing.")  //TODO: check this text?
                     .setLargeIcon(largeIconBitmap)
                     .setAutoCancel(true);
 
