@@ -202,19 +202,19 @@ public class SettingsActivity extends BaseDrawerActivity implements View.OnClick
                 new SimpleTwoButtonsDialog.SimpleTwoBtnsDialogListener() {
                     @Override
                     public void onRightBtnClicked(SimpleTwoButtonsDialog dialog) {
-                        galilelApplication.stopBlockchain();
-                        Toast.makeText(SettingsActivity.this,getString(R.string.reseting_blockchain),Toast.LENGTH_LONG).show();
                         dialog.dismiss();
                     }
 
                     @Override
                     public void onLeftBtnClicked(SimpleTwoButtonsDialog dialog) {
+                        galilelApplication.stopBlockchain();
+                        Toast.makeText(SettingsActivity.this,getString(R.string.reseting_blockchain),Toast.LENGTH_LONG).show();
                         dialog.dismiss();
                     }
                 }
         );
-        dialog.setLeftBtnText(getString(R.string.button_cancel))
-                .setRightBtnText(getString(R.string.button_ok));
+        dialog.setLeftBtnText(getString(R.string.button_yes))
+                .setRightBtnText(getString(R.string.button_no));
         dialog.show();
     }
 

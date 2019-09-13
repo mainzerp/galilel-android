@@ -452,6 +452,12 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                     new SimpleTwoButtonsDialog.SimpleTwoBtnsDialogListener() {
                         @Override
                         public void onRightBtnClicked(SimpleTwoButtonsDialog dialog) {
+                            dialog.dismiss();
+
+                        }
+
+                        @Override
+                        public void onLeftBtnClicked(SimpleTwoButtonsDialog dialog) {
                             try {
                                 send(true);
                             }catch (Exception e){
@@ -459,23 +465,12 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                                 showErrorDialog(e.getMessage());
                             }
                             dialog.dismiss();
-
-                        }
-
-                        @Override
-                        public void onLeftBtnClicked(SimpleTwoButtonsDialog dialog) {
-                            dialog.dismiss();
                         }
                     }
             );
-            noConnectivityDialog.setRightBtnTextColor(ContextCompat.getColor(getApplicationContext(), R.color.darkBrown1));
-            noConnectivityDialog.setLeftBtnTextColor(ContextCompat.getColor(getApplicationContext(), R.color.galilelWhite))
-                    .setRightBtnTextColor(ContextCompat.getColor(getApplicationContext(), R.color.galilelBlack))
-                    .setRightBtnBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.galilelWhite))
-                    .setLeftBtnTextColor(ContextCompat.getColor(getApplicationContext(), R.color.galilelBlack))
-                    .setLeftBtnText(getString(R.string.button_cancel))
-                    .setRightBtnText(getString(R.string.button_ok))
-                    .show();
+            noConnectivityDialog.setLeftBtnText(getString(R.string.button_yes))
+                    .setRightBtnText(getString(R.string.button_no));
+            noConnectivityDialog.show();
 
             return false;
         }
