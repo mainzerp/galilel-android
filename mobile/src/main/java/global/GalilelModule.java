@@ -102,8 +102,8 @@ public interface GalilelModule {
 
     boolean chechAddress(String addressBase58);
 
-    Transaction buildSendTx(String addressBase58, Coin amount, String memo,Address changeAddress) throws InsufficientMoneyException;
-    Transaction buildSendTx(String addressBase58, Coin amount,Coin feePerKb, String memo,Address changeAddress) throws InsufficientMoneyException;
+    Transaction buildSendTx(String addressBase58, Coin amount, String memo, Address changeAddress) throws InsufficientMoneyException;
+    Transaction buildSendTx(String addressBase58, Coin amount, String memo, Address changeAddress, Coin feePerKb, boolean emptyWallet) throws InsufficientMoneyException;
 
     WalletConfiguration getConf();
 

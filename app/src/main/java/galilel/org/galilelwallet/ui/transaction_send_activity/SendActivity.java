@@ -403,9 +403,6 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
             if (!isMultiSend) {
                 cleanWallet = true;
                 Coin coin = galilelModule.getAvailableBalanceCoin();
-                if (galilelModule.getAvailableBalanceCoin().getValue() >= getFee().getValue()) {
-                    coin = coin.subtract(getFee());
-                }
                 if (inGalis) {
                     edit_amount.setText(coin.toPlainString());
                     txt_local_currency.setText(
@@ -688,7 +685,13 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                 }else {
                     changeAddressTemp = galilelModule.getReceiveAddress();
                 }
-                transaction = galilelModule.buildSendTx(addressStr,amount,feePerKb,memo,changeAddressTemp);
+
+                // check if wallet should be cleaned
+                if (amount.getValue() == galilelModule.getAvailableBalanceCoin().getValue()) {
+                    transaction = galilelModule.buildSendTx(addressStr, amount, memo, changeAddressTemp, feePerKb, true);
+                } else {
+                    transaction = galilelModule.buildSendTx(addressStr, amount, memo, changeAddressTemp, feePerKb, false);
+                }
 
                 // check if there is a need to change the change address
                 if (changeToOrigin){
@@ -770,10 +773,10 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
 
         } catch (InsufficientMoneyException e) {
             e.printStackTrace();
-            throw new IllegalArgumentException(getString(R.string.invalid_balance) + " " + e.missing.toFriendlyString());
+            throw new IllegalArgumentException(getString(R.string.invalid_balance_missing) + " " + e.missing.toFriendlyString());
         } catch (InsufficientInputsException e) {
             e.printStackTrace();
-            throw new IllegalArgumentException(getString(R.string.invalid_balance) + " " + e.getMissing().toFriendlyString());
+            throw new IllegalArgumentException(getString(R.string.invalid_balance_missing) + " " + e.getMissing().toFriendlyString());
         } catch (Wallet.DustySendRequested e){
             e.printStackTrace();
             throw new IllegalArgumentException(getString(R.string.invalid_amount_dusty));

@@ -87,6 +87,7 @@
     <string name="fee_explanation">Wenn die benutzerdefinierte Gebühr kleiner als die Mindestgebühr (0.0001 GALI/kB) ist, wird die Mindestgebühr benutzt. Die Gebühr wird pro Kilobyte berechnet.</string>
     <string name="fee_fast">Schnell</string>
     <string name="fee_included">Die Gebühr ist nicht in der Gesamtsumme enthalten</string>
+    <string name="fee_included_send">Die Gebühr wird automatisch abgezogen, falls alles hinzufügen benutzt wird, ansonsten ist sie nicht enthalten</string>
     <string name="fee_normal">Normal</string>
     <string name="fee_per_kb">%s GALI/kB</string>
     <string name="hint_fee">0.0000001</string>

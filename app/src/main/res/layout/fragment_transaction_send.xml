@@ -308,7 +308,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/fee_included"
+                    android:text="@string/fee_included_send"
                     android:gravity="center"
                     android:paddingTop="16dp"
                     android:paddingBottom="16dp" />

@@ -87,6 +87,7 @@
     <string name="fee_explanation">If the custom fee is lower than the minimum fee (0.0001 GALI/kB) the cost will be the minimum and not the custom fee selected. Fee calculated per kilobyte.</string>
     <string name="fee_fast">Fast</string>
     <string name="fee_included">Fee is not included on the total amount</string>
+    <string name="fee_included_send">Fee is deducted if add all is used otherwise it is not included</string>
     <string name="fee_normal">Normal</string>
     <string name="fee_per_kb">GALI/kB</string>
     <string name="hint_fee">0.0000001</string>
