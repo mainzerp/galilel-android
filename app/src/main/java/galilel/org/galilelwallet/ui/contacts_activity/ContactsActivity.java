@@ -133,14 +133,14 @@ public class ContactsActivity extends BaseDrawerActivity implements ListItemList
         SimpleTwoButtonsDialog.SimpleTwoBtnsDialogListener listener = new SimpleTwoButtonsDialog.SimpleTwoBtnsDialogListener() {
             @Override
             public void onRightBtnClicked(SimpleTwoButtonsDialog dialog) {
-                galilelModule.deleteAddressLabel(data);
-                load();
-                Toast.makeText(ContactsActivity.this,getString(R.string.address_label_deleted),Toast.LENGTH_LONG).show();
                 dialog.dismiss();
             }
 
             @Override
             public void onLeftBtnClicked(SimpleTwoButtonsDialog dialog) {
+                galilelModule.deleteAddressLabel(data);
+                load();
+                Toast.makeText(ContactsActivity.this,getString(R.string.address_label_deleted),Toast.LENGTH_LONG).show();
                 dialog.dismiss();
             }
         };

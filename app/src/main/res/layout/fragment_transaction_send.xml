@@ -63,7 +63,7 @@
                             android:textCursorDrawable="@drawable/color_cursor"
                             android:layout_marginBottom="10dp"
                             android:maxLines="1"
-                            android:maxLength="8"
+                            android:maxLength="12"
                             android:textColor = "@color/grey85black"
                             android:textSize = "16sp" />
 
@@ -108,7 +108,7 @@
                             android:textCursorDrawable="@drawable/color_cursor"
                             android:layout_marginBottom="10dp"
                             android:maxLines="1"
-                            android:maxLength="8"
+                            android:maxLength="12"
                             android:textColor = "@color/grey85black"
                             android:textSize = "16sp" />
 
@@ -191,7 +191,9 @@
                         android:layout_weight="1"
                         android:layout_width = "0dp"
                         android:layout_height="wrap_content"
-                        android:maxLines="4"
+                        android:maxLines="1"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
                         android:paddingBottom="11dp"
                         android:paddingTop="11dp"
                         android:paddingEnd="5dp"
@@ -238,6 +240,7 @@
                     android:background="@drawable/transaction_inputs"
                     android:layout_marginBottom="10dp"
                     android:maxLines="1"
+                    android:inputType="text"
                     android:hint="@string/set_description"
                     android:textColor = "@color/grey85black"
                     android:textSize = "16sp" />
@@ -305,7 +308,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/fee_included"
+                    android:text="@string/fee_included_send"
                     android:gravity="center"
                     android:paddingTop="16dp"
                     android:paddingBottom="16dp" />

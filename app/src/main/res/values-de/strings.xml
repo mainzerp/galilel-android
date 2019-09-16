@@ -67,6 +67,7 @@
     <string name="donation_message">Spenden helfen bei der Erhaltung und der Entwicklung dieser App. Vielen Dank im Voraus.</string>
     <string name="donation_thanks">Sende die Spende..\n\nVielen Dank für deine Unterstützung!</string>
     <string name="donation_title">Ich werde spenden</string>
+    <string name="donation">Spende</string>
     <string name="donations">Spenden</string>
     <string name="empty_connection">Keine Verbindung zu einem Server</string>
     <string name="empty_message_address">Du hast bisher keine gespeicherten Adressen.</string>
@@ -86,6 +87,7 @@
     <string name="fee_explanation">Wenn die benutzerdefinierte Gebühr kleiner als die Mindestgebühr (0.0001 GALI/kB) ist, wird die Mindestgebühr benutzt. Die Gebühr wird pro Kilobyte berechnet.</string>
     <string name="fee_fast">Schnell</string>
     <string name="fee_included">Die Gebühr ist nicht in der Gesamtsumme enthalten</string>
+    <string name="fee_included_send">Die Gebühr wird automatisch abgezogen, falls alles hinzufügen benutzt wird, ansonsten ist sie nicht enthalten</string>
     <string name="fee_normal">Normal</string>
     <string name="fee_per_kb">%s GALI/kB</string>
     <string name="hint_fee">0.0000001</string>
@@ -102,6 +104,11 @@
     <string name="inputs_explanation">Wähle die Münzen für diese Transaktion</string>
     <string name="insert_new_pin">Gebe die neue PIN ein</string>
     <string name="insert_old_pin">Gebe deine aktuelle PIN ein</string>
+    <string name="invalid_amount">Ungültiger Betrag</string>
+    <string name="invalid_amount_dusty">Zu kleine Ausgaben, bitte erhöhe den Wert deiner Ausgaben</string>
+    <string name="invalid_amount_small">Betrag muss größer als das zulässige Minimum sein:</string>
+    <string name="invalid_balance">Unzureichendes Guthaben</string>
+    <string name="invalid_balance_missing">Unzureichendes Guthaben, fehlende Münzen:</string>
     <string name="invalid_fee_amount">Ungültige Gebühr</string>
     <string name="invalid_host">Üngültiger Servername</string>
     <string name="invalid_input_address">Ungültige Adresse</string>
@@ -155,7 +162,7 @@
     <string name="origin_address">Ursprungsadresse</string>
     <string name="output">Ausgabe</string>
     <string name="output_amount">Betrag</string>
-    <string name="output_label">Adresse</string>
+    <string name="output_label">Adressebucheintrag (optional)</string>
     <string name="payment_request">Zahlung anfordern</string>
     <string name="payment_request_received">Anfrage erhalten</string>
     <string name="per_kilobyte">Pro Kilobyte</string>
@@ -187,7 +194,6 @@
     <string name="restore_from_words">Wiederherstellung aus Wörtern</string>
     <string name="restore_mnemonic">Wiederherstellen der Geldbörse aus Mnemonic...</string>
     <string name="restore_mnemonic_dialog_body">Wiederherstellung fast fertig! Die Blockchainsynchronisierung startet nun und es kann eine Weile dauern bis sie abgeschlossen ist.</string>
-    <string name="restore_mnemonic_screen_title">Mnemonic wiederherstellen</string>
     <string name="restore_mnemonic_title">Mnemonic wiederherstellen</string>
     <string name="restore_wallet">Geldbörse wiederherstellen</string>
     <string name="restore_wallet_dialog_success">Geldbörse wurde wiederhergestellt</string>

@@ -67,6 +67,7 @@
     <string name="donation_message">Donations help with the maintenance and development of the app. Thanks in advance.</string>
     <string name="donation_thanks">Sending donation...\n\nThanks for your support!</string>
     <string name="donation_title">I\'m going to donate</string>
+    <string name="donation">Donation</string>
     <string name="donations">Donations</string>
     <string name="empty_connection">No connection to any node</string>
     <string name="empty_message_address">You don\'t have any saved address yet.</string>
@@ -86,6 +87,7 @@
     <string name="fee_explanation">If the custom fee is lower than the minimum fee (0.0001 GALI/kB) the cost will be the minimum and not the custom fee selected. Fee calculated per kilobyte.</string>
     <string name="fee_fast">Fast</string>
     <string name="fee_included">Fee is not included on the total amount</string>
+    <string name="fee_included_send">Fee is deducted if add all is used otherwise it is not included</string>
     <string name="fee_normal">Normal</string>
     <string name="fee_per_kb">GALI/kB</string>
     <string name="hint_fee">0.0000001</string>
@@ -102,6 +104,11 @@
     <string name="inputs_explanation">Select coins to use in the transaction</string>
     <string name="insert_new_pin">Insert new PIN</string>
     <string name="insert_old_pin">Insert your current PIN</string>
+    <string name="invalid_amount">Amount not valid</string>
+    <string name="invalid_amount_dusty">Dusty send output, please increase the value of your outputs</string>
+    <string name="invalid_amount_small">Amount must be greater than the accepted minimum:</string>
+    <string name="invalid_balance">Insufficient balance</string>
+    <string name="invalid_balance_missing">Insufficient balance, missing coins:</string>
     <string name="invalid_fee_amount">Invalid fee amount</string>
     <string name="invalid_host">Invalid host name</string>
     <string name="invalid_input_address">Invalid address</string>
@@ -116,7 +123,7 @@
     <string name="message_blockstore_error">Blockchain store corrupted\n\nPlease send the error report and try to restore the wallet from the mnemonic code or the backup file.</string>
     <string name="message_no_trusted_peer_connection">Trusted peer connection fail</string>
     <string name="minimum_fee">Pay only the minimum fee of 0.0001 GALI/kB</string>
-    <string name="multi_send_activity_title">Multi Send</string>
+    <string name="multi_send_activity_title">Multi send</string>
     <string name="multiple_address_send">Sending to %d addresses</string>
     <string name="my_address">My Address</string>
     <string name="my_wallet">My Wallet</string>
@@ -155,7 +162,7 @@
     <string name="origin_address">Origin address</string>
     <string name="output">Output</string>
     <string name="output_amount">Amount</string>
-    <string name="output_label">Address label</string>
+    <string name="output_label">Address label (optional)</string>
     <string name="payment_request">Payment Request</string>
     <string name="payment_request_received">Request Received</string>
     <string name="per_kilobyte">Per kilobyte</string>
@@ -187,7 +194,6 @@
     <string name="restore_from_words">Restore from words</string>
     <string name="restore_mnemonic">Restoring wallet from mnemonic...</string>
     <string name="restore_mnemonic_dialog_body">The restore is almost done! The blockchain synchronization process is going to start and could take a while to be fully synced.</string>
-    <string name="restore_mnemonic_screen_title">Restore Mnemonic</string>
     <string name="restore_mnemonic_title">Restore Mnemonic</string>
     <string name="restore_wallet">Restore Wallet</string>
     <string name="restore_wallet_dialog_success">Wallet was restored</string>

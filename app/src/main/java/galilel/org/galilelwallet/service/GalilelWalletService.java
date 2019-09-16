@@ -383,7 +383,7 @@ public class GalilelWalletService extends Service{
             Bitmap largeIconBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
             Notification.Builder builder = new Notification.Builder(this, NOTIFICATION_CHANNEL_ID)
                     .setContentTitle(getString(R.string.app_name))
-                    .setContentText("MAIK wallet is syncing.")
+                    .setContentText("Wallet is syncing.")  //TODO: check this text?
                     .setLargeIcon(largeIconBitmap)
                     .setAutoCancel(true);
 
@@ -413,9 +413,8 @@ public class GalilelWalletService extends Service{
 
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                         stopForeground(true);
-                    } else {
-                        stopSelf();
                     }
+                    stopSelf();
                 } else if (ACTION_BROADCAST_TRANSACTION.equals(action)) {
                     blockchainManager.broadcastTransaction(intent.getByteArrayExtra(DATA_TRANSACTION_HASH));
                 }
@@ -583,9 +582,11 @@ public class GalilelWalletService extends Service{
                 isChecking.set(false);
             }
         }catch (Exception e){
-            e.printStackTrace();
+            log.error("Exception on blockchainManager check", e);
             isChecking.set(false);
             broadcastBlockchainState(false);
+            // Try to schedule the service again
+            tryScheduleServiceNow();
         }
     }
 
@@ -639,9 +640,8 @@ public class GalilelWalletService extends Service{
         if (blockchainState == BlockchainState.SYNC){
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 stopForeground(true);
-            } else {
-                stopSelf();
             }
+            stopSelf();
         }
     }
 

@@ -449,6 +449,12 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                     new SimpleTwoButtonsDialog.SimpleTwoBtnsDialogListener() {
                         @Override
                         public void onRightBtnClicked(SimpleTwoButtonsDialog dialog) {
+                            dialog.dismiss();
+
+                        }
+
+                        @Override
+                        public void onLeftBtnClicked(SimpleTwoButtonsDialog dialog) {
                             try {
                                 send(true);
                             }catch (Exception e){
@@ -456,23 +462,12 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                                 showErrorDialog(e.getMessage());
                             }
                             dialog.dismiss();
-
-                        }
-
-                        @Override
-                        public void onLeftBtnClicked(SimpleTwoButtonsDialog dialog) {
-                            dialog.dismiss();
                         }
                     }
             );
-            noConnectivityDialog.setRightBtnTextColor(ContextCompat.getColor(getApplicationContext(), R.color.darkBrown1));
-            noConnectivityDialog.setLeftBtnTextColor(ContextCompat.getColor(getApplicationContext(), R.color.galilelWhite))
-                    .setRightBtnTextColor(ContextCompat.getColor(getApplicationContext(), R.color.galilelBlack))
-                    .setRightBtnBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.galilelWhite))
-                    .setLeftBtnTextColor(ContextCompat.getColor(getApplicationContext(), R.color.galilelBlack))
-                    .setLeftBtnText(getString(R.string.button_cancel))
-                    .setRightBtnText(getString(R.string.button_ok))
-                    .show();
+            noConnectivityDialog.setLeftBtnText(getString(R.string.button_yes))
+                    .setRightBtnText(getString(R.string.button_no));
+            noConnectivityDialog.show();
 
             return false;
         }
@@ -662,17 +657,17 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
 
             // first check amount
             String amountStr = getAmountStr();
-            if (amountStr.length() < 1) throw new IllegalArgumentException("Amount not valid");
-            if (amountStr.length()==1 && amountStr.equals(".")) throw new IllegalArgumentException("Amount not valid");
+            if (amountStr.length() < 1) throw new IllegalArgumentException(getString(R.string.invalid_amount));
+            if (amountStr.length()==1 && amountStr.equals(".")) throw new IllegalArgumentException(getString(R.string.invalid_amount));
             if (amountStr.charAt(0)=='.'){
                 amountStr = getString(R.string.number_0) + amountStr;
             }
 
             Coin amount = Coin.parseCoin(amountStr);
-            if (amount.isZero()) throw new IllegalArgumentException("Amount zero, please correct it");
-            if (amount.isLessThan(Transaction.MIN_NONDUST_OUTPUT)) throw new IllegalArgumentException("Amount must be greater than the minimum amount accepted from miners, "+Transaction.MIN_NONDUST_OUTPUT.toFriendlyString());
+            if (amount.isZero()) throw new IllegalArgumentException(getString(R.string.invalid_amount));
+            if (amount.isLessThan(Transaction.MIN_NONDUST_OUTPUT)) throw new IllegalArgumentException(getString(R.string.invalid_amount_small) + " " + Transaction.MIN_NONDUST_OUTPUT.toFriendlyString());
             if (amount.isGreaterThan(Coin.valueOf(galilelModule.getAvailableBalance())))
-                throw new IllegalArgumentException("Insuficient balance");
+                throw new IllegalArgumentException(getString(R.string.invalid_balance));
 
             // memo
             String memo = edit_memo.getText().toString();
@@ -682,7 +677,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
             if ( (outputWrappers==null || outputWrappers.isEmpty()) && (unspent==null || unspent.isEmpty()) ){
                 addressStr = edit_address.getText().toString();
                 if (!galilelModule.chechAddress(addressStr))
-                    throw new IllegalArgumentException("Address not valid");
+                    throw new IllegalArgumentException(getString(R.string.invalid_input_address));
                 Coin feePerKb = getFee();
                 Address changeAddressTemp = null;
                 if (changeAddress!=null){
@@ -690,7 +685,13 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                 }else {
                     changeAddressTemp = galilelModule.getReceiveAddress();
                 }
-                transaction = galilelModule.buildSendTx(addressStr,amount,feePerKb,memo,changeAddressTemp);
+
+                // check if wallet should be cleaned
+                if (amount.getValue() == galilelModule.getAvailableBalanceCoin().getValue()) {
+                    transaction = galilelModule.buildSendTx(addressStr, amount, memo, changeAddressTemp, feePerKb, true);
+                } else {
+                    transaction = galilelModule.buildSendTx(addressStr, amount, memo, changeAddressTemp, feePerKb, false);
+                }
 
                 // check if there is a need to change the change address
                 if (changeToOrigin){
@@ -710,7 +711,7 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
                 } else {
                     addressStr = edit_address.getText().toString();
                     if (!galilelModule.chechAddress(addressStr))
-                        throw new IllegalArgumentException("Address not valid");
+                        throw new IllegalArgumentException(getString(R.string.invalid_input_address));
                     transaction.addOutput(amount, Address.fromBase58(galilelModule.getConf().getNetworkParams(), addressStr));
                 }
 
@@ -772,13 +773,13 @@ public class SendActivity extends BaseActivity implements View.OnClickListener {
 
         } catch (InsufficientMoneyException e) {
             e.printStackTrace();
-            throw new IllegalArgumentException("Insuficient balance\nMissing coins "+e.missing.toFriendlyString());
+            throw new IllegalArgumentException(getString(R.string.invalid_balance_missing) + " " + e.missing.toFriendlyString());
         } catch (InsufficientInputsException e) {
             e.printStackTrace();
-            throw new IllegalArgumentException("Insuficient balance\nMissing coins "+e.getMissing().toFriendlyString());
+            throw new IllegalArgumentException(getString(R.string.invalid_balance_missing) + " " + e.getMissing().toFriendlyString());
         } catch (Wallet.DustySendRequested e){
             e.printStackTrace();
-            throw new IllegalArgumentException("Dusty send output, please increase the value of your outputs");
+            throw new IllegalArgumentException(getString(R.string.invalid_amount_dusty));
         }
     }
 

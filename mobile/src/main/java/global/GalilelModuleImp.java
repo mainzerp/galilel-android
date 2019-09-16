@@ -215,11 +215,11 @@ public class GalilelModuleImp implements GalilelModule {
     }
 
     @Override
-    public Transaction buildSendTx(String addressBase58, Coin amount, String memo,Address changeAddress) throws InsufficientMoneyException {
-        return buildSendTx(addressBase58,amount,null,memo,changeAddress);
+    public Transaction buildSendTx(String addressBase58, Coin amount, String memo, Address changeAddress) throws InsufficientMoneyException {
+        return buildSendTx(addressBase58, amount, memo, changeAddress, null, false);
     }
     @Override
-    public Transaction buildSendTx(String addressBase58, Coin amount,Coin feePerKb, String memo,Address changeAddress) throws InsufficientMoneyException{
+    public Transaction buildSendTx(String addressBase58, Coin amount, String memo, Address changeAddress, Coin feePerKb, boolean emptyWallet) throws InsufficientMoneyException {
         Address address = Address.fromBase58(walletConfiguration.getNetworkParams(), addressBase58);
 
         SendRequest sendRequest = SendRequest.to(address,amount);
@@ -231,6 +231,7 @@ public class GalilelModuleImp implements GalilelModule {
         if (changeAddress!=null){
             sendRequest.changeAddress = changeAddress;
         }
+        sendRequest.emptyWallet = emptyWallet; // add all has been used to empty the wallet
         walletManager.completeSend(sendRequest);
 
         return sendRequest.tx;
