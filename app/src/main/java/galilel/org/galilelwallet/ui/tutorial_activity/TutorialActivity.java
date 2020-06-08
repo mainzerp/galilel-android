@@ -20,6 +20,7 @@ import android.widget.TextView;
 
 import galilel.org.galilelwallet.R;
 import galilel.org.galilelwallet.ui.pincode_activity.PincodeActivity;
+import galilel.org.galilelwallet.ui.start_node_activity.StartNodeActivity;
 import galilel.org.galilelwallet.ui.wallet_activity.WalletActivity;
 
 public class TutorialActivity extends AppCompatActivity implements View.OnClickListener {
@@ -64,6 +65,10 @@ public class TutorialActivity extends AppCompatActivity implements View.OnClickL
         if (intent != null && intent.hasExtra(INTENT_EXTRA_INFO_TUTORIAL)) {
             isInit = false;
         }
+    }
+
+    public void btnNodeClick(View v) {
+        startActivity(new Intent(this, StartNodeActivity.class));
     }
 
     public void btnSkipClick(View v) {

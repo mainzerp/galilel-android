@@ -8,8 +8,8 @@ import galileltrum.GalileltrumPeerData;
 public class GalileltrumGlobalData {
 
     public static final String[] TRUSTED_NODES = new String[] {
-        // None for now, we don't use trusted nodes anymore, too complicated
-        // for users and >95% of users never touch it. -> useless setting.
+        "eu1.galilel.org",
+        "eu2.galilel.org"
     };
 
     public static final List<GalileltrumPeerData> listTrustedHosts(int paramsPort) {

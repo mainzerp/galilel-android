@@ -28,6 +28,7 @@
     <string name="btn_donate">Spende</string>
     <string name="btn_request">Empfangen</string>
     <string name="btn_restore_wallet">Geldbörse wiederherstellen</string>
+    <string name="btn_select_node">Server hinzufügen</string>
     <string name="btn_send">Senden</string>
     <string name="button_cancel">Abbrechen</string>
     <string name="button_dismiss">Verwerfen</string>
@@ -139,8 +140,11 @@
     <string name="no_rate">Kein Wechselkurs</string>
     <string name="no_transactions">Du hast keine Transaktionen im Moment.</string>
     <string name="node_block">Blöcke</string>
+    <string name="node_default">Standardwerte</string>
     <string name="node_millisecond">ms</string>
+    <string name="node_preferences">Servereinstellungen</string>
     <string name="node_protocol">Protokoll:</string>
+    <string name="node_selection_message">Du kannst einen verfügbaren Server auswählen oder einen hinzufügen</string>
     <string name="not_connection">Keine Verbindung</string>
     <string name="notification_received_text">Münzen empfangen im Wert von</string>
     <string name="notification_received_title">GALI empfangen</string>
@@ -212,8 +216,10 @@
     <string name="scan_result_address_title">Adresse erkannt</string>
     <string name="screen_title_watch_only">Nur beobachten</string>
     <string name="security_message">Bitte notiere die Wörter und bewahre sie an einem sicheren Platz auf, du brauchst sie um deine Geldbörse wiederherzustellen.\n\nTeile diese Wörter mit niemanden, wer auch immer diese Wörter besitzt ist Eigentümer der Münzen!</string>
+    <string name="select">Einen Server auswählen</string>
     <string name="select_all">Alles auswählen</string>
     <string name="select_file">Datei auswählen</string>
+    <string name="select_node">Server auswählen</string>
     <string name="send_amount_input_error">Du musst zuerst einen Betrag eingeben.</string>
     <string name="send_error_dialog_tag">Fehler beim Senden</string>
     <string name="sending_tx">Sende Transaktion...</string>
@@ -222,6 +228,7 @@
     <string name="set_currency">GALI</string>
     <string name="set_description">Eine Beschreibung hinzufügen (optional)</string>
     <string name="set_name">Name hier hinzufügen</string>
+    <string name="settings_change_trusted_node">Server wechseln</string>
     <string name="settings_export_pub_key">Konto exportieren</string>
     <string name="settings_import_xpub">Nur Beobachtermodus</string>
     <string name="settings_rates">Wechselkurs</string>
